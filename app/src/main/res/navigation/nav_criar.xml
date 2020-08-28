@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_criar"
+    app:startDestination="@id/step_one">
+    <fragment
+        android:id="@+id/step_one"
+        android:name="com.example.telas_v1.fragmentos_criar_conta.passo_um.Step_one"
+        android:label="fragment_step_one"
+        tools:layout="@layout/fragment_step_one" >
+        <action
+            android:id="@+id/action_step_one_to_step_two"
+            app:destination="@id/step_two" />
+    </fragment>
+    <fragment
+        android:id="@+id/step_two"
+        android:name="com.example.telas_v1.fragmentos_criar_conta.passo_dois.step_two"
+        android:label="fragment_step_two"
+        tools:layout="@layout/fragment_step_two" />
+</navigation>

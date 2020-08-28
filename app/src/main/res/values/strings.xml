@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Telas_V1</string>
+    <string name="l_gica_ajudando_voc">Lógica Ajudando Você</string>
+    <string name="logo">Logo do projeto</string>
+    <string name="entrar">Entrar</string>
+    <string name="criar_conta">Criar Conta</string>
+    <string name="email_ou_telefone">Email ou Telefone</string>
+    <string name="senha">Senha</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="vamos_come_ar">Vamos começar!</string>
+    <string name="selecione_o_seu_tipo_de_conta">Selecione o seu tipo de conta</string>
+    <string name="cliente">Cliente</string>
+    <string name="trabalhador">Trabalhador</string>
+</resources>
