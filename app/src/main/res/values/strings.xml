@@ -13,4 +13,8 @@
     <string name="selecione_o_seu_tipo_de_conta">Selecione o seu tipo de conta</string>
     <string name="cliente">Cliente</string>
     <string name="trabalhador">Trabalhador</string>
+    <string name="n_o_vai_demorar_muito">Não vai demorar muito</string>
+    <string name="infome_seu_nome">Infome seu nome</string>
+    <string name="informe_seu_nome">Informe seu nome</string>
+    <string name="informe_seus_dados">informe seus dados</string>
 </resources>

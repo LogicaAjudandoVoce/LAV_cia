@@ -10,6 +10,7 @@ import android.widget.Button;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.example.telas_v1.MainActivity;
@@ -58,10 +59,10 @@ public class Step_one extends Fragment {
             @Override
             public void onClick(View v) {
              //aqui é o cliente selecionado
-            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-            Fragment fragment = new Step_two();
-            fragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment).commit();
-
+                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                FragmentTransaction fragmentTransacion = fragmentManager.beginTransaction();
+                Fragment fragment = new Step_two();
+                fragmentTransacion.replace(R.id.paipai,fragment).commit();
 
             }
         });

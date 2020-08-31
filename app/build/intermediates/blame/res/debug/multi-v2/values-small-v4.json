@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Kazuma\\Projetos\\Telas_V1\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "C:\\Users\\Kazuma\\Projetos\\Telas\\telas\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Kazuma\\.gradle\\caches\\transforms-2\\files-2.1\\afffa2962a5951385d906deaec08b09b\\material-1.2.0\\res\\values-small-v4\\values-small-v4.xml",

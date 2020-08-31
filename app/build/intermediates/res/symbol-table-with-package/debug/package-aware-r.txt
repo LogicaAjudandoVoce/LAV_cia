@@ -1726,6 +1726,7 @@ id bt_client
 id bt_entrar
 id bt_trab
 id bt_voltar_fragmento
+id bt_voltar_fragmento2
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -1872,7 +1873,6 @@ id mtrl_picker_title_text
 id multiply
 id nav_controller_view_tag
 id nav_criar
-id nav_host_fragment
 id nav_host_fragment_container
 id navigation_header_container
 id never
@@ -1886,6 +1886,7 @@ id off
 id on
 id outline
 id packed
+id paipai
 id parallax
 id parent
 id parentPanel
@@ -1983,6 +1984,7 @@ id text
 id text2
 id textEnd
 id textInputLayout2
+id textInputLayout3
 id textInputLayout4
 id textSpacerNoButtons
 id textSpacerNoTitle
@@ -1990,6 +1992,8 @@ id textStart
 id textView
 id textView2
 id textView3
+id textView4
+id textView5
 id text_input_end_icon
 id text_input_start_icon
 id textinput_counter
@@ -2014,6 +2018,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txt_nome
 id unchecked
 id uniform
 id unlabeled
@@ -2220,6 +2225,9 @@ string fab_transformation_sheet_behavior
 string hello_blank_fragment
 string hide_bottom_view_on_scroll_behavior
 string icon_content_description
+string infome_seu_nome
+string informe_seu_nome
+string informe_seus_dados
 string item_view_role_description
 string l_gica_ajudando_voc
 string logo
@@ -2260,6 +2268,7 @@ string mtrl_picker_toggle_to_calendar_input_mode
 string mtrl_picker_toggle_to_day_selection
 string mtrl_picker_toggle_to_text_input_mode
 string mtrl_picker_toggle_to_year_selection
+string n_o_vai_demorar_muito
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
 string password_toggle_content_description
