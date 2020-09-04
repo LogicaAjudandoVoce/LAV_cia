@@ -8,6 +8,7 @@ public abstract class MaskUtil {
 
     public static TextWatcher mask(final EditText ediTxt, final String mask) {
 
+        //tudo ok,dia: 40/09/2020 ás 00:24
         return new TextWatcher() {
 
             boolean isUpdating;

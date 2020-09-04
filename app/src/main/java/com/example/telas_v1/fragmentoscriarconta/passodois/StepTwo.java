@@ -17,6 +17,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class StepTwo extends Fragment{
 
+    //tudo ok,dia: 40/09/2020 ás 00:24
     private StepTwoViewModel step_two_viewModel;
     TextInputEditText txtData;
     Button btnVoltar,btnAvancar,btnRetorna;

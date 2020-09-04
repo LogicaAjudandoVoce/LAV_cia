@@ -25,6 +25,7 @@ public class StepOne extends Fragment {
 
     private StepOneViewModel step_one_viewModel;
 
+    //tudo ok,dia: 40/09/2020 ás 00:24
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
         step_one_viewModel = ViewModelProviders.of(this).get(StepOneViewModel.class);

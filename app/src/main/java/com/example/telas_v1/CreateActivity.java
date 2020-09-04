@@ -11,6 +11,7 @@ import com.example.telas_v1.fragmentoscriarconta.passoum.StepOne;
 
 public class CreateActivity extends AppCompatActivity {
 
+    //tudo ok,dia: 40/09/2020 ás 00:24
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

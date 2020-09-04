@@ -8,8 +8,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-
-    //Ultima atualização dia 31/08 às 00:50
+    //tudo ok,dia: 40/09/2020 ás 00:24
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

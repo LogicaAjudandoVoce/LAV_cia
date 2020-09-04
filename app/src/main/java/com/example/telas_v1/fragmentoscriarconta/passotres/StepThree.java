@@ -13,6 +13,7 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class StepThree extends Fragment {
 
+    //tudo ok,dia: 40/09/2020 ás 00:24
     private StepThreeViewModel step_three_viewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,

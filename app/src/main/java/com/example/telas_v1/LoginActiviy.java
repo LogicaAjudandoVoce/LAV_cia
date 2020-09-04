@@ -9,6 +9,7 @@ import android.view.inputmethod.InputMethodManager;
 
 public class LoginActiviy extends AppCompatActivity {
 
+    //tudo ok,dia: 40/09/2020 ás 00:24
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
