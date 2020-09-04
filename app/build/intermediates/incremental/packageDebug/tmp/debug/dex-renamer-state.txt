@@ -1,4 +1,4 @@
-#Mon Aug 31 00:32:17 BOT 2020
+#Wed Sep 02 14:45:07 BOT 2020
 base.0=C\:\\Users\\Kazuma\\Projetos\\Telas\\telas\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex

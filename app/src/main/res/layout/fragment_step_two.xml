@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
-    tools:context=".fragmentos_criar_conta.passo_dois.Step_two" >
+    tools:context=".fragmentoscriarconta.passodois.StepTwo" >
 
     <Button
         android:id="@+id/bt_voltar_fragmento2"
@@ -21,7 +21,7 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="128dp"
+        android:layout_marginTop="140dp"
         android:fontFamily="@font/montserrat_alternates"
         android:text="@string/n_o_vai_demorar_muito"
         android:textColor="@color/colorPrimaryDark"
@@ -34,7 +34,7 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="24dp"
         android:fontFamily="@font/montserrat_alternates"
         android:text="@string/informe_seus_dados"
         android:textColor="@color/colorPrimaryDark"
@@ -48,11 +48,12 @@
         android:id="@+id/textInputLayout3"
         android:layout_width="275dp"
         android:layout_height="70dp"
-        android:layout_marginTop="24dp"
-        android:hint="nome"
+        android:layout_marginTop="32dp"
+        android:hint="@string/nome_e_sobrenome"
         android:textAlignment="center"
         android:textColorHint="@color/colorPrimaryDark"
         app:boxStrokeColor="@color/colorPrimaryDark"
+        app:hintAnimationEnabled="false"
         app:layout_constraintEnd_toEndOf="@+id/textView5"
         app:layout_constraintStart_toStartOf="@+id/textView5"
         app:layout_constraintTop_toBottomOf="@+id/textView5">
@@ -68,24 +69,55 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout5"
         android:layout_width="275dp"
         android:layout_height="70dp"
-        android:layout_marginTop="16dp"
-        android:hint="data de nascimento"
+        android:layout_marginTop="24dp"
+        android:hint="@string/data_de_nascimento"
         android:textColorHint="@color/colorPrimaryDark"
         app:boxStrokeColor="@color/colorPrimaryDark"
+        app:hintAnimationEnabled="false"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout3"
         app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txt_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="date"
+            android:inputType="number"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="18sp" />
+
     </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/bt_retornar"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:layout_weight="1"
+        android:background="@drawable/botao_preto"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="@string/voltar"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
+
+    <Button
+        android:id="@+id/bt_avancar"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/botao_branco"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="@string/avan_ar"
+        android:textAllCaps="false"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
+        app:layout_constraintTop_toBottomOf="@+id/textInputLayout5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

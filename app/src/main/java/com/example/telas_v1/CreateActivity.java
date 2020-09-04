@@ -7,7 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.telas_v1.fragmentos_criar_conta.passo_um.Step_one;
+import com.example.telas_v1.fragmentoscriarconta.passoum.StepOne;
 
 public class CreateActivity extends AppCompatActivity {
 
@@ -18,11 +18,12 @@ public class CreateActivity extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.add(R.id.paipai, new Step_one());
+        ft.add(R.id.paipai, new StepOne());
         ft.commit();
     }
 
     public void voltar(View view) {
         finish();
     }
+
 }

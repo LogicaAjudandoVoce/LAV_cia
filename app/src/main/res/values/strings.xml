@@ -17,4 +17,9 @@
     <string name="infome_seu_nome">Infome seu nome</string>
     <string name="informe_seu_nome">Informe seu nome</string>
     <string name="informe_seus_dados">informe seus dados</string>
+    <string name="data_de_nascimento">data de nascimento</string>
+    <string name="nome">nome completo</string>
+    <string name="nome_e_sobrenome">nome e sobrenome</string>
+    <string name="voltar">voltar</string>
+    <string name="avan_ar">avançar</string>
 </resources>

@@ -1696,7 +1696,6 @@ id action_menu_presenter
 id action_mode_bar
 id action_mode_bar_stub
 id action_mode_close_button
-id action_step_one_to_step_two
 id action_text
 id actions
 id activity_chooser_view_content
@@ -1722,8 +1721,10 @@ id bottom
 id bounce
 id bt_Criar
 id bt_Entrar
+id bt_avancar
 id bt_client
 id bt_entrar
+id bt_retornar
 id bt_trab
 id bt_voltar_fragmento
 id bt_voltar_fragmento2
@@ -1872,7 +1873,6 @@ id mtrl_picker_text_input_range_start
 id mtrl_picker_title_text
 id multiply
 id nav_controller_view_tag
-id nav_criar
 id nav_host_fragment_container
 id navigation_header_container
 id never
@@ -1961,8 +1961,6 @@ id startVertical
 id staticLayout
 id staticPostLayout
 id status_bar_latest_event_content
-id step_one
-id step_two
 id stop
 id stretch
 id submenuarrow
@@ -1986,6 +1984,7 @@ id textEnd
 id textInputLayout2
 id textInputLayout3
 id textInputLayout4
+id textInputLayout5
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
@@ -2018,6 +2017,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
+id txt_data
 id txt_nome
 id unchecked
 id uniform
@@ -2113,6 +2113,7 @@ layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout fragment_step_one
+layout fragment_step_three
 layout fragment_step_two
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
@@ -2177,7 +2178,6 @@ layout text_view_with_theme_line_height
 layout text_view_without_line_height
 mipmap ic_launcher
 mipmap ic_launcher_round
-navigation nav_criar
 plurals mtrl_badge_content_description
 string abc_action_bar_home_description
 string abc_action_bar_up_description
@@ -2208,6 +2208,7 @@ string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
 string app_name
 string appbar_scrolling_view_behavior
+string avan_ar
 string bottom_sheet_behavior
 string character_counter_content_description
 string character_counter_overflowed_content_description
@@ -2216,6 +2217,7 @@ string chip_text
 string clear_text_end_icon_content_description
 string cliente
 string criar_conta
+string data_de_nascimento
 string email_ou_telefone
 string entrar
 string error_icon_content_description
@@ -2271,6 +2273,8 @@ string mtrl_picker_toggle_to_year_selection
 string n_o_vai_demorar_muito
 string nav_app_bar_navigate_up_description
 string nav_app_bar_open_drawer_description
+string nome
+string nome_e_sobrenome
 string password_toggle_content_description
 string path_password_eye
 string path_password_eye_mask_strike_through
@@ -2282,6 +2286,7 @@ string senha
 string status_bar_notification_info_overflow
 string trabalhador
 string vamos_come_ar
+string voltar
 style AlertDialog_AppCompat
 style AlertDialog_AppCompat_Light
 style AndroidThemeColorAccentYellow
