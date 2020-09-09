@@ -912,6 +912,10 @@
         "source": "C:\\Users\\Kazuma\\.gradle\\caches\\transforms-2\\files-2.1\\afffa2962a5951385d906deaec08b09b\\material-1.2.0\\res\\color\\mtrl_fab_bg_color_selector.xml"
     },
     {
+        "merged": "C:\\Users\\Kazuma\\Projetos\\Telas\\telas\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_step_four.xml.flat",
+        "source": "C:\\Users\\Kazuma\\Projetos\\Telas\\telas\\app\\src\\main\\res\\layout\\fragment_step_four.xml"
+    },
+    {
         "merged": "C:\\Users\\Kazuma\\Projetos\\Telas\\telas\\app\\build\\intermediates\\res\\merged\\debug\\color_abc_btn_colored_text_material.xml.flat",
         "source": "C:\\Users\\Kazuma\\.gradle\\caches\\transforms-2\\files-2.1\\529d92923825ed8d05fab3038e182347\\appcompat-1.2.0\\res\\color\\abc_btn_colored_text_material.xml"
     },

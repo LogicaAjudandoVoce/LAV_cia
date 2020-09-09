@@ -22,4 +22,9 @@
     <string name="nome_e_sobrenome">nome e sobrenome</string>
     <string name="voltar">voltar</string>
     <string name="avan_ar">avançar</string>
+    <string name="informe_seu_e_mail">Informe seu E-mail</string>
+    <string name="j_estamos_acabando">Já estamos acabando</string>
+    <string name="os_e_emails_n_o_s_o_iguais">Os e-emails não são iguais</string>
+    <string name="confirme_seu_e_mail">Confirme seu e-mail</string>
+    <string name="e_mail">E-mail</string>
 </resources>
