@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "522651802259",
+    "firebase_url": "https://projetolavcia-2020.firebaseio.com",
+    "project_id": "projetolavcia-2020",
+    "storage_bucket": "projetolavcia-2020.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:522651802259:android:498fcb61a8acd612208b66",
+        "android_client_info": {
+          "package_name": "com.example.telas_v1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "522651802259-doaltnbsujnvubi0m3br9ao74kbaidg6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.telas_v1",
+            "certificate_hash": "0a809fd4953a4213bdd6a21e54711a4e2c56dbb5"
+          }
+        },
+        {
+          "client_id": "522651802259-k9rdpbbgatnh09nj13nb6in7ls67htpc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCsGSHmuTpl-aVWlHFxkBNXB27IOs0A9k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "522651802259-k9rdpbbgatnh09nj13nb6in7ls67htpc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
