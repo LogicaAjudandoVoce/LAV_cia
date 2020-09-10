@@ -2,12 +2,15 @@ package com.example.telas_v1.fragmentoscriarconta.passotres;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -17,7 +20,13 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.telas_v1.R;
 import com.example.telas_v1.fragmentoscriarconta.passoquatro.StepFour;
+import com.example.telas_v1.metodosusers.MetodosUsers;
+import com.example.telas_v1.users.UserCliente;
+import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
+
+import java.time.LocalDate;
 
 public class StepThree extends Fragment {
 
@@ -25,6 +34,9 @@ public class StepThree extends Fragment {
     Button btAvancar, btRetornar, btVoltar;
     TextInputEditText txtEmail, txtEmailConf;
     TextView txtError;
+    private Bundle bundle;
+    private UserCliente userCliente;
+    private UserTrabalhador userTrabalhador;
 
     //tudo ok,dia: 40/09/2020 ás 00:24
     private StepThreeViewModel step_three_viewModel;
@@ -34,6 +46,10 @@ public class StepThree extends Fragment {
         step_three_viewModel = ViewModelProviders.of(this).get(StepThreeViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_step_three, container, false);
 
+        userCliente = this.getArguments().getParcelable("cliente");
+        userTrabalhador = this.getArguments().getParcelable("trabalhador");
+        bundle = new Bundle();
+
 
         //Setando
         LyFundo      = root.findViewById(R.id.ly_fundo_tres);
@@ -42,7 +58,6 @@ public class StepThree extends Fragment {
         btVoltar     = root.findViewById(R.id.bt_voltar_frag_dois);
         txtEmail     = root.findViewById(R.id.txt_email);
         txtEmailConf = root.findViewById(R.id.txt_email_confirmar);
-        txtError     = root.findViewById(R.id.txt_error_tres);
 
         //bt retornar (seta)
         btRetornar.setOnClickListener(new View.OnClickListener() {
@@ -55,11 +70,28 @@ public class StepThree extends Fragment {
         //bt avancar
         btAvancar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransacion = fragmentManager.beginTransaction();
-                Fragment fragment = new StepFour();
-                fragmentTransacion.replace(R.id.paipai,fragment).addToBackStack(null).commit();
+            public void onClick(final View v) {
+                final String email = txtEmail.getText().toString().trim();
+                String emailConf = txtEmailConf.getText().toString().trim();
+
+                if (!email.isEmpty() && !emailConf.isEmpty()) {
+                    if (email.equals(emailConf)) {
+                        if (checarEmail(email)) {
+                            FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
+                            FragmentTransaction fragmentTransacion = fragmentManager.beginTransaction();
+                            if (userCliente != null) {
+                                userCliente.setEmail(email);
+                                bundle.putParcelable("cliente", userCliente);
+                            } else {
+                                userTrabalhador.setEmail(email);
+                                bundle.putParcelable("trabalhador", userTrabalhador);
+                            }
+                            Fragment fragment = new StepFour();
+                            fragment.setArguments(bundle);
+                            fragmentTransacion.replace(R.id.paipai, fragment).addToBackStack(null).commit();
+                        }else Toast.makeText(getContext(), "O email não é válido!", Toast.LENGTH_LONG).show();
+                    }else Toast.makeText(getContext(), "Os campos precisam ser iguais!", Toast.LENGTH_LONG).show();
+                }else Toast.makeText(getContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
             }
         });
 
@@ -77,15 +109,6 @@ public class StepThree extends Fragment {
             public void onClick(View v) {
                 InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(getView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-                if(txtEmail.getText().equals("") && txtEmailConf.getText().equals("")){
-                    txtError.setVisibility(View.INVISIBLE);
-                }else{
-                    if(txtEmail.getText().equals(txtEmailConf.getText())){
-                        txtError.setVisibility(View.INVISIBLE);
-                    }else {
-                        txtError.setVisibility(View.VISIBLE);
-                    }
-                }
             }
         });
 
@@ -101,6 +124,13 @@ public class StepThree extends Fragment {
         if(getActivity().getSupportFragmentManager().getBackStackEntryCount()>0){
             getActivity().getSupportFragmentManager().popBackStack();
         }
+    }
+
+    private boolean checarEmail(String email){
+        if (Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+            return true;
+        }
+        return false;
     }
 
 }

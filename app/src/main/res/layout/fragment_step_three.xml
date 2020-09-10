@@ -79,17 +79,6 @@
             android:hint="@string/confirme_seu_e_mail" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <TextView
-        android:id="@+id/txt_error_tres"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/os_e_emails_n_o_s_o_iguais"
-        android:textColor="@android:color/holo_red_light"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout"
-        app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
-        app:layout_constraintStart_toStartOf="@+id/textInputLayout" />
-
     <Button
         android:id="@+id/bt_avancar"
         android:layout_width="120dp"

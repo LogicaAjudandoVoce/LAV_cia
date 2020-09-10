@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class MainActivity extends AppCompatActivity {
 
     //tudo ok,dia: 40/09/2020 ás 00:24
@@ -13,6 +15,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        if (FirebaseAuth.getInstance().getUid()!=null){
+            startActivity(new Intent(MainActivity.this, MainUserActivity.class));
+            finish();
+        }
     }
 
     public void entrar(View view) {

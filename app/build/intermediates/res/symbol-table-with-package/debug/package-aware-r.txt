@@ -1770,6 +1770,7 @@ id bt_voltar
 id bt_voltar_frag_dois
 id bt_voltar_fragmento
 id bt_voltar_fragmento2
+id btnSair
 id buttonPanel
 id cancel_action
 id cancel_button
@@ -2042,12 +2043,10 @@ id textSpacerNoTitle
 id textStart
 id textView
 id textView10
-id textView11
 id textView2
 id textView3
 id textView4
 id textView5
-id textView6
 id textView7
 id textView8
 id textView9
@@ -2080,7 +2079,6 @@ id txtPassword
 id txt_data
 id txt_email
 id txt_email_confirmar
-id txt_error_tres
 id txt_nome
 id txt_senha
 id txt_senha_conf
@@ -2163,6 +2161,7 @@ layout abc_tooltip
 layout activity_create
 layout activity_login
 layout activity_main
+layout activity_main_user
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog
@@ -2284,12 +2283,6 @@ string character_counter_pattern
 string chip_text
 string clear_text_end_icon_content_description
 string cliente
-<<<<<<< HEAD
-string confirme_seu_e_mail
-string criar_conta
-string data_de_nascimento
-string e_mail
-=======
 string common_google_play_services_enable_button
 string common_google_play_services_enable_text
 string common_google_play_services_enable_title
@@ -2308,10 +2301,11 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string confirme_seu_e_mail
 string criar_conta
 string data_de_nascimento
 string default_web_client_id
->>>>>>> 72809ce3d52aec16cf8b492d51c8065d33bb1dea
+string e_mail
 string email_ou_telefone
 string entrar
 string error_icon_content_description

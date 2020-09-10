@@ -2,6 +2,7 @@ package com.example.telas_v1;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -9,6 +10,7 @@ import android.widget.Button;
 import com.example.telas_v1.metodosusers.*;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginActiviy extends AppCompatActivity {
 
@@ -28,6 +30,8 @@ public class LoginActiviy extends AppCompatActivity {
         txtPassword = findViewById(R.id.txtPassword);
         btnEntrar = findViewById(R.id.bt_entrar);
 
+        if (FirebaseAuth.getInstance().getUid()!=null) FirebaseAuth.getInstance().signOut();
+
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -37,7 +41,9 @@ public class LoginActiviy extends AppCompatActivity {
     }
 
     public void voltar(View view) {
-        finish();
+        Intent voltar = new Intent(this, MainActivity.class);
+        voltar.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(voltar);
     }
 
 

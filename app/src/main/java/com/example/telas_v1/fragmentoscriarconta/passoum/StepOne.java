@@ -16,12 +16,17 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.telas_v1.MainActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.fragmentoscriarconta.passodois.StepTwo;
+import com.example.telas_v1.users.UserCliente;
+import com.example.telas_v1.users.UserTrabalhador;
 
 public class StepOne extends Fragment {
 
-    Button btnVoltar;
-    Button btnClient;
-    Button btnTrab;
+    private Button btnVoltar;
+    private Button btnClient;
+    private Button btnTrab;
+    private UserTrabalhador userTrabalhador;
+    private UserCliente userCliente;
+    private Bundle bundle;
 
     private StepOneViewModel step_one_viewModel;
 
@@ -31,8 +36,6 @@ public class StepOne extends Fragment {
         step_one_viewModel = ViewModelProviders.of(this).get(StepOneViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_step_one,container, false);
         //NÃO MEXE AQUI EM CIMA
-
-
 
 
         //Botão Voltar
@@ -45,6 +48,7 @@ public class StepOne extends Fragment {
             }
         });
 
+        bundle = new Bundle();
         //botão Cliente & Trabalhador
         btnClient = (Button) root.findViewById(R.id.bt_client);
         btnTrab = (Button) root.findViewById(R.id.bt_trab);
@@ -53,9 +57,13 @@ public class StepOne extends Fragment {
             @Override
             public void onClick(View v) {
                 //aqui é o cliente selecionado
+                userCliente = new UserCliente();
+                userCliente.setTipoUser("Cliente");
+                bundle.putParcelable("cliente", userCliente);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransacion = fragmentManager.beginTransaction();
                 Fragment fragment = new StepTwo();
+                fragment.setArguments(bundle);
                 fragmentTransacion.replace(R.id.paipai,fragment).addToBackStack(null).commit();
             }
         });
@@ -64,9 +72,13 @@ public class StepOne extends Fragment {
             @Override
             public void onClick(View v) {
                 //aqui é o trab selecionado
+                userTrabalhador = new UserTrabalhador();
+                userTrabalhador.setTipoUser("Trabalhador");
+                bundle.putParcelable("trabalhador", userTrabalhador);
                 FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
                 FragmentTransaction fragmentTransacion = fragmentManager.beginTransaction();
                 Fragment fragment = new StepTwo();
+                fragment.setArguments(bundle);
                 fragmentTransacion.replace(R.id.paipai,fragment).addToBackStack(null).commit();
             }
         });
