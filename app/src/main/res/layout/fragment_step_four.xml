@@ -65,7 +65,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_alternates"
             android:hint="@string/senha"
-            android:password="true" />
+            android:inputType="textPassword"
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -85,7 +86,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_alternates"
             android:hint="Redigite a senha"
-            android:password="true" />
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

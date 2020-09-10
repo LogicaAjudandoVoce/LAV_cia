@@ -66,6 +66,7 @@ public class StepTwo extends Fragment{
         txtNome = root.findViewById(R.id.txt_nome);
         lyFundo = root.findViewById(R.id.ly_fundo_dois);
 
+
         //bt voltar artificial
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override

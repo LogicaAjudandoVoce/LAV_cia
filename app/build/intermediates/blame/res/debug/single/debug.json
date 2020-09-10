@@ -80,12 +80,12 @@
         "source": "C:\\Users\\CassioMarciao\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-ldrtl-hdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_card_view_foreground.xml.flat",
-        "source": "C:\\Users\\CassioMarciao\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\color\\mtrl_card_view_foreground.xml"
-    },
-    {
         "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_ic_star_half_black_48dp.png.flat",
         "source": "C:\\Users\\CassioMarciao\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_48dp.png"
+    },
+    {
+        "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_card_view_foreground.xml.flat",
+        "source": "C:\\Users\\CassioMarciao\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\color\\mtrl_card_view_foreground.xml"
     },
     {
         "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\color-v23_abc_tint_btn_checkable.xml.flat",
@@ -132,12 +132,12 @@
         "source": "C:\\Users\\CassioMarciao\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-mdpi-v4\\abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
-        "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_vpn_key_black_24dp.xml.flat",
-        "source": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\ic_vpn_key_black_24dp.xml"
-    },
-    {
         "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\color_mtrl_chip_surface_color.xml.flat",
         "source": "C:\\Users\\CassioMarciao\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\color\\mtrl_chip_surface_color.xml"
+    },
+    {
+        "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_vpn_key_black_24dp.xml.flat",
+        "source": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\ic_vpn_key_black_24dp.xml"
     },
     {
         "merged": "C:\\Users\\CassioMarciao\\Documents\\FMM\\Rodrigo-FMM\\AndroidStudio\\AulasKlisman\\Projeto\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_navigation_empty_icon.xml.flat",

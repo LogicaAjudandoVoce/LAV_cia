@@ -36,6 +36,7 @@
             android:fontFamily="@font/montserrat_alternates"
             android:hint="@string/email_ou_telefone"
             android:textAlignment="textStart"
+            android:inputType="textEmailAddress"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -57,6 +58,7 @@
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_alternates"
             android:hint="@string/senha"
+            android:inputType="textPassword"
             android:textAlignment="textStart"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
