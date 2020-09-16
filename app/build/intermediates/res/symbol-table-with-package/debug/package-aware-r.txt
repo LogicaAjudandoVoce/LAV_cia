@@ -1583,6 +1583,7 @@ drawable abc_textfield_search_material
 drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
+drawable barra_custom
 drawable botao_azul
 drawable botao_branco
 drawable botao_dourado
@@ -1949,6 +1950,7 @@ id percent
 id pin
 id position
 id postLayout
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -2047,6 +2049,7 @@ id textView2
 id textView3
 id textView4
 id textView5
+id textView6
 id textView7
 id textView8
 id textView9
@@ -2162,6 +2165,7 @@ layout activity_create
 layout activity_login
 layout activity_main
 layout activity_main_user
+layout barra_progresso
 layout custom_dialog
 layout design_bottom_navigation_item
 layout design_bottom_sheet_dialog

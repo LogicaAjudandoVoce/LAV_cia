@@ -3,6 +3,7 @@ package com.example.telas_v1.fragmentoscriarconta.passoquatro;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.KeyEvent;
@@ -25,6 +26,7 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.telas_v1.LoginActiviy;
 import com.example.telas_v1.R;
+import com.example.telas_v1.classesuteis.BarraProgresso;
 import com.example.telas_v1.classesuteis.MaskUtil;
 import com.example.telas_v1.fragmentoscriarconta.passodois.StepTwoViewModel;
 import com.example.telas_v1.fragmentoscriarconta.passotres.StepThree;
@@ -43,19 +45,20 @@ public class StepFour extends Fragment{
 
     //tudo ok,dia: 40/09/2020 ás 00:24
     private StepFourViewModel step_four_viewModel;
-    ConstraintLayout LyFundo;
-    Button btAvancar, btRetornar, btVoltar;
-    TextInputEditText txtSenha, txtSenhaConf;
+    private ConstraintLayout LyFundo;
+    private Button btAvancar, btRetornar, btVoltar;
+    private TextInputEditText txtSenha, txtSenhaConf;
     private UserCliente userCliente;
     private UserTrabalhador userTrabalhador;
     private Bundle bundle;
+    private MetodosUsers metodosUsers;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
         step_four_viewModel = ViewModelProviders.of(this).get(StepFourViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_step_four, container, false);
 
-        final MetodosUsers metodosUsers = new MetodosUsers();
+        metodosUsers = new MetodosUsers();
         userCliente = this.getArguments().getParcelable("cliente");
         userTrabalhador = this.getArguments().getParcelable("trabalhador");
         bundle = new Bundle();
@@ -88,12 +91,12 @@ public class StepFour extends Fragment{
                     if (senha.equals(senhaConf)) {
                         if (senha.length()>=6) {
                             if (userCliente != null) {
-                                userCliente.setSenha(txtSenha.getText().toString().trim());
-                                metodosUsers.cadastrarUser(getActivity(), getContext(), userCliente, null);
-                            } else {
-                                userTrabalhador.setSenha(txtSenha.getText().toString().trim());
-                                metodosUsers.cadastrarUser(getActivity(), getContext(), null, userTrabalhador);
-                            }
+                            userCliente.setSenha(txtSenha.getText().toString().trim());
+                            metodosUsers.cadastrarUser(getActivity(), getContext(), userCliente, null);
+                        } else {
+                            userTrabalhador.setSenha(txtSenha.getText().toString().trim());
+                            metodosUsers.cadastrarUser(getActivity(), getContext(), null, userTrabalhador);
+                        }
                         }else Toast.makeText(getContext(), "A senha deve ter mais de 6 caracteres!", Toast.LENGTH_LONG).show();
                     }else Toast.makeText(getContext(), "Os campos precisam ser iguais!", Toast.LENGTH_LONG).show();
                 }else Toast.makeText(getContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
@@ -114,7 +117,6 @@ public class StepFour extends Fragment{
             public void onClick(View v) {
                 InputMethodManager inputMethodManager = (InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
                 inputMethodManager.hideSoftInputFromWindow(getView().getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-
             }
         });
 

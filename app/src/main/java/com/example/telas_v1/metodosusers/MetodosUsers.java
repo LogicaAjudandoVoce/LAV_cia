@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentActivity;
 
 import com.example.telas_v1.LoginActiviy;
 import com.example.telas_v1.MainUserActivity;
+import com.example.telas_v1.classesuteis.BarraProgresso;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,6 +32,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.List;
 
 public class MetodosUsers {
+    private BarraProgresso progresso;
+
     public void autenticarUsuario(final Context context, String email, String password){
         FirebaseAuth.getInstance().signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
@@ -49,6 +52,8 @@ public class MetodosUsers {
     }
 
     public void cadastrarUser(final Activity activity, final Context context, final UserCliente userCliente, final UserTrabalhador userTrabalhador){
+        progresso = new BarraProgresso(activity);
+        progresso.comecarProgresso();
         if (userCliente!=null){
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(userCliente.getEmail(), userCliente.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
@@ -67,6 +72,7 @@ public class MetodosUsers {
                         try {
                             throw task.getException();
                         }catch(FirebaseAuthUserCollisionException e) {
+                            progresso.cancelarDialog();
                             Toast.makeText(context, "Email já Cadastrado!", Toast.LENGTH_LONG).show();
                         } catch(Exception e) {
                         }
