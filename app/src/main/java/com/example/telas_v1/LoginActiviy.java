@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
+
 import com.example.telas_v1.metodosusers.*;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -19,6 +21,7 @@ public class LoginActiviy extends AppCompatActivity {
     private TextInputEditText txtEmail, txtPassword;
     private Button btnEntrar;
     private MetodosUsers metodosUsers;
+    private TextView txtEsqueci;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class LoginActiviy extends AppCompatActivity {
         txtEmail = findViewById(R.id.txtEmail);
         txtPassword = findViewById(R.id.txtPassword);
         btnEntrar = findViewById(R.id.bt_entrar);
+        txtEsqueci = findViewById(R.id.txtEsquecer);
 
         if (FirebaseAuth.getInstance().getUid()!=null) FirebaseAuth.getInstance().signOut();
 
@@ -36,6 +40,13 @@ public class LoginActiviy extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 metodosUsers.autenticarUsuario(getApplicationContext(), txtEmail.getText().toString(), txtPassword.getText().toString());
+            }
+        });
+
+        txtEsqueci.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActiviy.this, RecuperarSenhaActivity.class));
             }
         });
     }

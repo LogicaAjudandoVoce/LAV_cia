@@ -1771,6 +1771,7 @@ id bt_voltar
 id bt_voltar_frag_dois
 id bt_voltar_fragmento
 id bt_voltar_fragmento2
+id btnAvancar
 id btnSair
 id buttonPanel
 id cancel_action
@@ -2040,11 +2041,14 @@ id textInputLayout5
 id textInputLayout6
 id textInputLayout7
 id textInputLayout8
+id textInputLayout9
 id textSpacerNoButtons
 id textSpacerNoTitle
 id textStart
 id textView
 id textView10
+id textView11
+id textView12
 id textView2
 id textView3
 id textView4
@@ -2078,6 +2082,7 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id txtEmail
+id txtEsquecer
 id txtPassword
 id txt_data
 id txt_email
@@ -2165,6 +2170,7 @@ layout activity_create
 layout activity_login
 layout activity_main
 layout activity_main_user
+layout activity_recuperar_senha
 layout barra_progresso
 layout custom_dialog
 layout design_bottom_navigation_item
