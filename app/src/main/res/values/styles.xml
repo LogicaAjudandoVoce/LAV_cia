@@ -8,4 +8,9 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="BarraMenu"
+        parent="@style/Widget.Design.BottomNavigationView">
+        <item name="fontFamily">@font/montserrat_alternates</item>
+    </style>
+
 </resources>

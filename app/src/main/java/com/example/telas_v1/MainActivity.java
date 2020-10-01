@@ -6,17 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.example.telas_v1.fragmentosmenu.perfil.MenuPerfil;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    //tudo ok,dia: 40/09/2020 ás 00:24
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (FirebaseAuth.getInstance().getUid()!=null){
-            startActivity(new Intent(MainActivity.this, MainUserActivity.class));
+            startActivity(new Intent(MainActivity.this, MenuActivity.class));
             finish();
         }
     }

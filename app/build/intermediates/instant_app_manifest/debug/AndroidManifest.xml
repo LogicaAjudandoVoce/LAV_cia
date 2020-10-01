@@ -26,8 +26,10 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.telas_v1.ChatActivity" />
+        <activity android:name="com.example.telas_v1.OtherPersonActivity" />
+        <activity android:name="com.example.telas_v1.MenuActivity" />
         <activity android:name="com.example.telas_v1.RecuperarSenhaActivity" />
-        <activity android:name="com.example.telas_v1.MainUserActivity" />
         <activity android:name="com.example.telas_v1.CreateActivity" />
         <activity android:name="com.example.telas_v1.LoginActiviy" />
         <activity android:name="com.example.telas_v1.MainActivity" >

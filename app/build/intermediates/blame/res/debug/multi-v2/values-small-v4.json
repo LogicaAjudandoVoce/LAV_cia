@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\3bimaq04\\Documents\\Projeto_LAV\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "C:\\Users\\Kazuma\\Projetos\\lav\\Projeto_LAV\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\3bimaq04\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\Kazuma\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

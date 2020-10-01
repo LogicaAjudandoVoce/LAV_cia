@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:title="Buscar"
+        android:icon="@drawable/ic_trabalho"
+        android:id="@+id/nav_buscar"
+        />
+    <item
+        android:title="Contratos"
+        android:icon="@drawable/ic_empregados"
+        android:id="@+id/nav_contratos"
+        />
+    <item
+        android:title="Perfil"
+        android:icon="@drawable/ic_pessoa"
+        android:id="@+id/nav_perfil"
+        />
+</menu>
