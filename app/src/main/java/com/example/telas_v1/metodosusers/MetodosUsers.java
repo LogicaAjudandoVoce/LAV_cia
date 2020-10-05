@@ -3,13 +3,19 @@ package com.example.telas_v1.metodosusers;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 
 import com.example.telas_v1.LoginActiviy;
 import com.example.telas_v1.MenuActivity;
+import com.example.telas_v1.R;
 import com.example.telas_v1.classesuteis.BarraProgresso;
+import com.example.telas_v1.fragmentosmenu.buscar.MenuBuscar;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -19,7 +25,17 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.squareup.picasso.Picasso;
+import com.xwray.groupie.GroupAdapter;
+import com.xwray.groupie.Item;
+import com.xwray.groupie.ViewHolder;
+
+import java.util.List;
 
 public class MetodosUsers {
     private BarraProgresso progresso;
@@ -127,4 +143,97 @@ public class MetodosUsers {
                 }
             });
         }
-    }}
+    }
+
+    public void listarTrabalhador(final GroupAdapter adapter, final String tipoTrab, final String cidade, final float preco) {
+        FirebaseFirestore.getInstance().collection("userTrabalhador").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                adapter.clear();
+                for(DocumentSnapshot doc: docs){
+                    UserTrabalhador userTrabalhador = doc.toObject(UserTrabalhador.class);
+                    if (!tipoTrab.equals("Nenhum Selecionado")){
+                        if (!cidade.isEmpty()){
+//                            if (preco!=0){
+//                                if (userTrabalhador.getMyPreco()<=preco && userTrabalhador.getCidade().equals(cidade))adapter.add(new ListarTrabalhadorView(userTrabalhador));
+//                            }else{
+//                                if (cidade.equals(userTrabalhador.getCidade()))adapter.add(new ListarTrabalhadorView(userTrabalhador));
+//                            }
+                        }else{
+//                            if (userTrabalhador.getTrabalho().equals(tipoTrab)) adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                        }
+                    }else if (!cidade.equals("Qualquer")){
+//                            if (preco!=0){
+//                                if (userTrabalhador.getMyPreco()<=preco && userTrabalhador.getCidade().equals(cidade))adapter.add(new ListarTrabalhadorView(userTrabalhador));
+//                            }else{
+//                                if (cidade.equals(userTrabalhador.getCidade()))adapter.add(new ListarTrabalhadorView(userTrabalhador));
+//                            }
+                    }else if (preco!=0){
+                        if (userTrabalhador.getMyPreco()<=preco)adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                    }else adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                    adapter.notifyDataSetChanged();
+                }
+            }
+        });
+    }
+
+    private class ListarTrabalhadorView extends Item<ViewHolder> {
+
+        private final UserTrabalhador userTrabalhador;
+
+        private ListarTrabalhadorView(UserTrabalhador userTrabalhador) {
+            this.userTrabalhador = userTrabalhador;
+        }
+
+        @Override
+        public void bind(@NonNull ViewHolder viewHolder, int position) {
+            TextView txtNome = viewHolder.itemView.findViewById(R.id.txtNomeList);
+            TextView txtEmail = viewHolder.itemView.findViewById(R.id.txtEmailList);
+            TextView txtMyPreco = viewHolder.itemView.findViewById(R.id.txtPrecoList);
+            ImageView imgFoto = viewHolder.itemView.findViewById(R.id.imgFotoList);
+
+            txtNome.setText(userTrabalhador.getNome());
+            txtEmail.setText(userTrabalhador.getEmail());
+            txtMyPreco.setText(String.valueOf(userTrabalhador.getMyPreco()));
+            if (userTrabalhador.getUrlFotoPerfil()!=null) Picasso.get().load(userTrabalhador.getUrlFotoPerfil()).into(imgFoto);
+            else imgFoto.setImageResource(R.drawable.ic_client);
+        }
+
+        @Override
+        public int getLayout() {
+            return R.layout.item_barrauser_list;
+        }
+    }
+
+    public interface OnResultUser{
+        void onResultCliente(UserCliente userCliente);
+        void onResultTrabalhador(UserTrabalhador userTrabalhador);
+    }
+
+    public void verificarUser(final OnResultUser resultUser){
+        FirebaseFirestore.getInstance().collection("/userCliente").whereEqualTo("id", FirebaseAuth.getInstance().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                for (DocumentSnapshot doc: docs) {
+                    UserCliente user = doc.toObject(UserCliente.class);
+                    if (user==null)resultUser.onResultCliente(null);
+                    else resultUser.onResultCliente(user);
+                }
+            }
+        });
+        FirebaseFirestore.getInstance().collection("/userTrabalhador").whereEqualTo("id", FirebaseAuth.getInstance().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                for (DocumentSnapshot doc: docs) {
+                    UserTrabalhador user = doc.toObject(UserTrabalhador.class);
+                    if (user==null)resultUser.onResultTrabalhador(null);
+                    else resultUser.onResultTrabalhador(user);
+                }
+            }
+        });
+    }
+
+}

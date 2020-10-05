@@ -222,6 +222,11 @@ attr chipStyle
 attr chipSurfaceColor
 attr circleCrop
 attr circleRadius
+attr civ_border_color
+attr civ_border_overlay
+attr civ_border_width
+attr civ_circle_background_color
+attr civ_fill_color
 attr clickAction
 attr closeIcon
 attr closeIconEnabled
@@ -1782,8 +1787,9 @@ id bt_voltar_frag_dois
 id bt_voltar_fragmento
 id bt_voltar_fragmento2
 id btnAvancar
+id btnMyFoto
+id btnPesq
 id btnSair
-id button
 id button2
 id button3
 id button4
@@ -1810,6 +1816,7 @@ id collapseActionView
 id confirm_button
 id constrain_fragmento
 id constraintLayout
+id constraintLayout2
 id container
 id container_menu
 id content
@@ -1848,8 +1855,6 @@ id easeIn
 id easeInOut
 id easeOut
 id editText
-id editText3
-id editText4
 id edit_query
 id end
 id end_padder
@@ -1890,11 +1895,11 @@ id image
 id imageButton
 id imageView
 id imageView2
-id imageView3
 id imageView4
 id imageView5
 id imageView6
-id imageView7
+id imgFotoList
+id imgMyFoto
 id info
 id invisible
 id italic
@@ -1985,6 +1990,7 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
+id rcView
 id rectangles
 id reverseSawtooth
 id right
@@ -2027,7 +2033,6 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
-id spinner
 id spline
 id split_action_bar
 id spn_contrat
@@ -2092,6 +2097,7 @@ id textView20
 id textView21
 id textView22
 id textView23
+id textView28
 id textView3
 id textView4
 id textView5
@@ -2108,6 +2114,7 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
+id tipoTrab
 id title
 id titleDividerNoCustom
 id title_template
@@ -2127,17 +2134,19 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id txtEmail
+id txtCidade
+id txtEmailList
 id txtEsquecer
+id txtNomeList
 id txtPassword
+id txtPreco
+id txtPrecoList
 id txt_data
 id txt_email
 id txt_email_confirmar
 id txt_nome
-id txt_nomebusca
 id txt_senha
 id txt_senha_conf
-id txt_valorbuscar
 id unchecked
 id uniform
 id unlabeled
@@ -2246,6 +2255,7 @@ layout fragment_step_four
 layout fragment_step_one
 layout fragment_step_three
 layout fragment_step_two
+layout item_barrauser_list
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -3184,6 +3194,7 @@ styleable ButtonBarLayout allowStacking
 styleable CardView android_minWidth android_minHeight cardBackgroundColor cardCornerRadius cardElevation cardMaxElevation cardPreventCornerOverlap cardUseCompatPadding contentPadding contentPaddingBottom contentPaddingLeft contentPaddingRight contentPaddingTop
 styleable Chip android_textAppearance android_textColor android_ellipsize android_maxWidth android_text android_checkable checkedIcon checkedIconEnabled checkedIconTint checkedIconVisible chipBackgroundColor chipCornerRadius chipEndPadding chipIcon chipIconEnabled chipIconSize chipIconTint chipIconVisible chipMinHeight chipMinTouchTargetSize chipStartPadding chipStrokeColor chipStrokeWidth chipSurfaceColor closeIcon closeIconEnabled closeIconEndPadding closeIconSize closeIconStartPadding closeIconTint closeIconVisible ensureMinTouchTargetSize hideMotionSpec iconEndPadding iconStartPadding rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec textEndPadding textStartPadding
 styleable ChipGroup checkedChip chipSpacing chipSpacingHorizontal chipSpacingVertical selectionRequired singleLine singleSelection
+styleable CircleImageView civ_border_color civ_border_overlay civ_border_width civ_circle_background_color civ_fill_color
 styleable CollapsingToolbarLayout collapsedTitleGravity collapsedTitleTextAppearance contentScrim expandedTitleGravity expandedTitleMargin expandedTitleMarginBottom expandedTitleMarginEnd expandedTitleMarginStart expandedTitleMarginTop expandedTitleTextAppearance maxLines scrimAnimationDuration scrimVisibleHeightTrigger statusBarScrim title titleEnabled toolbarId
 styleable CollapsingToolbarLayout_Layout layout_collapseMode layout_collapseParallaxMultiplier
 styleable ColorStateListItem android_color android_alpha alpha

@@ -5,7 +5,8 @@ import android.os.Parcelable;
 
 public class UserTrabalhador implements Parcelable {
 
-    private String id, email, nome, senha, tipoUser, dataNasc;
+    private String id, email, nome, senha, tipoUser, dataNasc, urlFotoPerfil;
+    float myPreco;
 
     public UserTrabalhador(){}
 
@@ -16,6 +17,8 @@ public class UserTrabalhador implements Parcelable {
         senha = in.readString();
         tipoUser = in.readString();
         dataNasc = in.readString();
+        myPreco = in.readFloat();
+        urlFotoPerfil = in.readString();
     }
 
     public String getId() {
@@ -66,6 +69,22 @@ public class UserTrabalhador implements Parcelable {
         this.dataNasc = dataNasc;
     }
 
+    public float getMyPreco() {
+        return myPreco;
+    }
+
+    public void setMyPreco(float myPreco) {
+        this.myPreco = myPreco;
+    }
+
+    public String getUrlFotoPerfil() {
+        return urlFotoPerfil;
+    }
+
+    public void setUrlFotoPerfil(String urlFotoPerfil) {
+        this.urlFotoPerfil = urlFotoPerfil;
+    }
+
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(id);
@@ -74,6 +93,8 @@ public class UserTrabalhador implements Parcelable {
         dest.writeString(senha);
         dest.writeString(tipoUser);
         dest.writeString(dataNasc);
+        dest.writeString(urlFotoPerfil);
+        dest.writeFloat(myPreco);
     }
 
     @Override

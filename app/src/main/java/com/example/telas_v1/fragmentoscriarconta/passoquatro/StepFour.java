@@ -95,6 +95,7 @@ public class StepFour extends Fragment{
                             metodosUsers.cadastrarUser(getActivity(), getContext(), userCliente, null);
                         } else {
                             userTrabalhador.setSenha(txtSenha.getText().toString().trim());
+                            userTrabalhador.setMyPreco(0.00f);
                             metodosUsers.cadastrarUser(getActivity(), getContext(), null, userTrabalhador);
                         }
                         }else Toast.makeText(getContext(), "A senha deve ter mais de 6 caracteres!", Toast.LENGTH_LONG).show();

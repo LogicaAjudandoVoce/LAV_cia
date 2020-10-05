@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 public class UserCliente implements Parcelable {
 
-    private String id, email, nome, senha, tipoUser, dataNasc;
+    private String id, email, nome, senha, tipoUser, dataNasc, urlFotoPerfil;
 
     public UserCliente() {
     }
@@ -17,6 +17,7 @@ public class UserCliente implements Parcelable {
         senha = in.readString();
         tipoUser = in.readString();
         dataNasc = in.readString();
+        urlFotoPerfil = in.readString();
     }
 
     public static final Creator<UserCliente> CREATOR = new Creator<UserCliente>() {
@@ -79,6 +80,14 @@ public class UserCliente implements Parcelable {
         this.tipoUser = tipoUser;
     }
 
+    public String getUrlFotoPerfil() {
+        return urlFotoPerfil;
+    }
+
+    public void setUrlFotoPerfil(String urlFotoPerfil) {
+        this.urlFotoPerfil = urlFotoPerfil;
+    }
+
     @Override
     public int describeContents() {
         return 0;
@@ -92,5 +101,6 @@ public class UserCliente implements Parcelable {
         dest.writeString(senha);
         dest.writeString(tipoUser);
         dest.writeString(dataNasc);
+        dest.writeString(urlFotoPerfil);
     }
 }

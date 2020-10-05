@@ -31,23 +31,12 @@
 
     <ImageView
         android:id="@+id/imageView6"
-        android:layout_width="613dp"
+        android:layout_width="0dp"
         android:layout_height="203dp"
         android:src="@drawable/aaaaaa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@mipmap/ic_launcher_round"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar2"
-        app:layout_constraintVertical_bias="0.299" />
 
     <TextView
         android:id="@+id/textView13"
@@ -57,9 +46,10 @@
         android:fontFamily="@font/montserrat_alternates"
         android:text="Minhas fotos:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+        app:layout_constraintTop_toBottomOf="@+id/btnMyFoto" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="0dp"
         android:layout_height="150dp"
         android:layout_marginTop="8dp"
@@ -78,5 +68,27 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/btnMyFoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/botao_azul"
+        android:text="Selecionar Foto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2"
+        app:layout_constraintVertical_bias="0.361" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imgMyFoto"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnMyFoto"
+        app:layout_constraintEnd_toEndOf="@+id/btnMyFoto"
+        app:layout_constraintStart_toStartOf="@+id/btnMyFoto"
+        app:layout_constraintTop_toTopOf="@+id/btnMyFoto" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
