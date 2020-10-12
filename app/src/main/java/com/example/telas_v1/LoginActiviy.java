@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.telas_v1.metodosusers.*;
@@ -22,6 +23,7 @@ public class LoginActiviy extends AppCompatActivity {
     private Button btnEntrar;
     private MetodosUsers metodosUsers;
     private TextView txtEsqueci;
+    private ProgressBar barra;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +35,14 @@ public class LoginActiviy extends AppCompatActivity {
         txtPassword = findViewById(R.id.txtPassword);
         btnEntrar = findViewById(R.id.bt_entrar);
         txtEsqueci = findViewById(R.id.txtEsquecer);
+        barra = findViewById(R.id.barra);
 
         if (FirebaseAuth.getInstance().getUid()!=null) FirebaseAuth.getInstance().signOut();
 
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                metodosUsers.autenticarUsuario(getApplicationContext(), txtEmail.getText().toString(), txtPassword.getText().toString());
+                metodosUsers.autenticarUsuario(getApplicationContext(), txtEmail.getText().toString(), txtPassword.getText().toString(), barra);
             }
         });
 

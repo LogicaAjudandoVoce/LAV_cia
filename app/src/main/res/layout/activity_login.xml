@@ -102,5 +102,16 @@
         app:layout_constraintStart_toStartOf="@+id/bt_entrar"
         app:layout_constraintTop_toBottomOf="@+id/bt_entrar" />
 
+    <ProgressBar
+        android:id="@+id/barra"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/bt_entrar"
+        app:layout_constraintStart_toEndOf="@+id/bt_entrar"
+        app:layout_constraintTop_toTopOf="@+id/bt_entrar" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

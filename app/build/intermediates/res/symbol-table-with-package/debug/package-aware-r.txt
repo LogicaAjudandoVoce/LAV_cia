@@ -397,6 +397,22 @@ attr fabCradleRoundedCornerRadius
 attr fabCradleVerticalOffset
 attr fabCustomSize
 attr fabSize
+attr fab_addButtonColorNormal
+attr fab_addButtonColorPressed
+attr fab_addButtonPlusIconColor
+attr fab_addButtonSize
+attr fab_addButtonStrokeVisible
+attr fab_colorDisabled
+attr fab_colorNormal
+attr fab_colorPressed
+attr fab_expandDirection
+attr fab_icon
+attr fab_labelStyle
+attr fab_labelsPosition
+attr fab_plusIconColor
+attr fab_size
+attr fab_stroke_visible
+attr fab_title
 attr fastScrollEnabled
 attr fastScrollHorizontalThumbDrawable
 attr fastScrollHorizontalTrackDrawable
@@ -1293,6 +1309,16 @@ dimen design_tab_text_size_2line
 dimen design_textinput_caption_translate_y
 dimen disabled_alpha_material_dark
 dimen disabled_alpha_material_light
+dimen fab_actions_spacing
+dimen fab_icon_size
+dimen fab_labels_margin
+dimen fab_plus_icon_size
+dimen fab_plus_icon_stroke
+dimen fab_shadow_offset
+dimen fab_shadow_radius
+dimen fab_size_mini
+dimen fab_size_normal
+dimen fab_stroke_width
 dimen fastscroll_default_thickness
 dimen fastscroll_margin
 dimen fastscroll_minimum_range
@@ -1629,13 +1655,19 @@ drawable design_ic_visibility
 drawable design_ic_visibility_off
 drawable design_password_eye
 drawable design_snackbar_background
+drawable fab_bg_mini
+drawable fab_bg_normal
 drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
+drawable ic_adicionar_foto
 drawable ic_build_black_24dp
 drawable ic_client
+drawable ic_editar
 drawable ic_empregados
+drawable ic_floating
 drawable ic_launcher_background
 drawable ic_launcher_foreground
+drawable ic_logout
 drawable ic_mtrl_checked_circle
 drawable ic_mtrl_chip_checked_black
 drawable ic_mtrl_chip_checked_circle
@@ -1647,6 +1679,8 @@ drawable ic_trab
 drawable ic_trabalho
 drawable ic_voltar
 drawable ic_vpn_key_black_24dp
+drawable item_botao_perfil
+drawable item_user_list
 drawable logo_normal
 drawable logo_redonda
 drawable material_ic_calendar_black_24dp
@@ -1767,6 +1801,7 @@ id auto
 id autoComplete
 id autoCompleteToEnd
 id autoCompleteToStart
+id barra
 id barrier
 id baseline
 id beginOnFirstDraw
@@ -1786,7 +1821,9 @@ id bt_voltar
 id bt_voltar_frag_dois
 id bt_voltar_fragmento
 id bt_voltar_fragmento2
+id btnAdicionarFoto
 id btnAvancar
+id btnEditarPerfil
 id btnMyFoto
 id btnPesq
 id btnSair
@@ -1816,7 +1853,6 @@ id collapseActionView
 id confirm_button
 id constrain_fragmento
 id constraintLayout
-id constraintLayout2
 id container
 id container_menu
 id content
@@ -1844,6 +1880,7 @@ id direct
 id disableHome
 id disablePostScroll
 id disableScroll
+id down
 id dragDown
 id dragEnd
 id dragLeft
@@ -1863,6 +1900,8 @@ id enterAlwaysCollapsed
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
+id fab_expand_menu_button
+id fab_label
 id fade
 id fill
 id fill_horizontal
@@ -1897,8 +1936,9 @@ id imageView
 id imageView2
 id imageView4
 id imageView5
-id imageView6
 id imgFotoList
+id imgFundo
+id imgList
 id imgMyFoto
 id info
 id invisible
@@ -2087,7 +2127,6 @@ id textView11
 id textView12
 id textView13
 id textView14
-id textView15
 id textView16
 id textView17
 id textView18
@@ -2120,7 +2159,6 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
-id toolbar2
 id toolbar3
 id toolbar4
 id top
@@ -2138,6 +2176,7 @@ id txtCidade
 id txtEmailList
 id txtEsquecer
 id txtNomeList
+id txtNomeUser
 id txtPassword
 id txtPreco
 id txtPrecoList
@@ -2256,6 +2295,7 @@ layout fragment_step_one
 layout fragment_step_three
 layout fragment_step_two
 layout item_barrauser_list
+layout item_foto_list
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions
 layout mtrl_alert_dialog_title
@@ -3174,6 +3214,7 @@ styleable ActionMenuView
 styleable ActionMode background backgroundSplit closeItemLayout height subtitleTextStyle titleTextStyle
 styleable ActivityChooserView expandActivityOverflowButtonDrawable initialActivityCount
 styleable ActivityNavigator android_name action data dataPattern targetPackage
+styleable AddFloatingActionButton fab_plusIconColor
 styleable AlertDialog android_layout buttonIconDimen buttonPanelSideLayout listItemLayout listLayout multiChoiceItemLayout showTitle singleChoiceItemLayout
 styleable AnimatedStateListDrawableCompat android_dither android_visible android_variablePadding android_constantSize android_enterFadeDuration android_exitFadeDuration
 styleable AnimatedStateListDrawableItem android_id android_drawable
@@ -3211,8 +3252,9 @@ styleable DrawerArrowToggle arrowHeadLength arrowShaftLength barLength color dra
 styleable DrawerLayout elevation
 styleable ExtendedFloatingActionButton elevation extendMotionSpec hideMotionSpec showMotionSpec shrinkMotionSpec
 styleable ExtendedFloatingActionButton_Behavior_Layout behavior_autoHide behavior_autoShrink
-styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
+styleable FloatingActionButton android_enabled backgroundTint backgroundTintMode borderWidth elevation ensureMinTouchTargetSize fabCustomSize fabSize fab_colorDisabled fab_colorNormal fab_colorPressed fab_icon fab_size fab_stroke_visible fab_title hideMotionSpec hoveredFocusedTranslationZ maxImageSize pressedTranslationZ rippleColor shapeAppearance shapeAppearanceOverlay showMotionSpec useCompatPadding
 styleable FloatingActionButton_Behavior_Layout behavior_autoHide
+styleable FloatingActionsMenu fab_addButtonColorNormal fab_addButtonColorPressed fab_addButtonPlusIconColor fab_addButtonSize fab_addButtonStrokeVisible fab_expandDirection fab_labelStyle fab_labelsPosition
 styleable FlowLayout itemSpacing lineSpacing
 styleable FontFamily fontProviderAuthority fontProviderCerts fontProviderFetchStrategy fontProviderFetchTimeout fontProviderPackage fontProviderQuery
 styleable FontFamilyFont android_font android_fontWeight android_fontStyle android_ttcIndex android_fontVariationSettings font fontStyle fontVariationSettings fontWeight ttcIndex

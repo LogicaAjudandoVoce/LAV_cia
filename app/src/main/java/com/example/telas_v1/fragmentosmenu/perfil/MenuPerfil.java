@@ -1,5 +1,7 @@
 package com.example.telas_v1.fragmentosmenu.perfil;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -8,6 +10,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -15,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telas_v1.LoginActiviy;
@@ -22,25 +27,38 @@ import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
+import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
+import com.xwray.groupie.GroupAdapter;
+import com.xwray.groupie.Item;
+import com.xwray.groupie.ViewHolder;
 
+import java.util.List;
 import java.util.UUID;
 
 public class MenuPerfil extends Fragment {
 
     private MenuPerfilViewModel menuperfil_viewmodel;
-    private Button logOut, btnMyFoto;
-    private ImageView imgMyFoto;
+    private Button  btnMyFoto;
+    private ImageView imgMyFoto, imgFotoFundo;
     private Uri uriFoto;
     private UserTrabalhador trabalhador;
     private UserCliente cliente;
     private MetodosUsers metodosUsers;
+    private FloatingActionButton btnLogOut,btnEditarPerfil, btnAdicionarFoto;
+    private RecyclerView recyclerView;
+    private GroupAdapter adapter;
+    private TextView txtNome;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
@@ -52,6 +70,17 @@ public class MenuPerfil extends Fragment {
 
         btnMyFoto= root.findViewById(R.id.btnMyFoto);
         imgMyFoto= root.findViewById(R.id.imgMyFoto);
+        imgFotoFundo= root.findViewById(R.id.imgFundo);
+        btnAdicionarFoto = root.findViewById(R.id.btnAdicionarFoto);
+        btnEditarPerfil = root.findViewById(R.id.btnEditarPerfil);
+        recyclerView = root.findViewById(R.id.rcView);
+        txtNome = root.findViewById(R.id.txtNomeUser);
+
+        adapter = new GroupAdapter();
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setAdapter(adapter);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(layoutManager);
 
         btnMyFoto.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,19 +89,30 @@ public class MenuPerfil extends Fragment {
             }
         });
 
-        logOut = root.findViewById(R.id.bt_sairperfil);
-        logOut.setOnClickListener(new View.OnClickListener() {
+        btnLogOut = root.findViewById(R.id.bt_sairperfil);
+        btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getActivity(), LoginActiviy.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                startActivity(intent);
+                  startActivity(intent);
                 getActivity().finish();
-
             }
         });
 
+        imgFotoFundo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selecionarFotoFundo();
+            }
+        });
+
+        btnAdicionarFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                selecionarListaFotos();
+            }
+        });
         return root;
     }
 
@@ -81,14 +121,89 @@ public class MenuPerfil extends Fragment {
     }
 
     private void selecionarFotoPerfil(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("O que deseja fazer?")
+                .setPositiveButton("Mudar Foto de Perfil", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(Intent.ACTION_PICK);
+                        intent.setType("image/*");
+                        startActivityForResult(intent, 0);
+                    }
+                }).setNegativeButton("Excluir Foto de Perfil", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        }).setNeutralButton("Cancelar", null).create().show();
+    }
+
+    private void selecionarFotoFundo() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+        builder.setMessage("O que deseja fazer?")
+                .setPositiveButton("Mudar Foto de Fundo", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(Intent.ACTION_PICK);
+                        intent.setType("image/*");
+                        startActivityForResult(intent, 1);
+                    }
+                }).setNegativeButton("Excluir Foto de Fundo", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+
+            }
+        }).setNeutralButton("Cancelar", null).create().show();
+    }
+
+    private void selecionarListaFotos() {
         Intent intent = new Intent(Intent.ACTION_PICK);
         intent.setType("image/*");
-        startActivityForResult(intent, 0);
+        startActivityForResult(intent, 2);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode==0 && resultCode==getActivity().RESULT_OK){
+            uriFoto = data.getData();
+            salvarFotoPerfilBanco();
+        }
+        else if (requestCode==1 && resultCode == getActivity().RESULT_OK){
+            uriFoto = data.getData();
+            salvarFotoFundoBanco();
+        }
+        else if (requestCode==2 && resultCode == getActivity().RESULT_OK){
+            uriFoto = data.getData();
+            salvarFotoListaBanco();
+        }
+
+    }
+
+    private void salvarFotoListaBanco() {
+        final String id = UUID.randomUUID().toString();
+        final StorageReference ref = FirebaseStorage.getInstance().getReference("/listaImages/"+FirebaseAuth.getInstance().getUid()+"/"+id);
+        ref.putFile(uriFoto).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        FotoLista fotoLista = new FotoLista();
+                        fotoLista.setId(FirebaseAuth.getInstance().getUid());
+                        fotoLista.setFoto(uri.toString());
+                        FirebaseFirestore.getInstance().collection("listaImgs/").document(id).set(fotoLista);
+                    }
+                });
+            }
+        });
+        Toast.makeText(getContext(), "Espere um momento...", Toast.LENGTH_LONG).show();
     }
 
     private void salvarFotoPerfilBanco() {
         String id = UUID.randomUUID().toString();
-        final StorageReference ref = FirebaseStorage.getInstance().getReference("/perfilImages/"+id);
+        final StorageReference ref = FirebaseStorage.getInstance().getReference("/perfilImages/"+FirebaseAuth.getInstance().getUid());
         ref.putFile(uriFoto).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
             public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
@@ -108,6 +223,31 @@ public class MenuPerfil extends Fragment {
             }
         });
         Toast.makeText(getContext(), "Espere um momento...", Toast.LENGTH_LONG).show();
+    }
+
+    private void salvarFotoFundoBanco(){
+        String id = UUID.randomUUID().toString();
+        final StorageReference ref = FirebaseStorage.getInstance().getReference("/fundoImages/"+FirebaseAuth.getInstance().getUid());
+        ref.putFile(uriFoto).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri) {
+                        if (cliente !=null){
+                            cliente.setUrlFotoFundo(uri.toString());
+                            FirebaseFirestore.getInstance().collection("userCliente").document(cliente.getId()).set(cliente);
+                        }
+                        else if (trabalhador !=null){
+                            trabalhador.setUrlFotoFundo(uri.toString());
+                            FirebaseFirestore.getInstance().collection("userTrabalhador").document(trabalhador.getId()).set(trabalhador);
+                        }
+                    }
+                });
+            }
+        });
+        Toast.makeText(getContext(), "Espere um momento...", Toast.LENGTH_LONG).show();
+
     }
 
     private void verificarUser(){
@@ -131,19 +271,103 @@ public class MenuPerfil extends Fragment {
     }
 
     private void carregarTrabalhador() {
+        txtNome.setText(trabalhador.getNome());
+        if (trabalhador.getUrlFotoPerfil()!=null && !trabalhador.getUrlFotoPerfil().equals("Nada")) {
+            Picasso.get().load(trabalhador.getUrlFotoPerfil()).into(imgMyFoto);
+            btnMyFoto.setAlpha(0);
+        }
+        if (trabalhador.getUrlFotoFundo()!=null && !trabalhador.getUrlFotoFundo().equals("Nada"))Picasso.get().load(trabalhador.getUrlFotoFundo()).fit().into(imgFotoFundo);
+
+        FirebaseFirestore.getInstance().collection("listaImgs").whereEqualTo("id", FirebaseAuth.getInstance().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                if (e!=null){
+                    Log.d("TESTE","Error:"+e.getMessage());
+                }
+                else {
+                    List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                    adapter.clear();
+                    for (DocumentSnapshot doc : docs) {
+                        adapter.add(new FotoListaView(doc.get("foto").toString()));
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
     }
 
     private void carregarCliente() {
+        txtNome.setText(cliente.getNome());
+        if (cliente.getUrlFotoPerfil()!=null && !cliente.getUrlFotoPerfil().equals("Nada")) {
+            Picasso.get().load(cliente.getUrlFotoPerfil()).into(imgMyFoto);
+            btnMyFoto.setAlpha(0);
+        }
+        if (cliente.getUrlFotoFundo()!=null && !cliente.getUrlFotoFundo().equals("Nada"))Picasso.get().load(cliente.getUrlFotoFundo()).fit().into(imgFotoFundo);
+
+        FirebaseFirestore.getInstance().collection("listaImgs").whereEqualTo("id", FirebaseAuth.getInstance().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                if (e!=null){
+                    Log.d("TESTE","Error:"+e.getMessage());
+                }
+                else {
+                    List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                    adapter.clear();
+                    for (DocumentSnapshot doc : docs) {
+                        adapter.add(new FotoListaView(doc.get("foto").toString()));
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
+    private class FotoLista{
+        private String foto, id;
 
-        if (requestCode==0){
-            Log.d("TESTE", "ENTROU");
-            uriFoto = data.getData();
-            salvarFotoPerfilBanco();
+        public FotoLista(){
+        }
+
+        public FotoLista(String id, String foto) {
+            this.id = id;
+            this.foto = foto;
+        }
+
+        public void setId(String id) {
+            this.id = id;
+        }
+
+        public String getId() {
+            return id;
+        }
+
+        public String getFoto() {
+            return foto;
+        }
+
+        public void setFoto(String foto) {
+            this.foto = foto;
+        }
+    }
+
+    private class FotoListaView extends Item<ViewHolder>{
+
+        private final String fotoLista;
+
+        private FotoListaView(String fotoLista) {
+            this.fotoLista = fotoLista;
+        }
+
+        @Override
+        public void bind(@NonNull ViewHolder viewHolder, int position) {
+            ImageView img = viewHolder.itemView.findViewById(R.id.imgList);
+
+            Picasso.get().load(fotoLista).resize(400, 300).into(img);
+        }
+
+        @Override
+        public int getLayout() {
+            return R.layout.item_foto_list;
         }
     }
 }
