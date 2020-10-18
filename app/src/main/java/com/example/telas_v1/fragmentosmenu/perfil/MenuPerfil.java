@@ -22,7 +22,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.telas_v1.LoginActiviy;
+import com.example.telas_v1.startactivitys.LoginActiviy;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
 import com.example.telas_v1.users.UserCliente;
@@ -58,7 +58,7 @@ public class MenuPerfil extends Fragment {
     private FloatingActionButton btnLogOut,btnEditarPerfil, btnAdicionarFoto;
     private RecyclerView recyclerView;
     private GroupAdapter adapter;
-    private TextView txtNome;
+    private TextView txtNome, txtAdd;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
@@ -75,6 +75,7 @@ public class MenuPerfil extends Fragment {
         btnEditarPerfil = root.findViewById(R.id.btnEditarPerfil);
         recyclerView = root.findViewById(R.id.rcView);
         txtNome = root.findViewById(R.id.txtNomeUser);
+        txtAdd = root.findViewById(R.id.txtAdd);
 
         adapter = new GroupAdapter();
         recyclerView.setHasFixedSize(true);
@@ -133,7 +134,16 @@ public class MenuPerfil extends Fragment {
                 }).setNegativeButton("Excluir Foto de Perfil", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                if (cliente !=null){
+                    cliente.setUrlFotoPerfil("Nada");
+                    FirebaseFirestore.getInstance().collection("userCliente").document(cliente.getId()).set(cliente);
+                    btnMyFoto.setAlpha(1);
+                }
+                else if (trabalhador !=null){
+                    trabalhador.setUrlFotoPerfil("Nada");
+                    FirebaseFirestore.getInstance().collection("userTrabalhador").document(trabalhador.getId()).set(trabalhador);
+                    btnMyFoto.setAlpha(1);
+                }
             }
         }).setNeutralButton("Cancelar", null).create().show();
     }
@@ -151,7 +161,16 @@ public class MenuPerfil extends Fragment {
                 }).setNegativeButton("Excluir Foto de Fundo", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
-
+                if (cliente !=null){
+                    cliente.setUrlFotoFundo("Nada");
+                    FirebaseFirestore.getInstance().collection("userCliente").document(cliente.getId()).set(cliente);
+                    imgFotoFundo.setImageResource(R.drawable.aaaaaa);
+                }
+                else if (trabalhador !=null){
+                    trabalhador.setUrlFotoFundo("Nada");
+                    FirebaseFirestore.getInstance().collection("userTrabalhador").document(trabalhador.getId()).set(trabalhador);
+                    imgFotoFundo.setImageResource(R.drawable.aaaaaa);
+                }
             }
         }).setNeutralButton("Cancelar", null).create().show();
     }
@@ -202,7 +221,6 @@ public class MenuPerfil extends Fragment {
     }
 
     private void salvarFotoPerfilBanco() {
-        String id = UUID.randomUUID().toString();
         final StorageReference ref = FirebaseStorage.getInstance().getReference("/perfilImages/"+FirebaseAuth.getInstance().getUid());
         ref.putFile(uriFoto).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -226,7 +244,6 @@ public class MenuPerfil extends Fragment {
     }
 
     private void salvarFotoFundoBanco(){
-        String id = UUID.randomUUID().toString();
         final StorageReference ref = FirebaseStorage.getInstance().getReference("/fundoImages/"+FirebaseAuth.getInstance().getUid());
         ref.putFile(uriFoto).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
             @Override
@@ -341,10 +358,6 @@ public class MenuPerfil extends Fragment {
             return id;
         }
 
-        public String getFoto() {
-            return foto;
-        }
-
         public void setFoto(String foto) {
             this.foto = foto;
         }
@@ -362,7 +375,11 @@ public class MenuPerfil extends Fragment {
         public void bind(@NonNull ViewHolder viewHolder, int position) {
             ImageView img = viewHolder.itemView.findViewById(R.id.imgList);
 
-            Picasso.get().load(fotoLista).resize(400, 300).into(img);
+            if (fotoLista!=null){
+                Picasso.get().load(fotoLista).resize(400, 300).into(img);
+                txtAdd.setText("");
+            }
+            else txtAdd.setText("Adicione suas fotos aqui");
         }
 
         @Override

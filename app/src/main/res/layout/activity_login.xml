@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
     android:onClick="close"
-    tools:context=".LoginActiviy">
+    tools:context=".startactivitys.LoginActiviy">
 
     <ImageView
         android:id="@+id/imageView2"

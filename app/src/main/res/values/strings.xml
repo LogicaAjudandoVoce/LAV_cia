@@ -49,5 +49,7 @@
         <item>Contratos Ativos</item>
         <item>Contratos Finalizados</item>
     </string-array>
+    <string name="title_activity_mapa_nova_postagem">Map</string>
+    <string name="title_activity_map_new_post">Map</string>
 
 </resources>

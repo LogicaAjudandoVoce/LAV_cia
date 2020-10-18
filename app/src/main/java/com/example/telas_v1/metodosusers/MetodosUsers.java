@@ -13,11 +13,10 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.telas_v1.LoginActiviy;
-import com.example.telas_v1.MenuActivity;
+import com.example.telas_v1.startactivitys.LoginActiviy;
+import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.classesuteis.BarraProgresso;
-import com.example.telas_v1.fragmentosmenu.buscar.MenuBuscar;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnCompleteListener;

@@ -8,10 +8,21 @@
         android:minSdkVersion="22"
         android:targetSdkVersion="29" />
 
-    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" /> <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
     <!-- <uses-sdk android:minSdkVersion="14" /> -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
@@ -25,13 +36,30 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name="com.example.telas_v1.postagemcliente.MapNewPostActivity"
+            android:label="@string/title_activity_map_new_post" />
+        <activity android:name="com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity" />
         <activity android:name="com.example.telas_v1.ChatActivity" />
         <activity android:name="com.example.telas_v1.OtherPersonActivity" />
-        <activity android:name="com.example.telas_v1.MenuActivity" />
-        <activity android:name="com.example.telas_v1.RecuperarSenhaActivity" />
-        <activity android:name="com.example.telas_v1.CreateActivity" />
-        <activity android:name="com.example.telas_v1.LoginActiviy" />
-        <activity android:name="com.example.telas_v1.MainActivity" >
+        <activity android:name="com.example.telas_v1.fragmentosmenu.MenuActivity" />
+        <activity android:name="com.example.telas_v1.startactivitys.RecuperarSenhaActivity" />
+        <activity android:name="com.example.telas_v1.fragmentoscriarconta.CreateActivity" />
+        <activity android:name="com.example.telas_v1.startactivitys.LoginActiviy" />
+        <activity android:name="com.example.telas_v1.startactivitys.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -42,6 +70,14 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
+            android:exported="false"
+            android:label="@string/places_autocomplete_label"
+            android:theme="@style/PlacesAutocompleteOverlay"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
 
         <service
             android:name="com.google.firebase.components.ComponentDiscoveryService"
@@ -75,7 +111,10 @@
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
             android:authorities="com.example.telas_v1.com.squareup.picasso"
-            android:exported="false" />
+            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
@@ -108,6 +147,23 @@
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
+        <service
+            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+            android:exported="false" >
+            <meta-data
+                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+                android:value="cct" />
+        </service>
+        <service
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" >
+        </service>
+
+        <receiver
+            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+            android:exported="false" />
 
         <provider
             android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"

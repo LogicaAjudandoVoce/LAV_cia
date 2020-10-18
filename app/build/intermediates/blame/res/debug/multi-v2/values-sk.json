@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV - Copia\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
+            "outputFile": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sk\\values-sk.xml",
             "map": [
                 {
                     "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\1a906b03603559a3f35fb0b9431a0a43\\navigation-ui-2.3.0\\res\\values-sk\\values-sk.xml",
@@ -38,6 +38,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\9c371a6e67b5ed1b01ba59b440795774\\places-2.2.0\\res\\values-sk\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11",
+                        "startColumns": "0,0,0,0,0,0,0,0",
+                        "startOffsets": "184,262,325,432,501,546,622,707",
+                        "endColumns": "77,62,106,68,44,75,84,53",
+                        "endOffsets": "261,324,431,500,545,621,706,760"
+                    },
+                    "to": {
+                        "startLines": "49,50,51,52,53,54,55,56",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "5804,5886,5953,6064,6137,6186,6266,6355",
+                        "endColumns": "81,66,110,72,48,79,88,57",
+                        "endOffsets": "5881,5948,6059,6132,6181,6261,6350,6408"
+                    }
+                },
+                {
                     "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\values-sk\\values-sk.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -47,11 +64,11 @@
                         "endOffsets": "207,308,419,505,613,731,810,887,978,1071,1169,1263,1363,1456,1551,1649,1740,1831,1915,2020,2128,2227,2333,2445,2548,2714,2812,2895"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,49",
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,212,313,424,510,618,736,815,892,983,1076,1174,1268,1368,1461,1556,1654,1745,1836,1920,2025,2133,2232,2338,2450,2553,2719,5804",
+                        "startOffsets": "105,212,313,424,510,618,736,815,892,983,1076,1174,1268,1368,1461,1556,1654,1745,1836,1920,2025,2133,2232,2338,2450,2553,2719,6413",
                         "endColumns": "106,100,110,85,107,117,78,76,90,92,97,93,99,92,94,97,90,90,83,104,107,98,105,111,102,165,97,82",
-                        "endOffsets": "207,308,419,505,613,731,810,887,978,1071,1169,1263,1363,1456,1551,1649,1740,1831,1915,2020,2128,2227,2333,2445,2548,2714,2812,5882"
+                        "endOffsets": "207,308,419,505,613,731,810,887,978,1071,1169,1263,1363,1456,1551,1649,1740,1831,1915,2020,2128,2227,2333,2445,2548,2714,2812,6491"
                     }
                 },
                 {
@@ -64,11 +81,11 @@
                         "endOffsets": "151"
                     },
                     "to": {
-                        "startLines": "50",
+                        "startLines": "58",
                         "startColumns": "4",
-                        "startOffsets": "5887",
+                        "startOffsets": "6496",
                         "endColumns": "100",
-                        "endOffsets": "5983"
+                        "endOffsets": "6592"
                     }
                 },
                 {

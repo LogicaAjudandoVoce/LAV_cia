@@ -1,5 +1,6 @@
 package com.example.telas_v1.fragmentosmenu.buscar;
 
+import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -7,7 +8,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,10 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xwray.groupie.GroupAdapter;
 
 public class MenuBuscar extends Fragment {
@@ -32,6 +34,7 @@ public class MenuBuscar extends Fragment {
     private Spinner tipoTrab;
     private UserCliente cliente;
     private UserTrabalhador trabalhador;
+    private FloatingActionButton btnAddPost;
 
     //tudo ok,dia: 40/09/2020 ás 00:24
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -43,6 +46,7 @@ public class MenuBuscar extends Fragment {
         txtCidade = root.findViewById(R.id.txtCidade);
         txtPreco = root.findViewById(R.id.txtPreco);
         tipoTrab = root.findViewById(R.id.tipoTrab);
+        btnAddPost = root.findViewById(R.id.btnAddPost);
 
         metodosUsers = new MetodosUsers();
         adapter = new GroupAdapter();
@@ -54,18 +58,32 @@ public class MenuBuscar extends Fragment {
         btnPesq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String cidade;
-                float preco;
+                if (cliente!=null) {
+                    String cidade;
+                    float preco;
 
-                if (txtPreco.getText().toString().isEmpty()) preco=0;
-                else preco = Float.valueOf(txtPreco.getText().toString());
-                if (txtCidade.getText().toString().isEmpty()) cidade = "Qualquer";
-                else cidade = txtCidade.getText().toString();
+                    if (txtPreco.getText().toString().isEmpty()) preco = 0;
+                    else preco = Float.valueOf(txtPreco.getText().toString());
+                    if (txtCidade.getText().toString().isEmpty()) cidade = "Qualquer";
+                    else cidade = txtCidade.getText().toString();
 
-                metodosUsers.listarTrabalhador(adapter, tipoTrab.getSelectedItem().toString(), cidade, preco);
+                    metodosUsers.listarTrabalhador(adapter, tipoTrab.getSelectedItem().toString(), cidade, preco);
+                }
             }
         });
-         verificarUser();
+        verificarUser();
+
+        if (trabalhador!=null){
+            btnAddPost.setVisibility(View.INVISIBLE);
+            btnAddPost.setEnabled(false);
+        }
+
+        btnAddPost.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), NovaPostagemClienteActivity.class));
+            }
+        });
         return root;
     }
 
@@ -91,5 +109,4 @@ public class MenuBuscar extends Fragment {
             }
         });
     }
-
 }
