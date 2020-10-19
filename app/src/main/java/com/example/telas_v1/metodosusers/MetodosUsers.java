@@ -166,7 +166,7 @@ public class MetodosUsers {
         });
     }
 
-    private class ListarTrabalhadorView extends Item<ViewHolder> {
+    public class ListarTrabalhadorView extends Item<ViewHolder> {
 
         private final UserTrabalhador userTrabalhador;
 
@@ -252,8 +252,8 @@ public class MetodosUsers {
         });
     }
 
-    private class ListarPostagemViewModel extends Item<ViewHolder> {
-       private final Postagem postagem;
+    public class ListarPostagemViewModel extends Item<ViewHolder> {
+       public final Postagem postagem;
 
         private ListarPostagemViewModel(Postagem postagem) {
             this.postagem = postagem;

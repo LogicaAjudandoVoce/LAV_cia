@@ -15,6 +15,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
+import com.example.telas_v1.PostagemActivity;
+import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
@@ -22,6 +24,8 @@ import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.xwray.groupie.GroupAdapter;
+import com.xwray.groupie.Item;
+import com.xwray.groupie.OnItemClickListener;
 
 public class MenuBuscar extends Fragment {
 
@@ -53,6 +57,20 @@ public class MenuBuscar extends Fragment {
         rcView.setHasFixedSize(true);
         rcView.setAdapter(adapter);
         rcView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        adapter.setOnItemClickListener(new OnItemClickListener() {
+            @Override
+            public void onItemClick(@NonNull Item item, @NonNull View view) {
+                if (trabalhador!=null){
+                    Intent intent = new Intent(getContext(), PostagemActivity.class);
+                    MetodosUsers.ListarPostagemViewModel model =(MetodosUsers.ListarPostagemViewModel) item;
+                    intent.putExtra("post", model.postagem);
+                    intent.putExtra("forma", "menu");
+                    startActivity(intent);
+                }
+            }
+        });
+
 
         btnPesq = root.findViewById(R.id.btnPesq);
         btnPesq.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +124,8 @@ public class MenuBuscar extends Fragment {
                 if (userTrabalhador!=null){
                     trabalhador = userTrabalhador;
                     metodosUsers.listarPostagens(adapter);
+                    btnAddPost.setVisibility(View.INVISIBLE);
+                    btnAddPost.setEnabled(false);
                 }
             }
         });

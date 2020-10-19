@@ -22,6 +22,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.telas_v1.fragmentosmenu.MenuActivity;
+import com.example.telas_v1.mensagens.ConversasActivity;
 import com.example.telas_v1.startactivitys.LoginActiviy;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
@@ -55,7 +57,7 @@ public class MenuPerfil extends Fragment {
     private UserTrabalhador trabalhador;
     private UserCliente cliente;
     private MetodosUsers metodosUsers;
-    private FloatingActionButton btnLogOut,btnEditarPerfil, btnAdicionarFoto;
+    private FloatingActionButton btnLogOut,btnEditarPerfil, btnAdicionarFoto, btnConversas;
     private RecyclerView recyclerView;
     private GroupAdapter adapter;
     private TextView txtNome, txtAdd;
@@ -73,6 +75,7 @@ public class MenuPerfil extends Fragment {
         imgFotoFundo= root.findViewById(R.id.imgFundo);
         btnAdicionarFoto = root.findViewById(R.id.btnAdicionarFoto);
         btnEditarPerfil = root.findViewById(R.id.btnEditarPerfil);
+        btnConversas = root.findViewById(R.id.btnConversas);
         recyclerView = root.findViewById(R.id.rcView);
         txtNome = root.findViewById(R.id.txtNomeUser);
         txtAdd = root.findViewById(R.id.txtAdd);
@@ -112,6 +115,13 @@ public class MenuPerfil extends Fragment {
             @Override
             public void onClick(View view) {
                 selecionarListaFotos();
+            }
+        });
+
+        btnConversas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ConversasActivity.class));
             }
         });
         return root;

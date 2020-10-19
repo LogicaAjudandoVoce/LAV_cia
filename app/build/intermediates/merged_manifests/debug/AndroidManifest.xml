@@ -7,7 +7,6 @@
     <uses-sdk
         android:minSdkVersion="22"
         android:targetSdkVersion="29" />
-
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
@@ -36,7 +35,8 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-
+        <activity android:name="com.example.telas_v1.mensagens.ConversasActivity" />
+        <activity android:name="com.example.telas_v1.PostagemActivity" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -53,7 +53,7 @@
             android:name="com.example.telas_v1.postagemcliente.MapNewPostActivity"
             android:label="@string/title_activity_map_new_post" />
         <activity android:name="com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity" />
-        <activity android:name="com.example.telas_v1.ChatActivity" />
+        <activity android:name="com.example.telas_v1.mensagens.ChatActivity" />
         <activity android:name="com.example.telas_v1.OtherPersonActivity" />
         <activity android:name="com.example.telas_v1.fragmentosmenu.MenuActivity" />
         <activity android:name="com.example.telas_v1.startactivitys.RecuperarSenhaActivity" />
