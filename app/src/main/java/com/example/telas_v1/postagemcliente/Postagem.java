@@ -9,9 +9,9 @@ import java.util.List;
 
 public class Postagem implements Parcelable {
 
-    private String idCliente, idPost, titulo, descricao;
+    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email;
     private double preco, latitude, longitude;
-    private List<Uri> uri;
+    private List<String> uri;
 
     public Postagem() {
     }
@@ -19,12 +19,35 @@ public class Postagem implements Parcelable {
     protected Postagem(Parcel in) {
         idCliente = in.readString();
         idPost = in.readString();
+        nomeAutor = in.readString();
         titulo = in.readString();
         descricao = in.readString();
+        data = in.readString();
+        email = in.readString();
         preco = in.readDouble();
         latitude = in.readDouble();
         longitude = in.readDouble();
-        uri = in.createTypedArrayList(Uri.CREATOR);
+        uri = in.createStringArrayList();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(idCliente);
+        dest.writeString(idPost);
+        dest.writeString(nomeAutor);
+        dest.writeString(titulo);
+        dest.writeString(descricao);
+        dest.writeString(data);
+        dest.writeString(email);
+        dest.writeDouble(preco);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
+        dest.writeStringList(uri);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Postagem> CREATOR = new Creator<Postagem>() {
@@ -55,6 +78,14 @@ public class Postagem implements Parcelable {
         this.idPost = idPost;
     }
 
+    public String getNomeAutor() {
+        return nomeAutor;
+    }
+
+    public void setNomeAutor(String nomeAutor) {
+        this.nomeAutor = nomeAutor;
+    }
+
     public String getTitulo() {
         return titulo;
     }
@@ -69,6 +100,22 @@ public class Postagem implements Parcelable {
 
     public void setDescricao(String descricao) {
         this.descricao = descricao;
+    }
+
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     public double getPreco() {
@@ -95,28 +142,11 @@ public class Postagem implements Parcelable {
         this.longitude = longitude;
     }
 
-    public List<Uri> getUri() {
+    public List<String> getUri() {
         return uri;
     }
 
-    public void setUri(List<Uri> uri) {
+    public void setUri(List<String> uri) {
         this.uri = uri;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(idCliente);
-        parcel.writeString(idPost);
-        parcel.writeString(titulo);
-        parcel.writeString(descricao);
-        parcel.writeDouble(preco);
-        parcel.writeDouble(latitude);
-        parcel.writeDouble(longitude);
-        parcel.writeTypedList(uri);
     }
 }

@@ -105,6 +105,7 @@ public class MenuBuscar extends Fragment {
             public void onResultTrabalhador(UserTrabalhador userTrabalhador) {
                 if (userTrabalhador!=null){
                     trabalhador = userTrabalhador;
+                    metodosUsers.listarPostagens(adapter);
                 }
             }
         });

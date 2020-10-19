@@ -49,6 +49,7 @@
                     android:layout_height="match_parent"
                     android:gravity="center"
                     android:hint="Informe um título"
+                    android:text="Teste de Título"
                     android:textSize="18sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -118,6 +119,7 @@
                     android:gravity="center"
                     android:hint="Informe a descrição aqui"
                     android:maxWidth="0dp"
+                    android:text="Teste de Descrção a Postagem."
                     android:textColor="#FFF" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,6 +169,7 @@
                 android:gravity="start"
                 android:hint="Valor"
                 android:inputType="numberDecimal"
+                android:text="100"
                 android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="@+id/textView26"
                 app:layout_constraintStart_toEndOf="@+id/textView26"

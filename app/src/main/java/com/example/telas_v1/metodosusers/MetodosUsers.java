@@ -13,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.telas_v1.postagemcliente.Postagem;
 import com.example.telas_v1.startactivitys.LoginActiviy;
 import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.R;
@@ -192,6 +193,25 @@ public class MetodosUsers {
         }
     }
 
+    public void listarPostagens(final GroupAdapter adapter){
+        FirebaseFirestore.getInstance().collection("postagens").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                if (e!=null){
+                    Log.d("TESTE", e.getMessage());
+                }else{
+                    List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                    adapter.clear();
+                    for (DocumentSnapshot doc : docs) {
+                        Postagem postagem = doc.toObject(Postagem.class);
+                        adapter.add(new ListarPostagemViewModel(postagem));
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
+    }
+
     public interface OnResultUser{
         void onResultCliente(UserCliente userCliente);
         void onResultTrabalhador(UserTrabalhador userTrabalhador);
@@ -232,4 +252,33 @@ public class MetodosUsers {
         });
     }
 
+    private class ListarPostagemViewModel extends Item<ViewHolder> {
+       private final Postagem postagem;
+
+        private ListarPostagemViewModel(Postagem postagem) {
+            this.postagem = postagem;
+        }
+
+        @Override
+        public void bind(@NonNull ViewHolder viewHolder, int position) {
+            TextView txtTitle = viewHolder.itemView.findViewById(R.id.txtTituloPost);
+            TextView txtAutor = viewHolder.itemView.findViewById(R.id.txtAutorPost);
+            TextView txtEmail = viewHolder.itemView.findViewById(R.id.txtEmailPost);
+            TextView txtPreco = viewHolder.itemView.findViewById(R.id.txtPrecoPost);
+            TextView txtData = viewHolder.itemView.findViewById(R.id.txtDataPost);
+            ImageView img = viewHolder.itemView.findViewById(R.id.imgPost);
+
+            txtTitle.setText(postagem.getTitulo());
+            txtAutor.setText(postagem.getNomeAutor());
+            txtEmail.setText(postagem.getEmail());
+            txtPreco.setText(String.valueOf(postagem.getPreco()));
+            txtData.setText(postagem.getData());
+
+        }
+
+        @Override
+        public int getLayout() {
+            return R.layout.item_card_list;
+        }
+    }
 }

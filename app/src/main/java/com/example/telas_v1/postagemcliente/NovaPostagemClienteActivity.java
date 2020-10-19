@@ -20,16 +20,28 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telas_v1.R;
+import com.example.telas_v1.fragmentosmenu.MenuActivity;
+import com.example.telas_v1.fragmentosmenu.buscar.MenuBuscar;
+import com.example.telas_v1.metodosusers.MetodosUsers;
+import com.example.telas_v1.users.UserCliente;
+import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
 
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
@@ -42,13 +54,31 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     private GroupAdapter adapter;
     private Button btnPost;
     private ImageView imgMapa;
-    private List<Uri> uriFoto = new ArrayList<>();
+    private  UUID uid;
+    private List<String> uriFoto = new ArrayList<>();
+    private List<Uri> uriAx = new ArrayList<>();
     private Postagem postagem = new Postagem();
+    private MetodosUsers metodosUsers= new MetodosUsers();
+    private UserCliente cliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_postagem_cliente);
+
+        metodosUsers.verificarUser(new MetodosUsers.OnResultUser() {
+            @Override
+            public void onResultCliente(UserCliente userCliente) {
+                if (userCliente!=null){
+                    cliente = userCliente;
+                }
+            }
+
+            @Override
+            public void onResultTrabalhador(UserTrabalhador userTrabalhador) {
+
+            }
+        });
 
         postagem = getIntent().getParcelableExtra("loc");
 
@@ -97,7 +127,8 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode==0 && resultCode==NovaPostagemClienteActivity.RESULT_OK){
-            uriFoto.add(data.getData());
+            uriFoto.add(data.getData().toString());
+            uriAx.add(data.getData());
             Log.d("TESTE", String.valueOf(uriFoto.size()));
             adapter.clear();
             for (int i=0;i<uriFoto.size();i++){
@@ -114,24 +145,49 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         double preco = Double.valueOf(txtPreco.getText().toString());
 
         if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null){
-            UUID uid = UUID.randomUUID();
+            uid = UUID.randomUUID();
+            SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
+            Date data = new Date();
+            String dataFormatada = formataData.format(data);
 
             postagem.setIdCliente(FirebaseAuth.getInstance().getUid());
             postagem.setIdPost(uid.toString() );
+            postagem.setNomeAutor(cliente.getNome());
+            postagem.setEmail(cliente.getEmail());
             postagem.setTitulo(titulo);
             postagem.setDescricao(descricao);
             postagem.setPreco(preco);
-            postagem.setUri(null);
+            postagem.setData(dataFormatada);
+            uriFoto.clear();
+            uploadarFotos(postagem);
 
-            FirebaseFirestore.getInstance().collection("postagems").document(uid.toString()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
+            FirebaseFirestore.getInstance().collection("postagens").document(FirebaseAuth.getInstance().getUid()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
-                    Toast.makeText(NovaPostagemClienteActivity.this, "Postagem concluída!", Toast.LENGTH_LONG).show();
-                    finish();
+                    Intent intent = new Intent(NovaPostagemClienteActivity.this, MenuActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
                 }
             });
         }else{
             Toast.makeText(this, "Preecha todos os campos!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    public void uploadarFotos(Postagem postagem){
+        final StorageReference ref = FirebaseStorage.getInstance().getReference("/postagens/"+FirebaseAuth.getInstance().getUid()+"/"+uid.toString());
+        for (int i=0;i<uriFoto.size();i++) {
+            ref.putFile(uriAx.get(i)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                @Override
+                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                    ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                        @Override
+                        public void onSuccess(Uri uri) {
+                            uriFoto.add(uri.toString());
+                        }
+                    });
+                }
+            });
         }
     }
 
@@ -140,9 +196,9 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     }
 
     private class PostViewHolder extends Item<ViewHolder>{
-        private final Uri uri;
+        private final String uri;
 
-        public PostViewHolder(Uri uri) {
+        public PostViewHolder(String uri) {
             this.uri = uri;
         }
 

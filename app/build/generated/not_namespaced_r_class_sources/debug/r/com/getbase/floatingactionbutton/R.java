@@ -55,11 +55,11 @@ public final class R {
         public static final int down = 0x7f0a00a8;
         public static final int fab_expand_menu_button = 0x7f0a00bd;
         public static final int fab_label = 0x7f0a00be;
-        public static final int left = 0x7f0a00f1;
-        public static final int mini = 0x7f0a0100;
-        public static final int normal = 0x7f0a0128;
-        public static final int right = 0x7f0a015f;
-        public static final int up = 0x7f0a0208;
+        public static final int left = 0x7f0a00f2;
+        public static final int mini = 0x7f0a0101;
+        public static final int normal = 0x7f0a0129;
+        public static final int right = 0x7f0a0160;
+        public static final int up = 0x7f0a0211;
     }
     public static final class styleable {
         private styleable() {}
