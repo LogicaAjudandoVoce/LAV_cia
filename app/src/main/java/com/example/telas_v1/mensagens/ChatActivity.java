@@ -226,13 +226,18 @@ public class ChatActivity extends AppCompatActivity {
                 .orderBy("timestamp", Query.Direction.ASCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override
-                        public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) { List<DocumentChange> documentChanges = queryDocumentSnapshots.getDocumentChanges();
-
-                        if (documentChanges != null) {
-                            for (DocumentChange doc: documentChanges) {
-                                if (doc.getType() == DocumentChange.Type.ADDED) {
-                                    Mensagem message = doc.getDocument().toObject(Mensagem.class);
-                                    adapter.add(new MessageItemTrabalhador(message));
+                        public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                            if(e!=null){
+                                Log.d("TESTE", e.getMessage());
+                            }
+                        else {
+                                List<DocumentChange> documentChanges = queryDocumentSnapshots.getDocumentChanges();
+                                if (documentChanges != null) {
+                                for (DocumentChange doc : documentChanges) {
+                                    if (doc.getType() == DocumentChange.Type.ADDED) {
+                                        Mensagem message = doc.getDocument().toObject(Mensagem.class);
+                                        adapter.add(new MessageItemTrabalhador(message));
+                                    }
                                 }
                             }
                         }
