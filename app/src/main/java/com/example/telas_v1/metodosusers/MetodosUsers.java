@@ -204,8 +204,11 @@ public class MetodosUsers {
                     adapter.clear();
                     for (DocumentSnapshot doc : docs) {
                         Postagem postagem = doc.toObject(Postagem.class);
-                        adapter.add(new ListarPostagemViewModel(postagem));
-                        adapter.notifyDataSetChanged();
+
+                        if (!postagem.isConclusao()){
+                             adapter.add(new ListarPostagemViewModel(postagem));
+                             adapter.notifyDataSetChanged();
+                        }
                     }
                 }
             }
@@ -263,14 +266,14 @@ public class MetodosUsers {
         public void bind(@NonNull ViewHolder viewHolder, int position) {
             TextView txtTitle = viewHolder.itemView.findViewById(R.id.txtTituloPost);
             TextView txtAutor = viewHolder.itemView.findViewById(R.id.txtAutorPost);
-            TextView txtEmail = viewHolder.itemView.findViewById(R.id.txtEmailPost);
+            TextView txtMini = viewHolder.itemView.findViewById(R.id.txtMiniDescricao);
             TextView txtPreco = viewHolder.itemView.findViewById(R.id.txtPrecoPost);
             TextView txtData = viewHolder.itemView.findViewById(R.id.txtDataPost);
             ImageView img = viewHolder.itemView.findViewById(R.id.imgPost);
 
+            txtMini.setText(postagem.getMiniDescricao());
             txtTitle.setText(postagem.getTitulo());
             txtAutor.setText(postagem.getNomeAutor());
-            txtEmail.setText(postagem.getEmail());
             txtPreco.setText(String.valueOf(postagem.getPreco()));
             txtData.setText(postagem.getData());
 

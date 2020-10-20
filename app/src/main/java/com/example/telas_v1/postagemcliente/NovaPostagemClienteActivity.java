@@ -47,19 +47,20 @@ import java.util.UUID;
 
 public class NovaPostagemClienteActivity extends AppCompatActivity {
 
-    private TextInputEditText txtTitulo, txtDescricao;
+    private TextInputEditText txtTitulo, txtDescricao, txtDescricaoRapida;
     private TextView txtRc;
     private EditText txtPreco;
     private RecyclerView rcView;
     private GroupAdapter adapter;
     private Button btnPost;
     private ImageView imgMapa;
-    private  UUID uid;
+    private UUID uid;
     private List<String> uriFoto = new ArrayList<>();
     private List<Uri> uriAx = new ArrayList<>();
     private Postagem postagem = new Postagem();
     private MetodosUsers metodosUsers= new MetodosUsers();
     private UserCliente cliente;
+    private double preco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +85,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
 
         txtTitulo = findViewById(R.id.txtTitulo);
         txtDescricao = findViewById(R.id.txtDescricao);
+        txtDescricaoRapida = findViewById(R.id.txtDescricaoRapida);
         txtRc = findViewById(R.id.txtRc);
         txtPreco = findViewById(R.id.txtPreco);
         imgMapa = findViewById(R.id.imgMapa);
@@ -141,10 +143,12 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
 
     public void postar(){
         String titulo= txtTitulo.getText().toString();
+        String mini = txtDescricaoRapida.getText().toString();
         String descricao= txtDescricao.getText().toString();
-        double preco = Double.valueOf(txtPreco.getText().toString());
+        if (txtPreco.getText().toString().isEmpty()) preco=0f;
+         else preco = Double.valueOf(txtPreco.getText().toString());
 
-        if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null){
+        if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null && mini!=null){
             uid = UUID.randomUUID();
             SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
@@ -155,13 +159,15 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
             postagem.setNomeAutor(cliente.getNome());
             postagem.setEmail(cliente.getEmail());
             postagem.setTitulo(titulo);
+            postagem.setMiniDescricao(mini);
             postagem.setDescricao(descricao);
             postagem.setPreco(preco);
+            postagem.setConclusao(false);
             postagem.setData(dataFormatada);
             uriFoto.clear();
             uploadarFotos(postagem);
 
-            FirebaseFirestore.getInstance().collection("postagens").document(FirebaseAuth.getInstance().getUid()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
+            FirebaseFirestore.getInstance().collection("postagens").document(postagem.getIdPost()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Intent intent = new Intent(NovaPostagemClienteActivity.this, MenuActivity.class);

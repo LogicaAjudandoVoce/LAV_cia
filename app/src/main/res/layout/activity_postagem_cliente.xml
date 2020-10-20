@@ -36,8 +36,9 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout10"
                 android:layout_width="350dp"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/item_txt_back"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.491"
                 app:layout_constraintStart_toStartOf="parent"
@@ -47,9 +48,14 @@
                     android:id="@+id/txtTitulo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@null"
                     android:gravity="center"
-                    android:hint="Informe um título"
-                    android:textSize="18sp" />
+                    android:maxLength="50"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -57,7 +63,7 @@
                 android:layout_width="410dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
-                android:background="#5C5B5B"
+                android:background="#5C5C5B"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout10" />
@@ -105,6 +111,7 @@
                 android:layout_width="350dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="8dp"
+                android:background="@drawable/item_txt_back"
                 android:gravity="start"
                 android:maxWidth="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -115,10 +122,14 @@
                     android:id="@+id/txtDescricao"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:hint="Informe a descrição aqui"
+                    android:background="@null"
+                    android:gravity="start"
                     android:maxWidth="0dp"
-                    android:textColor="#FFF" />
+                    android:paddingStart="20dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#000" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -126,12 +137,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="16dp"
                 android:text="Valor Máximo a se Pagar:"
                 android:textColor="#FFF"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -208,6 +219,47 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imgMapa" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Descrição Rápida:"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView24"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout11" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout12"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="400dp"
+                android:background="@drawable/item_txt_back"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:counterEnabled="true"
+                app:counterMaxLength="120"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout11"
+                app:layout_constraintTop_toBottomOf="@+id/textView18">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/txtDescricaoRapida"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="@null"
+                    android:gravity="start"
+                    android:maxWidth="0dp"
+                    android:maxLength="120"
+                    android:maxLines="10"
+                    android:paddingStart="20dp"
+                    android:paddingEnd="4dp"
+                    android:paddingBottom="4dp"
+                    android:textColor="#FFFFFF" />
+            </com.google.android.material.textfield.TextInputLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

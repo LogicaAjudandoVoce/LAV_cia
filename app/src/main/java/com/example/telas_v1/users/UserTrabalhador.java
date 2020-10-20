@@ -17,10 +17,22 @@ public class UserTrabalhador implements Parcelable {
         senha = in.readString();
         tipoUser = in.readString();
         dataNasc = in.readString();
-        myPreco = in.readFloat();
         urlFotoPerfil = in.readString();
         urlFotoFundo = in.readString();
+        myPreco = in.readFloat();
     }
+
+    public static final Creator<UserTrabalhador> CREATOR = new Creator<UserTrabalhador>() {
+        @Override
+        public UserTrabalhador createFromParcel(Parcel in) {
+            return new UserTrabalhador(in);
+        }
+
+        @Override
+        public UserTrabalhador[] newArray(int size) {
+            return new UserTrabalhador[size];
+        }
+    };
 
     public String getId() {
         return id;
@@ -70,14 +82,6 @@ public class UserTrabalhador implements Parcelable {
         this.dataNasc = dataNasc;
     }
 
-    public float getMyPreco() {
-        return myPreco;
-    }
-
-    public void setMyPreco(float myPreco) {
-        this.myPreco = myPreco;
-    }
-
     public String getUrlFotoPerfil() {
         return urlFotoPerfil;
     }
@@ -94,17 +98,12 @@ public class UserTrabalhador implements Parcelable {
         this.urlFotoFundo = urlFotoFundo;
     }
 
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(id);
-        dest.writeString(email);
-        dest.writeString(nome);
-        dest.writeString(senha);
-        dest.writeString(tipoUser);
-        dest.writeString(dataNasc);
-        dest.writeString(urlFotoPerfil);
-        dest.writeString(urlFotoFundo);
-        dest.writeFloat(myPreco);
+    public float getMyPreco() {
+        return myPreco;
+    }
+
+    public void setMyPreco(float myPreco) {
+        this.myPreco = myPreco;
     }
 
     @Override
@@ -112,15 +111,16 @@ public class UserTrabalhador implements Parcelable {
         return 0;
     }
 
-    public static final Creator<UserTrabalhador> CREATOR = new Creator<UserTrabalhador>() {
-        @Override
-        public UserTrabalhador createFromParcel(Parcel in) {
-            return new UserTrabalhador(in);
-        }
-
-        @Override
-        public UserTrabalhador[] newArray(int size) {
-            return new UserTrabalhador[size];
-        }
-    };
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(id);
+        parcel.writeString(email);
+        parcel.writeString(nome);
+        parcel.writeString(senha);
+        parcel.writeString(tipoUser);
+        parcel.writeString(dataNasc);
+        parcel.writeString(urlFotoPerfil);
+        parcel.writeString(urlFotoFundo);
+        parcel.writeFloat(myPreco);
+    }
 }

@@ -43,7 +43,7 @@
 26-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:26:22-107
 27
 28    <application
-28-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:13:5-55:19
+28-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:13:5-56:19
 29        android:allowBackup="true"
 29-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:14:9-35
 30        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -66,252 +66,253 @@
 39        <activity android:name="com.example.telas_v1.PostagemActivity" />
 39-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:21:9-54
 39-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:21:19-51
-40        <!--
-41             The API key for Google Maps-based APIs is defined as a string resource.
-42             (See the file "res/values/google_maps_api.xml").
-43             Note that the API key is linked to the encryption key used to sign the APK.
-44             You need a different API key for each encryption key, including the release key that is used to
-45             sign the APK for publishing.
-46             You can define the keys for the debug and release targets in src/debug/ and src/release/.
-47        -->
-48        <meta-data
-48-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:30:9-32:55
-49            android:name="com.google.android.geo.API_KEY"
-49-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:31:13-58
-50            android:value="@string/google_maps_key" />
-50-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:32:13-52
-51
-52        <activity
-52-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:34:9-36:67
-53            android:name="com.example.telas_v1.postagemcliente.MapNewPostActivity"
-53-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:35:13-63
-54            android:label="@string/title_activity_map_new_post" />
-54-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:36:13-64
-55        <activity android:name="com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity" />
-55-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:37:9-81
-55-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:37:19-78
-56        <activity android:name="com.example.telas_v1.mensagens.ChatActivity" />
-56-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:9-60
-56-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:19-57
-57        <activity android:name="com.example.telas_v1.OtherPersonActivity" />
-57-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:9-57
-57-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:19-54
-58        <activity android:name="com.example.telas_v1.fragmentosmenu.MenuActivity" />
-58-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:9-65
-58-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:19-62
-59        <activity android:name="com.example.telas_v1.startactivitys.RecuperarSenhaActivity" />
-59-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:9-75
-59-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:19-72
-60        <activity android:name="com.example.telas_v1.fragmentoscriarconta.CreateActivity" />
-60-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:9-73
-60-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:19-70
-61        <activity android:name="com.example.telas_v1.startactivitys.LoginActiviy" />
-61-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:9-65
-61-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:19-62
-62        <activity android:name="com.example.telas_v1.startactivitys.MainActivity" >
-62-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:9-50:20
-62-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:19-62
-63            <intent-filter>
-63-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:45:13-49:29
-64                <action android:name="android.intent.action.MAIN" />
-64-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:46:17-69
-64-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:46:25-66
-65
-66                <category android:name="android.intent.category.LAUNCHER" />
-66-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:48:17-77
-66-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:48:27-74
-67            </intent-filter>
-68        </activity>
+40
+41        <uses-library
+41-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:22:9-87
+42            android:name="org.apache.http.legacy"
+42-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:22:23-60
+43            android:required="false" />
+43-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:22:61-85
+44        <!--
+45             The API key for Google Maps-based APIs is defined as a string resource.
+46             (See the file "res/values/google_maps_api.xml").
+47             Note that the API key is linked to the encryption key used to sign the APK.
+48             You need a different API key for each encryption key, including the release key that is used to
+49             sign the APK for publishing.
+50             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+51        -->
+52        <meta-data
+52-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:31:9-33:55
+53            android:name="com.google.android.geo.API_KEY"
+53-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:32:13-58
+54            android:value="@string/google_maps_key" />
+54-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:33:13-52
+55
+56        <activity
+56-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:35:9-37:67
+57            android:name="com.example.telas_v1.postagemcliente.MapNewPostActivity"
+57-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:36:13-63
+58            android:label="@string/title_activity_map_new_post" />
+58-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:37:13-64
+59        <activity android:name="com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity" />
+59-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:9-81
+59-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:19-78
+60        <activity android:name="com.example.telas_v1.mensagens.ChatActivity" />
+60-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:9-60
+60-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:19-57
+61        <activity android:name="com.example.telas_v1.OtherPersonActivity" />
+61-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:9-57
+61-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:19-54
+62        <activity android:name="com.example.telas_v1.fragmentosmenu.MenuActivity" />
+62-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:9-65
+62-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:19-62
+63        <activity android:name="com.example.telas_v1.startactivitys.RecuperarSenhaActivity" />
+63-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:9-75
+63-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:19-72
+64        <activity android:name="com.example.telas_v1.fragmentoscriarconta.CreateActivity" />
+64-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:9-73
+64-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:19-70
+65        <activity android:name="com.example.telas_v1.startactivitys.LoginActiviy" />
+65-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:9-65
+65-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:19-62
+66        <activity android:name="com.example.telas_v1.startactivitys.MainActivity" >
+66-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:45:9-51:20
+66-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:45:19-62
+67            <intent-filter>
+67-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:46:13-50:29
+68                <action android:name="android.intent.action.MAIN" />
+68-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:47:17-69
+68-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:47:25-66
 69
-70        <meta-data
-70-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:52:9-54:57
-71            android:name="preloaded_fonts"
-71-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:53:13-43
-72            android:resource="@array/preloaded_fonts" />
-72-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:54:13-54
+70                <category android:name="android.intent.category.LAUNCHER" />
+70-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:49:17-77
+70-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:49:27-74
+71            </intent-filter>
+72        </activity>
 73
-74        <activity
-74-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:14:9-20:20
-75            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
-75-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:15:13-91
-76            android:exported="false"
-76-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:16:13-37
-77            android:label="@string/places_autocomplete_label"
-77-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:17:13-62
-78            android:theme="@style/PlacesAutocompleteOverlay"
-78-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:18:13-61
-79            android:windowSoftInputMode="adjustResize" >
-79-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:19:13-55
-80        </activity>
-81
-82        <service
-82-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:17:9-21:19
-83            android:name="com.google.firebase.components.ComponentDiscoveryService"
-83-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:17:18-89
-84            android:directBootAware="true"
-84-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
-85            android:exported="false" >
-85-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:35:13-37
-86            <meta-data
-86-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:18:13-20:85
-87                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
-87-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:19:17-111
-88                android:value="com.google.firebase.components.ComponentRegistrar" />
-88-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:20:17-82
-89            <meta-data
-89-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:36:13-38:85
-90                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
-90-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:37:17-109
-91                android:value="com.google.firebase.components.ComponentRegistrar" />
-91-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:38:17-82
-92            <meta-data
-92-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d8d51b73f3e526fafac6b70d090f808e\firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
-93                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
-93-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d8d51b73f3e526fafac6b70d090f808e\firebase-storage-19.2.0\AndroidManifest.xml:34:17-107
-94                android:value="com.google.firebase.components.ComponentRegistrar" />
-94-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d8d51b73f3e526fafac6b70d090f808e\firebase-storage-19.2.0\AndroidManifest.xml:35:17-82
-95            <meta-data
-95-->[com.google.android.gms:play-services-measurement-api:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9992eff884613e7524f453b5d0d8db9b\play-services-measurement-api-17.5.0\AndroidManifest.xml:30:13-32:85
-96                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
-96-->[com.google.android.gms:play-services-measurement-api:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9992eff884613e7524f453b5d0d8db9b\play-services-measurement-api-17.5.0\AndroidManifest.xml:31:17-139
-97                android:value="com.google.firebase.components.ComponentRegistrar" />
-97-->[com.google.android.gms:play-services-measurement-api:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9992eff884613e7524f453b5d0d8db9b\play-services-measurement-api-17.5.0\AndroidManifest.xml:32:17-82
-98            <meta-data
-98-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\272df24f7fb1b2d7ef13b9e517d92286\firebase-installations-16.3.2\AndroidManifest.xml:17:13-19:85
-99                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
-99-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\272df24f7fb1b2d7ef13b9e517d92286\firebase-installations-16.3.2\AndroidManifest.xml:18:17-127
-100                android:value="com.google.firebase.components.ComponentRegistrar" />
-100-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\272df24f7fb1b2d7ef13b9e517d92286\firebase-installations-16.3.2\AndroidManifest.xml:19:17-82
-101        </service>
-102
-103        <activity
-103-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:24:9-31:50
-104            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
-104-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:25:13-85
-105            android:excludeFromRecents="true"
-105-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:26:13-46
-106            android:exported="true"
-106-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:27:13-36
-107            android:launchMode="singleTask"
-107-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:28:13-44
-108            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
-108-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:29:13-102
-109            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-109-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:30:13-72
-110
-111        <provider
-111-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
-112            android:name="com.squareup.picasso.PicassoProvider"
-112-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
-113            android:authorities="com.example.telas_v1.com.squareup.picasso"
-113-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
-114            android:exported="false" /> <!-- Needs to be explicitly declared on P+ -->
-114-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
-115        <uses-library
-115-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-116            android:name="org.apache.http.legacy"
-116-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
-117            android:required="false" />
-117-->[com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-118
-119        <activity
-119-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
-120            android:name="com.google.android.gms.common.api.GoogleApiActivity"
-120-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
-121            android:exported="false"
-121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
-122            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-122-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
-123
-124        <receiver
-124-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:29:9-33:20
-125            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
-125-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:30:13-85
-126            android:enabled="true"
-126-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:31:13-35
-127            android:exported="false" >
-127-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:32:13-37
-128        </receiver>
-129
-130        <service
-130-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:35:9-38:40
-131            android:name="com.google.android.gms.measurement.AppMeasurementService"
-131-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:36:13-84
-132            android:enabled="true"
-132-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:37:13-35
-133            android:exported="false" />
-133-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:38:13-37
-134        <service
-134-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:39:9-43:72
-135            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
-135-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:40:13-87
-136            android:enabled="true"
-136-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:41:13-35
-137            android:exported="false"
-137-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:42:13-37
-138            android:permission="android.permission.BIND_JOB_SERVICE" />
-138-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:43:13-69
-139
-140        <provider
-140-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
-141            android:name="com.google.firebase.provider.FirebaseInitProvider"
-141-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
-142            android:authorities="com.example.telas_v1.firebaseinitprovider"
-142-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
-143            android:directBootAware="true"
-143-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
-144            android:exported="false"
-144-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
-145            android:initOrder="100" />
-145-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
-146
-147        <meta-data
-147-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\776041cf2af53e0ef6a8dffeead83325\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
-148            android:name="com.google.android.gms.version"
-148-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\776041cf2af53e0ef6a8dffeead83325\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
-149            android:value="@integer/google_play_services_version" />
-149-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\776041cf2af53e0ef6a8dffeead83325\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
-150
-151        <service
-151-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:29:9-35:19
-152            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
-152-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:30:13-103
-153            android:exported="false" >
-153-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:31:13-37
-154            <meta-data
-154-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:32:13-34:39
-155                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
-155-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:33:17-94
-156                android:value="cct" />
-156-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:34:17-36
-157        </service>
-158        <service
-158-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:26:9-30:19
-159            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
-159-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:27:13-117
-160            android:exported="false"
-160-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:28:13-37
-161            android:permission="android.permission.BIND_JOB_SERVICE" >
-161-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:29:13-69
-162        </service>
-163
-164        <receiver
-164-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:32:9-34:40
-165            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
-165-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:33:13-132
-166            android:exported="false" />
-166-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:34:13-37
-167
-168        <provider
-168-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
-169            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-169-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
-170            android:authorities="com.example.telas_v1.lifecycle-process"
-170-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
-171            android:exported="false"
-171-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
-172            android:multiprocess="true" />
-172-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
-173    </application>
-174
-175</manifest>
+74        <meta-data
+74-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:53:9-55:57
+75            android:name="preloaded_fonts"
+75-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:54:13-43
+76            android:resource="@array/preloaded_fonts" />
+76-->C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:55:13-54
+77
+78        <activity
+78-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:14:9-20:20
+79            android:name="com.google.android.libraries.places.widget.AutocompleteActivity"
+79-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:15:13-91
+80            android:exported="false"
+80-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:16:13-37
+81            android:label="@string/places_autocomplete_label"
+81-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:17:13-62
+82            android:theme="@style/PlacesAutocompleteOverlay"
+82-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:18:13-61
+83            android:windowSoftInputMode="adjustResize" >
+83-->[com.google.android.libraries.places:places:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9c371a6e67b5ed1b01ba59b440795774\places-2.2.0\AndroidManifest.xml:19:13-55
+84        </activity>
+85
+86        <service
+86-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:17:9-21:19
+87            android:name="com.google.firebase.components.ComponentDiscoveryService"
+87-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:17:18-89
+88            android:directBootAware="true"
+88-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:35:13-43
+89            android:exported="false" >
+89-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:35:13-37
+90            <meta-data
+90-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:18:13-20:85
+91                android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+91-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:19:17-111
+92                android:value="com.google.firebase.components.ComponentRegistrar" />
+92-->[com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f95c959206f7e1e660a6a3ff99164169\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:20:17-82
+93            <meta-data
+93-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:36:13-38:85
+94                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+94-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:37:17-109
+95                android:value="com.google.firebase.components.ComponentRegistrar" />
+95-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:38:17-82
+96            <meta-data
+96-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d8d51b73f3e526fafac6b70d090f808e\firebase-storage-19.2.0\AndroidManifest.xml:33:13-35:85
+97                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+97-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d8d51b73f3e526fafac6b70d090f808e\firebase-storage-19.2.0\AndroidManifest.xml:34:17-107
+98                android:value="com.google.firebase.components.ComponentRegistrar" />
+98-->[com.google.firebase:firebase-storage:19.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d8d51b73f3e526fafac6b70d090f808e\firebase-storage-19.2.0\AndroidManifest.xml:35:17-82
+99            <meta-data
+99-->[com.google.android.gms:play-services-measurement-api:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9992eff884613e7524f453b5d0d8db9b\play-services-measurement-api-17.5.0\AndroidManifest.xml:30:13-32:85
+100                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+100-->[com.google.android.gms:play-services-measurement-api:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9992eff884613e7524f453b5d0d8db9b\play-services-measurement-api-17.5.0\AndroidManifest.xml:31:17-139
+101                android:value="com.google.firebase.components.ComponentRegistrar" />
+101-->[com.google.android.gms:play-services-measurement-api:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\9992eff884613e7524f453b5d0d8db9b\play-services-measurement-api-17.5.0\AndroidManifest.xml:32:17-82
+102            <meta-data
+102-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\272df24f7fb1b2d7ef13b9e517d92286\firebase-installations-16.3.2\AndroidManifest.xml:17:13-19:85
+103                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+103-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\272df24f7fb1b2d7ef13b9e517d92286\firebase-installations-16.3.2\AndroidManifest.xml:18:17-127
+104                android:value="com.google.firebase.components.ComponentRegistrar" />
+104-->[com.google.firebase:firebase-installations:16.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\272df24f7fb1b2d7ef13b9e517d92286\firebase-installations-16.3.2\AndroidManifest.xml:19:17-82
+105        </service>
+106
+107        <activity
+107-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:24:9-31:50
+108            android:name="com.google.firebase.auth.internal.FederatedSignInActivity"
+108-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:25:13-85
+109            android:excludeFromRecents="true"
+109-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:26:13-46
+110            android:exported="true"
+110-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:27:13-36
+111            android:launchMode="singleTask"
+111-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:28:13-44
+112            android:permission="com.google.firebase.auth.api.gms.permission.LAUNCH_FEDERATED_SIGN_IN"
+112-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:29:13-102
+113            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+113-->[com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\6461ffca4b8b9dfd45827541550ff86d\firebase-auth-19.3.2\AndroidManifest.xml:30:13-72
+114
+115        <provider
+115-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:8:9-11:40
+116            android:name="com.squareup.picasso.PicassoProvider"
+116-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:9:13-64
+117            android:authorities="com.example.telas_v1.com.squareup.picasso"
+117-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:10:13-72
+118            android:exported="false" />
+118-->[com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2de49f6b0b9d66d83c2391621562e19e\jetified-picasso-2.71828\AndroidManifest.xml:11:13-37
+119
+120        <activity
+120-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+121            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+121-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+122            android:exported="false"
+122-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+123            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+123-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+124
+125        <receiver
+125-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:29:9-33:20
+126            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+126-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:30:13-85
+127            android:enabled="true"
+127-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:31:13-35
+128            android:exported="false" >
+128-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:32:13-37
+129        </receiver>
+130
+131        <service
+131-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:35:9-38:40
+132            android:name="com.google.android.gms.measurement.AppMeasurementService"
+132-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:36:13-84
+133            android:enabled="true"
+133-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:37:13-35
+134            android:exported="false" />
+134-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:38:13-37
+135        <service
+135-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:39:9-43:72
+136            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+136-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:40:13-87
+137            android:enabled="true"
+137-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:41:13-35
+138            android:exported="false"
+138-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:42:13-37
+139            android:permission="android.permission.BIND_JOB_SERVICE" />
+139-->[com.google.android.gms:play-services-measurement:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\b25b06ae3df75c43f3cb56b82737a509\play-services-measurement-17.5.0\AndroidManifest.xml:43:13-69
+140
+141        <provider
+141-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:26:9-31:39
+142            android:name="com.google.firebase.provider.FirebaseInitProvider"
+142-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:27:13-77
+143            android:authorities="com.example.telas_v1.firebaseinitprovider"
+143-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:28:13-72
+144            android:directBootAware="true"
+144-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:29:13-43
+145            android:exported="false"
+145-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:30:13-37
+146            android:initOrder="100" />
+146-->[com.google.firebase:firebase-common:19.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5c6762ff3d8e33b9e8c0326fc8c28764\jetified-firebase-common-19.3.1\AndroidManifest.xml:31:13-36
+147
+148        <meta-data
+148-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\776041cf2af53e0ef6a8dffeead83325\jetified-play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+149            android:name="com.google.android.gms.version"
+149-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\776041cf2af53e0ef6a8dffeead83325\jetified-play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+150            android:value="@integer/google_play_services_version" />
+150-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\776041cf2af53e0ef6a8dffeead83325\jetified-play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+151
+152        <service
+152-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:29:9-35:19
+153            android:name="com.google.android.datatransport.runtime.backends.TransportBackendDiscovery"
+153-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:30:13-103
+154            android:exported="false" >
+154-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:31:13-37
+155            <meta-data
+155-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:32:13-34:39
+156                android:name="backend:com.google.android.datatransport.cct.CctBackendFactory"
+156-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:33:17-94
+157                android:value="cct" />
+157-->[com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\263ee32f2ad5a733ca33d161a415978d\transport-backend-cct-2.1.0\AndroidManifest.xml:34:17-36
+158        </service>
+159        <service
+159-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:26:9-30:19
+160            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.JobInfoSchedulerService"
+160-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:27:13-117
+161            android:exported="false"
+161-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:28:13-37
+162            android:permission="android.permission.BIND_JOB_SERVICE" >
+162-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:29:13-69
+163        </service>
+164
+165        <receiver
+165-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:32:9-34:40
+166            android:name="com.google.android.datatransport.runtime.scheduling.jobscheduling.AlarmManagerSchedulerBroadcastReceiver"
+166-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:33:13-132
+167            android:exported="false" />
+167-->[com.google.android.datatransport:transport-runtime:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\254b76b4fb39735a114140764f8be64b\transport-runtime-2.1.0\AndroidManifest.xml:34:13-37
+168
+169        <provider
+169-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:25:9-29:43
+170            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+170-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:26:13-79
+171            android:authorities="com.example.telas_v1.lifecycle-process"
+171-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:27:13-69
+172            android:exported="false"
+172-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:28:13-37
+173            android:multiprocess="true" />
+173-->[androidx.lifecycle:lifecycle-process:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c8d9b39a4423cedeb84ced6cd898c148\lifecycle-process-2.2.0\AndroidManifest.xml:29:13-40
+174    </application>
+175
+176</manifest>

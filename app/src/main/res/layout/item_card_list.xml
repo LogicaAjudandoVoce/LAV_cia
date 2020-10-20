@@ -6,8 +6,8 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="350dp"
-        android:layout_height="280dp"
+        android:layout_width="375dp"
+        android:layout_height="200dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/item_post"
         app:layout_constraintEnd_toEndOf="parent"
@@ -17,49 +17,37 @@
 
         <TextView
             android:id="@+id/txtTituloPost"
-            android:layout_width="250dp"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
             android:layout_marginTop="16dp"
-            android:maxWidth="0dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="4dp"
             android:text="Título da Postagem"
             android:textColor="#FFF"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toStartOf="@+id/imgPost"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imgPost"
-            android:layout_width="300dp"
+            android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.493"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtTituloPost"
+            app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/aaaaaa" />
 
         <TextView
             android:id="@+id/textView31"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Autor:"
-            android:textColor="#FFF"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:text="por:"
             app:layout_constraintStart_toStartOf="@+id/txtTituloPost"
-            app:layout_constraintTop_toBottomOf="@+id/imgPost" />
-
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Email:"
-            android:textColor="#FFF"
-            app:layout_constraintStart_toStartOf="@+id/textView31"
-            app:layout_constraintTop_toBottomOf="@+id/textView31" />
+            app:layout_constraintTop_toBottomOf="@+id/txtTituloPost" />
 
         <TextView
             android:id="@+id/txtAutorPost"
@@ -67,31 +55,20 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Nome do Autor"
-            android:textColor="#FFF"
             app:layout_constraintBottom_toBottomOf="@+id/textView31"
             app:layout_constraintStart_toEndOf="@+id/textView31"
             app:layout_constraintTop_toTopOf="@+id/textView31" />
 
         <TextView
-            android:id="@+id/txtEmailPost"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Email do autor"
-            android:textColor="#FFF"
-            app:layout_constraintBottom_toBottomOf="@+id/textView32"
-            app:layout_constraintStart_toStartOf="@+id/txtAutorPost"
-            app:layout_constraintTop_toTopOf="@+id/textView32" />
-
-        <TextView
             android:id="@+id/textView37"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="324dp"
             android:text="Preço:"
             android:textColor="#FFF"
-            app:layout_constraintBottom_toBottomOf="@+id/textView31"
-            app:layout_constraintStart_toEndOf="@+id/txtAutorPost"
-            app:layout_constraintTop_toTopOf="@+id/textView31" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgPost" />
 
         <TextView
             android:id="@+id/txtPrecoPost"
@@ -102,18 +79,34 @@
             android:textColor="#FFF"
             app:layout_constraintBottom_toBottomOf="@+id/textView37"
             app:layout_constraintStart_toEndOf="@+id/textView37"
-            app:layout_constraintTop_toTopOf="@+id/textView37" />
+            app:layout_constraintTop_toTopOf="@+id/textView37"
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/txtDataPost"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="20dp"
-            android:text="Data do Post"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="32dp"
+            android:text="12/12/2012"
             android:textColor="#FFF"
-            app:layout_constraintBottom_toBottomOf="@+id/txtTituloPost"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txtTituloPost" />
+            app:layout_constraintTop_toBottomOf="@+id/imgPost" />
+
+        <TextView
+            android:id="@+id/txtMiniDescricao"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:paddingStart="8dp"
+            android:paddingEnd="4dp"
+            android:paddingBottom="4dp"
+            android:text="Aqui ficará uma breve descrição do serviço que esta sendo postado pelo cliente na hora da postagem."
+            app:layout_constraintBottom_toTopOf="@+id/txtPrecoPost"
+            app:layout_constraintEnd_toStartOf="@+id/imgPost"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtAutorPost" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

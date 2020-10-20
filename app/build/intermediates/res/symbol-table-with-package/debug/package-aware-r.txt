@@ -2092,6 +2092,7 @@ drawable ic_vpn_key_black_24dp
 drawable img_mapa
 drawable item_botao_perfil
 drawable item_post
+drawable item_txt_back
 drawable item_user_list
 drawable logo_normal
 drawable logo_redonda
@@ -2576,6 +2577,7 @@ id textEnd
 id textInputLayout
 id textInputLayout10
 id textInputLayout11
+id textInputLayout12
 id textInputLayout2
 id textInputLayout3
 id textInputLayout4
@@ -2595,6 +2597,7 @@ id textView13
 id textView14
 id textView16
 id textView17
+id textView18
 id textView19
 id textView2
 id textView20
@@ -2608,7 +2611,6 @@ id textView29
 id textView3
 id textView30
 id textView31
-id textView32
 id textView33
 id textView34
 id textView35
@@ -2636,6 +2638,7 @@ id titleDividerNoCustom
 id title_template
 id toggle
 id toolbar
+id toolbar2
 id toolbar3
 id toolbar4
 id top
@@ -2656,11 +2659,14 @@ id txtDataPost
 id txtDataPostagem
 id txtDescricao
 id txtDescricaoPostagem
+id txtDescricaoRapida
 id txtEmailAutor
 id txtEmailList
-id txtEmailPost
 id txtEsquecer
+id txtHora
+id txtInfo
 id txtMensagem
+id txtMiniDescricao
 id txtMsn
 id txtNome
 id txtNomeAutor
@@ -2796,9 +2802,9 @@ layout fragment_step_two
 layout item_barrauser_list
 layout item_card_list
 layout item_foto_list
-layout item_from_msn
 layout item_msn_me
 layout item_post_img
+layout item_to_msn
 layout item_user_message
 layout mtrl_alert_dialog
 layout mtrl_alert_dialog_actions

@@ -59,7 +59,7 @@ public final class R {
         public static final int mini = 0x7f0a0107;
         public static final int normal = 0x7f0a012f;
         public static final int right = 0x7f0a0166;
-        public static final int up = 0x7f0a0223;
+        public static final int up = 0x7f0a0228;
     }
     public static final class styleable {
         private styleable() {}

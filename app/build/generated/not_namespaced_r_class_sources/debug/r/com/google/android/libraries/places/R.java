@@ -400,13 +400,13 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int places_autocomplete_toolbar_shadow = 0x7f0800c7;
-        public static final int places_powered_by_google_dark = 0x7f0800c8;
-        public static final int places_powered_by_google_light = 0x7f0800c9;
-        public static final int quantum_ic_arrow_back_grey600_24 = 0x7f0800ca;
-        public static final int quantum_ic_clear_grey600_24 = 0x7f0800cb;
-        public static final int quantum_ic_cloud_off_vd_theme_24 = 0x7f0800cc;
-        public static final int quantum_ic_search_grey600_24 = 0x7f0800cd;
+        public static final int places_autocomplete_toolbar_shadow = 0x7f0800c8;
+        public static final int places_powered_by_google_dark = 0x7f0800c9;
+        public static final int places_powered_by_google_light = 0x7f0800ca;
+        public static final int quantum_ic_arrow_back_grey600_24 = 0x7f0800cb;
+        public static final int quantum_ic_clear_grey600_24 = 0x7f0800cc;
+        public static final int quantum_ic_cloud_off_vd_theme_24 = 0x7f0800cd;
+        public static final int quantum_ic_search_grey600_24 = 0x7f0800ce;
     }
     public static final class id {
         private id() {}
@@ -589,21 +589,21 @@ public final class R {
         public static final int tag_unhandled_key_listeners = 0x7f0a01ab;
         public static final int text = 0x7f0a01b1;
         public static final int text2 = 0x7f0a01b2;
-        public static final int textSpacerNoButtons = 0x7f0a01bf;
-        public static final int textSpacerNoTitle = 0x7f0a01c0;
-        public static final int time = 0x7f0a01ec;
-        public static final int title = 0x7f0a01ee;
-        public static final int titleDividerNoCustom = 0x7f0a01ef;
-        public static final int title_template = 0x7f0a01f0;
-        public static final int top = 0x7f0a01f5;
-        public static final int topPanel = 0x7f0a01f6;
-        public static final int unchecked = 0x7f0a0220;
-        public static final int uniform = 0x7f0a0221;
-        public static final int up = 0x7f0a0223;
-        public static final int useLogo = 0x7f0a0224;
-        public static final int visible_removing_fragment_view_tag = 0x7f0a0227;
-        public static final int withText = 0x7f0a0229;
-        public static final int wrap_content = 0x7f0a022c;
+        public static final int textSpacerNoButtons = 0x7f0a01c0;
+        public static final int textSpacerNoTitle = 0x7f0a01c1;
+        public static final int time = 0x7f0a01ed;
+        public static final int title = 0x7f0a01ef;
+        public static final int titleDividerNoCustom = 0x7f0a01f0;
+        public static final int title_template = 0x7f0a01f1;
+        public static final int top = 0x7f0a01f7;
+        public static final int topPanel = 0x7f0a01f8;
+        public static final int unchecked = 0x7f0a0225;
+        public static final int uniform = 0x7f0a0226;
+        public static final int up = 0x7f0a0228;
+        public static final int useLogo = 0x7f0a0229;
+        public static final int visible_removing_fragment_view_tag = 0x7f0a022c;
+        public static final int withText = 0x7f0a022e;
+        public static final int wrap_content = 0x7f0a0231;
     }
     public static final class layout {
         private layout() {}

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\e2739fa23a0a8858c75a47c10c4d2f4e\constraintlayout-2.0.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.navigation:navigation-ui:2.3.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\1a906b03603559a3f35fb0b9431a0a43\navigation-ui-2.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\25f2c24a390828b4b9bfc415a3d42abf\material-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -87,22 +87,22 @@ MERGED from [com.google.firebase:protolite-well-known-types:16.0.1] C:\Users\cas
 MERGED from [io.grpc:grpc-android:1.16.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\fb659ba949a238e7ee7fa4cdaf1f8d1f\grpc-android-1.16.1\AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.volley:volley:1.1.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\92e9bbad2aacc9195f347bd103ee569c\jetified-volley-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.android.datatransport:transport-api:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\55f21e3ffbea54ff9d3ffdb3ad1da7a5\transport-api-2.1.0\AndroidManifest.xml:15:1-22:12
-INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
-INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
+INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
+INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
 	package
 		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:4:5-35
 		INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
 	xmlns:tools
 		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:3:5-51
 	android:versionCode
 		INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-57:12
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:1-58:12
 		INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:2:11-69
@@ -137,7 +137,7 @@ MERGED from [com.google.android.datatransport:transport-backend-cct:2.1.0] C:\Us
 	android:name
 		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:11:22-64
 application
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:13:5-55:19
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:13:5-56:19
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\e2739fa23a0a8858c75a47c10c4d2f4e\constraintlayout-2.0.0\AndroidManifest.xml:9:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\e2739fa23a0a8858c75a47c10c4d2f4e\constraintlayout-2.0.0\AndroidManifest.xml:9:5-20
 MERGED from [com.google.android.material:material:1.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\25f2c24a390828b4b9bfc415a3d42abf\material-1.2.0\AndroidManifest.xml:22:5-20
@@ -230,66 +230,74 @@ activity#com.example.telas_v1.PostagemActivity
 ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:21:9-54
 	android:name
 		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:21:19-51
+uses-library#org.apache.http.legacy
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:22:9-87
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:22:61-85
+	android:name
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:22:23-60
 meta-data#com.google.android.geo.API_KEY
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:30:9-32:55
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:31:9-33:55
 	android:value
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:32:13-52
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:33:13-52
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:31:13-58
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:32:13-58
 activity#com.example.telas_v1.postagemcliente.MapNewPostActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:34:9-36:67
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:35:9-37:67
 	android:label
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:36:13-64
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:37:13-64
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:35:13-63
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:36:13-63
 activity#com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:37:9-81
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:9-81
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:37:19-78
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:19-78
 activity#com.example.telas_v1.mensagens.ChatActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:9-60
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:9-60
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:38:19-57
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:19-57
 activity#com.example.telas_v1.OtherPersonActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:9-57
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:9-57
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:39:19-54
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:19-54
 activity#com.example.telas_v1.fragmentosmenu.MenuActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:9-65
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:9-65
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:40:19-62
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:19-62
 activity#com.example.telas_v1.startactivitys.RecuperarSenhaActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:9-75
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:9-75
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:41:19-72
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:19-72
 activity#com.example.telas_v1.fragmentoscriarconta.CreateActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:9-73
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:9-73
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:42:19-70
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:19-70
 activity#com.example.telas_v1.startactivitys.LoginActiviy
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:9-65
-	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:43:19-62
-activity#com.example.telas_v1.startactivitys.MainActivity
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:9-50:20
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:9-65
 	android:name
 		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:44:19-62
+activity#com.example.telas_v1.startactivitys.MainActivity
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:45:9-51:20
+	android:name
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:45:19-62
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:45:13-49:29
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:46:13-50:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:46:17-69
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:47:17-69
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:46:25-66
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:47:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:48:17-77
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:49:17-77
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:48:27-74
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:49:27-74
 meta-data#preloaded_fonts
-ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:52:9-54:57
+ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:53:9-55:57
 	android:resource
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:54:13-54
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:55:13-54
 	android:name
-		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:53:13-43
+		ADDED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml:54:13-43
 uses-sdk
 INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\cassi\Documents\ProjetosEscola\AndroidStudio\ProjetoMobile\ProjetoAtualizado\Projeto_LAV\app\src\main\AndroidManifest.xml
@@ -578,12 +586,6 @@ ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gr
 		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:27:9-41
 	android:required
 		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:28:9-32
-uses-library#org.apache.http.legacy
-ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:33:9-35:40
-	android:required
-		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:35:13-37
-	android:name
-		ADDED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\942153811ee5f4359a2890b4c352a04b\play-services-maps-17.0.0\AndroidManifest.xml:34:13-50
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:17.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\f0f19aef38b6dcd725c3625651d6946d\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
 	android:exported

@@ -12,7 +12,9 @@ import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.mensagens.ChatActivity;
 import com.example.telas_v1.postagemcliente.Postagem;
 import com.example.telas_v1.users.UserCliente;
+import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -22,7 +24,8 @@ public class PostagemActivity extends AppCompatActivity {
     private TextView txtTitulo, txtDescricao, txtPreco, txtData, txtNome, txtEmail;
     private Button btnContrato, btnChat, btnBack;
     private String forma;
-    private UserCliente cliente;
+    private UserCliente cliente = new UserCliente();
+    private UserTrabalhador trabalhador = new UserTrabalhador();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,10 +65,17 @@ public class PostagemActivity extends AppCompatActivity {
         btnChat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent =  new Intent(PostagemActivity.this, ChatActivity.class);
-                intent.putExtra("forma", "post");
-                intent.putExtra("cliente", cliente);
-                startActivity(intent);
+                FirebaseFirestore.getInstance().collection("userTrabalhador").document(FirebaseAuth.getInstance().getUid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        trabalhador = documentSnapshot.toObject(UserTrabalhador.class);
+                        Intent intent =  new Intent(PostagemActivity.this, ChatActivity.class);
+                        intent.putExtra("forma", "post");
+                        intent.putExtra("toCliente", cliente);
+                        intent.putExtra("meTrabalhador", trabalhador);
+                        startActivity(intent);
+                    }
+                });
             }
         });
 

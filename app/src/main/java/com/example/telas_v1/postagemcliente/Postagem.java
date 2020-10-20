@@ -9,9 +9,9 @@ import java.util.List;
 
 public class Postagem implements Parcelable {
 
-    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email;
+    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao;
+    private boolean conclusao;
     private double preco, latitude, longitude;
-    private List<String> uri;
 
     public Postagem() {
     }
@@ -24,30 +24,11 @@ public class Postagem implements Parcelable {
         descricao = in.readString();
         data = in.readString();
         email = in.readString();
+        miniDescricao = in.readString();
+        conclusao = in.readByte() != 0;
         preco = in.readDouble();
         latitude = in.readDouble();
         longitude = in.readDouble();
-        uri = in.createStringArrayList();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(idCliente);
-        dest.writeString(idPost);
-        dest.writeString(nomeAutor);
-        dest.writeString(titulo);
-        dest.writeString(descricao);
-        dest.writeString(data);
-        dest.writeString(email);
-        dest.writeDouble(preco);
-        dest.writeDouble(latitude);
-        dest.writeDouble(longitude);
-        dest.writeStringList(uri);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
     }
 
     public static final Creator<Postagem> CREATOR = new Creator<Postagem>() {
@@ -118,6 +99,22 @@ public class Postagem implements Parcelable {
         this.email = email;
     }
 
+    public String getMiniDescricao() {
+        return miniDescricao;
+    }
+
+    public void setMiniDescricao(String miniDescricao) {
+        this.miniDescricao = miniDescricao;
+    }
+
+    public boolean isConclusao() {
+        return conclusao;
+    }
+
+    public void setConclusao(boolean conclusao) {
+        this.conclusao = conclusao;
+    }
+
     public double getPreco() {
         return preco;
     }
@@ -142,11 +139,24 @@ public class Postagem implements Parcelable {
         this.longitude = longitude;
     }
 
-    public List<String> getUri() {
-        return uri;
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
-    public void setUri(List<String> uri) {
-        this.uri = uri;
+    @Override
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(idCliente);
+        parcel.writeString(idPost);
+        parcel.writeString(nomeAutor);
+        parcel.writeString(titulo);
+        parcel.writeString(descricao);
+        parcel.writeString(data);
+        parcel.writeString(email);
+        parcel.writeString(miniDescricao);
+        parcel.writeByte((byte) (conclusao ? 1 : 0));
+        parcel.writeDouble(preco);
+        parcel.writeDouble(latitude);
+        parcel.writeDouble(longitude);
     }
 }

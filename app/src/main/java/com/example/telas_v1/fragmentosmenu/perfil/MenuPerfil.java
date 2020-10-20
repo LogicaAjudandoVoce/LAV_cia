@@ -62,7 +62,7 @@ public class MenuPerfil extends Fragment {
     private GroupAdapter adapter;
     private TextView txtNome, txtAdd;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
+    public View onCreateView(@NonNull final LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
         menuperfil_viewmodel = ViewModelProviders.of(this).get(MenuPerfilViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_menu_perfil, container, false);
@@ -121,7 +121,10 @@ public class MenuPerfil extends Fragment {
         btnConversas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(getContext(), ConversasActivity.class));
+                Intent intent = new Intent(getContext(), ConversasActivity.class);
+                if (cliente!=null) intent.putExtra("meC", cliente);
+                if (trabalhador!=null) intent.putExtra("meT", trabalhador);
+                startActivity(intent);
             }
         });
         return root;
