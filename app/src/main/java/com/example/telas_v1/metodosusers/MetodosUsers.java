@@ -168,7 +168,7 @@ public class MetodosUsers {
 
     public class ListarTrabalhadorView extends Item<ViewHolder> {
 
-        private final UserTrabalhador userTrabalhador;
+        public final UserTrabalhador userTrabalhador;
 
         private ListarTrabalhadorView(UserTrabalhador userTrabalhador) {
             this.userTrabalhador = userTrabalhador;

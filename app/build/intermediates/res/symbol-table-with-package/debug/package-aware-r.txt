@@ -2085,6 +2085,7 @@ drawable ic_person_black_24dp
 drawable ic_pessoa
 drawable ic_search
 drawable ic_send_black_24dp
+drawable ic_star
 drawable ic_trab
 drawable ic_trabalho
 drawable ic_voltar
@@ -2136,6 +2137,7 @@ drawable seacrh_item
 drawable test_custom_background
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
+drawable trab
 font montserrat_alternates
 font montserrat_alternates_bold
 id ALT
@@ -2246,6 +2248,7 @@ id btnAdd
 id btnAddImg
 id btnAddPost
 id btnAdicionarFoto
+id btnAvaliar
 id btnAvancar
 id btnChat
 id btnContrato
@@ -2339,6 +2342,7 @@ id fitToContents
 id fixed
 id flip
 id floating
+id floatingActionButton3
 id forever
 id fragment_container_view_tag
 id ghost_view
@@ -2602,6 +2606,7 @@ id textView19
 id textView2
 id textView20
 id textView21
+id textView23
 id textView24
 id textView25
 id textView26
@@ -2611,13 +2616,17 @@ id textView29
 id textView3
 id textView30
 id textView31
+id textView32
 id textView33
 id textView34
 id textView35
 id textView37
+id textView38
 id textView4
 id textView40
+id textView41
 id textView42
+id textView44
 id textView5
 id textView6
 id textView7
@@ -2655,6 +2664,7 @@ id triangle
 id txtAdd
 id txtAutorPost
 id txtCidade
+id txtContato
 id txtDataPost
 id txtDataPostagem
 id txtDescricao
@@ -2678,7 +2688,9 @@ id txtPreco
 id txtPrecoList
 id txtPrecoPost
 id txtPrecoPostagem
+id txtProfissao
 id txtRc
+id txtSobreMim
 id txtTitulo
 id txtTituloPost
 id txt_data
@@ -2772,6 +2784,7 @@ layout activity_main_user
 layout activity_map_new_post
 layout activity_menu
 layout activity_other_person
+layout activity_pefil_trabalhador
 layout activity_postagem
 layout activity_postagem_cliente
 layout activity_recuperar_senha

@@ -27,6 +27,7 @@ import com.example.telas_v1.mensagens.ConversasActivity;
 import com.example.telas_v1.startactivitys.LoginActiviy;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
+import com.example.telas_v1.users.FotoLista;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.getbase.floatingactionbutton.FloatingActionButton;
@@ -352,29 +353,6 @@ public class MenuPerfil extends Fragment {
         });
     }
 
-    private class FotoLista{
-        private String foto, id;
-
-        public FotoLista(){
-        }
-
-        public FotoLista(String id, String foto) {
-            this.id = id;
-            this.foto = foto;
-        }
-
-        public void setId(String id) {
-            this.id = id;
-        }
-
-        public String getId() {
-            return id;
-        }
-
-        public void setFoto(String foto) {
-            this.foto = foto;
-        }
-    }
 
     private class FotoListaView extends Item<ViewHolder>{
 

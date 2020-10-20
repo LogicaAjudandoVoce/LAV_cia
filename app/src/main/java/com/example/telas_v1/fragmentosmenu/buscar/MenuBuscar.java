@@ -16,10 +16,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.telas_v1.PostagemActivity;
-import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
+import com.example.telas_v1.users.PerfilTrabalhadorActivity;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -65,6 +65,14 @@ public class MenuBuscar extends Fragment {
                     Intent intent = new Intent(getContext(), PostagemActivity.class);
                     MetodosUsers.ListarPostagemViewModel model =(MetodosUsers.ListarPostagemViewModel) item;
                     intent.putExtra("post", model.postagem);
+                    intent.putExtra("forma", "menu");
+                    startActivity(intent);
+                }
+                else if(cliente!=null){
+                    Intent intent = new Intent(getContext(), PerfilTrabalhadorActivity.class);
+                    MetodosUsers.ListarTrabalhadorView model = (MetodosUsers.ListarTrabalhadorView) item;
+                    intent.putExtra("toT", model.userTrabalhador);
+                    intent.putExtra("meC", cliente);
                     intent.putExtra("forma", "menu");
                     startActivity(intent);
                 }
