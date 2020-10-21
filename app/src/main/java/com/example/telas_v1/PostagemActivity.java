@@ -1,18 +1,22 @@
 package com.example.telas_v1;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.mensagens.ChatActivity;
 import com.example.telas_v1.postagemcliente.Postagem;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -21,8 +25,6 @@ import com.google.firebase.firestore.FirebaseFirestore;
 public class PostagemActivity extends AppCompatActivity {
 
     private Postagem postagem;
-    private TextView txtTitulo, txtDescricao, txtPreco, txtData, txtNome, txtEmail;
-    private Button btnContrato, btnChat, btnBack;
     private String forma;
     private UserCliente cliente = new UserCliente();
     private UserTrabalhador trabalhador = new UserTrabalhador();
@@ -35,15 +37,15 @@ public class PostagemActivity extends AppCompatActivity {
         forma = getIntent().getExtras().getString("forma");
         verificarUserPost();
 
-        txtTitulo = findViewById(R.id.txtPostTitle);
-        txtNome = findViewById(R.id.txtNomeAutor);
-        txtEmail = findViewById(R.id.txtEmailAutor);
-        txtDescricao = findViewById(R.id.txtDescricaoPostagem);
-        txtPreco = findViewById(R.id.txtPrecoPostagem);
-        txtData = findViewById(R.id.txtDataPostagem);
-        btnChat = findViewById(R.id.btnChat);
-        btnContrato = findViewById(R.id.btnContrato);
-        btnBack = findViewById(R.id.btnVoltar);
+        TextView txtTitulo = findViewById(R.id.txtPostTitle);
+        TextView txtNome = findViewById(R.id.txtNomeAutor);
+        TextView txtEmail = findViewById(R.id.txtEmailAutor);
+        TextView txtDescricao = findViewById(R.id.txtDescricaoPostagem);
+        TextView txtPreco = findViewById(R.id.txtPrecoPostagem);
+        TextView txtData = findViewById(R.id.txtDataPostagem);
+        Button btnChat = findViewById(R.id.btnChat);
+        Button btnContrato = findViewById(R.id.btnContrato);
+        Button btnBack = findViewById(R.id.btnVoltar);
 
         txtTitulo.setText(postagem.getTitulo());
         txtNome.setText(postagem.getNomeAutor());
@@ -76,13 +78,6 @@ public class PostagemActivity extends AppCompatActivity {
                         startActivity(intent);
                     }
                 });
-            }
-        });
-
-        btnContrato.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
             }
         });
 

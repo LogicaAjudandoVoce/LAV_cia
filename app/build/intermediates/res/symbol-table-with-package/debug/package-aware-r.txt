@@ -2370,7 +2370,6 @@ id imageButton6
 id imageView
 id imageView2
 id imageView3
-id imageView4
 id imageView5
 id imgFotoList
 id imgFundo
@@ -2602,10 +2601,7 @@ id textView14
 id textView16
 id textView17
 id textView18
-id textView19
 id textView2
-id textView20
-id textView21
 id textView23
 id textView24
 id textView25
@@ -2649,7 +2645,6 @@ id toggle
 id toolbar
 id toolbar2
 id toolbar3
-id toolbar4
 id top
 id topPanel
 id touch_outside

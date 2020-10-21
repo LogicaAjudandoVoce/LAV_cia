@@ -90,16 +90,6 @@ public class ConversasActivity extends AppCompatActivity {
                         }
                     });
 
-                    FirebaseFirestore.getInstance().collection("userCliente").document(contactItem.contact.getUuid()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                        @Override
-                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-                            toCliente = documentSnapshot.toObject(UserCliente.class);
-                            Intent intent = new Intent(ConversasActivity.this, ChatActivity.class);
-                            intent.putExtra("meTrabalhador", meT);
-                            intent.putExtra("toCliente", toCliente);
-                            startActivity(intent);
-                        }
-                    });
                 }else if(meC!=null){
                     FirebaseFirestore.getInstance().collection("userTrabalhador").whereEqualTo("email", contactItem.contact.getEmail()).addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override

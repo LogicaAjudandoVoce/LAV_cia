@@ -7,11 +7,12 @@
     tools:context=".mensagens.ChatActivity">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar4"
+        android:id="@+id/barra"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
         android:minHeight="?attr/actionBarSize"
+        android:onClick="abrirPerfilTrabalhador"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -23,19 +24,20 @@
         android:layout_height="32dp"
         android:layout_marginStart="8dp"
         android:background="@drawable/ic_voltar"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
-        app:layout_constraintStart_toStartOf="@+id/toolbar4"
-        app:layout_constraintTop_toTopOf="@+id/toolbar4" />
+        app:layout_constraintBottom_toBottomOf="@+id/barra"
+        app:layout_constraintStart_toStartOf="@+id/barra"
+        app:layout_constraintTop_toTopOf="@+id/barra" />
 
     <TextView
         android:id="@+id/txtNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
+        android:onClick="abrirPerfilTrabalhador"
         android:text="@string/infome_seu_nome"
         android:textColor="#000"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        app:layout_constraintBottom_toBottomOf="@+id/barra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
         app:layout_constraintStart_toStartOf="parent"
@@ -82,14 +84,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar4"
+        app:layout_constraintTop_toBottomOf="@+id/barra"
         app:layout_constraintVertical_bias="1.0" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgPerfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar4"
+        android:onClick="abrirPerfilTrabalhador"
+        app:layout_constraintBottom_toBottomOf="@+id/barra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.28"
         app:layout_constraintStart_toStartOf="@+id/btnVoltar"

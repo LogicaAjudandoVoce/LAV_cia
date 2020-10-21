@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.telas_v1.R;
+import com.example.telas_v1.users.PerfilTrabalhadorActivity;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.google.android.material.textfield.TextInputEditText;
@@ -28,6 +31,7 @@ public class ChatActivity extends AppCompatActivity {
     private UserCliente meC, userC;
     private UserTrabalhador meT, userT;
     private GroupAdapter adapter;
+    private Button btnVoltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class ChatActivity extends AppCompatActivity {
         txtNome = findViewById(R.id.txtNome);
         imgPerfil = findViewById(R.id.imgPerfil);
         btnEnviar = findViewById(R.id.btnEnviar);
+        btnVoltar = findViewById(R.id.btnVoltar);
 
         meT = getIntent().getExtras().getParcelable("meTrabalhador");
         userC = getIntent().getExtras().getParcelable("toCliente");
@@ -74,5 +79,20 @@ public class ChatActivity extends AppCompatActivity {
                 else if (meT!=null) mensagens.enviarMensagemToCliente(txtMsn, meT, userC);
             }
         });
+
+        btnVoltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
+
+    public void abrirPerfilTrabalhador(View view){
+        Intent intent = new Intent(ChatActivity.this, PerfilTrabalhadorActivity.class);
+        intent.putExtra("toT", userT);
+        intent.putExtra("meC", meC);
+        intent.putExtra("forma", "chatJa");
+        startActivity(intent);
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -12,8 +13,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.telas_v1.R;
-import com.example.telas_v1.fragmentosmenu.perfil.MenuPerfil;
-import com.google.firebase.auth.FirebaseAuth;
+import com.example.telas_v1.mensagens.ChatActivity;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -52,6 +53,8 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         TextView txtValor = findViewById(R.id.txtPreco);
         TextView txtContato = findViewById(R.id.txtContato);
         txtInfo = findViewById(R.id.txtInfo);
+        FloatingActionButton btnAvaliar = findViewById(R.id.btnAvaliar);
+        FloatingActionButton btnChat = findViewById(R.id.btnChat);
         RecyclerView tcView = findViewById(R.id.rcView);
 
         adapter = new GroupAdapter();
@@ -63,9 +66,7 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (forma.equals("menu")){
                     finish();
-                }
             }
         });
 
@@ -78,6 +79,20 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
             txtValor.setText(String.valueOf(toT.getMyPreco()));
             listarFotos();
         };
+
+        if (forma.equals("chatJa")){
+            btnChat.setVisibility(View.INVISIBLE);
+            btnChat.setEnabled(false);
+        }
+        btnChat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PerfilTrabalhadorActivity.this, ChatActivity.class);
+                intent.putExtra("meCliente", meC);
+                intent.putExtra("toTrabalhador", toT);
+                startActivity(intent);
+            }
+        });
     }
 
     private void listarFotos(){

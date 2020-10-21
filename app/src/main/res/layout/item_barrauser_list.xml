@@ -18,21 +18,21 @@
             android:id="@+id/imgFotoList"
             android:layout_width="60dp"
             android:layout_height="60dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/trab"
             app:civ_border_color="@color/colorDourado"
             app:civ_border_width="1dp"
-            android:layout_marginStart="24dp"
-            android:src="@drawable/ic_trab"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtNomeList"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
+            android:layout_marginStart="10dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="187dp"
+            android:layout_marginEnd="130dp"
             android:text="nameUser"
             android:textColor="#000"
             app:layout_constraintEnd_toEndOf="parent"
@@ -51,7 +51,7 @@
 
         <TextView
             android:id="@+id/txtEmailList"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="emailuser"
