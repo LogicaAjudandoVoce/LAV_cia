@@ -3,6 +3,7 @@ package com.example.telas_v1.mensagens;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -155,6 +156,7 @@ public class MetodosMensagens {
                             ? meC.getUrlFotoPerfil()
                             : userT.getUrlFotoPerfil())
                     .into(imgMessage);
+
         }
 
         @Override
@@ -168,162 +170,165 @@ public class MetodosMensagens {
     public void enviarMensagemToCliente(TextView txtMsn,final UserTrabalhador meT, final UserCliente userC){
         String text = txtMsn.getText().toString();
 
-        txtMsn.setText(null);
+        if (!text.isEmpty()) {
+            txtMsn.setText(null);
 
-        final String fromId = FirebaseAuth.getInstance().getUid();
-        final String toId = userC.getId();
-        long timestamp = System.currentTimeMillis();
+            final String fromId = FirebaseAuth.getInstance().getUid();
+            final String toId = userC.getId();
+            long timestamp = System.currentTimeMillis();
 
-        final Mensagem message = new Mensagem();
-        message.setFromId(fromId);
-        message.setToId(toId);
-        message.setTimestamp(timestamp);
-        message.setText(text);
+            final Mensagem message = new Mensagem();
+            message.setFromId(fromId);
+            message.setToId(toId);
+            message.setTimestamp(timestamp);
+            message.setText(text);
 
-        if (!message.getText().isEmpty()) {
-            FirebaseFirestore.getInstance().collection("/conversas")
-                    .document(fromId)
-                    .collection(toId)
-                    .add(message)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d("Teste", documentReference.getId());
+            if (!message.getText().isEmpty()) {
+                FirebaseFirestore.getInstance().collection("/conversas")
+                        .document(fromId)
+                        .collection(toId)
+                        .add(message)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("Teste", documentReference.getId());
 
-                            Contato contact = new Contato();
-                            contact.setUuid(toId);
-                            contact.setUsername(userC.getNome());
-                            contact.setEmail(userC.getEmail());
-                            contact.setPhotoUrl(userC.getUrlFotoPerfil());
-                            contact.setTimestamp(message.getTimestamp());
-                            contact.setLastMessage(message.getText());
+                                Contato contact = new Contato();
+                                contact.setUuid(toId);
+                                contact.setUsername(userC.getNome());
+                                contact.setEmail(userC.getEmail());
+                                contact.setPhotoUrl(userC.getUrlFotoPerfil());
+                                contact.setTimestamp(message.getTimestamp());
+                                contact.setLastMessage(message.getText());
 
-                            FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
-                                    .document(fromId)
-                                    .collection("contacts")
-                                    .document(toId)
-                                    .set(contact);
+                                FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
+                                        .document(fromId)
+                                        .collection("contacts")
+                                        .document(toId)
+                                        .set(contact);
 
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e("Teste", e.getMessage(), e);
-                        }
-                    });
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.e("Teste", e.getMessage(), e);
+                            }
+                        });
 
-            FirebaseFirestore.getInstance().collection("/conversas")
-                    .document(toId)
-                    .collection(fromId)
-                    .add(message)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d("Teste", documentReference.getId());
+                FirebaseFirestore.getInstance().collection("/conversas")
+                        .document(toId)
+                        .collection(fromId)
+                        .add(message)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("Teste", documentReference.getId());
 
-                            Contato contact = new Contato();
-                            contact.setUuid(toId);
-                            contact.setUsername(meT.getNome());
-                            contact.setEmail(meT.getEmail());
-                            contact.setPhotoUrl(meT.getUrlFotoPerfil());
-                            contact.setTimestamp(message.getTimestamp());
-                            contact.setLastMessage(message.getText());
+                                Contato contact = new Contato();
+                                contact.setUuid(toId);
+                                contact.setUsername(meT.getNome());
+                                contact.setEmail(meT.getEmail());
+                                contact.setPhotoUrl(meT.getUrlFotoPerfil());
+                                contact.setTimestamp(message.getTimestamp());
+                                contact.setLastMessage(message.getText());
 
-                            FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
-                                    .document(toId)
-                                    .collection("contacts")
-                                    .document(fromId)
-                                    .set(contact);
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e("Teste", e.getMessage(), e);
-                        }
-                    });
+                                FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
+                                        .document(toId)
+                                        .collection("contacts")
+                                        .document(fromId)
+                                        .set(contact);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.e("Teste", e.getMessage(), e);
+                            }
+                        });
+            }
         }
     }
 
     public void enviarMensagemToTrabalhador(TextView txtMsn, final UserCliente meC, final UserTrabalhador userT){
         String text = txtMsn.getText().toString();
+        if (!text.isEmpty()) {
+            txtMsn.setText(null);
 
-        txtMsn.setText(null);
+            final String fromId = FirebaseAuth.getInstance().getUid();
+            final String toId = userT.getId();
+            long timestamp = System.currentTimeMillis();
 
-        final String fromId = FirebaseAuth.getInstance().getUid();
-        final String toId = userT.getId();
-        long timestamp = System.currentTimeMillis();
+            final Mensagem message = new Mensagem();
+            message.setFromId(fromId);
+            message.setToId(toId);
+            message.setTimestamp(timestamp);
+            message.setText(text);
 
-        final Mensagem message = new Mensagem();
-        message.setFromId(fromId);
-        message.setToId(toId);
-        message.setTimestamp(timestamp);
-        message.setText(text);
+            if (!message.getText().isEmpty()) {
+                FirebaseFirestore.getInstance().collection("/conversas")
+                        .document(fromId)
+                        .collection(toId)
+                        .add(message)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("Teste", documentReference.getId());
 
-        if (!message.getText().isEmpty()) {
-            FirebaseFirestore.getInstance().collection("/conversas")
-                    .document(fromId)
-                    .collection(toId)
-                    .add(message)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d("Teste", documentReference.getId());
+                                Contato contact = new Contato();
+                                contact.setUuid(toId);
+                                contact.setEmail(userT.getEmail());
+                                contact.setUsername(userT.getNome());
+                                contact.setPhotoUrl(userT.getUrlFotoPerfil());
+                                contact.setTimestamp(message.getTimestamp());
+                                contact.setLastMessage(message.getText());
 
-                            Contato contact = new Contato();
-                            contact.setUuid(toId);
-                            contact.setEmail(userT.getEmail());
-                            contact.setUsername(userT.getNome());
-                            contact.setPhotoUrl(userT.getUrlFotoPerfil());
-                            contact.setTimestamp(message.getTimestamp());
-                            contact.setLastMessage(message.getText());
+                                FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
+                                        .document(fromId)
+                                        .collection("contacts")
+                                        .document(toId)
+                                        .set(contact);
 
-                            FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
-                                    .document(fromId)
-                                    .collection("contacts")
-                                    .document(toId)
-                                    .set(contact);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.e("Teste", e.getMessage(), e);
+                            }
+                        });
 
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e("Teste", e.getMessage(), e);
-                        }
-                    });
+                FirebaseFirestore.getInstance().collection("/conversas")
+                        .document(toId)
+                        .collection(fromId)
+                        .add(message)
+                        .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                            @Override
+                            public void onSuccess(DocumentReference documentReference) {
+                                Log.d("Teste", documentReference.getId());
 
-            FirebaseFirestore.getInstance().collection("/conversas")
-                    .document(toId)
-                    .collection(fromId)
-                    .add(message)
-                    .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
-                        @Override
-                        public void onSuccess(DocumentReference documentReference) {
-                            Log.d("Teste", documentReference.getId());
+                                Contato contact = new Contato();
+                                contact.setUuid(toId);
+                                contact.setUsername(meC.getNome());
+                                contact.setEmail(meC.getEmail());
+                                contact.setPhotoUrl(meC.getUrlFotoPerfil());
+                                contact.setTimestamp(message.getTimestamp());
+                                contact.setLastMessage(message.getText());
 
-                            Contato contact = new Contato();
-                            contact.setUuid(toId);
-                            contact.setUsername(meC.getNome());
-                            contact.setEmail(meC.getEmail());
-                            contact.setPhotoUrl(meC.getUrlFotoPerfil());
-                            contact.setTimestamp(message.getTimestamp());
-                            contact.setLastMessage(message.getText());
-
-                            FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
-                                    .document(toId)
-                                    .collection("contacts")
-                                    .document(fromId)
-                                    .set(contact);
-                        }
-                    })
-                    .addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            Log.e("Teste", e.getMessage(), e);
-                        }
-                    });
+                                FirebaseFirestore.getInstance().collection("/ultimas-mensagens")
+                                        .document(toId)
+                                        .collection("contacts")
+                                        .document(fromId)
+                                        .set(contact);
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.e("Teste", e.getMessage(), e);
+                            }
+                        });
+            }
         }
     }
 }

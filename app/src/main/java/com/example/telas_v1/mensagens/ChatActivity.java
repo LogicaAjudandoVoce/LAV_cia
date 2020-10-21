@@ -50,7 +50,12 @@ public class ChatActivity extends AppCompatActivity {
 
         if (userC!=null) {
             txtNome.setText(userC.getNome());
-            Picasso.get().load(userC.getUrlFotoPerfil()).into(imgPerfil);
+            if (userC.getUrlFotoPerfil()!=null && !userC.getUrlFotoPerfil().equals("Nada")){
+                Picasso.get().load(userC.getUrlFotoPerfil()).into(imgPerfil);
+            }
+            else{
+                imgPerfil.setImageResource(R.drawable.img_cliente);
+            }
         }
 
         meC = getIntent().getExtras().getParcelable("meCliente");
@@ -59,8 +64,12 @@ public class ChatActivity extends AppCompatActivity {
         if (userT!=null) {
             txtNome.setText(userT.getNome());
             Picasso.get().load(userT.getUrlFotoPerfil()).into(imgPerfil);
+            if (userT.getUrlFotoPerfil()!=null && !userT.getUrlFotoPerfil().equals("Nada")){
+                Picasso.get().load(userT.getUrlFotoPerfil()).into(imgPerfil);
+            } else{
+                imgPerfil.setImageResource(R.drawable.trab);
+            }
         }
-
         adapter = new GroupAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -89,10 +98,12 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     public void abrirPerfilTrabalhador(View view){
-        Intent intent = new Intent(ChatActivity.this, PerfilTrabalhadorActivity.class);
-        intent.putExtra("toT", userT);
-        intent.putExtra("meC", meC);
-        intent.putExtra("forma", "chatJa");
-        startActivity(intent);
+        if(meC!=null) {
+            Intent intent = new Intent(ChatActivity.this, PerfilTrabalhadorActivity.class);
+            intent.putExtra("toT", userT);
+            intent.putExtra("meC", meC);
+            intent.putExtra("forma", "chatJa");
+            startActivity(intent);
+        }
     }
 }

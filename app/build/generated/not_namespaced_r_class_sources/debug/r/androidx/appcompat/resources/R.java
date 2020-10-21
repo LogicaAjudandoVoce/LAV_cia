@@ -62,7 +62,7 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int abc_vector_test = 0x7f08005d;
+        public static final int abc_vector_test = 0x7f08005c;
         public static final int notification_action_background = 0x7f0800bd;
         public static final int notification_bg = 0x7f0800be;
         public static final int notification_bg_low = 0x7f0800bf;

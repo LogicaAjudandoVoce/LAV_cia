@@ -1932,7 +1932,6 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
-drawable aaaaaa
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -2090,8 +2089,9 @@ drawable ic_trab
 drawable ic_trabalho
 drawable ic_voltar
 drawable ic_vpn_key_black_24dp
+drawable img_cliente
+drawable img_fundo
 drawable img_mapa
-drawable item_botao_perfil
 drawable item_post
 drawable item_txt_back
 drawable item_user_list
@@ -2699,6 +2699,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id view
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag

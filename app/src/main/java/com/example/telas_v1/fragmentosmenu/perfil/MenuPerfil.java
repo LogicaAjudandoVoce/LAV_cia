@@ -22,7 +22,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.mensagens.ConversasActivity;
 import com.example.telas_v1.startactivitys.LoginActiviy;
 import com.example.telas_v1.R;
@@ -178,12 +177,12 @@ public class MenuPerfil extends Fragment {
                 if (cliente !=null){
                     cliente.setUrlFotoFundo("Nada");
                     FirebaseFirestore.getInstance().collection("userCliente").document(cliente.getId()).set(cliente);
-                    imgFotoFundo.setImageResource(R.drawable.aaaaaa);
+                    imgFotoFundo.setImageResource(R.drawable.img_fundo);
                 }
                 else if (trabalhador !=null){
                     trabalhador.setUrlFotoFundo("Nada");
                     FirebaseFirestore.getInstance().collection("userTrabalhador").document(trabalhador.getId()).set(trabalhador);
-                    imgFotoFundo.setImageResource(R.drawable.aaaaaa);
+                    imgFotoFundo.setImageResource(R.drawable.img_fundo);
                 }
             }
         }).setNeutralButton("Cancelar", null).create().show();

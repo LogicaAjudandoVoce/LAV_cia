@@ -601,9 +601,9 @@ public final class R {
         public static final int uniform = 0x7f0a022b;
         public static final int up = 0x7f0a022d;
         public static final int useLogo = 0x7f0a022e;
-        public static final int visible_removing_fragment_view_tag = 0x7f0a0231;
-        public static final int withText = 0x7f0a0233;
-        public static final int wrap_content = 0x7f0a0236;
+        public static final int visible_removing_fragment_view_tag = 0x7f0a0232;
+        public static final int withText = 0x7f0a0234;
+        public static final int wrap_content = 0x7f0a0237;
     }
     public static final class layout {
         private layout() {}

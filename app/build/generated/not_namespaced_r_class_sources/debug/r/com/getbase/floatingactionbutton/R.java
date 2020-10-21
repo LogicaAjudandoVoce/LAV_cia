@@ -46,8 +46,8 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int fab_bg_mini = 0x7f080086;
-        public static final int fab_bg_normal = 0x7f080087;
+        public static final int fab_bg_mini = 0x7f080085;
+        public static final int fab_bg_normal = 0x7f080086;
     }
     public static final class id {
         private id() {}

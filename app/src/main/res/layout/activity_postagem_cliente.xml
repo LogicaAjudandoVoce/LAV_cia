@@ -258,7 +258,7 @@
                     android:paddingStart="20dp"
                     android:paddingEnd="4dp"
                     android:paddingBottom="4dp"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#000" />
             </com.google.android.material.textfield.TextInputLayout>
 
 
