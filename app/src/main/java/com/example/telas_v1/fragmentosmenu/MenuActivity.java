@@ -7,8 +7,10 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.fragmentoscriarconta.passodois.StepTwo;
@@ -34,7 +36,6 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
         FragmentTransaction ft = fm.beginTransaction();
         ft.add(R.id.container_menu, new MenuBuscar());
         ft.commit();
-
     }
 
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -65,5 +66,4 @@ public class MenuActivity extends AppCompatActivity implements BottomNavigationV
         transaction.addToBackStack(null);
         transaction.commit();
     }
-
 }

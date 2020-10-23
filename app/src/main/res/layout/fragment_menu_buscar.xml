@@ -1,126 +1,167 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+
+
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+    </androidx.core.widget.NestedScrollView>
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
 
         android:layout_width="match_parent"
-        android:layout_height="260dp">
-
-        <com.google.android.material.appbar.CollapsingToolbarLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
-
-            app:toolbarId="@+id/toolbar">
-
-
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"></androidx.appcompat.widget.Toolbar>
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Spinner
-                    android:id="@+id/tipoTrab"
-                    android:layout_width="230dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="16dp"
-                    android:entries="@array/teste"
-                    android:prompt="@string/teste2"
-                    app:layout_constraintEnd_toEndOf="@+id/txtCidade"
-                    app:layout_constraintStart_toStartOf="@+id/txtCidade"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <EditText
-                    android:id="@+id/txtCidade"
-                    android:layout_width="230dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:fontFamily="@font/montserrat_alternates"
-                    android:hint="@string/cidade"
-                    android:inputType="textPersonName"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.502"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/tipoTrab"
-                    android:autofillHints="" />
-
-                <EditText
-                    android:id="@+id/txtPreco"
-                    android:layout_width="230dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:fontFamily="@font/montserrat_alternates"
-                    android:hint="@string/pre_o"
-                    android:inputType="number|textPersonName"
-                    app:layout_constraintEnd_toEndOf="@+id/txtCidade"
-                    app:layout_constraintStart_toStartOf="@+id/txtCidade"
-                    app:layout_constraintTop_toBottomOf="@+id/txtCidade"
-                    android:importantForAutofill="no" />
-
-                <Button
-                    android:id="@+id/btnPesq"
-                    android:layout_width="175dp"
-                    android:layout_height="50dp"
-                    android:layout_marginTop="12dp"
-                    android:background="@drawable/botao_preto"
-                    android:fontFamily="@font/montserrat_alternates"
-                    android:text="@string/buscar"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimaryDark"
-                    app:layout_constraintEnd_toEndOf="@+id/txtPreco"
-                    app:layout_constraintStart_toStartOf="@+id/txtPreco"
-                    app:layout_constraintTop_toBottomOf="@+id/txtPreco" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-        </com.google.android.material.appbar.CollapsingToolbarLayout>
-    </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        android:layout_height="280dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+            <Spinner
+                android:id="@+id/tipoTrab"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:entries="@array/teste"
+                android:prompt="@string/teste2"
+                app:layout_constraintEnd_toEndOf="@+id/txtCidade"
+                app:layout_constraintStart_toStartOf="@+id/txtCidade"
                 app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/txtCidade"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:autofillHints=""
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates"
+                android:hint="@string/cidade"
+                android:inputType="textPersonName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.502"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipoTrab" />
+
+            <EditText
+                android:id="@+id/txtPreco"
+                android:layout_width="230dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:fontFamily="@font/montserrat_alternates"
+                android:hint="@string/pre_o"
+                android:importantForAutofill="no"
+                android:inputType="number|textPersonName"
+                app:layout_constraintEnd_toEndOf="@+id/txtCidade"
+                app:layout_constraintStart_toStartOf="@+id/txtCidade"
+                app:layout_constraintTop_toBottomOf="@+id/txtCidade" />
+
+            <Button
+                android:id="@+id/btnPesq"
+                android:layout_width="175dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/botao_preto"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="@string/buscar"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimaryDark"
+                app:layout_constraintEnd_toEndOf="@+id/txtPreco"
+                app:layout_constraintStart_toStartOf="@+id/txtPreco"
+                app:layout_constraintTop_toBottomOf="@+id/txtPreco" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAddPost"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="70dp"
-        android:backgroundTint="@color/colorPrimary"
-        android:clickable="true"
-        android:src="@drawable/ic_add_post" />
+    </com.google.android.material.appbar.AppBarLayout>
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/nestedScrollView">
+
+        <TextView
+            android:id="@+id/txtPost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Fazer uma Postagem"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMenu"
+            app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+            app:layout_constraintTop_toTopOf="@+id/btnMenu"
+            app:layout_constraintVertical_bias="0.27" />
+
+        <TextView
+            android:id="@+id/txtPesq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pesquisar"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/btnMenu"
+            app:layout_constraintEnd_toStartOf="@+id/btnMenu"
+            app:layout_constraintTop_toTopOf="@+id/btnMenu"
+            app:layout_constraintVertical_bias="0.57" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <com.getbase.floatingactionbutton.FloatingActionsMenu
+            android:id="@+id/btnMenu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="70dp"
+            android:backgroundTint="@color/colorDourado"
+            app:layout_constraintBottom_toBottomOf="@+id/rcView"
+            app:layout_constraintEnd_toEndOf="@+id/rcView">
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnAddPost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorDourado"
+                android:clickable="true"
+                android:src="@drawable/ic_add_post" />
+
+            <com.getbase.floatingactionbutton.FloatingActionButton
+                android:id="@+id/btnBarra"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorDourado"
+                android:clickable="true"
+                android:src="@drawable/ic_search" />
+
+        </com.getbase.floatingactionbutton.FloatingActionsMenu>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
