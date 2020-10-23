@@ -148,12 +148,12 @@ public class MenuPerfil extends Fragment {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 if (cliente !=null){
-                    cliente.setUrlFotoPerfil("Nada");
+                    cliente.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8");
                     FirebaseFirestore.getInstance().collection("userCliente").document(cliente.getId()).set(cliente);
                     btnMyFoto.setAlpha(1);
                 }
                 else if (trabalhador !=null){
-                    trabalhador.setUrlFotoPerfil("Nada");
+                    trabalhador.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F2e3534fb-21e2-429c-8f1c-ab8f0f5165ee?alt=media&token=0e3b8518-22ab-4ff2-bc13-367059352e92");
                     FirebaseFirestore.getInstance().collection("userTrabalhador").document(trabalhador.getId()).set(trabalhador);
                     btnMyFoto.setAlpha(1);
                 }
@@ -302,10 +302,8 @@ public class MenuPerfil extends Fragment {
 
     private void carregarTrabalhador() {
         txtNome.setText(trabalhador.getNome());
-        if (trabalhador.getUrlFotoPerfil()!=null && !trabalhador.getUrlFotoPerfil().equals("Nada")) {
-            Picasso.get().load(trabalhador.getUrlFotoPerfil()).into(imgMyFoto);
-            btnMyFoto.setAlpha(0);
-        }
+        Picasso.get().load(trabalhador.getUrlFotoPerfil()).into(imgMyFoto);
+        btnMyFoto.setAlpha(0);
         if (trabalhador.getUrlFotoFundo()!=null && !trabalhador.getUrlFotoFundo().equals("Nada"))Picasso.get().load(trabalhador.getUrlFotoFundo()).fit().into(imgFotoFundo);
 
         FirebaseFirestore.getInstance().collection("listaImgs").whereEqualTo("id", FirebaseAuth.getInstance().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {
@@ -328,10 +326,8 @@ public class MenuPerfil extends Fragment {
 
     private void carregarCliente() {
         txtNome.setText(cliente.getNome());
-        if (cliente.getUrlFotoPerfil()!=null && !cliente.getUrlFotoPerfil().equals("Nada")) {
-            Picasso.get().load(cliente.getUrlFotoPerfil()).into(imgMyFoto);
-            btnMyFoto.setAlpha(0);
-        }
+        Picasso.get().load(cliente.getUrlFotoPerfil()).into(imgMyFoto);
+        btnMyFoto.setAlpha(0);
         if (cliente.getUrlFotoFundo()!=null && !cliente.getUrlFotoFundo().equals("Nada"))Picasso.get().load(cliente.getUrlFotoFundo()).fit().into(imgFotoFundo);
 
         FirebaseFirestore.getInstance().collection("listaImgs").whereEqualTo("id", FirebaseAuth.getInstance().getUid()).addSnapshotListener(new EventListener<QuerySnapshot>() {

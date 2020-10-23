@@ -72,6 +72,7 @@ public class MetodosUsers {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         userCliente.setId(task.getResult().getUser().getUid());
+                        userCliente.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8");
                         FirebaseFirestore.getInstance().collection("userCliente").document(userCliente.getId()).set(userCliente).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
@@ -101,6 +102,7 @@ public class MetodosUsers {
             });
 
         }else{
+            userTrabalhador.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F2e3534fb-21e2-429c-8f1c-ab8f0f5165ee?alt=media&token=0e3b8518-22ab-4ff2-bc13-367059352e92");
             FirebaseAuth.getInstance().createUserWithEmailAndPassword(userTrabalhador.getEmail(), userTrabalhador.getSenha()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {

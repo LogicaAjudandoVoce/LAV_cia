@@ -21,11 +21,14 @@
         android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:fontFamily="@font/montserrat_alternates"
-        android:text="Minhas fotos:"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="sans-serif"
+        android:text="Minhas Fotos:"
+        android:textColor="#000"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeUser" />
+        app:layout_constraintTop_toBottomOf="@+id/textView15" />
 
     <Button
         android:id="@+id/btnMyFoto"
@@ -45,7 +48,6 @@
         android:layout_height="150dp"
         app:civ_border_color="@color/colorDourado"
         app:civ_border_width="1dp"
-        android:background="@drawable/trab"
         app:layout_constraintBottom_toBottomOf="@+id/btnMyFoto"
         app:layout_constraintEnd_toEndOf="@+id/btnMyFoto"
         app:layout_constraintStart_toStartOf="@+id/btnMyFoto"
@@ -55,7 +57,6 @@
         android:id="@+id/rcView"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:layout_marginTop="8dp"
         android:background="#5C5B5B"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,9 +117,9 @@
         android:id="@+id/txtNomeUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="NomeUser"
+        android:layout_marginTop="4dp"
+        android:text="Nome do Usuário"
         android:textColor="#000"
-        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnMyFoto" />
@@ -134,5 +135,17 @@
         app:layout_constraintEnd_toEndOf="@+id/rcView"
         app:layout_constraintStart_toStartOf="@+id/rcView"
         app:layout_constraintTop_toTopOf="@+id/rcView" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Principal Trabalho"
+        android:textColor="#000"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/txtNomeUser"
+        app:layout_constraintStart_toStartOf="@+id/txtNomeUser"
+        app:layout_constraintTop_toBottomOf="@+id/txtNomeUser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

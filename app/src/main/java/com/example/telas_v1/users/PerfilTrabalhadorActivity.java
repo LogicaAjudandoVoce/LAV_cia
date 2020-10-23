@@ -74,7 +74,7 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
             if (!toT.getUrlFotoFundo().equals("Nada")) {
                 Picasso.get().load(toT.getUrlFotoFundo()).fit().into(imgFundo);
             }
-            if (!toT.getUrlFotoPerfil().equals("Nada")) Picasso.get().load(toT.getUrlFotoPerfil()).into(imgPerfil);
+            Picasso.get().load(toT.getUrlFotoPerfil()).into(imgPerfil);
             txtNome.setText(toT.getNome());
             txtValor.setText(String.valueOf(toT.getMyPreco()));
             listarFotos();

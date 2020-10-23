@@ -50,12 +50,7 @@ public class ChatActivity extends AppCompatActivity {
 
         if (userC!=null) {
             txtNome.setText(userC.getNome());
-            if (userC.getUrlFotoPerfil()!=null && !userC.getUrlFotoPerfil().equals("Nada")){
-                Picasso.get().load(userC.getUrlFotoPerfil()).into(imgPerfil);
-            }
-            else{
-                imgPerfil.setImageResource(R.drawable.img_cliente);
-            }
+            Picasso.get().load(userC.getUrlFotoPerfil()).into(imgPerfil);
         }
 
         meC = getIntent().getExtras().getParcelable("meCliente");
@@ -64,11 +59,6 @@ public class ChatActivity extends AppCompatActivity {
         if (userT!=null) {
             txtNome.setText(userT.getNome());
             Picasso.get().load(userT.getUrlFotoPerfil()).into(imgPerfil);
-            if (userT.getUrlFotoPerfil()!=null && !userT.getUrlFotoPerfil().equals("Nada")){
-                Picasso.get().load(userT.getUrlFotoPerfil()).into(imgPerfil);
-            } else{
-                imgPerfil.setImageResource(R.drawable.trab);
-            }
         }
         adapter = new GroupAdapter();
         recyclerView.setAdapter(adapter);
