@@ -12,13 +12,13 @@ public final class R {
     public static final class anim {
         private anim() {}
 
-        public static final int fragment_close_enter = 0x7f01001d;
-        public static final int fragment_close_exit = 0x7f01001e;
-        public static final int fragment_fade_enter = 0x7f01001f;
-        public static final int fragment_fade_exit = 0x7f010020;
-        public static final int fragment_fast_out_extra_slow_in = 0x7f010021;
-        public static final int fragment_open_enter = 0x7f010022;
-        public static final int fragment_open_exit = 0x7f010023;
+        public static final int fragment_close_enter = 0x7f01001c;
+        public static final int fragment_close_exit = 0x7f01001d;
+        public static final int fragment_fade_enter = 0x7f01001e;
+        public static final int fragment_fade_exit = 0x7f01001f;
+        public static final int fragment_fast_out_extra_slow_in = 0x7f010020;
+        public static final int fragment_open_enter = 0x7f010021;
+        public static final int fragment_open_exit = 0x7f010022;
     }
     public static final class attr {
         private attr() {}
@@ -93,18 +93,18 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int notification_action_background = 0x7f0800be;
-        public static final int notification_bg = 0x7f0800bf;
-        public static final int notification_bg_low = 0x7f0800c0;
-        public static final int notification_bg_low_normal = 0x7f0800c1;
-        public static final int notification_bg_low_pressed = 0x7f0800c2;
-        public static final int notification_bg_normal = 0x7f0800c3;
-        public static final int notification_bg_normal_pressed = 0x7f0800c4;
-        public static final int notification_icon_background = 0x7f0800c5;
-        public static final int notification_template_icon_bg = 0x7f0800c6;
-        public static final int notification_template_icon_low_bg = 0x7f0800c7;
-        public static final int notification_tile_bg = 0x7f0800c8;
-        public static final int notify_panel_notification_icon_bg = 0x7f0800c9;
+        public static final int notification_action_background = 0x7f0800bf;
+        public static final int notification_bg = 0x7f0800c0;
+        public static final int notification_bg_low = 0x7f0800c1;
+        public static final int notification_bg_low_normal = 0x7f0800c2;
+        public static final int notification_bg_low_pressed = 0x7f0800c3;
+        public static final int notification_bg_normal = 0x7f0800c4;
+        public static final int notification_bg_normal_pressed = 0x7f0800c5;
+        public static final int notification_icon_background = 0x7f0800c6;
+        public static final int notification_template_icon_bg = 0x7f0800c7;
+        public static final int notification_template_icon_low_bg = 0x7f0800c8;
+        public static final int notification_tile_bg = 0x7f0800c9;
+        public static final int notify_panel_notification_icon_bg = 0x7f0800ca;
     }
     public static final class id {
         private id() {}
@@ -179,7 +179,7 @@ public final class R {
         public static final int text2 = 0x7f0a01b6;
         public static final int time = 0x7f0a01f4;
         public static final int title = 0x7f0a01f6;
-        public static final int visible_removing_fragment_view_tag = 0x7f0a0236;
+        public static final int visible_removing_fragment_view_tag = 0x7f0a0237;
     }
     public static final class integer {
         private integer() {}

@@ -696,10 +696,6 @@
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\drawable\\mtrl_ic_arrow_drop_up.xml"
     },
     {
-        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\anim_anim_item_trab.xml.flat",
-        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\anim\\anim_item_trab.xml"
-    },
-    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_selector_disabled_holo_light.9.png.flat",
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-hdpi-v4\\abc_list_selector_disabled_holo_light.9.png"
     },
@@ -716,12 +712,12 @@
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_places_autocomplete_impl_fragment_overlay.xml.flat",
-        "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\9c371a6e67b5ed1b01ba59b440795774\\places-2.2.0\\res\\layout\\places_autocomplete_impl_fragment_overlay.xml"
-    },
-    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_support_simple_spinner_dropdown_item.xml.flat",
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_places_autocomplete_impl_fragment_overlay.xml.flat",
+        "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\9c371a6e67b5ed1b01ba59b440795774\\places-2.2.0\\res\\layout\\places_autocomplete_impl_fragment_overlay.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_abc_switch_thumb_material.xml.flat",
@@ -1954,6 +1950,10 @@
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_text_input_end_icon.xml.flat",
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\25f2c24a390828b4b9bfc415a3d42abf\\material-1.2.0\\res\\layout\\design_text_input_end_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_expand_more.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable\\ic_expand_more.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_big_media.xml.flat",

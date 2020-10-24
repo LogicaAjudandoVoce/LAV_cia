@@ -6,9 +6,11 @@
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="75dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/item_user_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,10 +34,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="12dp"
-            android:layout_marginEnd="130dp"
+            android:layout_marginEnd="8dp"
             android:text="nameUser"
             android:textColor="#000"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView28"
             app:layout_constraintStart_toEndOf="@+id/imgFotoList"
             app:layout_constraintTop_toTopOf="parent" />
 

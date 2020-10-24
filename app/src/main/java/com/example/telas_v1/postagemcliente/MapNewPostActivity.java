@@ -1,12 +1,16 @@
 package com.example.telas_v1.postagemcliente;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentActivity;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -63,9 +67,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        LatLng sydney = new LatLng(-3.1345645,-59.9814487);
-        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
-        mMap.setMyLocationEnabled(true);
+        validarAcesso();
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
@@ -82,6 +84,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+
         if (requestCode==100 && resultCode==RESULT_OK){
             Place place = Autocomplete.getPlaceFromIntent(data);
             txtLoc.setText(place.getAddress());
@@ -104,5 +107,16 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
                         finish();
                     }
                 }).setNegativeButton("Cancelar", null).create().show();
+    }
+
+    private void validarAcesso(){
+        if(ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(MapNewPostActivity.this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+        }else{
+            LatLng sydney = new LatLng(-3.1345645,-59.9814487);
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
+            mMap.setMyLocationEnabled(true);
+        }
     }
 }

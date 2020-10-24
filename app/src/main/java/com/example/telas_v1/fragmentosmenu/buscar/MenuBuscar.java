@@ -60,8 +60,6 @@ public class MenuBuscar extends Fragment {
         menubuscar_viewmodel = ViewModelProviders.of(this).get(MenuBuscarViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_menu_buscar, container, false);
 
-        final Animation animation_trab = AnimationUtils.loadAnimation(getContext(), R.anim.anim_item_trab);
-
         RecyclerView rcView = root.findViewById(R.id.rcView);
         final EditText txtCidade = root.findViewById(R.id.txtCidade);
         final EditText txtPreco = root.findViewById(R.id.txtPreco);
@@ -94,28 +92,21 @@ public class MenuBuscar extends Fragment {
         adapter.setOnItemClickListener(new OnItemClickListener() {
             @Override
             public void onItemClick(@NonNull final Item item, @NonNull View view) {
-                view.startAnimation(animation_trab);
-                Handler handler = new Handler();
-
-                handler.postDelayed(new Runnable() {
-                    public void run() {
-                        if (trabalhador!=null){
-                            Intent intent = new Intent(getContext(), PostagemActivity.class);
-                            MetodosUsers.ListarPostagemViewModel model =(MetodosUsers.ListarPostagemViewModel) item;
-                            intent.putExtra("post", model.postagem);
-                            intent.putExtra("forma", "menu");
-                            startActivity(intent);
-                        }
-                        else if(cliente!=null){
-                            Intent intent = new Intent(getContext(), PerfilTrabalhadorActivity.class);
-                            MetodosUsers.ListarTrabalhadorView model = (MetodosUsers.ListarTrabalhadorView) item;
-                            intent.putExtra("toT", model.userTrabalhador);
-                            intent.putExtra("meC", cliente);
-                            intent.putExtra("forma", "menu");
-                            startActivity(intent);
-                        }
-                    }
-                }, 350);
+                if (trabalhador!=null){
+                    Intent intent = new Intent(getContext(), PostagemActivity.class);
+                    MetodosUsers.ListarPostagemViewModel model =(MetodosUsers.ListarPostagemViewModel) item;
+                    intent.putExtra("post", model.postagem);
+                    intent.putExtra("forma", "menu");
+                    startActivity(intent);
+                }
+                else if(cliente!=null){
+                    Intent intent = new Intent(getContext(), PerfilTrabalhadorActivity.class);
+                    MetodosUsers.ListarTrabalhadorView model = (MetodosUsers.ListarTrabalhadorView) item;
+                    intent.putExtra("toT", model.userTrabalhador);
+                    intent.putExtra("meC", cliente);
+                    intent.putExtra("forma", "menu");
+                    startActivity(intent);
+                }
             }
         });
 

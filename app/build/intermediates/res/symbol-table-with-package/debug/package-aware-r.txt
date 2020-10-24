@@ -11,7 +11,6 @@ anim abc_slide_out_bottom
 anim abc_slide_out_top
 anim abc_tooltip_enter
 anim abc_tooltip_exit
-anim anim_item_trab
 anim btn_checkbox_to_checked_box_inner_merged_animation
 anim btn_checkbox_to_checked_box_outer_merged_animation
 anim btn_checkbox_to_checked_icon_null_animation
@@ -2072,6 +2071,7 @@ drawable ic_chat
 drawable ic_client
 drawable ic_editar
 drawable ic_empregados
+drawable ic_expand_more
 drawable ic_floating
 drawable ic_img
 drawable ic_launcher_background
@@ -2706,6 +2706,7 @@ id uniform
 id unlabeled
 id up
 id useLogo
+id view
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag

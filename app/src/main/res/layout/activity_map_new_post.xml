@@ -18,17 +18,19 @@
 
     <EditText
         android:id="@+id/edtLoc"
-        android:layout_width="350dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/view"
         android:background="@drawable/seacrh_item"
-        android:drawableStart="@drawable/ic_search"
         android:ems="10"
         android:hint="Informe o local aqui..."
         android:inputType="textPersonName"
+        android:isScrollContainer="false"
         android:paddingStart="20dp" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -46,5 +48,14 @@
         android:src="@drawable/ic_floating"
         android:tint="#FFF"
         map:backgroundTint="#FFF" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp" />
 
 </RelativeLayout>

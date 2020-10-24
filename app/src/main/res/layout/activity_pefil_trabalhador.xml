@@ -188,7 +188,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/rcView"
-                app:srcCompat="@drawable/ic_floating" />
+                app:srcCompat="@drawable/ic_expand_more" />
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/btnVoltar"

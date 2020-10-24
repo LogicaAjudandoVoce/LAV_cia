@@ -24,13 +24,13 @@ public final class R {
         public static final int abc_slide_out_top = 0x7f010009;
         public static final int abc_tooltip_enter = 0x7f01000a;
         public static final int abc_tooltip_exit = 0x7f01000b;
-        public static final int fragment_close_enter = 0x7f01001d;
-        public static final int fragment_close_exit = 0x7f01001e;
-        public static final int fragment_fade_enter = 0x7f01001f;
-        public static final int fragment_fade_exit = 0x7f010020;
-        public static final int fragment_fast_out_extra_slow_in = 0x7f010021;
-        public static final int fragment_open_enter = 0x7f010022;
-        public static final int fragment_open_exit = 0x7f010023;
+        public static final int fragment_close_enter = 0x7f01001c;
+        public static final int fragment_close_exit = 0x7f01001d;
+        public static final int fragment_fade_enter = 0x7f01001e;
+        public static final int fragment_fade_exit = 0x7f01001f;
+        public static final int fragment_fast_out_extra_slow_in = 0x7f010020;
+        public static final int fragment_open_enter = 0x7f010021;
+        public static final int fragment_open_exit = 0x7f010022;
     }
     public static final class attr {
         private attr() {}
@@ -607,20 +607,20 @@ public final class R {
         public static final int abc_textfield_search_default_mtrl_alpha = 0x7f08005a;
         public static final int abc_textfield_search_material = 0x7f08005b;
         public static final int abc_vector_test = 0x7f08005c;
-        public static final int notification_action_background = 0x7f0800be;
-        public static final int notification_bg = 0x7f0800bf;
-        public static final int notification_bg_low = 0x7f0800c0;
-        public static final int notification_bg_low_normal = 0x7f0800c1;
-        public static final int notification_bg_low_pressed = 0x7f0800c2;
-        public static final int notification_bg_normal = 0x7f0800c3;
-        public static final int notification_bg_normal_pressed = 0x7f0800c4;
-        public static final int notification_icon_background = 0x7f0800c5;
-        public static final int notification_template_icon_bg = 0x7f0800c6;
-        public static final int notification_template_icon_low_bg = 0x7f0800c7;
-        public static final int notification_tile_bg = 0x7f0800c8;
-        public static final int notify_panel_notification_icon_bg = 0x7f0800c9;
-        public static final int tooltip_frame_dark = 0x7f0800d3;
-        public static final int tooltip_frame_light = 0x7f0800d4;
+        public static final int notification_action_background = 0x7f0800bf;
+        public static final int notification_bg = 0x7f0800c0;
+        public static final int notification_bg_low = 0x7f0800c1;
+        public static final int notification_bg_low_normal = 0x7f0800c2;
+        public static final int notification_bg_low_pressed = 0x7f0800c3;
+        public static final int notification_bg_normal = 0x7f0800c4;
+        public static final int notification_bg_normal_pressed = 0x7f0800c5;
+        public static final int notification_icon_background = 0x7f0800c6;
+        public static final int notification_template_icon_bg = 0x7f0800c7;
+        public static final int notification_template_icon_low_bg = 0x7f0800c8;
+        public static final int notification_tile_bg = 0x7f0800c9;
+        public static final int notify_panel_notification_icon_bg = 0x7f0800ca;
+        public static final int tooltip_frame_dark = 0x7f0800d4;
+        public static final int tooltip_frame_light = 0x7f0800d5;
     }
     public static final class id {
         private id() {}
@@ -779,8 +779,8 @@ public final class R {
         public static final int transition_transform = 0x7f0a0205;
         public static final int uniform = 0x7f0a0230;
         public static final int up = 0x7f0a0232;
-        public static final int visible_removing_fragment_view_tag = 0x7f0a0236;
-        public static final int wrap_content = 0x7f0a023b;
+        public static final int visible_removing_fragment_view_tag = 0x7f0a0237;
+        public static final int wrap_content = 0x7f0a023c;
     }
     public static final class integer {
         private integer() {}

@@ -400,13 +400,13 @@ public final class R {
     public static final class drawable {
         private drawable() {}
 
-        public static final int places_autocomplete_toolbar_shadow = 0x7f0800ca;
-        public static final int places_powered_by_google_dark = 0x7f0800cb;
-        public static final int places_powered_by_google_light = 0x7f0800cc;
-        public static final int quantum_ic_arrow_back_grey600_24 = 0x7f0800cd;
-        public static final int quantum_ic_clear_grey600_24 = 0x7f0800ce;
-        public static final int quantum_ic_cloud_off_vd_theme_24 = 0x7f0800cf;
-        public static final int quantum_ic_search_grey600_24 = 0x7f0800d0;
+        public static final int places_autocomplete_toolbar_shadow = 0x7f0800cb;
+        public static final int places_powered_by_google_dark = 0x7f0800cc;
+        public static final int places_powered_by_google_light = 0x7f0800cd;
+        public static final int quantum_ic_arrow_back_grey600_24 = 0x7f0800ce;
+        public static final int quantum_ic_clear_grey600_24 = 0x7f0800cf;
+        public static final int quantum_ic_cloud_off_vd_theme_24 = 0x7f0800d0;
+        public static final int quantum_ic_search_grey600_24 = 0x7f0800d1;
     }
     public static final class id {
         private id() {}
@@ -601,9 +601,9 @@ public final class R {
         public static final int uniform = 0x7f0a0230;
         public static final int up = 0x7f0a0232;
         public static final int useLogo = 0x7f0a0233;
-        public static final int visible_removing_fragment_view_tag = 0x7f0a0236;
-        public static final int withText = 0x7f0a0238;
-        public static final int wrap_content = 0x7f0a023b;
+        public static final int visible_removing_fragment_view_tag = 0x7f0a0237;
+        public static final int withText = 0x7f0a0239;
+        public static final int wrap_content = 0x7f0a023c;
     }
     public static final class layout {
         private layout() {}
