@@ -185,10 +185,10 @@ public class MenuBuscar extends Fragment {
 //    }
 
     public String weekDay(Calendar cal) {
-        String dia = new DateFormatSymbols().getWeekdays()[cal.get(Calendar.DAY_OF_WEEK)];
+        //String dia = new DateFormatSymbols().getWeekdays()[cal.get(Calendar.DAY_OF_WEEK)];
         Date data =  new Date();
         Locale local = new Locale("pt","BR");
-        DateFormat dateFormat = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy",local);
-        return dia+", "+dateFormat.format(data);
+        DateFormat dateFormat = new SimpleDateFormat("dd 'de' MMMM",local);
+        return dateFormat.format(data);
     }
 }
