@@ -2219,7 +2219,6 @@ id all
 id always
 id animateToEnd
 id animateToStart
-id appbar
 id asConfigured
 id async
 id auto
@@ -2249,18 +2248,14 @@ id bt_voltar_fragmento2
 id btnAdd
 id btnAddImg
 id btnAddPost
-id btnAdicionarFoto
 id btnAvaliar
 id btnAvancar
 id btnBarra
 id btnChat
 id btnContrato
 id btnConversas
-id btnEditarPerfil
 id btnEnviar
 id btnMenu
-id btnMyFoto
-id btnPesq
 id btnPostar
 id btnSair
 id btnVoltar
@@ -2379,7 +2374,6 @@ id imgFotoList
 id imgFundo
 id imgList
 id imgMapa
-id imgMyFoto
 id imgPerfil
 id imgPost
 id imgPostNew
@@ -2445,7 +2439,6 @@ id nav_host_fragment_container
 id nav_perfil
 id nav_view
 id navigation_header_container
-id nestedScrollView
 id never
 id noScroll
 id none
@@ -2586,6 +2579,7 @@ id textInputLayout
 id textInputLayout10
 id textInputLayout11
 id textInputLayout12
+id textInputLayout13
 id textInputLayout2
 id textInputLayout3
 id textInputLayout4
@@ -2601,9 +2595,7 @@ id textView
 id textView10
 id textView11
 id textView12
-id textView13
 id textView14
-id textView15
 id textView16
 id textView17
 id textView18
@@ -2643,7 +2635,6 @@ id textinput_placeholder
 id textinput_prefix_text
 id textinput_suffix_text
 id time
-id tipoTrab
 id title
 id titleDividerNoCustom
 id title_template
@@ -2661,9 +2652,7 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id txtAdd
 id txtAutorPost
-id txtCidade
 id txtContato
 id txtDataPost
 id txtDataPostagem
@@ -2681,10 +2670,7 @@ id txtMsn
 id txtNome
 id txtNomeAutor
 id txtNomeList
-id txtNomeUser
 id txtPassword
-id txtPesq
-id txtPost
 id txtPostTitle
 id txtPreco
 id txtPrecoList

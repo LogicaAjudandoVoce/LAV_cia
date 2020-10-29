@@ -43,14 +43,10 @@ public class MenuBuscar extends Fragment {
     private MenuBuscarViewModel menubuscar_viewmodel;
     private MetodosUsers metodosUsers = new MetodosUsers();;
     private GroupAdapter adapter;
-    private Spinner tipoTrab;
     private UserCliente cliente;
     private UserTrabalhador trabalhador;
-    private FloatingActionButton btnAddPost, btnBarra;
-    private int barra=0;
-    private ConstraintLayout layout;
-    private AppBarLayout appbar;
-    private LinearOutSlowInInterpolator linearOutSlowInInterpolator = new LinearOutSlowInInterpolator();
+    private FloatingActionButton btnAddPost;
+    //private LinearOutSlowInInterpolator linearOutSlowInInterpolator = new LinearOutSlowInInterpolator();
 
     ObjectAnimator objectAnimator;
 
@@ -61,28 +57,9 @@ public class MenuBuscar extends Fragment {
         final View root = inflater.inflate(R.layout.fragment_menu_buscar, container, false);
 
         RecyclerView rcView = root.findViewById(R.id.rcView);
-        final EditText txtCidade = root.findViewById(R.id.txtCidade);
         final EditText txtPreco = root.findViewById(R.id.txtPreco);
         FloatingActionsMenu btnMenu = root.findViewById(R.id.btnMenu);
-        tipoTrab = root.findViewById(R.id.tipoTrab);
         btnAddPost = root.findViewById(R.id.btnAddPost);
-        btnBarra= root.findViewById(R.id.btnBarra);
-        layout = root.findViewById(R.id.layout);
-        appbar = root.findViewById(R.id.appbar);
-
-        btnBarra.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (barra==0) {
-                    prepareObjectAnimatorDown(linearOutSlowInInterpolator);
-                    barra=1;
-                }
-                else if (barra==1){
-                    prepareObjectAnimatorUp(linearOutSlowInInterpolator);
-                    barra = 0;
-                }
-            }
-        });
 
         adapter = new GroupAdapter();
         rcView.setHasFixedSize(true);
@@ -110,24 +87,6 @@ public class MenuBuscar extends Fragment {
             }
         });
 
-
-        Button btnPesq = root.findViewById(R.id.btnPesq);
-        btnPesq.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (cliente!=null) {
-                    String cidade;
-                    float preco;
-
-                    if (txtPreco.getText().toString().isEmpty()) preco = 0;
-                    else preco = Float.valueOf(txtPreco.getText().toString());
-                    if (txtCidade.getText().toString().isEmpty()) cidade = "Qualquer";
-                    else cidade = txtCidade.getText().toString();
-
-                    metodosUsers.listarTrabalhador(adapter, tipoTrab.getSelectedItem().toString(), cidade, preco);
-                }
-            }
-        });
         verificarUser();
 
         if (trabalhador!=null){
@@ -154,7 +113,7 @@ public class MenuBuscar extends Fragment {
             public void onResultCliente(UserCliente userCliente) {
                 if (userCliente!=null){
                     cliente = userCliente;
-                    metodosUsers.listarTrabalhador(adapter, tipoTrab.getSelectedItem().toString(), "Qualquer", 0);
+                    metodosUsers.listarTrabalhador(adapter, "Nenhum Selecionado", "Qualquer", 0);
                 }
             }
 
@@ -170,31 +129,31 @@ public class MenuBuscar extends Fragment {
         });
     }
 
-    private void prepareObjectAnimatorDown(TimeInterpolator timeInterpolator){
-            float h = (float)layout.getHeight();
-            float propertyStart = 0f;
-            float propertyEnd = (h/2 - (float)appbar.getHeight()/2)+100;
-            String propertyName = "translationY";
-            objectAnimator
-                    = ObjectAnimator.ofFloat(appbar, propertyName, propertyStart, propertyEnd);
-            objectAnimator.setDuration(1700);
-            //objectAnimator.setRepeatCount(1);
-            //objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
-            objectAnimator.setInterpolator(timeInterpolator);
-            objectAnimator.start();
-
-    }
-    private void prepareObjectAnimatorUp(TimeInterpolator timeInterpolator){
-        float h = (float)layout.getHeight();
-        float propertyEnd = 0f;
-        float propertyStart = (h/2 - (float)appbar.getHeight()/2)+100;
-        String propertyName = "translationY";
-        objectAnimator
-                = ObjectAnimator.ofFloat(appbar, propertyName, propertyStart, propertyEnd);
-        objectAnimator.setDuration(1700);
-//        objectAnimator.setRepeatCount(1);
-//        objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
-        objectAnimator.setInterpolator(timeInterpolator);
-        objectAnimator.start();
-    }
+//    private void prepareObjectAnimatorDown(TimeInterpolator timeInterpolator){
+//            float h = (float)layout.getHeight();
+//            float propertyStart = 0f;
+//            float propertyEnd = (h/2 - (float)appbar.getHeight()/2)+100;
+//            String propertyName = "translationY";
+//            objectAnimator
+//                    = ObjectAnimator.ofFloat(appbar, propertyName, propertyStart, propertyEnd);
+//            objectAnimator.setDuration(1700);
+//            //objectAnimator.setRepeatCount(1);
+//            //objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
+//            objectAnimator.setInterpolator(timeInterpolator);
+//            objectAnimator.start();
+//
+//    }
+//    private void prepareObjectAnimatorUp(TimeInterpolator timeInterpolator){
+//        float h = (float)layout.getHeight();
+//        float propertyEnd = 0f;
+//        float propertyStart = (h/2 - (float)appbar.getHeight()/2)+100;
+//        String propertyName = "translationY";
+//        objectAnimator
+//                = ObjectAnimator.ofFloat(appbar, propertyName, propertyStart, propertyEnd);
+//        objectAnimator.setDuration(1700);
+////        objectAnimator.setRepeatCount(1);
+////        objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
+//        objectAnimator.setInterpolator(timeInterpolator);
+//        objectAnimator.start();
+//    }
 }

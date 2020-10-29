@@ -8,144 +8,32 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <ImageView
-        android:id="@+id/imgFundo"
-        android:layout_width="0dp"
-        android:layout_height="203dp"
-        android:src="@drawable/img_fundo"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif"
-        android:text="Minhas Fotos:"
-        android:textColor="#000"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView15" />
-
-    <Button
-        android:id="@+id/btnMyFoto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginTop="100dp"
-        android:background="@drawable/trab"
-        android:alpha="0"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imgMyFoto"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        app:civ_border_color="@color/colorDourado"
-        app:civ_border_width="1dp"
-        app:layout_constraintBottom_toBottomOf="@+id/btnMyFoto"
-        app:layout_constraintEnd_toEndOf="@+id/btnMyFoto"
-        app:layout_constraintStart_toStartOf="@+id/btnMyFoto"
-        app:layout_constraintTop_toTopOf="@+id/btnMyFoto" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rcView"
-        android:layout_width="0dp"
-        android:layout_height="150dp"
-        android:background="#5C5B5B"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
-
     <com.getbase.floatingactionbutton.FloatingActionsMenu
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" >
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnEditarPerfil"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_icon="@drawable/ic_editar"
-            android:src="@drawable/ic_editar"
-            app:fab_title="Editar Perfil"
-            android:clickable="true"
-            android:backgroundTint="@color/colorPrimary"
-            />
-
-        <com.getbase.floatingactionbutton.FloatingActionButton
-            android:id="@+id/btnAdicionarFoto"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_icon="@drawable/ic_adicionar_foto"
-            android:src="@drawable/ic_adicionar_foto"
-            app:fab_title="Adiconar Foto"
-            android:clickable="true"
-            android:backgroundTint="@color/colorPrimary"
-            />
+        app:layout_constraintEnd_toEndOf="parent">
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/btnConversas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_icon="@drawable/ic_chat"
-            android:src="@drawable/ic_chat"
-            app:fab_title="Conversas"
+            android:backgroundTint="@color/colorPrimary"
             android:clickable="true"
-            android:backgroundTint="@color/colorPrimary"/>
+            android:src="@drawable/ic_chat"
+            app:fab_icon="@drawable/ic_chat"
+            app:fab_title="Conversas" />
 
         <com.getbase.floatingactionbutton.FloatingActionButton
             android:id="@+id/bt_sairperfil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:fab_icon="@drawable/ic_logout"
-            android:src="@drawable/ic_logout"
-            android:clickable="true"
             android:backgroundTint="@color/colorPrimary"
-            />
+            android:clickable="true"
+            android:src="@drawable/ic_logout"
+            app:fab_icon="@drawable/ic_logout" />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
-
-    <TextView
-        android:id="@+id/txtNomeUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Nome do Usuário"
-        android:textColor="#000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnMyFoto" />
-
-    <TextView
-        android:id="@+id/txtAdd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Adicione suas fotos aqui"
-        android:textColor="#FFF"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/rcView"
-        app:layout_constraintEnd_toEndOf="@+id/rcView"
-        app:layout_constraintStart_toStartOf="@+id/rcView"
-        app:layout_constraintTop_toTopOf="@+id/rcView" />
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="Principal Trabalho"
-        android:textColor="#000"
-        android:textSize="10sp"
-        app:layout_constraintEnd_toEndOf="@+id/txtNomeUser"
-        app:layout_constraintStart_toStartOf="@+id/txtNomeUser"
-        app:layout_constraintTop_toBottomOf="@+id/txtNomeUser" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

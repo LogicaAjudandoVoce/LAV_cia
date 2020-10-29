@@ -38,7 +38,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        RecyclerView recyclerView = findViewById(R.id.rcView);
+        final RecyclerView recyclerView = findViewById(R.id.rcView);
         txtMsn = findViewById(R.id.txtMensagem);
         txtNome = findViewById(R.id.txtNome);
         imgPerfil = findViewById(R.id.imgPerfil);
@@ -63,7 +63,6 @@ public class ChatActivity extends AppCompatActivity {
         adapter = new GroupAdapter();
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
 
         if (meT != null){
             mensagens.carregarMensagensTrabalhador(meT, userC, adapter);

@@ -78,12 +78,10 @@
         android:id="@+id/rcView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageButton4"
+        app:layout_constraintBottom_toTopOf="@+id/textInputLayout13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/barra"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/barra" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgPerfil"
@@ -98,6 +96,7 @@
         tools:src="@tools:sample/avatars" />
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout13"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
