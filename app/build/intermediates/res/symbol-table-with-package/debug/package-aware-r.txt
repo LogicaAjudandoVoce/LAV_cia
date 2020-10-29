@@ -2021,6 +2021,8 @@ drawable abc_vector_test
 drawable avd_hide_password
 drawable avd_show_password
 drawable barra_custom
+drawable borda_menu_azul
+drawable borda_menu_branco
 drawable borda_redonda
 drawable botao_azul
 drawable botao_branco
@@ -2283,6 +2285,7 @@ id collapseActionView
 id confirm_button
 id constrain_fragmento
 id constraintLayout
+id constraintLayout2
 id container
 id container_menu
 id content
@@ -2370,6 +2373,7 @@ id imageView
 id imageView2
 id imageView3
 id imageView5
+id imgFoto
 id imgFotoList
 id imgFundo
 id imgList
@@ -2595,6 +2599,7 @@ id textView
 id textView10
 id textView11
 id textView12
+id textView13
 id textView14
 id textView16
 id textView17
@@ -2659,6 +2664,7 @@ id txtDataPostagem
 id txtDescricao
 id txtDescricaoPostagem
 id txtDescricaoRapida
+id txtDiaSemana
 id txtEmailAutor
 id txtEmailList
 id txtEsquecer
@@ -2693,6 +2699,7 @@ id unlabeled
 id up
 id useLogo
 id view
+id view4
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag

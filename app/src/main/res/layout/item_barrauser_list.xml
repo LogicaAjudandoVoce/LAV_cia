@@ -36,7 +36,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="8dp"
             android:text="nameUser"
-            android:textColor="#000"
+            android:textColor="#FFF"
             app:layout_constraintEnd_toStartOf="@+id/textView28"
             app:layout_constraintStart_toEndOf="@+id/imgFotoList"
             app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="32dp"
             android:text="precoUser"
-            android:textColor="#000"
+            android:textColor="#FFF"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txtNomeList" />
 
@@ -57,7 +57,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="emailuser"
-            android:textColor="#000"
+            android:textColor="#FFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -70,7 +70,7 @@
             android:layout_marginTop="12dp"
             android:layout_marginEnd="4dp"
             android:text="R$:"
-            android:textColor="#000"
+            android:textColor="#FFF"
             app:layout_constraintEnd_toStartOf="@+id/txtPrecoList"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>

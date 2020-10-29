@@ -492,6 +492,10 @@
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-mdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_menu_azul.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable\\borda_menu_azul.xml"
+    },
+    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_focused_holo.9.png.flat",
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-hdpi-v4\\abc_list_focused_holo.9.png"
     },
@@ -550,6 +554,10 @@
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_ic_menu_cut_mtrl_alpha.png.flat",
         "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\df921059f379563b3dae9e70c90e3355\\appcompat-1.2.0\\res\\drawable-ldrtl-mdpi-v17\\abc_ic_menu_cut_mtrl_alpha.png"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_menu_branco.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable\\borda_menu_branco.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_longpressed_holo.9.png.flat",

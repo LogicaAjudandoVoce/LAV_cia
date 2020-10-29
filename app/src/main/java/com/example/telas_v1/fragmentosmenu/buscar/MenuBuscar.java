@@ -21,6 +21,7 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -34,9 +35,18 @@ import com.example.telas_v1.users.UserTrabalhador;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 import com.google.android.material.appbar.AppBarLayout;
+import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.OnItemClickListener;
+
+import java.text.DateFormat;
+import java.text.DateFormatSymbols;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
+import java.util.Locale;
 
 public class MenuBuscar extends Fragment {
 
@@ -46,6 +56,10 @@ public class MenuBuscar extends Fragment {
     private UserCliente cliente;
     private UserTrabalhador trabalhador;
     private FloatingActionButton btnAddPost;
+    private TextView txtNome, txtDia;
+    private ImageView imgFoto;
+    private Date date;
+    private Calendar calendar;
     //private LinearOutSlowInInterpolator linearOutSlowInInterpolator = new LinearOutSlowInInterpolator();
 
     ObjectAnimator objectAnimator;
@@ -57,9 +71,10 @@ public class MenuBuscar extends Fragment {
         final View root = inflater.inflate(R.layout.fragment_menu_buscar, container, false);
 
         RecyclerView rcView = root.findViewById(R.id.rcView);
-        final EditText txtPreco = root.findViewById(R.id.txtPreco);
-        FloatingActionsMenu btnMenu = root.findViewById(R.id.btnMenu);
         btnAddPost = root.findViewById(R.id.btnAddPost);
+        txtNome = root.findViewById(R.id.txtNome);
+        txtDia = root.findViewById(R.id.txtDiaSemana);
+        imgFoto = root.findViewById(R.id.imgFoto);
 
         adapter = new GroupAdapter();
         rcView.setHasFixedSize(true);
@@ -100,6 +115,14 @@ public class MenuBuscar extends Fragment {
                 startActivity(new Intent(getContext(), NovaPostagemClienteActivity.class));
             }
         });
+
+        date = new Date();
+        calendar = new GregorianCalendar();
+        calendar.setTime(date);
+        if (calendar != null) {
+            Log.d("TESTE", calendar.toString());
+            txtDia.setText(weekDay(calendar));
+        }
         return root;
     }
 
@@ -113,6 +136,8 @@ public class MenuBuscar extends Fragment {
             public void onResultCliente(UserCliente userCliente) {
                 if (userCliente!=null){
                     cliente = userCliente;
+                    txtNome.setText(cliente.getNome());
+                    Picasso.get().load(cliente.getUrlFotoPerfil()).into(imgFoto);
                     metodosUsers.listarTrabalhador(adapter, "Nenhum Selecionado", "Qualquer", 0);
                 }
             }
@@ -121,6 +146,8 @@ public class MenuBuscar extends Fragment {
             public void onResultTrabalhador(UserTrabalhador userTrabalhador) {
                 if (userTrabalhador!=null){
                     trabalhador = userTrabalhador;
+                    txtNome.setText(trabalhador.getNome());
+                    Picasso.get().load(trabalhador.getUrlFotoPerfil()).into(imgFoto);
                     metodosUsers.listarPostagens(adapter);
                     btnAddPost.setVisibility(View.INVISIBLE);
                     btnAddPost.setEnabled(false);
@@ -156,4 +183,12 @@ public class MenuBuscar extends Fragment {
 //        objectAnimator.setInterpolator(timeInterpolator);
 //        objectAnimator.start();
 //    }
+
+    public String weekDay(Calendar cal) {
+        String dia = new DateFormatSymbols().getWeekdays()[cal.get(Calendar.DAY_OF_WEEK)];
+        Date data =  new Date();
+        Locale local = new Locale("pt","BR");
+        DateFormat dateFormat = new SimpleDateFormat("dd 'de' MMMM 'de' yyyy",local);
+        return dia+", "+dateFormat.format(data);
+    }
 }
