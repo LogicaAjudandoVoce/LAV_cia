@@ -33,7 +33,6 @@ public class StepThree extends Fragment {
     ConstraintLayout LyFundo;
     Button btAvancar, btRetornar, btVoltar;
     TextInputEditText txtEmail, txtEmailConf;
-    TextView txtError;
     private Bundle bundle;
     private UserCliente userCliente;
     private UserTrabalhador userTrabalhador;

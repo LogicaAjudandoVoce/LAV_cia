@@ -1,0 +1,506 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:onClick="filtrarCabelos"
+    tools:context=".fragmentosmenu.buscar.FiltrarTrabalhadorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.25" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.75" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.2" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.4" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.6" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.8" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img1"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="60dp"
+                android:onClick="filtrarAnimais"
+                android:src="@drawable/animais"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarAnimais"
+                android:text="Animais"
+                app:layout_constraintEnd_toEndOf="@+id/img1"
+                app:layout_constraintHorizontal_bias="0.51"
+                app:layout_constraintStart_toStartOf="@+id/img1"
+                app:layout_constraintTop_toBottomOf="@+id/img1" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img2"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarCabelos"
+                android:src="@drawable/cabelos"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/img1" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarCabelos"
+                android:text="Cabelos"
+                app:layout_constraintEnd_toEndOf="@+id/img2"
+                app:layout_constraintStart_toStartOf="@+id/img2"
+                app:layout_constraintTop_toBottomOf="@+id/img2" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img3"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarComidas"
+                android:src="@drawable/comidas"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="@+id/img2" />
+
+            <TextView
+                android:id="@+id/txt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarComidas"
+                android:text="Comidas"
+                app:layout_constraintEnd_toEndOf="@+id/img3"
+                app:layout_constraintStart_toStartOf="@+id/img3"
+                app:layout_constraintTop_toBottomOf="@+id/img3" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img4"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarDetetizacao"
+                android:src="@drawable/detetizacao"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/img3" />
+
+            <TextView
+                android:id="@+id/txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarDetetizacao"
+                android:text="Dedetização"
+                app:layout_constraintEnd_toEndOf="@+id/img4"
+                app:layout_constraintStart_toStartOf="@+id/img4"
+                app:layout_constraintTop_toBottomOf="@+id/img4" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img5"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="60dp"
+                android:onClick="filtrarEletricista"
+                android:src="@drawable/eletricista"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline5" />
+
+            <TextView
+                android:id="@+id/txt5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarEletricista"
+                android:text="Eletricista"
+                app:layout_constraintEnd_toEndOf="@+id/img5"
+                app:layout_constraintStart_toStartOf="@+id/img5"
+                app:layout_constraintTop_toBottomOf="@+id/img5" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img6"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarEncanador"
+                android:src="@drawable/encanador"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/img5" />
+
+            <TextView
+                android:id="@+id/txt6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarEncanador"
+                android:text="Encanador"
+                app:layout_constraintEnd_toEndOf="@+id/img6"
+                app:layout_constraintStart_toStartOf="@+id/img6"
+                app:layout_constraintTop_toBottomOf="@+id/img6" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img7"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarEstudos"
+                android:src="@drawable/estudos"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="@+id/img6" />
+
+            <TextView
+                android:id="@+id/txt7"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarEstudos"
+                android:text="Estudos"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/img7" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img8"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarFaxineiro"
+                android:src="@drawable/faxineiro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/img7" />
+
+            <TextView
+                android:id="@+id/txt8"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarFaxineiro"
+                android:text="Faxineiro"
+                app:layout_constraintEnd_toEndOf="@+id/img8"
+                app:layout_constraintStart_toStartOf="@+id/img8"
+                app:layout_constraintTop_toBottomOf="@+id/img8" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img9"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="60dp"
+                android:onClick="filtrarJardineiro"
+                android:src="@drawable/jardineiro"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline6" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarJardineiro"
+                android:text="Jardineiro"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img9" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img10"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarManicure"
+                android:src="@drawable/manicure"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/img9" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarManicure"
+                android:text="Manicure e Pedicure"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toBottomOf="@+id/img10" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img11"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarMaquiagem"
+                android:src="@drawable/maquiagem"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="@+id/img10" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarMaquiagem"
+                android:text="Maquiagem"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toBottomOf="@+id/img11" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img12"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarPedreiro"
+                android:src="@drawable/pedreiro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/img11" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarPedreiro"
+                android:text="Pedreiro"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toBottomOf="@+id/img12" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img13"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="60dp"
+                android:onClick="filtrarPintor"
+                android:src="@drawable/pintor"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline7" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarPintor"
+                android:text="Pintor"
+                app:layout_constraintEnd_toEndOf="@+id/img13"
+                app:layout_constraintStart_toStartOf="@+id/img13"
+                app:layout_constraintTop_toBottomOf="@+id/img13" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img14"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarModa"
+                android:src="@drawable/moda"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/img13" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:gravity="center"
+                android:onClick="filtrarModa"
+                android:text="Roupas e Moda"
+                app:layout_constraintEnd_toEndOf="@+id/img14"
+                app:layout_constraintStart_toStartOf="@+id/img14"
+                app:layout_constraintTop_toBottomOf="@+id/img14" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img15"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:onClick="filtrarVenda"
+                android:src="@drawable/vendas"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="@+id/img14" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarVenda"
+                android:text="Vendas"
+                app:layout_constraintEnd_toEndOf="@+id/img15"
+                app:layout_constraintStart_toStartOf="@+id/img15"
+                app:layout_constraintTop_toBottomOf="@+id/img15" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img16"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="4dp"
+                android:onClick="filtrarZelador"
+                android:src="@drawable/zelador"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/img15" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:onClick="filtrarZelador"
+                android:text="Zelador"
+                app:layout_constraintEnd_toEndOf="@+id/img16"
+                app:layout_constraintStart_toStartOf="@+id/img16"
+                app:layout_constraintTop_toBottomOf="@+id/img16" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img17"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:layout_marginTop="60dp"
+                android:src="@drawable/img_cliente"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/img17"
+                app:layout_constraintStart_toStartOf="@+id/img17"
+                app:layout_constraintTop_toBottomOf="@+id/img17" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img18"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/img_cliente"
+                app:layout_constraintEnd_toStartOf="@+id/guideline1"
+                app:layout_constraintStart_toStartOf="@+id/guideline"
+                app:layout_constraintTop_toTopOf="@+id/img17" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/img18"
+                app:layout_constraintStart_toStartOf="@+id/img18"
+                app:layout_constraintTop_toBottomOf="@+id/img18" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img19"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/img_cliente"
+                app:layout_constraintEnd_toStartOf="@+id/guideline2"
+                app:layout_constraintStart_toStartOf="@+id/guideline1"
+                app:layout_constraintTop_toTopOf="@+id/img18" />
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/img19"
+                app:layout_constraintStart_toStartOf="@+id/img19"
+                app:layout_constraintTop_toBottomOf="@+id/img19" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/img20"
+                android:layout_width="75dp"
+                android:layout_height="75dp"
+                android:src="@drawable/img_cliente"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/guideline2"
+                app:layout_constraintTop_toTopOf="@+id/img19" />
+
+            <TextView
+                android:id="@+id/textView20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="TextView"
+                app:layout_constraintEnd_toEndOf="@+id/img20"
+                app:layout_constraintStart_toStartOf="@+id/img20"
+                app:layout_constraintTop_toBottomOf="@+id/img20" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/ic_voltar"
+                android:onClick="voltar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -72,6 +72,7 @@ public class MenuBuscar extends Fragment {
 
         RecyclerView rcView = root.findViewById(R.id.rcView);
         btnAddPost = root.findViewById(R.id.btnAddPost);
+        FloatingActionButton btnFiltrar = root.findViewById(R.id.btnBarra);
         txtNome = root.findViewById(R.id.txtNome);
         txtDia = root.findViewById(R.id.txtDiaSemana);
         imgFoto = root.findViewById(R.id.imgFoto);
@@ -123,6 +124,17 @@ public class MenuBuscar extends Fragment {
             Log.d("TESTE", calendar.toString());
             txtDia.setText(weekDay(calendar));
         }
+
+        btnFiltrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (cliente!=null){
+                    startActivity(new Intent(getContext(), FiltrarTrabalhadorActivity.class));
+                }
+                if (trabalhador!=null){
+                }
+            }
+        });
         return root;
     }
 
