@@ -36,8 +36,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.telas_v1.users.myperfil.MyPerfilTrabalhadorActivity" />
         <activity android:name="com.example.telas_v1.fragmentosmenu.buscar.FiltrarTrabalhadorActivity" />
-        <activity android:name="com.example.telas_v1.users.PerfilTrabalhadorActivity" />
+        <activity android:name="com.example.telas_v1.users.otherperfil.PerfilTrabalhadorActivity" />
         <activity android:name="com.example.telas_v1.mensagens.ConversasActivity" />
         <activity android:name="com.example.telas_v1.PostagemActivity" />
 

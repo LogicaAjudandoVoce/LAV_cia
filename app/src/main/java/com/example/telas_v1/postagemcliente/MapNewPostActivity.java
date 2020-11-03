@@ -68,6 +68,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
         mMap = googleMap;
 
         validarAcesso();
+        mMap.setMyLocationEnabled(true);
 
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
@@ -91,7 +92,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
             mMap.clear();
             loc = new LatLng(place.getLatLng().latitude, place.getLatLng().longitude);
             mMap.addMarker(new MarkerOptions().position(loc));
-            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 15));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(loc, 17));
         }
     }
 
@@ -116,7 +117,6 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
         }else{
             LatLng sydney = new LatLng(-3.1345645,-59.9814487);
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(sydney, 17));
-            mMap.setMyLocationEnabled(true);
         }
     }
 }

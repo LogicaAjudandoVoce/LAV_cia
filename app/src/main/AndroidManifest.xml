@@ -17,8 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".fragmentosmenu.buscar.FiltrarTrabalhadorActivity"></activity>
-        <activity android:name=".users.PerfilTrabalhadorActivity" />
+        <activity android:name=".fragmentosmenu.buscar.FiltrarTrabalhadorActivity" />
+        <activity android:name=".users.otherperfil.PerfilTrabalhadorActivity" />
         <activity android:name=".mensagens.ConversasActivity" />
         <activity android:name=".PostagemActivity" />
 
@@ -42,7 +42,6 @@
             android:label="@string/title_activity_map_new_post" />
         <activity android:name=".postagemcliente.NovaPostagemClienteActivity" />
         <activity android:name=".mensagens.ChatActivity" />
-        <activity android:name=".OtherPersonActivity" />
         <activity android:name=".fragmentosmenu.MenuActivity" />
         <activity android:name=".startactivitys.RecuperarSenhaActivity" />
         <activity android:name=".fragmentoscriarconta.CreateActivity" />

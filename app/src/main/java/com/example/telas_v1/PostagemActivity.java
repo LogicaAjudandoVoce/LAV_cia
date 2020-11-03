@@ -44,7 +44,6 @@ public class PostagemActivity extends AppCompatActivity {
         TextView txtPreco = findViewById(R.id.txtPrecoPostagem);
         TextView txtData = findViewById(R.id.txtDataPostagem);
         Button btnChat = findViewById(R.id.btnChat);
-        Button btnContrato = findViewById(R.id.btnContrato);
         Button btnBack = findViewById(R.id.btnVoltar);
 
         txtTitulo.setText(postagem.getTitulo());

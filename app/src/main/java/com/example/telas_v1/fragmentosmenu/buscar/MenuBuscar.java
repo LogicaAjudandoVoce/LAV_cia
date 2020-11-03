@@ -1,47 +1,35 @@
 package com.example.telas_v1.fragmentosmenu.buscar;
 
 import android.animation.ObjectAnimator;
-import android.animation.TimeInterpolator;
 import android.content.Intent;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
-import androidx.interpolator.view.animation.LinearOutSlowInInterpolator;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.telas_v1.PostagemActivity;
 import com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
-import com.example.telas_v1.users.PerfilTrabalhadorActivity;
+import com.example.telas_v1.users.otherperfil.PerfilTrabalhadorActivity;
 import com.example.telas_v1.users.UserCliente;
 import com.example.telas_v1.users.UserTrabalhador;
 import com.getbase.floatingactionbutton.FloatingActionButton;
-import com.getbase.floatingactionbutton.FloatingActionsMenu;
-import com.google.android.material.appbar.AppBarLayout;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.OnItemClickListener;
 
 import java.text.DateFormat;
-import java.text.DateFormatSymbols;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
