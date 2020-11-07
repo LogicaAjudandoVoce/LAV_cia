@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+     <string-array name="profs">
+        <item>Nenhum Selecionado</item>
+        <item>Pedreiro</item>
+        <item>Professor Particular</item>
+        <item>Pintor</item>
+        <item>Eletricista</item>
+    </string-array>
+</resources>

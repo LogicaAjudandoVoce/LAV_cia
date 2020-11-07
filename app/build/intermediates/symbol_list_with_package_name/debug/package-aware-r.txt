@@ -61,7 +61,7 @@ array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array contrato
 array preloaded_fonts
-array teste
+array profs
 attr action
 attr actionBarDivider
 attr actionBarItemBackground
@@ -477,6 +477,7 @@ attr hideOnContentScroll
 attr hideOnScroll
 attr hintAnimationEnabled
 attr hintEnabled
+attr hintText
 attr hintTextAppearance
 attr hintTextColor
 attr homeAsUpIndicator
@@ -2076,6 +2077,8 @@ drawable googleg_standard_color_18
 drawable ic_add_location
 drawable ic_add_post
 drawable ic_adicionar_foto
+drawable ic_baseline_done_24
+drawable ic_baseline_remove_24
 drawable ic_build_black_24dp
 drawable ic_chat
 drawable ic_client
@@ -2096,6 +2099,7 @@ drawable ic_person_black_24dp
 drawable ic_pessoa
 drawable ic_search
 drawable ic_send_black_24dp
+drawable ic_spinner
 drawable ic_star
 drawable ic_trab
 drawable ic_trabalho
@@ -2104,6 +2108,7 @@ drawable ic_vpn_key_black_24dp
 drawable img_cliente
 drawable img_fundo
 drawable img_mapa
+drawable item_fundo_branco_edit_text
 drawable item_post
 drawable item_txt_back
 drawable item_user_list
@@ -2272,12 +2277,13 @@ id btnBarra
 id btnChat
 id btnContrato
 id btnConversas
+id btnEdit
 id btnEnviar
+id btnList
 id btnMenu
 id btnPostar
 id btnSair
 id btnVoltar
-id button
 id button2
 id button6
 id buttonPanel
@@ -2362,8 +2368,6 @@ id fitToContents
 id fixed
 id flip
 id floating
-id floatingActionButton
-id floatingActionButton2
 id floatingActionButton3
 id forever
 id fragment_container_view_tag
@@ -2399,9 +2403,7 @@ id imageButton6
 id imageView
 id imageView2
 id imageView3
-id imageView4
 id imageView5
-id imageView6
 id img1
 id img10
 id img11
@@ -2422,9 +2424,9 @@ id img6
 id img7
 id img8
 id img9
+id imgBackPerfil
 id imgFoto
 id imgFotoList
-id imgFundo
 id imgList
 id imgMapa
 id imgPerfil
@@ -2445,6 +2447,7 @@ id light
 id line1
 id line3
 id linear
+id listItems
 id listMode
 id list_item
 id ly_fundo_dois
@@ -2542,6 +2545,9 @@ id places_autocomplete_try_again
 id places_autocomplete_try_again_progress
 id position
 id postLayout
+id profDois
+id profTres
+id profUm
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -2567,6 +2573,7 @@ id scrollIndicatorDown
 id scrollIndicatorUp
 id scrollView
 id scrollable
+id search
 id search_badge
 id search_bar
 id search_button
@@ -2592,9 +2599,6 @@ id snackbar_text
 id snap
 id snapMargins
 id spacer
-id spinner
-id spinner2
-id spinner3
 id spline
 id split_action_bar
 id spn_contrat
@@ -2637,6 +2641,8 @@ id textInputLayout10
 id textInputLayout11
 id textInputLayout12
 id textInputLayout13
+id textInputLayout14
+id textInputLayout15
 id textInputLayout2
 id textInputLayout3
 id textInputLayout4
@@ -2661,7 +2667,7 @@ id textView18
 id textView19
 id textView2
 id textView20
-id textView21
+id textView22
 id textView23
 id textView24
 id textView25
@@ -2676,7 +2682,6 @@ id textView32
 id textView33
 id textView34
 id textView35
-id textView36
 id textView37
 id textView38
 id textView39
@@ -2687,6 +2692,7 @@ id textView42
 id textView43
 id textView44
 id textView45
+id textView47
 id textView5
 id textView6
 id textView7
@@ -2727,7 +2733,9 @@ id txt6
 id txt7
 id txt8
 id txtAutorPost
+id txtCampo2
 id txtContato
+id txtContatos
 id txtDataPost
 id txtDataPostagem
 id txtDescricao
@@ -2768,7 +2776,6 @@ id unlabeled
 id up
 id useLogo
 id view
-id view4
 id view_offset_helper
 id visible
 id visible_removing_fragment_view_tag
@@ -2944,6 +2951,7 @@ layout places_autocomplete_main_overlay
 layout places_autocomplete_prediction
 layout places_autocomplete_progress
 layout places_autocomplete_search_bar
+layout searchable_list_dialog
 layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
@@ -3946,6 +3954,7 @@ styleable RecyclerView android_orientation android_clipToPadding android_descend
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
+styleable SearchableSpinner hintText
 styleable ShapeAppearance cornerFamily cornerFamilyBottomLeft cornerFamilyBottomRight cornerFamilyTopLeft cornerFamilyTopRight cornerSize cornerSizeBottomLeft cornerSizeBottomRight cornerSizeTopLeft cornerSizeTopRight
 styleable ShapeableImageView shapeAppearance shapeAppearanceOverlay strokeColor strokeWidth
 styleable SignInButton buttonSize colorScheme scopeUris

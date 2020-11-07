@@ -18,8 +18,8 @@ import com.example.telas_v1.startactivitys.LoginActiviy;
 import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.classesuteis.BarraProgresso;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -56,6 +56,7 @@ public class MetodosUsers {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
+                Log.e("TESTE", "Login: "+e.getMessage(), e);
                 Toast.makeText(context, "Seu Email ou Senha estão Incorretos!", Toast.LENGTH_LONG).show();
                 barra.setVisibility(View.INVISIBLE);
             }
@@ -84,7 +85,7 @@ public class MetodosUsers {
                         }).addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.d("TESTE", e.getMessage());
+                                Log.e("TESTE", "Cadastrar Firestore Cliente: "+e.getMessage(), e);
                                 progresso.cancelarDialog();
                                 Toast.makeText(context, "Ocorreu algum erro, tente novamente!!", Toast.LENGTH_LONG).show();
                             }
@@ -98,6 +99,11 @@ public class MetodosUsers {
                         } catch(Exception e) {
                         }
                     }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e("TESTE", "Cadastrar Auth Cliente: "+e.getMessage(), e);
                 }
             });
 
@@ -115,7 +121,12 @@ public class MetodosUsers {
                             activity.startActivity(new Intent(activity, LoginActiviy.class));
                             activity.finish();
                             }
-                        });
+                        }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.e("TESTE", "Cadastrar Firestore Trablhador: "+e.getMessage(), e);
+                                }
+                            });
                     }else{
                         try {
                             throw task.getException();
@@ -124,6 +135,11 @@ public class MetodosUsers {
                         }catch (Exception e){
                         }
                     }
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e("TESTE", "Cadastrar Auth Trabalhador: "+e.getMessage(), e);
                 }
             });
         }
@@ -134,7 +150,7 @@ public class MetodosUsers {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 if (e!=null){
-                    Log.d("TESTE","Error:"+e.getMessage());
+                    Log.e("TESTE", "Listar Trabalhadores: " +e.getMessage(), e);
                 }
                 else {
                     List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
@@ -200,7 +216,7 @@ public class MetodosUsers {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
                 if (e!=null){
-                    Log.d("TESTE", e.getMessage());
+                    Log.e("TESTE", "Listar Postagens: "+e.getMessage(), e);
                 }else{
                     List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
                     adapter.clear();
@@ -227,7 +243,7 @@ public class MetodosUsers {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 if (e!=null){
-                    Log.d("TESTE","Error:"+e.getMessage());
+                    Log.e("TESTE","Verificar Usuario: " +e.getMessage(), e);
                 }
                 else {
                     List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
@@ -243,7 +259,7 @@ public class MetodosUsers {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                 if (e!=null){
-                    Log.d("TESTE","Error:"+e.getMessage());
+                    Log.e("TESTE","Verificar Usuario: " +e.getMessage(), e);
                 }
                 else {
                     List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();

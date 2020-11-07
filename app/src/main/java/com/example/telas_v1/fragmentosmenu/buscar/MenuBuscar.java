@@ -2,6 +2,7 @@ package com.example.telas_v1.fragmentosmenu.buscar;
 
 import android.animation.ObjectAnimator;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -9,7 +10,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +20,10 @@ import com.example.telas_v1.PostagemActivity;
 import com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity;
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
+import com.example.telas_v1.users.myperfil.MyPerfilTrabalhadorActivity;
 import com.example.telas_v1.users.otherperfil.PerfilTrabalhadorActivity;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
@@ -48,6 +49,7 @@ public class MenuBuscar extends Fragment {
     private ImageView imgFoto;
     private Date date;
     private Calendar calendar;
+    private Uri uri;
     //private LinearOutSlowInInterpolator linearOutSlowInInterpolator = new LinearOutSlowInInterpolator();
 
     ObjectAnimator objectAnimator;
@@ -109,7 +111,6 @@ public class MenuBuscar extends Fragment {
         calendar = new GregorianCalendar();
         calendar.setTime(date);
         if (calendar != null) {
-            Log.d("TESTE", calendar.toString());
             txtDia.setText(weekDay(calendar));
         }
 
@@ -120,6 +121,17 @@ public class MenuBuscar extends Fragment {
                     startActivity(new Intent(getContext(), FiltrarTrabalhadorActivity.class));
                 }
                 if (trabalhador!=null){
+                }
+            }
+        });
+
+        imgFoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (trabalhador!=null) {
+                    Intent intent = new Intent(getContext(), MyPerfilTrabalhadorActivity.class);
+                    intent.putExtra("meT", trabalhador);
+                    startActivity(intent);
                 }
             }
         });

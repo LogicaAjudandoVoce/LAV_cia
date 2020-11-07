@@ -3,14 +3,13 @@ package com.example.telas_v1.mensagens;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.example.telas_v1.R;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +42,7 @@ public class MetodosMensagens {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                         if (e != null) {
-
+                            Log.e("TESTE", "Carregar Mensagens Trabalhador: "+e.getMessage(), e);
                         } else {
                             List<DocumentChange> documentChanges = queryDocumentSnapshots.getDocumentChanges();
 
@@ -111,7 +110,7 @@ public class MetodosMensagens {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                         if (e != null) {
-
+                            Log.e("TESTE", "Carregar Mensagens Trabalhador: "+e.getMessage(), e);
                         } else {
                             List<DocumentChange> documentChanges = queryDocumentSnapshots.getDocumentChanges();
                             if (documentChanges != null) {
@@ -191,7 +190,6 @@ public class MetodosMensagens {
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
-                                Log.d("Teste", documentReference.getId());
 
                                 Contato contact = new Contato();
                                 contact.setUuid(toId);
@@ -212,7 +210,7 @@ public class MetodosMensagens {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.e("Teste", e.getMessage(), e);
+                                Log.e("Teste", "Enviar Mensagem To Cliente: "+e.getMessage(), e);
                             }
                         });
 
@@ -243,7 +241,7 @@ public class MetodosMensagens {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.e("Teste", e.getMessage(), e);
+                                Log.e("Teste", "Enviar Mensagem To Cliente: "+e.getMessage(), e);
                             }
                         });
             }
@@ -273,7 +271,6 @@ public class MetodosMensagens {
                         .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
                             @Override
                             public void onSuccess(DocumentReference documentReference) {
-                                Log.d("Teste", documentReference.getId());
 
                                 Contato contact = new Contato();
                                 contact.setUuid(toId);
@@ -294,7 +291,7 @@ public class MetodosMensagens {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.e("Teste", e.getMessage(), e);
+                                Log.e("Teste", "Enviar Mensagem To Trabalhador: "+e.getMessage(), e);
                             }
                         });
 
@@ -325,7 +322,7 @@ public class MetodosMensagens {
                         .addOnFailureListener(new OnFailureListener() {
                             @Override
                             public void onFailure(@NonNull Exception e) {
-                                Log.e("Teste", e.getMessage(), e);
+                                Log.e("Teste", "Enviar Mensagem To Trabalhador"+e.getMessage(), e);
                             }
                         });
             }

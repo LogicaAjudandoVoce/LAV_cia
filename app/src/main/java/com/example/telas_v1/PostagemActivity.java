@@ -9,13 +9,12 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.telas_v1.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.mensagens.ChatActivity;
 import com.example.telas_v1.postagemcliente.Postagem;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -76,6 +75,11 @@ public class PostagemActivity extends AppCompatActivity {
                         intent.putExtra("meTrabalhador", trabalhador);
                         startActivity(intent);
                     }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.e("TESTE", "Verificar Meu Trabalhador do Post: "+e.getMessage(), e);
+                    }
                 });
             }
         });
@@ -87,6 +91,11 @@ public class PostagemActivity extends AppCompatActivity {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 cliente = documentSnapshot.toObject(UserCliente.class);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Log.e("TESTE", "Verificar Cliente do Post: "+e.getMessage(), e);
             }
         });
     }

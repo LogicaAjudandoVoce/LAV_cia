@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -11,6 +12,7 @@ import android.widget.Toast;
 import com.example.telas_v1.R;
 import com.example.telas_v1.classesuteis.BarraProgresso;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -47,6 +49,11 @@ public class RecuperarSenhaActivity extends AppCompatActivity {
                                 Toast.makeText(RecuperarSenhaActivity.this, "Não foi possível localizar seu email!", Toast.LENGTH_LONG).show();
                                 barraProgresso.cancelarDialog();
                             }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Log.e("TESTE", "Recuperar Senha: "+e.getMessage(), e);
                         }
                     });
                 }else Toast.makeText(RecuperarSenhaActivity.this, "Informe seu email!", Toast.LENGTH_LONG).show();

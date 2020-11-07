@@ -16,8 +16,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.metodosusers.MetodosUsers;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class StepFour extends Fragment{
@@ -70,13 +70,14 @@ public class StepFour extends Fragment{
                     if (senha.equals(senhaConf)) {
                         if (senha.length()>=6) {
                             if (userCliente != null) {
+                                userCliente.setUrlFotoFundo("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105");
                                 userCliente.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8");
                                 userCliente.setSenha(txtSenha.getText().toString().trim());
                             metodosUsers.cadastrarUser(getActivity(), getContext(), userCliente, null);
                         } else {
                             userTrabalhador.setSenha(txtSenha.getText().toString().trim());
                             userTrabalhador.setMyPreco(0.00f);
-                            userTrabalhador.setUrlFotoFundo("Nada");
+                            userTrabalhador.setUrlFotoFundo("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105");
                             userTrabalhador.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F2e3534fb-21e2-429c-8f1c-ab8f0f5165ee?alt=media&token=0e3b8518-22ab-4ff2-bc13-367059352e92");
                             metodosUsers.cadastrarUser(getActivity(), getContext(), null, userTrabalhador);
                         }

@@ -1,19 +1,13 @@
 package com.example.telas_v1.fragmentoscriarconta.passodois;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
-import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -26,8 +20,8 @@ import androidx.lifecycle.ViewModelProviders;
 import com.example.telas_v1.R;
 import com.example.telas_v1.classesuteis.MaskUtil;
 import com.example.telas_v1.fragmentoscriarconta.passotres.StepThree;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.material.textfield.TextInputEditText;
 
 import java.text.ParseException;
@@ -36,8 +30,6 @@ import java.time.LocalDate;
 import java.time.Period;
 import java.time.ZoneId;
 import java.util.Date;
-
-import static androidx.core.content.ContextCompat.getSystemService;
 
 public class StepTwo extends Fragment{
 

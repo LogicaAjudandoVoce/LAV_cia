@@ -1,14 +1,14 @@
 package com.example.telas_v1.users;
 
 public class FotoLista {
-    private String foto, id;
+    private String link, id;
 
     public FotoLista(){
     }
 
-    public FotoLista(String id, String foto) {
+    public FotoLista(String id, String link) {
         this.id = id;
-        this.foto = foto;
+        this.link = link;
     }
 
     public void setId(String id) {
@@ -19,7 +19,11 @@ public class FotoLista {
         return id;
     }
 
-    public void setFoto(String foto) {
-        this.foto = foto;
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getLink() {
+        return link;
     }
 }

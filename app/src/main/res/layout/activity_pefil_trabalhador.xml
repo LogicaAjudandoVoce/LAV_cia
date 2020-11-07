@@ -21,25 +21,15 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/imgFundo"
-                android:layout_width="0dp"
-                android:layout_height="203dp"
-                android:scaleType="centerCrop"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/img_fundo" />
-
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnChat"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/colorDourado"
                 android:clickable="true"
-                app:layout_constraintBottom_toBottomOf="@+id/imgFundo"
+                app:layout_constraintBottom_toTopOf="@+id/txtNome"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/ic_chat" />
 
@@ -48,25 +38,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="24dp"
                 android:backgroundTint="@color/colorDourado"
                 android:clickable="true"
-                app:layout_constraintBottom_toBottomOf="@+id/imgFundo"
+                app:layout_constraintBottom_toTopOf="@+id/txtNome"
                 app:layout_constraintStart_toStartOf="parent"
                 app:srcCompat="@drawable/ic_star" />
-
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgPerfil"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="100dp"
-                android:src="@drawable/trab"
-                app:civ_border_color="@color/colorDourado"
-                app:civ_border_width="1dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
                 android:id="@+id/txtNome"
@@ -109,7 +86,6 @@
                 android:layout_height="150dp"
                 android:background="@color/places_ui_default_primary_dark"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
@@ -132,6 +108,7 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:text="Lorem ipsum dolor sit amet consectetur adipiscing, elit enim primis facilisi ultrices egestas inceptos, dui taciti felis habitant quisque. Convallis nulla curabitur mollis venenatis elementum laoreet conubia massa habitant ex euismod egestas, himenaeos ac felis bibendum justo suspendisse dignissim lorem luctus facilisi quis vestibulum tristique, tellus nullam enim vehicula commodo eros purus tortor fringilla vel dui. Arcu duis vestibulum sit viverra semper rhoncus ultrices cras natoque, erat placerat consectetur praesent iaculis tempus habitasse ex litora sollicitudin, mus lacinia quis adipiscing quisque mauris ullamcorper class."
+                android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -154,6 +131,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
                 android:text="Preço do Usuário"
+                android:textSize="16sp"
                 app:layout_constraintStart_toEndOf="@+id/textView44"
                 app:layout_constraintTop_toTopOf="@+id/textView44" />
 
@@ -174,7 +152,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 android:text="trabalhador@gmail.com"
+                android:textSize="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView41"
                 app:layout_constraintTop_toBottomOf="@id/textView41" />
 
@@ -218,13 +199,35 @@
                 android:id="@+id/txtInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Nada  por aqui"
+                android:text="Nada por aqui"
                 android:textColor="#FFF"
                 android:textSize="36sp"
                 app:layout_constraintBottom_toBottomOf="@+id/rcView"
                 app:layout_constraintEnd_toEndOf="@+id/rcView"
                 app:layout_constraintStart_toStartOf="@+id/rcView"
                 app:layout_constraintTop_toTopOf="@+id/rcView" />
+
+            <ImageView
+                android:id="@+id/imgBackPerfil"
+                android:layout_width="0dp"
+                android:layout_height="203dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/img_fundo" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgPerfil"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="100dp"
+                android:src="@drawable/trab"
+                app:civ_border_color="@color/colorDourado"
+                app:civ_border_width="1dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgBackPerfil" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -24,8 +24,6 @@ import java.util.UUID;
 
 public class MainActivity extends AppCompatActivity {
 
-    Uri uriFoto;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,4 +43,8 @@ public class MainActivity extends AppCompatActivity {
         Intent criar = new Intent(this, CreateActivity.class);
         startActivity(criar);
     }
+
+
+
+
 }

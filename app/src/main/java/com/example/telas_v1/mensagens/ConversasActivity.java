@@ -15,10 +15,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.telas_v1.R;
-import com.example.telas_v1.metodosusers.MetodosUsers;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
-import com.google.android.gms.tasks.OnSuccessListener;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentChange;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -73,7 +71,7 @@ public class ConversasActivity extends AppCompatActivity {
                         @Override
                         public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
                             if (e!=null){
-
+                                Log.e("TESTE", "Abrir Conversa Cliente por Conversas Activity: "+e.getMessage(), e);
                             }else{
                                 List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
                                 for(DocumentSnapshot doc: docs){
@@ -94,15 +92,19 @@ public class ConversasActivity extends AppCompatActivity {
                     FirebaseFirestore.getInstance().collection("userTrabalhador").whereEqualTo("email", contactItem.contact.getEmail()).addSnapshotListener(new EventListener<QuerySnapshot>() {
                         @Override
                         public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
-                            List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
-                            for(DocumentSnapshot doc:docs){
-                                toTrabalhador = doc.toObject(UserTrabalhador.class);
-                                if (toTrabalhador.getEmail().equals(contactItem.contact.getEmail())){
-                                    Intent intent = new Intent(ConversasActivity.this, ChatActivity.class);
-                                    intent.putExtra("meCliente", meC);
-                                    intent.putExtra("toTrabalhador", toTrabalhador);
-                                    startActivity(intent);
-                                    break;
+                            if (e!=null){
+                                Log.e("TESTE", "Abrir Conversa Trabalhador por Conversas Activity: "+e.getMessage(), e);
+                            }else {
+                                List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                                for (DocumentSnapshot doc : docs) {
+                                    toTrabalhador = doc.toObject(UserTrabalhador.class);
+                                    if (toTrabalhador.getEmail().equals(contactItem.contact.getEmail())) {
+                                        Intent intent = new Intent(ConversasActivity.this, ChatActivity.class);
+                                        intent.putExtra("meCliente", meC);
+                                        intent.putExtra("toTrabalhador", toTrabalhador);
+                                        startActivity(intent);
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -124,7 +126,7 @@ public class ConversasActivity extends AppCompatActivity {
                     @Override
                     public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
                         if (e!=null){
-                            Log.d("TESTE", e.getMessage());
+                            Log.e("TESTE", "Carregar Últimas Mensagens: "+e.getMessage(), e);
                         }else {
                             List<DocumentChange> documentChanges = queryDocumentSnapshots.getDocumentChanges();
                             if (documentChanges != null) {

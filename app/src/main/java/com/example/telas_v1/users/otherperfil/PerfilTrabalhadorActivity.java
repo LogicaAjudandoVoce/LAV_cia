@@ -14,8 +14,8 @@ import android.widget.TextView;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.mensagens.ChatActivity;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -47,7 +47,7 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
 
 
         ImageView btnVoltar = findViewById(R.id.btnVoltar);
-        ImageView imgFundo = findViewById(R.id.imgFundo);
+        ImageView imgFundo = findViewById(R.id.imgBackPerfil);
         ImageView imgPerfil = findViewById(R.id.imgPerfil);
         TextView txtNome = findViewById(R.id.txtNome);
         TextView txtProfissao = findViewById(R.id.txtProfissao);
@@ -72,15 +72,13 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
             }
         });
 
-        if (toT!=null){
-            if (!toT.getUrlFotoFundo().equals("Nada")) {
-                Picasso.get().load(toT.getUrlFotoFundo()).fit().into(imgFundo);
-            }
-            Picasso.get().load(toT.getUrlFotoPerfil()).into(imgPerfil);
-            txtNome.setText(toT.getNome());
-            txtValor.setText(String.valueOf(toT.getMyPreco()));
-            listarFotos();
-        };
+        Picasso.get().load(toT.getUrlFotoFundo()).fit().into(imgFundo);
+        Picasso.get().load(toT.getUrlFotoPerfil()).into(imgPerfil);
+        txtNome.setText(toT.getNome());
+        txtValor.setText(String.valueOf(toT.getMyPreco()));
+        txtSobreMim.setText(toT.getSobreMim());
+        txtContato.setText(toT.getContatos());
+        listarFotos();
 
         if (forma.equals("chatJa")){
             btnChat.setVisibility(View.INVISIBLE);
@@ -98,26 +96,29 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
     }
 
     private void listarFotos(){
-        FirebaseFirestore.getInstance().collection("listaImgs").whereEqualTo("id", toT.getId()).addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
-                if (e!=null){
-                    Log.d("TESTE","Error:"+e.getMessage());
-                }
-                else {
-                    List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
-                    adapter.clear();
-                    for (DocumentSnapshot doc : docs) {
-                        adapter.add(new FotoListaView(doc.get("foto").toString()));
-                        adapter.notifyDataSetChanged();
+        FirebaseFirestore.getInstance()
+                .collection("listaImagens")
+                .whereEqualTo("link", toT.getId())
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
+                            Log.e("TESTE","Listar Foto Other Perfil Trab: "+e.getMessage(), e);
+                        }
+                        else {
+                            List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                            adapter.clear();
+                            for (DocumentSnapshot doc : docs) {
+                                adapter.add(new FotoListaView(doc.get("id").toString()));
+                                adapter.notifyDataSetChanged();
+                            }
+                        }
                     }
-                }
-            }
-        });
+                });
     }
 
 
-    private class FotoListaView extends Item<ViewHolder>{
+    private class FotoListaView extends Item<ViewHolder> {
 
         private final String fotoLista;
 
@@ -128,12 +129,14 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         @Override
         public void bind(@NonNull ViewHolder viewHolder, int position) {
             ImageView img = viewHolder.itemView.findViewById(R.id.imgList);
+            TextView txtAdd = findViewById(R.id.txtInfo);
 
             if (fotoLista!=null){
+                Log.d("TESTE", fotoLista);
                 Picasso.get().load(fotoLista).resize(400, 300).into(img);
-                txtInfo.setText("");
+                txtAdd.setText("");
             }
-            else txtInfo.setText("Adicione suas fotos aqui");
+            else txtAdd.setText("Adicione suas fotos aqui");
         }
 
         @Override

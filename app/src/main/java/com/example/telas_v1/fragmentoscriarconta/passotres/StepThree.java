@@ -2,14 +2,12 @@ package com.example.telas_v1.fragmentoscriarconta.passotres;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,13 +18,9 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProviders;
 import com.example.telas_v1.R;
 import com.example.telas_v1.fragmentoscriarconta.passoquatro.StepFour;
-import com.example.telas_v1.metodosusers.MetodosUsers;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.material.textfield.TextInputEditText;
-import com.google.firebase.auth.FirebaseAuth;
-
-import java.time.LocalDate;
 
 public class StepThree extends Fragment {
 

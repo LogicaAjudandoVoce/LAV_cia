@@ -14,8 +14,8 @@ import android.widget.TextView;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.users.otherperfil.PerfilTrabalhadorActivity;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
 import com.google.android.material.textfield.TextInputEditText;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;

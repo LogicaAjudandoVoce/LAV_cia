@@ -43,6 +43,7 @@ public class LoginActiviy extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (!txtEmail.getText().toString().isEmpty() && !txtPassword.getText().toString().isEmpty())
                 metodosUsers.autenticarUsuario(getApplicationContext(), txtEmail.getText().toString(), txtPassword.getText().toString(), barra);
             }
         });

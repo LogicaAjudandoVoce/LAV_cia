@@ -61,7 +61,6 @@
             android:label="@string/title_activity_map_new_post" />
         <activity android:name="com.example.telas_v1.postagemcliente.NovaPostagemClienteActivity" />
         <activity android:name="com.example.telas_v1.mensagens.ChatActivity" />
-        <activity android:name="com.example.telas_v1.OtherPersonActivity" />
         <activity android:name="com.example.telas_v1.fragmentosmenu.MenuActivity" />
         <activity android:name="com.example.telas_v1.startactivitys.RecuperarSenhaActivity" />
         <activity android:name="com.example.telas_v1.fragmentoscriarconta.CreateActivity" />

@@ -21,10 +21,10 @@ import android.widget.Toast;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.fragmentosmenu.MenuActivity;
-import com.example.telas_v1.fragmentosmenu.buscar.MenuBuscar;
 import com.example.telas_v1.metodosusers.MetodosUsers;
-import com.example.telas_v1.users.UserCliente;
-import com.example.telas_v1.users.UserTrabalhador;
+import com.example.telas_v1.users.users.UserCliente;
+import com.example.telas_v1.users.users.UserTrabalhador;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,8 +38,6 @@ import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
 
 import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -173,6 +171,11 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
                     Intent intent = new Intent(NovaPostagemClienteActivity.this, MenuActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                     startActivity(intent);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception e) {
+                    Log.e("TESTE", "Enviar Postagem: "+e.getMessage(), e);
                 }
             });
         }else{

@@ -17,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".users.myperfil.MyPerfilTrabalhadorActivity"></activity>
         <activity android:name=".fragmentosmenu.buscar.FiltrarTrabalhadorActivity" />
         <activity android:name=".users.otherperfil.PerfilTrabalhadorActivity" />
         <activity android:name=".mensagens.ConversasActivity" />
