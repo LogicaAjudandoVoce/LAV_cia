@@ -9248,9 +9248,9 @@
                     "from": {
                         "startLines": "22",
                         "startColumns": "4",
-                        "startOffsets": "903",
+                        "startOffsets": "913",
                         "endColumns": "137",
-                        "endOffsets": "1036"
+                        "endOffsets": "1046"
                     },
                     "to": {
                         "startLines": "1470",

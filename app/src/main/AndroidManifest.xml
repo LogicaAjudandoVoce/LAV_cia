@@ -17,11 +17,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".users.myperfil.MyPerfilTrabalhadorActivity"></activity>
-        <activity android:name=".fragmentosmenu.buscar.FiltrarTrabalhadorActivity" />
-        <activity android:name=".users.otherperfil.PerfilTrabalhadorActivity" />
-        <activity android:name=".mensagens.ConversasActivity" />
-        <activity android:name=".PostagemActivity" />
+        <activity android:name=".activitys.users.myperfil.MyPerfilClienteActivity"></activity>
+        <activity android:name=".activitys.users.myperfil.MyPerfilTrabalhadorActivity" />
+        <activity android:name=".fragmentos.fragmentosmenu.buscar.FiltrarTrabalhadorActivity" />
+        <activity android:name=".activitys.users.otherperfil.PerfilTrabalhadorActivity" />
+        <activity android:name=".activitys.mensagens.ConversasActivity" />
+        <activity android:name=".activitys.postagemcliente.PostagemActivity" />
 
         <uses-library
             android:name="org.apache.http.legacy"
@@ -39,15 +40,15 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".postagemcliente.MapNewPostActivity"
+            android:name=".activitys.postagemcliente.MapNewPostActivity"
             android:label="@string/title_activity_map_new_post" />
-        <activity android:name=".postagemcliente.NovaPostagemClienteActivity" />
-        <activity android:name=".mensagens.ChatActivity" />
-        <activity android:name=".fragmentosmenu.MenuActivity" />
-        <activity android:name=".startactivitys.RecuperarSenhaActivity" />
-        <activity android:name=".fragmentoscriarconta.CreateActivity" />
-        <activity android:name=".startactivitys.LoginActiviy" />
-        <activity android:name=".startactivitys.MainActivity">
+        <activity android:name=".activitys.postagemcliente.NovaPostagemClienteActivity" />
+        <activity android:name=".activitys.mensagens.ChatActivity" />
+        <activity android:name=".fragmentos.fragmentosmenu.MenuActivity" />
+        <activity android:name=".activitys.startactivitys.RecuperarSenhaActivity" />
+        <activity android:name=".fragmentos.fragmentoscriarconta.CreateActivity" />
+        <activity android:name=".activitys.startactivitys.LoginActiviy" />
+        <activity android:name=".activitys.startactivitys.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

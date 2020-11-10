@@ -5,7 +5,7 @@
     android:id="@+id/constrain_fragmento"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragmentoscriarconta.CreateActivity">
+    tools:context=".fragmentos.fragmentoscriarconta.CreateActivity">
 
     <FrameLayout
         android:id="@+id/paipai"
