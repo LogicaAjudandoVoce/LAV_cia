@@ -3,12 +3,16 @@ package com.example.telas_v1.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 public class UserCliente implements Parcelable {
 
     private String id, email, nome, senha, tipoUser, dataNasc, urlFotoPerfil, urlFotoFundo, sobremim, contatos;
-    private int u=0, d=0, t=0, q=0, c=0;
+    private float stars;
+    private int countStar;
 
     public UserCliente() {
+
     }
 
     protected UserCliente(Parcel in) {
@@ -20,13 +24,10 @@ public class UserCliente implements Parcelable {
         dataNasc = in.readString();
         urlFotoPerfil = in.readString();
         urlFotoFundo = in.readString();
-        contatos = in.readString();
         sobremim = in.readString();
-        u = in.readInt();
-        d = in.readInt();
-        t = in.readInt();
-        q = in.readInt();
-        c = in.readInt();
+        contatos = in.readString();
+        stars = in.readFloat();
+        countStar = in.readInt();
     }
 
     public static final Creator<UserCliente> CREATOR = new Creator<UserCliente>() {
@@ -51,14 +52,6 @@ public class UserCliente implements Parcelable {
 
     public String getEmail() {
         return email;
-    }
-
-    public String getContatos() {
-        return contatos;
-    }
-
-    public void setContatos(String contatos) {
-        this.contatos = contatos;
     }
 
     public void setEmail(String email) {
@@ -121,44 +114,28 @@ public class UserCliente implements Parcelable {
         this.sobremim = sobremim;
     }
 
-    public int getU() {
-        return u;
+    public String getContatos() {
+        return contatos;
     }
 
-    public void setU(int u) {
-        this.u = u;
+    public void setContatos(String contatos) {
+        this.contatos = contatos;
     }
 
-    public int getD() {
-        return d;
+    public float getStars() {
+        return stars;
     }
 
-    public void setD(int d) {
-        this.d = d;
+    public void setStars(float stars) {
+        this.stars = stars;
     }
 
-    public int getT() {
-        return t;
+    public int getCountStar() {
+        return countStar;
     }
 
-    public void setT(int t) {
-        this.t = t;
-    }
-
-    public int getQ() {
-        return q;
-    }
-
-    public void setQ(int q) {
-        this.q = q;
-    }
-
-    public int getC() {
-        return c;
-    }
-
-    public void setC(int c) {
-        this.c = c;
+    public void setCountStar(int countStar) {
+        this.countStar = countStar;
     }
 
     @Override
@@ -178,10 +155,7 @@ public class UserCliente implements Parcelable {
         parcel.writeString(urlFotoFundo);
         parcel.writeString(sobremim);
         parcel.writeString(contatos);
-        parcel.writeInt(u);
-        parcel.writeInt(d);
-        parcel.writeInt(t);
-        parcel.writeInt(q);
-        parcel.writeInt(c);
+        parcel.writeFloat(stars);
+        parcel.writeInt(countStar);
     }
 }

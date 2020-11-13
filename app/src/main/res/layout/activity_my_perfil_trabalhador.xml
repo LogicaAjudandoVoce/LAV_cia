@@ -70,7 +70,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:background="@color/places_ui_default_primary_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -143,9 +143,9 @@
                 android:id="@+id/profUm"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
+                android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="64dp"
+                android:layout_marginEnd="32dp"
                 android:background="@android:drawable/editbox_background"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -177,12 +177,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="100dp"
                 android:text="Contatos:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView62" />
+                app:layout_constraintTop_toBottomOf="@+id/view4" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout15"
@@ -230,15 +230,15 @@
                 android:id="@+id/btnList"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="130dp"
+                android:layout_marginEnd="8dp"
                 android:backgroundTint="#393434"
                 android:clickable="true"
                 android:onClick="selecionarFoto"
                 android:tint="#FFF"
+                app:layout_constraintBottom_toTopOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/recyclerView"
-                app:srcCompat="@drawable/ic_expand_more" />
+                app:srcCompat="@drawable/ic_floating" />
 
             <TextView
                 android:id="@+id/txtCampo2"
@@ -275,7 +275,7 @@
                 app:srcCompat="@drawable/ic_hitorico" />
 
             <TextView
-                android:id="@+id/textView57"
+                android:id="@+id/txtAvaliar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
@@ -284,174 +284,126 @@
                 android:textSize="100sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profTres" />
+                app:layout_constraintTop_toBottomOf="@+id/textView44" />
 
             <View
                 android:id="@+id/view4"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#000"
-                app:layout_constraintBottom_toBottomOf="@+id/textView57"
+                app:layout_constraintBottom_toBottomOf="@+id/txtAvaliar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView57" />
+                app:layout_constraintTop_toBottomOf="@+id/txtAvaliar" />
 
             <View
                 android:id="@+id/view5"
                 android:layout_width="wrap_content"
                 android:layout_height="1dp"
                 android:background="#000"
-                app:layout_constraintBottom_toTopOf="@+id/textView57"
+                app:layout_constraintBottom_toTopOf="@+id/txtAvaliar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView57" />
+                app:layout_constraintTop_toTopOf="@+id/txtAvaliar" />
 
             <ImageView
                 android:id="@+id/imageView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="100dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView57"
+                app:layout_constraintBottom_toBottomOf="@+id/txtAvaliar"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/ic_star"
                 app:tint="#FFD700" />
 
-            <ImageView
-                android:id="@+id/imageView13"
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/floatingActionButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="50dp"
-                android:layout_marginTop="32dp"
+                android:clickable="true"
+                android:onClick="abrirFotosList"
+                android:tint="#FFF"
+                app:backgroundTint="#393434"
+                app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/view4"
-                app:srcCompat="@drawable/ic_star"
-                app:tint="#FFD700" />
-
-            <ImageView
-                android:id="@+id/imageView14"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/imageView16"
-                app:layout_constraintTop_toBottomOf="@+id/imageView16"
-                app:srcCompat="@drawable/ic_star"
-                app:tint="#FFD700" />
-
-            <ImageView
-                android:id="@+id/imageView15"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/imageView13"
-                app:layout_constraintTop_toBottomOf="@+id/imageView13"
-                app:srcCompat="@drawable/ic_star"
-                app:tint="#FFD700" />
-
-            <ImageView
-                android:id="@+id/imageView16"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                app:layout_constraintStart_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toBottomOf="@+id/imageView15"
-                app:srcCompat="@drawable/ic_star"
-                app:tint="#FFD700" />
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView"
+                app:srcCompat="@drawable/ic_expand_more" />
 
             <TextView
-                android:id="@+id/textView58"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="1"
-                android:textColor="@color/colorDourado"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                app:layout_constraintEnd_toStartOf="@+id/imageView13"
-                app:layout_constraintTop_toTopOf="@+id/imageView13"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/textView63"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="2"
-                android:textColor="@color/colorDourado"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-                app:layout_constraintEnd_toStartOf="@+id/imageView15"
-                app:layout_constraintTop_toTopOf="@+id/imageView15"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/textView64"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="4dp"
-                android:text="3"
-                android:textColor="@color/colorDourado"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-                app:layout_constraintEnd_toStartOf="@+id/imageView16"
-                app:layout_constraintTop_toTopOf="@+id/imageView16"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <TextView
-                android:id="@+id/textView65"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4"
-                android:textColor="@color/colorDourado"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-                app:layout_constraintEnd_toStartOf="@+id/imageView14"
-                app:layout_constraintTop_toTopOf="@+id/imageView14"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/textView59"
+                android:id="@+id/textView44"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:text="0 estrelas"
+                android:layout_marginTop="32dp"
+                android:text="Avaliação:"
                 android:textColor="#000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView13"
-                app:layout_constraintStart_toEndOf="@+id/imageView13"
-                app:layout_constraintTop_toTopOf="@+id/imageView13" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
-            <TextView
-                android:id="@+id/textView60"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerView2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profTres" />
+
+            <RatingBar
+                android:id="@+id/ratingBar2"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0 estrelas"
-                android:textColor="#000"
-                android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView15"
-                app:layout_constraintStart_toStartOf="@+id/textView59"
-                app:layout_constraintTop_toTopOf="@+id/imageView15" />
+                android:layout_marginTop="8dp"
+                android:progressTint="@color/colorDourado"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAvaliar" />
 
             <TextView
-                android:id="@+id/textView61"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0 estrelas"
+                android:id="@+id/txtTrabUm"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center"
+                android:text="Trabalho Um"
                 android:textColor="#000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView16"
-                app:layout_constraintStart_toStartOf="@+id/textView59"
-                app:layout_constraintTop_toTopOf="@+id/imageView16" />
+                app:layout_constraintBottom_toBottomOf="@+id/profUm"
+                app:layout_constraintEnd_toEndOf="@+id/profUm"
+                app:layout_constraintStart_toStartOf="@+id/profUm"
+                app:layout_constraintTop_toTopOf="@+id/profUm" />
 
             <TextView
-                android:id="@+id/textView62"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="0 estrelas"
+                android:id="@+id/txtTrabDois"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center"
+                android:text="Trabalho Dois"
                 android:textColor="#000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toBottomOf="@+id/imageView14"
-                app:layout_constraintStart_toStartOf="@+id/textView61"
-                app:layout_constraintTop_toTopOf="@+id/imageView14" />
+                app:layout_constraintBottom_toBottomOf="@+id/profDois"
+                app:layout_constraintEnd_toEndOf="@+id/profUm"
+                app:layout_constraintStart_toStartOf="@+id/profDois"
+                app:layout_constraintTop_toTopOf="@+id/profDois" />
+
+            <TextView
+                android:id="@+id/txtTrabTres"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@android:drawable/editbox_background_normal"
+                android:gravity="center"
+                android:text="Trabalho Três"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/profTres"
+                app:layout_constraintEnd_toEndOf="@+id/profTres"
+                app:layout_constraintStart_toStartOf="@+id/profTres"
+                app:layout_constraintTop_toTopOf="@+id/profTres" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.telas_v1.R;
-import com.example.telas_v1.fragmentos.fragmentosmenu.MenuActivity;
+import com.example.telas_v1.fragmentos.fragmentosmenu.*;
 import com.example.telas_v1.activitys.mensagens.ChatActivity;
 import com.example.telas_v1.models.Postagem;
 import com.example.telas_v1.models.UserCliente;

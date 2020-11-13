@@ -46,7 +46,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
 
         txtLoc = findViewById(R.id.edtLoc);
 
-        Places.initialize(getApplicationContext(), "AIzaSyBjAlJo8Wlr1w007qWeRw8kXNCBEoJ0pJg");
+        Places.initialize(MapNewPostActivity.this, "AIzaSyBjAlJo8Wlr1w007qWeRw8kXNCBEoJ0pJg");
         txtLoc.setFocusable(false);
         txtLoc.setOnClickListener(new View.OnClickListener() {
             @Override

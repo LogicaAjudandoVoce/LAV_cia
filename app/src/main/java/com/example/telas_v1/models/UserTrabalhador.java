@@ -3,11 +3,14 @@ package com.example.telas_v1.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 public class UserTrabalhador implements Parcelable {
 
     private String id, email, nome, senha, tipoUser, dataNasc, urlFotoPerfil, urlFotoFundo, sobreMim, contatos;
     private String profUm, profDois, profTres;
-    float myPreco;
+    private float stars, myPreco;
+    private int countStars;
 
     public UserTrabalhador() {
     }
@@ -26,7 +29,34 @@ public class UserTrabalhador implements Parcelable {
         profUm = in.readString();
         profDois = in.readString();
         profTres = in.readString();
+        stars = in.readFloat();
         myPreco = in.readFloat();
+        countStars = in.readInt();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(email);
+        dest.writeString(nome);
+        dest.writeString(senha);
+        dest.writeString(tipoUser);
+        dest.writeString(dataNasc);
+        dest.writeString(urlFotoPerfil);
+        dest.writeString(urlFotoFundo);
+        dest.writeString(sobreMim);
+        dest.writeString(contatos);
+        dest.writeString(profUm);
+        dest.writeString(profDois);
+        dest.writeString(profTres);
+        dest.writeFloat(stars);
+        dest.writeFloat(myPreco);
+        dest.writeInt(countStars);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<UserTrabalhador> CREATOR = new Creator<UserTrabalhador>() {
@@ -145,6 +175,14 @@ public class UserTrabalhador implements Parcelable {
         this.profTres = profTres;
     }
 
+    public float getStars() {
+        return stars;
+    }
+
+    public void setStars(float stars) {
+        this.stars = stars;
+    }
+
     public float getMyPreco() {
         return myPreco;
     }
@@ -153,26 +191,11 @@ public class UserTrabalhador implements Parcelable {
         this.myPreco = myPreco;
     }
 
-    @Override
-    public int describeContents() {
-        return 0;
+    public int getCountStars() {
+        return countStars;
     }
 
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(id);
-        parcel.writeString(email);
-        parcel.writeString(nome);
-        parcel.writeString(senha);
-        parcel.writeString(tipoUser);
-        parcel.writeString(dataNasc);
-        parcel.writeString(urlFotoPerfil);
-        parcel.writeString(urlFotoFundo);
-        parcel.writeString(sobreMim);
-        parcel.writeString(contatos);
-        parcel.writeString(profUm);
-        parcel.writeString(profDois);
-        parcel.writeString(profTres);
-        parcel.writeFloat(myPreco);
+    public void setCountStars(int countStars) {
+        this.countStars = countStars;
     }
 }

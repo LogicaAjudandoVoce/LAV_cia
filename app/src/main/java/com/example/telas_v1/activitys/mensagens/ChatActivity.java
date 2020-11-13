@@ -13,6 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.telas_v1.R;
+import com.example.telas_v1.activitys.users.myperfil.MyPerfilClienteActivity;
 import com.example.telas_v1.activitys.users.otherperfil.PerfilTrabalhadorActivity;
 import com.example.telas_v1.models.MetodosMensagens;
 import com.example.telas_v1.models.UserCliente;
@@ -92,6 +93,12 @@ public class ChatActivity extends AppCompatActivity {
             intent.putExtra("toT", userT);
             intent.putExtra("meC", meC);
             intent.putExtra("forma", "chatJa");
+            startActivity(intent);
+        }
+        else if (meT!=null){
+            Intent intent = new Intent(this, MyPerfilClienteActivity.class);
+            intent.putExtra("meC", userC);
+            intent.putExtra("tipo", "chat");
             startActivity(intent);
         }
     }

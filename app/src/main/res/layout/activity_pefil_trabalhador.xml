@@ -27,23 +27,24 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="24dp"
-                android:backgroundTint="@color/colorDourado"
+                android:backgroundTint="#393434"
                 android:clickable="true"
                 app:layout_constraintBottom_toTopOf="@+id/txtNome"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:srcCompat="@drawable/ic_chat" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/btnAvaliar"
+                android:id="@+id/btnHistorico"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginBottom="24dp"
-                android:backgroundTint="@color/colorDourado"
+                android:backgroundTint="#393434"
                 android:clickable="true"
+                android:tint="#FFF"
                 app:layout_constraintBottom_toTopOf="@+id/txtNome"
                 app:layout_constraintStart_toStartOf="parent"
-                app:srcCompat="@drawable/ic_star" />
+                app:srcCompat="@drawable/ic_hitorico" />
 
             <TextView
                 android:id="@+id/txtNome"
@@ -83,7 +84,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcView"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="200dp"
                 android:background="@color/places_ui_default_primary_dark"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -119,21 +120,28 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Meus Preços:"
+                android:text="Meus Trabalhos:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textView32"
                 app:layout_constraintTop_toBottomOf="@+id/txtSobreMim" />
 
             <TextView
-                android:id="@+id/txtPreco"
-                android:layout_width="wrap_content"
+                android:id="@+id/trab1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
-                android:text="Preço do Usuário"
-                android:textSize="16sp"
-                app:layout_constraintStart_toEndOf="@+id/textView44"
-                app:layout_constraintTop_toTopOf="@+id/textView44" />
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="@android:drawable/editbox_background"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Trabalho 1"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
             <TextView
                 android:id="@+id/textView41"
@@ -144,7 +152,7 @@
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textView38"
-                app:layout_constraintTop_toBottomOf="@id/txtPreco" />
+                app:layout_constraintTop_toBottomOf="@+id/btnAvaliar" />
 
             <TextView
                 android:id="@+id/txtContato"
@@ -163,13 +171,14 @@
                 android:id="@+id/floatingActionButton3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="130dp"
-                android:backgroundTint="@color/colorDourado"
+                android:backgroundTint="#393434"
                 android:clickable="true"
-                android:tint="#000"
+                android:onClick="abrirFotos"
+                android:tint="#FFF"
+                app:layout_constraintBottom_toBottomOf="@+id/rcView"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/rcView"
+                app:layout_constraintTop_toBottomOf="@+id/rcView"
                 app:srcCompat="@drawable/ic_expand_more" />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -184,16 +193,6 @@
                 app:civ_border_width="1dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/textView44"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="8dp"
-                android:text="R$"
-                app:layout_constraintStart_toStartOf="@+id/textView38"
-                app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
             <TextView
                 android:id="@+id/txtInfo"
@@ -228,6 +227,118 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imgBackPerfil" />
+
+            <TextView
+                android:id="@+id/trab2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/editbox_background"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Trabalho 2"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/trab1"
+                app:layout_constraintStart_toStartOf="@+id/trab1"
+                app:layout_constraintTop_toBottomOf="@+id/trab1" />
+
+            <TextView
+                android:id="@+id/trab3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@android:drawable/editbox_background"
+                android:gravity="center"
+                android:padding="20dp"
+                android:text="Trabalho 3"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="@+id/trab2"
+                app:layout_constraintStart_toStartOf="@+id/trab1"
+                app:layout_constraintTop_toBottomOf="@+id/trab2" />
+
+            <TextView
+                android:id="@+id/textView46"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="32dp"
+                android:text="Avaliação:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/trab3" />
+
+            <TextView
+                android:id="@+id/txtAvaliar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:gravity="center"
+                android:text="0,0"
+                android:textSize="100sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView46" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintBottom_toBottomOf="@+id/txtAvaliar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:srcCompat="@drawable/ic_star"
+                android:contentDescription="TODO"
+                app:tint="@color/colorDourado" />
+
+            <RatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.AppCompat.RatingBar.Indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:progressTint="@color/colorDourado"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAvaliar" />
+
+            <Button
+                android:id="@+id/btnAvaliar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/botao_azul"
+                android:padding="10dp"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:text="Avaliar"
+                android:textColor="#FFF"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+
+            <View
+                android:id="@+id/view6"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000"
+                app:layout_constraintBottom_toTopOf="@+id/txtAvaliar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtAvaliar" />
+
+            <View
+                android:id="@+id/view7"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:background="#000"
+                app:layout_constraintBottom_toBottomOf="@+id/txtAvaliar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtAvaliar" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

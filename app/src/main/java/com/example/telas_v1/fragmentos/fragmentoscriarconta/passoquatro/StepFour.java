@@ -73,12 +73,19 @@ public class StepFour extends Fragment{
                                 userCliente.setUrlFotoFundo("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105");
                                 userCliente.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8");
                                 userCliente.setSenha(txtSenha.getText().toString().trim());
+                                userCliente.setStars(0);
+                                userCliente.setCountStar(0);
                             metodosUsers.cadastrarUser(getActivity(), getContext(), userCliente, null);
                         } else {
                             userTrabalhador.setSenha(txtSenha.getText().toString().trim());
                             userTrabalhador.setMyPreco(0.00f);
+                            userTrabalhador.setProfUm("Nenhum Selecionado");
+                            userTrabalhador.setProfDois("Nenhum Selecionado");
+                            userTrabalhador.setProfTres("Nenhum Selecionado");
                             userTrabalhador.setUrlFotoFundo("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105");
                             userTrabalhador.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F2e3534fb-21e2-429c-8f1c-ab8f0f5165ee?alt=media&token=0e3b8518-22ab-4ff2-bc13-367059352e92");
+                            userTrabalhador.setStars(0);
+                            userTrabalhador.setCountStars(0);
                             metodosUsers.cadastrarUser(getActivity(), getContext(), null, userTrabalhador);
                         }
                         }else Toast.makeText(getContext(), "A senha deve ter mais de 6 caracteres!", Toast.LENGTH_LONG).show();

@@ -1,7 +1,12 @@
 package com.example.telas_v1.models;
 
+import android.app.Dialog;
+import android.content.Context;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,6 +40,7 @@ public class MetodosMensagens {
     public void carregarMensagensTrabalhador(final UserTrabalhador meT, final UserCliente userC, final GroupAdapter adapter) {
         String fromId = meT.getId();
         String toId = userC.getId();
+
 
         FirebaseFirestore.getInstance().collection("/conversas")
                 .document(fromId)

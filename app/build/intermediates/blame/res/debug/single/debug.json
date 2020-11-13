@@ -184,6 +184,10 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_list_fotos.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_list_fotos.xml"
+    },
+    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_trabalho.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable\\ic_trabalho.xml"
     },
@@ -300,6 +304,10 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\item_msn_me.xml"
     },
     {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_avaliar_users.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\item_avaliar_users.xml"
+    },
+    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_my_perfil_trabalhador.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_my_perfil_trabalhador.xml"
     },
@@ -310,6 +318,10 @@
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\font_montserrat_alternates_bold.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\font\\montserrat_alternates_bold.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_list_fotos.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\item_list_fotos.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_img.xml.flat",

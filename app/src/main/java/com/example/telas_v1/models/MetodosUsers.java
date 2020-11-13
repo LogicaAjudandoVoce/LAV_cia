@@ -1,20 +1,23 @@
 package com.example.telas_v1.models;
 
 import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.telas_v1.activitys.startactivitys.LoginActiviy;
-import com.example.telas_v1.fragmentos.fragmentosmenu.MenuActivity;
+import com.example.telas_v1.activitys.startactivitys.*;
+import com.example.telas_v1.fragmentos.fragmentosmenu.*;
 import com.example.telas_v1.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,7 +38,7 @@ import com.xwray.groupie.ViewHolder;
 
 import java.util.List;
 
-public class MetodosUsers {
+public class MetodosUsers{
     private BarraProgresso progresso;
 
     public void autenticarUsuario(final Context context, String email, String password, final ProgressBar barra){
@@ -297,5 +300,64 @@ public class MetodosUsers {
         public int getLayout() {
             return R.layout.item_card_list;
         }
+    }
+
+    public void avaliarUser(final Context context, final UserCliente userC, final UserTrabalhador userT){
+        final Dialog dialog= new Dialog(context);
+        dialog.setContentView(R.layout.item_avaliar_users);
+
+        final RatingBar ratingBar = dialog.findViewById(R.id.avaliarBarra);
+        Button btnCancelar = dialog.findViewById(R.id.btnCancelar);
+        Button btnAvaliar = dialog.findViewById(R.id.btnAvaliarStars);
+
+        dialog.show();
+
+        btnCancelar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                dialog.dismiss();
+            }
+        });
+
+        btnAvaliar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (userC!=null) {
+                    Log.d("TESTE", String.valueOf(ratingBar.getNumStars()));
+                    userC.setCountStar(userC.getCountStar() + 1);
+                    userC.setStars(userC.getStars()+ratingBar.getRating());
+                    FirebaseFirestore.getInstance().collection("userCliente").document(userC.getId()).set(userC).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(context, "Obrigado pela avaliação!", Toast.LENGTH_LONG).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "Ocorreu algum erro... tente novamente", Toast.LENGTH_LONG).show();
+                            Log.e("TESTE", "Erro avaliar cliente: "+e.getMessage(), e);
+                        }
+                    });
+                 }else if (userT!=null) {
+                    Log.d("TESTE", String.valueOf(ratingBar.getNumStars()));
+                    userT.setCountStars(userT.getCountStars() + 1);
+                    userT.setStars(userT.getStars()+ratingBar.getRating());
+                    FirebaseFirestore.getInstance().collection("userTrabalhador").document(userT.getId()).set(userT).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(context, "Obrigado pela avaliação!", Toast.LENGTH_LONG).show();
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(context, "Ocorreu algum erro... tente novamente", Toast.LENGTH_LONG).show();
+                            Log.e("TESTE", "Erro avaliar trabalhador: "+e.getMessage(), e);
+                        }
+                    });
+                }
+                dialog.dismiss();
+
+            }
+        });
     }
 }

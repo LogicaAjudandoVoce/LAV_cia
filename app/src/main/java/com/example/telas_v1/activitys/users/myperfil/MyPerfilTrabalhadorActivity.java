@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -11,15 +12,18 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telas_v1.R;
+import com.example.telas_v1.activitys.users.ListFotosActivity;
 import com.example.telas_v1.models.FotoLista;
 import com.example.telas_v1.models.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -40,6 +44,10 @@ import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
 
+import org.w3c.dom.Text;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
@@ -50,10 +58,11 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     private ImageView imgFundo, imgFoto;
     private FloatingActionButton btnList;
     private TextInputEditText txtSobreMim, txtContatos;
-    private TextView txt1, txt2;
+    private TextView txt1, txt2, txtTrabUm, txtTrabDois, txtTrabTres;
     private Spinner prof, prof1, prof2;
     private Uri uri;
-    private GroupAdapter adapter;
+    private List<String> urls;
+    private GroupAdapter adapter, precosAdapter;
     private boolean aux=false;
 
     @Override
@@ -62,28 +71,32 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_perfil_trabalhador);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
+        RecyclerView recyclerView1 = findViewById(R.id.recyclerView2);
+
+        adapter = new GroupAdapter();
+        precosAdapter = new GroupAdapter();
+        recyclerView.setAdapter(adapter);
+        recyclerView1.setAdapter(precosAdapter);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2, GridLayoutManager.HORIZONTAL, false);
+        recyclerView.setLayoutManager(gridLayoutManager);
+        recyclerView1.setLayoutManager(new LinearLayoutManager(this));
+
+        iniciarComponentes();
+    }
+
+    private void iniciarComponentes(){
+        TextView txtAvaliar = findViewById(R.id.txtAvaliar);
+        RatingBar ratingBar = findViewById(R.id.ratingBar2);
+        txtTrabUm = findViewById(R.id.txtTrabUm);
+        txtTrabDois = findViewById(R.id.txtTrabDois);
+        txtTrabTres = findViewById(R.id.txtTrabTres);
+        urls = new ArrayList<String>();
         userT = getIntent().getExtras().getParcelable("meT");
         imgFundo = findViewById(R.id.imgPerfil);
         imgFoto = findViewById(R.id.imgFoto);
         btnList = findViewById(R.id.btnList);
         txt1 = findViewById(R.id.txtCampo2);
         txt2 = findViewById(R.id.textView47);
-
-        imgFoto.setEnabled(false);
-        imgFundo.setEnabled(false);
-        btnList.setEnabled(false);
-
-        adapter = new GroupAdapter();
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(adapter);
-        LinearLayoutManager layoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.HORIZONTAL, false);
-        recyclerView.setLayoutManager(layoutManager);
-
-        iniciarComponentes();
-        listarFotos();
-    }
-
-    private void iniciarComponentes(){
         TextView txtNome = findViewById(R.id.txtNome);
         txtSobreMim = findViewById(R.id.txtSobreMim);
         txtContatos = findViewById(R.id.txtContatos);
@@ -91,20 +104,37 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         prof1 = findViewById(R.id.profDois);
         prof2 = findViewById(R.id.profTres);
 
+        txtAvaliar.setText(String.valueOf(userT.getStars()/(float)userT.getCountStars()).substring(0, 3));
+        ratingBar.setFocusable(false);
+        ratingBar.setRating(userT.getStars()/(float)userT.getCountStars());
+
+        imgFoto.setEnabled(false);
+        imgFundo.setEnabled(false);
+        btnList.setEnabled(false);
         txtNome.setText(userT.getNome());
         txtSobreMim.setText(userT.getSobreMim());
         txtContatos.setText(userT.getContatos());
         Picasso.get().load(userT.getUrlFotoFundo()).into(imgFundo);
         Picasso.get().load(userT.getUrlFotoPerfil()).into(imgFoto);
+        txtTrabUm.setText(userT.getProfUm());
+        txtTrabDois.setText(userT.getProfDois());
+        txtTrabTres.setText(userT.getProfTres());
 
         List<String> profs = Arrays.asList(getResources().getStringArray(R.array.profs));
         prof.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, profs));
         prof1.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, profs));
         prof2.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, profs));
 
+
         prof.setEnabled(false);
         prof1.setEnabled(false);
         prof2.setEnabled(false);
+
+        prof.setVisibility(View.INVISIBLE);
+        prof1.setVisibility(View.INVISIBLE);
+        prof2.setVisibility(View.INVISIBLE);
+
+        listarFotos();
     }
 
     public void listarFotos(){
@@ -139,8 +169,13 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
             prof.setEnabled(true);
             prof1.setEnabled(true);
             prof2.setEnabled(true);
+            prof.setVisibility(View.VISIBLE);
+            prof1.setVisibility(View.VISIBLE);
+            prof2.setVisibility(View.VISIBLE);
+            txtTrabUm.setVisibility(View.INVISIBLE);
+            txtTrabDois.setVisibility(View.INVISIBLE);
+            txtTrabTres.setVisibility(View.INVISIBLE);
             txtContatos.setEnabled(true);
-            btnList.setImageResource(R.drawable.ic_floating);
             btnList.setEnabled(true);
             aux=!aux;
         }else{
@@ -172,6 +207,12 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                                         prof.setEnabled(false);
                                         prof1.setEnabled(false);
                                         prof2.setEnabled(false);
+                                        prof.setVisibility(View.INVISIBLE);
+                                        prof1.setVisibility(View.INVISIBLE);
+                                        prof2.setVisibility(View.INVISIBLE);
+                                        txtTrabUm.setVisibility(View.VISIBLE);
+                                        txtTrabDois.setVisibility(View.VISIBLE);
+                                        txtTrabTres.setVisibility(View.VISIBLE);
                                         btnList.setImageResource(R.drawable.ic_expand_more);
                                         btnList.setEnabled(false);
                                         aux=!aux;
@@ -194,7 +235,14 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                     prof.setEnabled(false);
                     prof1.setEnabled(false);
                     prof2.setEnabled(false);
-                    btnList.setImageResource(R.drawable.ic_expand_more);
+                    txtTrabUm.setVisibility(View.VISIBLE);
+                    txtTrabDois.setVisibility(View.VISIBLE);
+                    txtTrabTres.setVisibility(View.VISIBLE);
+                    prof.setVisibility(View.INVISIBLE);
+                    prof1.setVisibility(View.INVISIBLE);
+                    prof2.setVisibility(View.INVISIBLE);
+                    txt1.setVisibility(View.INVISIBLE);
+                    txt2.setVisibility(View.INVISIBLE);
                     btnList.setEnabled(false);
                     aux=!aux;
                 }
@@ -219,7 +267,6 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                         if (view.getId()==R.id.imgPerfil){
                             startActivityForResult(intent, 0);
                         }else{
-                            Log.d("TESTE", "Perfil 1");
                             startActivityForResult(intent, 1);
                         }
                     }
@@ -257,10 +304,11 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode==RESULT_OK)uri = data.getData();
-        if (requestCode==0 && resultCode==RESULT_OK){
+        if (requestCode==0 && resultCode==RESULT_OK)
             salvarFotoFundo();
+        else if (requestCode==1 && resultCode==RESULT_OK)
             salvarFotoPerfil();
-        }else if (requestCode==2 && resultCode==RESULT_OK){
+        else if (requestCode==2 && resultCode==RESULT_OK){
             salvarFotoLista();
         }
     }
@@ -348,9 +396,9 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         public void bind(@NonNull ViewHolder viewHolder, int position) {
             ImageView img = viewHolder.itemView.findViewById(R.id.imgList);
             TextView txtAdd = findViewById(R.id.txtInfo);
+            urls.add(fotoLista);
 
             if (fotoLista!=null){
-                Log.d("TESTE", fotoLista);
                 Picasso.get().load(fotoLista).resize(400, 300).into(img);
                 txtAdd.setText("");
             }
@@ -371,5 +419,16 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
             return true;
         }
         return false;
+    }
+
+    public void abrirFotosList(View view){
+        if (!urls.isEmpty()){
+            Intent intent = new Intent(this, ListFotosActivity.class);
+            intent.putExtra("meT", userT);
+            intent.putExtra("urls", (Serializable) urls);
+            intent.putExtra("me", "sim");
+            startActivity(intent);
+        }else
+            Toast.makeText(this, "Não existem fotos para visualizar...", Toast.LENGTH_LONG).show();
     }
 }

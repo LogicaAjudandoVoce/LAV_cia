@@ -20,7 +20,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telas_v1.R;
-import com.example.telas_v1.fragmentos.fragmentosmenu.MenuActivity;
+import com.example.telas_v1.fragmentos.fragmentosmenu.*;
 import com.example.telas_v1.models.MetodosUsers;
 import com.example.telas_v1.models.Postagem;
 import com.example.telas_v1.models.UserCliente;
@@ -86,7 +86,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         txtDescricao = findViewById(R.id.txtDescricao);
         txtDescricaoRapida = findViewById(R.id.txtDescricaoRapida);
         txtRc = findViewById(R.id.txtRc);
-        txtPreco = findViewById(R.id.txtPreco);
+        txtPreco = findViewById(R.id.trab1);
         imgMapa = findViewById(R.id.imgMapa);
         rcView = findViewById(R.id.rcView);
         btnPost = findViewById(R.id.btnPostar);
