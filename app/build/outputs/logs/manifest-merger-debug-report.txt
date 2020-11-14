@@ -21,6 +21,7 @@ MERGED from [com.squareup.picasso:picasso:2.71828] C:\Users\cassi\.gradle\caches
 MERGED from [androidx.lifecycle:lifecycle-extensions:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\5cfca9dad9a098e7f5ae4ed8cd4915b6\lifecycle-extensions-2.2.0\AndroidManifest.xml:17:1-27:12
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\084433f34dfbd59ebc2b1b89248bedea\jetified-circleimageview-2.2.0\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\536b1f8564519f1ebce1cfe9d700dd74\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d3326d426ad881679b26d582c278c69a\jetified-roundedimageview-2.3.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d90d34fbf0ab4ab34eb6b72774e60e79\jetified-play-services-maps-17.0.0\AndroidManifest.xml:17:1-38:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\bad85c7c8eeaa9dbcea6c7513e9606e7\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d7b0b62d84be2843f21a1a06ea985d17\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -355,6 +356,8 @@ MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\cassi\.gradle\caches\t
 MERGED from [de.hdodenhof:circleimageview:2.2.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\084433f34dfbd59ebc2b1b89248bedea\jetified-circleimageview-2.2.0\AndroidManifest.xml:5:5-7:41
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\536b1f8564519f1ebce1cfe9d700dd74\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\536b1f8564519f1ebce1cfe9d700dd74\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d3326d426ad881679b26d582c278c69a\jetified-roundedimageview-2.3.0\AndroidManifest.xml:7:5-43
+MERGED from [com.makeramen:roundedimageview:2.3.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d3326d426ad881679b26d582c278c69a\jetified-roundedimageview-2.3.0\AndroidManifest.xml:7:5-43
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d90d34fbf0ab4ab34eb6b72774e60e79\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-maps:17.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\d90d34fbf0ab4ab34eb6b72774e60e79\jetified-play-services-maps-17.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\bad85c7c8eeaa9dbcea6c7513e9606e7\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44

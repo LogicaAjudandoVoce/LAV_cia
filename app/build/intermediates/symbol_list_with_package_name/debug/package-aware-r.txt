@@ -749,6 +749,18 @@ attr region_widthLessThan
 attr region_widthMoreThan
 attr reverseLayout
 attr rippleColor
+attr riv_border_color
+attr riv_border_width
+attr riv_corner_radius
+attr riv_corner_radius_bottom_left
+attr riv_corner_radius_bottom_right
+attr riv_corner_radius_top_left
+attr riv_corner_radius_top_right
+attr riv_mutate_background
+attr riv_oval
+attr riv_tile_mode
+attr riv_tile_mode_x
+attr riv_tile_mode_y
 attr round
 attr roundPercent
 attr saturation
@@ -2310,6 +2322,7 @@ id chip2
 id chip3
 id chip_group
 id chronometer
+id clamp
 id clear_text
 id clip_horizontal
 id clip_vertical
@@ -2476,6 +2489,7 @@ id media_actions
 id message
 id middle
 id mini
+id mirror
 id month_grid
 id month_navigation_bar
 id month_navigation_fragment_toggle
@@ -2576,6 +2590,7 @@ id rcView
 id rectangles
 id recyclerView
 id recyclerView2
+id repeat
 id reverseSawtooth
 id right
 id right_icon
@@ -3082,6 +3097,7 @@ string contratos_ativos
 string criar_conta
 string data_de_nascimento
 string default_web_client_id
+string define_roundedimageview
 string e_mail
 string email_ou_telefone
 string entrar
@@ -3106,6 +3122,15 @@ string informe_seus_dados
 string item_view_role_description
 string j_estamos_acabando
 string l_gica_ajudando_voc
+string library_roundedimageview_author
+string library_roundedimageview_authorWebsite
+string library_roundedimageview_isOpenSource
+string library_roundedimageview_libraryDescription
+string library_roundedimageview_libraryName
+string library_roundedimageview_libraryVersion
+string library_roundedimageview_libraryWebsite
+string library_roundedimageview_licenseId
+string library_roundedimageview_repositoryLink
 string logo
 string material_slider_range_end
 string material_slider_range_start
@@ -3995,6 +4020,7 @@ styleable PropertySet android_visibility android_alpha layout_constraintTag moti
 styleable RangeSlider values
 styleable RecycleListView paddingBottomNoButtons paddingTopNoTitle
 styleable RecyclerView android_orientation android_clipToPadding android_descendantFocusability fastScrollEnabled fastScrollHorizontalThumbDrawable fastScrollHorizontalTrackDrawable fastScrollVerticalThumbDrawable fastScrollVerticalTrackDrawable layoutManager reverseLayout spanCount stackFromEnd
+styleable RoundedImageView android_scaleType riv_border_color riv_border_width riv_corner_radius riv_corner_radius_bottom_left riv_corner_radius_bottom_right riv_corner_radius_top_left riv_corner_radius_top_right riv_mutate_background riv_oval riv_tile_mode riv_tile_mode_x riv_tile_mode_y
 styleable ScrimInsetsFrameLayout insetForeground
 styleable ScrollingViewBehavior_Layout behavior_overlapTop
 styleable SearchView android_focusable android_maxWidth android_inputType android_imeOptions closeIcon commitIcon defaultQueryHint goIcon iconifiedByDefault layout queryBackground queryHint searchHintIcon searchIcon submitBackground suggestionRowLayout voiceIcon
