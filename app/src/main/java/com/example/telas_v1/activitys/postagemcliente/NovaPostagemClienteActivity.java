@@ -13,9 +13,11 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +35,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.hootsuite.nachos.NachoTextView;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
@@ -40,26 +43,31 @@ import com.xwray.groupie.ViewHolder;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
+import static com.hootsuite.nachos.terminator.ChipTerminatorHandler.BEHAVIOR_CHIPIFY_TO_TERMINATOR;
+
 public class NovaPostagemClienteActivity extends AppCompatActivity {
 
     private TextInputEditText txtTitulo, txtDescricao, txtDescricaoRapida;
+    private Spinner spCateghoria;
     private TextView txtRc;
     private EditText txtPreco;
     private RecyclerView rcView;
     private GroupAdapter adapter;
     private Button btnPost;
     private ImageView imgMapa;
-    private UUID uid;
+    private UUID uid = UUID.randomUUID();
     private List<String> uriFoto = new ArrayList<>();
-    private List<Uri> uriAx = new ArrayList<>();
+    private Uri uriAx;
     private Postagem postagem = new Postagem();
     private MetodosUsers metodosUsers= new MetodosUsers();
     private UserCliente cliente;
     private double preco;
+    private NachoTextView txtPalavrasChaves;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,6 +88,10 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
             }
         });
 
+        iniciarComponentes();
+    }
+
+    private void iniciarComponentes(){
         postagem = getIntent().getParcelableExtra("loc");
 
         txtTitulo = findViewById(R.id.txtTitulo);
@@ -90,13 +102,13 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         imgMapa = findViewById(R.id.imgMapa);
         rcView = findViewById(R.id.rcView);
         btnPost = findViewById(R.id.btnPostar);
+        txtPalavrasChaves = findViewById(R.id.txtPalavrasChaves);
+        spCateghoria = findViewById(R.id.spCategoria);
 
-        btnPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                postar();
-            }
-        });
+        List<String> filtros = Arrays.asList(getResources().getStringArray(R.array.filtros));
+        spCateghoria.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, filtros));
+
+        txtPalavrasChaves.addChipTerminator(' ', BEHAVIOR_CHIPIFY_TO_TERMINATOR);
 
         adapter = new GroupAdapter();
         rcView.setAdapter(adapter);
@@ -127,20 +139,16 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode==0 && resultCode==NovaPostagemClienteActivity.RESULT_OK){
-            uriFoto.add(data.getData().toString());
-            uriAx.add(data.getData());
-            Log.d("TESTE", String.valueOf(uriFoto.size()));
-            adapter.clear();
-            for (int i=0;i<uriFoto.size();i++){
-                adapter.add(new PostViewHolder(uriFoto.get(i)));
-            }
+        if (requestCode==0 && resultCode==RESULT_OK){
+            uriAx=data.getData();
+            adapter.add(new PostViewHolder(uriAx.toString()));
             adapter.notifyDataSetChanged();
             txtRc.setText("");
+        //    uploadarFotos();
         }
     }
 
-    public void postar(){
+    public void postar(View view){
         String titulo= txtTitulo.getText().toString();
         String mini = txtDescricaoRapida.getText().toString();
         String descricao= txtDescricao.getText().toString();
@@ -148,23 +156,26 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
          else preco = Double.valueOf(txtPreco.getText().toString());
 
         if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null && mini!=null){
-            uid = UUID.randomUUID();
             SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
             String dataFormatada = formataData.format(data);
+            List<String> keys = new ArrayList<>();
 
             postagem.setIdCliente(FirebaseAuth.getInstance().getUid());
             postagem.setIdPost(uid.toString() );
             postagem.setNomeAutor(cliente.getNome());
             postagem.setEmail(cliente.getEmail());
             postagem.setTitulo(titulo);
+            for (String chip: txtPalavrasChaves.getChipValues()){
+                keys.add(chip);
+            }
+            postagem.setKeys(keys);
             postagem.setMiniDescricao(mini);
             postagem.setDescricao(descricao);
             postagem.setPreco(preco);
-            postagem.setConclusao(false);
+            postagem.setStatus("Pendente");
+            postagem.setFiltroFixo(spCateghoria.getSelectedItem().toString());
             postagem.setData(dataFormatada);
-            uriFoto.clear();
-            uploadarFotos(postagem);
 
             FirebaseFirestore.getInstance().collection("postagens").document(postagem.getIdPost()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
                 @Override
@@ -184,21 +195,20 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         }
     }
 
-    public void uploadarFotos(Postagem postagem){
+    public void uploadarFotos(){
         final StorageReference ref = FirebaseStorage.getInstance().getReference("/postagens/"+FirebaseAuth.getInstance().getUid()+"/"+uid.toString());
-        for (int i=0;i<uriFoto.size();i++) {
-            ref.putFile(uriAx.get(i)).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            ref.putFile((Uri) uriAx).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                 @Override
                 public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                     ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                         @Override
                         public void onSuccess(Uri uri) {
                             uriFoto.add(uri.toString());
+                            postagem.setFotos(uriFoto);
                         }
                     });
                 }
             });
-        }
     }
 
     public void abrirMapa(View view){

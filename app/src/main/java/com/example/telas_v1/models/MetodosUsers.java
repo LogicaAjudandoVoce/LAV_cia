@@ -144,7 +144,7 @@ public class MetodosUsers{
         }
     }
 
-    public void listarTrabalhador(final GroupAdapter adapter, final String tipoTrab, final String cidade, final float preco) {
+    public void listarTrabalhador(final GroupAdapter adapter, final String tipoTrab, final List<String> keys) {
         FirebaseFirestore.getInstance().collection("/userTrabalhador").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -157,25 +157,23 @@ public class MetodosUsers{
                     for (DocumentSnapshot doc : docs) {
                         UserTrabalhador userTrabalhador = doc.toObject(UserTrabalhador.class);
                         if (!tipoTrab.equals("Nenhum Selecionado")) {
-                            if (!cidade.isEmpty()) {
-//                            if (preco!=0){
-//                                if (userTrabalhador.getMyPreco()<=preco && userTrabalhador.getCidade().equals(cidade))adapter.add(new ListarTrabalhadorView(userTrabalhador));
-//                            }else{
-//                                if (cidade.equals(userTrabalhador.getCidade()))adapter.add(new ListarTrabalhadorView(userTrabalhador));
-//                            }
-                            } else {
-//                            if (userTrabalhador.getTrabalho().equals(tipoTrab)) adapter.add(new ListarTrabalhadorView(userTrabalhador));
-                            }
-                        } else if (!cidade.equals("Qualquer")) {
-//                            if (preco!=0){
-//                                if (userTrabalhador.getMyPreco()<=preco && userTrabalhador.getCidade().equals(cidade))adapter.add(new ListarTrabalhadorView(userTrabalhador));
-//                            }else{
-//                                if (cidade.equals(userTrabalhador.getCidade()))adapter.add(new ListarTrabalhadorView(userTrabalhador));
-//                            }
-                        } else if (preco != 0) {
-                            if (userTrabalhador.getMyPreco() <= preco)
+                            if (userTrabalhador.getFiltoFixo().equals(tipoTrab)){
                                 adapter.add(new ListarTrabalhadorView(userTrabalhador));
-                        } else adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                                return;
+                            }
+                        } else if (!keys.isEmpty()){
+                            for (String keyT : userTrabalhador.getKeys()) {
+                                for (String filtro : keys) {
+                                    if (keyT.equals(filtro)) {
+                                        adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                                        return;
+                                    }
+                                }
+                            }
+                        }
+                        else {
+                            adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                        }
                         adapter.notifyDataSetChanged();
                     }
                 }
@@ -211,7 +209,8 @@ public class MetodosUsers{
     }
 
     public void listarPostagens(final GroupAdapter adapter){
-        FirebaseFirestore.getInstance().collection("postagens").addSnapshotListener(new EventListener<QuerySnapshot>() {
+        FirebaseFirestore.getInstance().collection("postagens")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
                 if (e!=null){
@@ -222,7 +221,7 @@ public class MetodosUsers{
                     for (DocumentSnapshot doc : docs) {
                         Postagem postagem = doc.toObject(Postagem.class);
 
-                        if (!postagem.isConclusao()){
+                        if (postagem.getStatus().equals("Pendente")){
                              adapter.add(new ListarPostagemViewModel(postagem));
                              adapter.notifyDataSetChanged();
                         }
@@ -230,6 +229,55 @@ public class MetodosUsers{
                 }
             }
         });
+    }
+
+    public void listarPostagensVoluntariosTrab(final GroupAdapter adapter, final String id, final String status){
+        FirebaseFirestore.getInstance().collection("postagens")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
+                            Log.e("TESTE", "Listar Postagens: "+e.getMessage(), e);
+                        }else{
+                            List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                            adapter.clear();
+                            for (DocumentSnapshot doc : docs) {
+                                Postagem postagem = doc.toObject(Postagem.class);
+
+                                if (postagem.getStatus().equals(status)){
+                                    for(String user: postagem.getVoluntarios()) {
+                                        if (user.equals(id)) {
+                                            adapter.add(new ListarPostagemViewModel(postagem));
+                                            adapter.notifyDataSetChanged();
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                });
+    }
+
+    public void listarPostagensVoluntariosCliente(final GroupAdapter adapter, final String id, final  String status){
+        FirebaseFirestore.getInstance().collection("postagens")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
+                            Log.e("TESTE", "Listar Postagens: "+e.getMessage(), e);
+                        }else{
+                            List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                            adapter.clear();
+                            for (DocumentSnapshot doc : docs) {
+                                Postagem postagem = doc.toObject(Postagem.class);
+                                if (postagem.getStatus().equals(status)){
+                                    adapter.add(new ListarPostagemViewModel(postagem));
+                                    adapter.notifyDataSetChanged();
+                                }
+                            }
+                        }
+                    }
+                });
     }
 
     public interface OnResultUser{

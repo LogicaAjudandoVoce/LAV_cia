@@ -73,6 +73,7 @@
                 android:layout_height="200dp"
                 android:background="@color/places_ui_default_primary_dark"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView22" />
 
@@ -335,22 +336,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="32dp"
                 android:text="Avaliação:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/profTres" />
+                app:layout_constraintTop_toBottomOf="@+id/txtCampoKeys" />
 
             <RatingBar
                 android:id="@+id/ratingBar2"
@@ -404,6 +394,75 @@
                 app:layout_constraintEnd_toEndOf="@+id/profTres"
                 app:layout_constraintStart_toStartOf="@+id/profTres"
                 app:layout_constraintTop_toTopOf="@+id/profTres" />
+
+            <com.hootsuite.nachos.NachoTextView
+                android:id="@+id/txtPalavrasTrab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/item_fundo_branco_edit_text"
+                android:paddingStart="10dp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout14"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout14"
+                app:layout_constraintTop_toBottomOf="@+id/textView53" />
+
+            <TextView
+                android:id="@+id/textView53"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Palavras Chaves  para o identificar:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView43"
+                app:layout_constraintTop_toBottomOf="@+id/filtrarTrab" />
+
+            <TextView
+                android:id="@+id/txtCampoKeys"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Este Campo é Obrigatório"
+                android:textColor="#FF1744"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/txtPalavrasTrab"
+                app:layout_constraintTop_toBottomOf="@+id/txtPalavrasTrab" />
+
+            <TextView
+                android:id="@+id/textView52"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Filtro Fixo para Pesquisar Você:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView43"
+                app:layout_constraintTop_toBottomOf="@+id/profTres" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/filtrarTrab"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/profDois"
+                app:layout_constraintStart_toStartOf="@+id/profTres"
+                app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+            <TextView
+                android:id="@+id/txtFiltro"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@+id/filtrarTrab"
+                app:layout_constraintEnd_toEndOf="@+id/filtrarTrab"
+                app:layout_constraintStart_toStartOf="@+id/filtrarTrab"
+                app:layout_constraintTop_toTopOf="@+id/filtrarTrab" />
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

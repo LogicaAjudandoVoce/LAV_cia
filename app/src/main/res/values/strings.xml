@@ -36,7 +36,7 @@
     <string name="contratos_ativos">Contratos ativos:</string>
 
     <string-array name="contrato">
-        <item>Contratos Voluntarios</item>
+        <item>Contratos Voluntários</item>
         <item>Contratos Ativos</item>
         <item>Contratos Finalizados</item>
     </string-array>

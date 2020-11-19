@@ -1,10 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
      <string-array name="profs">
-        <item>Nenhum Selecionado</item>
         <item>Pedreiro</item>
         <item>Professor Particular</item>
         <item>Pintor</item>
         <item>Eletricista</item>
+    </string-array>
+
+    <string-array name="filtros">
+        <item>Animais</item>
+        <item>Cabelos</item>
+        <item>Comidas</item>
+        <item>Dedetização</item>
+        <item>Eletricista</item>
+        <item>Encanador</item>
+        <item>Estudos</item>
+        <item>Faxineiro</item>
+        <item>Jardineio</item>
+        <item>Manicure e Pedicure</item>
+        <item>Maquiagem</item>
+        <item>Pedreiro</item>
+        <item>Pintor</item>
+        <item>Roupas e Moda</item>
+        <item>Vendas</item>
+        <item>Zelador</item>
     </string-array>
 </resources>

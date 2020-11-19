@@ -3,10 +3,13 @@ package com.example.telas_v1.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import java.util.List;
+
 public class Postagem implements Parcelable {
 
-    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao;
-    private boolean conclusao;
+    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao, filtroFixo, status;
+    private String idContratado;
+    private List<String> keys, fotos, voluntarios;
     private double preco, latitude, longitude;
 
     public Postagem() {
@@ -21,10 +24,41 @@ public class Postagem implements Parcelable {
         data = in.readString();
         email = in.readString();
         miniDescricao = in.readString();
-        conclusao = in.readByte() != 0;
+        filtroFixo = in.readString();
+        status = in.readString();
+        idContratado = in.readString();
+        keys = in.createStringArrayList();
+        fotos = in.createStringArrayList();
+        voluntarios = in.createStringArrayList();
         preco = in.readDouble();
         latitude = in.readDouble();
         longitude = in.readDouble();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(idCliente);
+        dest.writeString(idPost);
+        dest.writeString(nomeAutor);
+        dest.writeString(titulo);
+        dest.writeString(descricao);
+        dest.writeString(data);
+        dest.writeString(email);
+        dest.writeString(miniDescricao);
+        dest.writeString(filtroFixo);
+        dest.writeString(status);
+        dest.writeString(idContratado);
+        dest.writeStringList(keys);
+        dest.writeStringList(fotos);
+        dest.writeStringList(voluntarios);
+        dest.writeDouble(preco);
+        dest.writeDouble(latitude);
+        dest.writeDouble(longitude);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Postagem> CREATOR = new Creator<Postagem>() {
@@ -103,12 +137,52 @@ public class Postagem implements Parcelable {
         this.miniDescricao = miniDescricao;
     }
 
-    public boolean isConclusao() {
-        return conclusao;
+    public String getFiltroFixo() {
+        return filtroFixo;
     }
 
-    public void setConclusao(boolean conclusao) {
-        this.conclusao = conclusao;
+    public void setFiltroFixo(String filtroFixo) {
+        this.filtroFixo = filtroFixo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getIdContratado() {
+        return idContratado;
+    }
+
+    public void setIdContratado(String idContratado) {
+        this.idContratado = idContratado;
+    }
+
+    public List<String> getKeys() {
+        return keys;
+    }
+
+    public void setKeys(List<String> keys) {
+        this.keys = keys;
+    }
+
+    public List<String> getFotos() {
+        return fotos;
+    }
+
+    public void setFotos(List<String> fotos) {
+        this.fotos = fotos;
+    }
+
+    public List<String> getVoluntarios() {
+        return voluntarios;
+    }
+
+    public void setVoluntarios(List<String> voluntarios) {
+        this.voluntarios = voluntarios;
     }
 
     public double getPreco() {
@@ -133,26 +207,5 @@ public class Postagem implements Parcelable {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(idCliente);
-        parcel.writeString(idPost);
-        parcel.writeString(nomeAutor);
-        parcel.writeString(titulo);
-        parcel.writeString(descricao);
-        parcel.writeString(data);
-        parcel.writeString(email);
-        parcel.writeString(miniDescricao);
-        parcel.writeByte((byte) (conclusao ? 1 : 0));
-        parcel.writeDouble(preco);
-        parcel.writeDouble(latitude);
-        parcel.writeDouble(longitude);
     }
 }

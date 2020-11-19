@@ -104,11 +104,13 @@
             <TextView
                 android:id="@+id/txtSobreMim"
                 android:layout_width="0dp"
+                android:padding="10dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="Lorem ipsum dolor sit amet consectetur adipiscing, elit enim primis facilisi ultrices egestas inceptos, dui taciti felis habitant quisque. Convallis nulla curabitur mollis venenatis elementum laoreet conubia massa habitant ex euismod egestas, himenaeos ac felis bibendum justo suspendisse dignissim lorem luctus facilisi quis vestibulum tristique, tellus nullam enim vehicula commodo eros purus tortor fringilla vel dui. Arcu duis vestibulum sit viverra semper rhoncus ultrices cras natoque, erat placerat consectetur praesent iaculis tempus habitasse ex litora sollicitudin, mus lacinia quis adipiscing quisque mauris ullamcorper class."
+                android:text="Sobre Mim"
+                android:background="@drawable/item_fundo_branco_edit_text"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
@@ -162,6 +164,8 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="16dp"
                 android:text="trabalhador@gmail.com"
+                android:padding="10dp"
+                android:background="@drawable/item_fundo_branco_edit_text"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/textView41"
@@ -268,7 +272,7 @@
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/trab3" />
+                app:layout_constraintTop_toBottomOf="@+id/txtKeys" />
 
             <TextView
                 android:id="@+id/txtAvaliar"
@@ -339,6 +343,54 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtAvaliar" />
+
+            <TextView
+                android:id="@+id/textView51"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Palavras Chaves relacionadas ao Trabalhador:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView38"
+                app:layout_constraintTop_toBottomOf="@+id/txtFiltroFixo" />
+
+            <com.hootsuite.nachos.NachoTextView
+                android:id="@+id/txtKeys"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:background="@drawable/item_fundo_branco_edit_text"
+                android:paddingEnd="10dp"
+                android:enabled="false"
+                android:paddingBottom="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/trab3"
+                app:layout_constraintStart_toStartOf="@+id/trab3"
+                app:layout_constraintTop_toBottomOf="@+id/textView51" />
+
+            <TextView
+                android:id="@+id/textView54"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Filtro Fixo para Pesquisa:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView38"
+                app:layout_constraintTop_toBottomOf="@+id/trab3" />
+
+            <TextView
+                android:id="@+id/txtFiltroFixo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="TextView"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView54" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

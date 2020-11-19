@@ -143,12 +143,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="32dp"
                 android:text="Valor Máximo a se Pagar:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
+                app:layout_constraintTop_toBottomOf="@+id/spCategoria" />
 
             <TextView
                 android:id="@+id/textView26"
@@ -223,6 +223,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/botao_azul"
+                android:onClick="postar"
                 android:text="Postar"
                 android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -243,24 +244,21 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout12"
                 android:layout_width="0dp"
-                android:layout_height="100dp"
+                android:layout_height="120dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="400dp"
                 android:background="@drawable/item_txt_back"
                 android:hint="Informe uma breve descrição..."
                 android:textColorHint="#FFF"
                 app:counterEnabled="true"
                 app:counterMaxLength="120"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout11"
                 app:layout_constraintTop_toBottomOf="@+id/textView18">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/txtDescricaoRapida"
                     android:layout_width="match_parent"
-                    android:layout_height="70dp"
+                    android:layout_height="90dp"
                     android:background="@null"
                     android:gravity="start"
                     android:maxWidth="0dp"
@@ -272,6 +270,56 @@
                     android:textColor="#FFF"
                     android:textColorHint="#FFF" />
             </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/textView50"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Palavras Chaves ou Tags para a pesquisarem sua Postagem:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView18"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout12" />
+
+            <com.hootsuite.nachos.NachoTextView
+                android:id="@+id/txtPalavrasChaves"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/item_txt_back"
+                android:gravity="start"
+                android:hint="Insira as Palavras Chaves ou Tags..."
+                android:paddingStart="20dp"
+                android:paddingTop="10dp"
+                android:paddingEnd="4dp"
+                android:paddingBottom="4dp"
+                android:textColor="#FFF"
+                android:textColorHint="#FFF"
+                app:layout_constraintEnd_toEndOf="@+id/textInputLayout12"
+                app:layout_constraintStart_toStartOf="@+id/textInputLayout12"
+                app:layout_constraintTop_toBottomOf="@+id/textView50" />
+
+            <TextView
+                android:id="@+id/textView55"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="Escilha uma Categoria:"
+                android:textColor="#000"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/textView50"
+                app:layout_constraintTop_toBottomOf="@+id/txtPalavrasChaves" />
+
+            <com.toptoche.searchablespinnerlibrary.SearchableSpinner
+                android:id="@+id/spCategoria"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@android:drawable/editbox_background_normal"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/txtPalavrasChaves"
+                app:layout_constraintStart_toStartOf="@+id/txtPalavrasChaves"
+                app:layout_constraintTop_toBottomOf="@+id/textView55" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

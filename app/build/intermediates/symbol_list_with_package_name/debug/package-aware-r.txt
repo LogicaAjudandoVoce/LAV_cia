@@ -60,6 +60,7 @@ array com_google_android_gms_fonts_certs
 array com_google_android_gms_fonts_certs_dev
 array com_google_android_gms_fonts_certs_prod
 array contrato
+array filtros
 array preloaded_fonts
 array profs
 attr action
@@ -208,10 +209,12 @@ attr checkedIconEnabled
 attr checkedIconTint
 attr checkedIconVisible
 attr checkedTextViewStyle
+attr chipBackground
 attr chipBackgroundColor
 attr chipCornerRadius
 attr chipEndPadding
 attr chipGroupStyle
+attr chipHeight
 attr chipIcon
 attr chipIconEnabled
 attr chipIconSize
@@ -228,6 +231,9 @@ attr chipStrokeColor
 attr chipStrokeWidth
 attr chipStyle
 attr chipSurfaceColor
+attr chipTextColor
+attr chipTextSize
+attr chipVerticalSpacing
 attr circleCrop
 attr circleRadius
 attr civ_border_color
@@ -1036,6 +1042,9 @@ color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
 color checkbox_themeable_attribute_color
+color chip_default_icon_background_color
+color chip_default_text_color
+color chip_material_background
 color colorAccent
 color colorDourado
 color colorPrimary
@@ -1650,6 +1659,10 @@ dimen appcompat_dialog_background_inset
 dimen cardview_compat_inset_shadow
 dimen cardview_default_elevation
 dimen cardview_default_radius
+dimen chip_default_left_margin
+dimen chip_default_padding_between_image
+dimen chip_default_padding_edge
+dimen chip_default_right_margin
 dimen compat_button_inset_horizontal_material
 dimen compat_button_inset_vertical_material
 dimen compat_button_padding_horizontal_material
@@ -2297,6 +2310,7 @@ id btnConversas
 id btnEdit
 id btnEditCliente
 id btnEnviar
+id btnFiltrar
 id btnHisotricCliente
 id btnHistorico
 id btnList
@@ -2304,6 +2318,7 @@ id btnMenu
 id btnPostar
 id btnSair
 id btnVoltar
+id button
 id button2
 id button6
 id buttonPanel
@@ -2369,6 +2384,9 @@ id dropdown_menu
 id easeIn
 id easeInOut
 id easeOut
+id editTextTextPersonName
+id editTextTextPersonName2
+id editTextTextPersonName3
 id edit_query
 id edtLoc
 id end
@@ -2385,6 +2403,7 @@ id fill
 id fill_horizontal
 id fill_vertical
 id filled
+id filtrarTrab
 id fitToContents
 id fixed
 id flip
@@ -2589,7 +2608,6 @@ id ratio
 id rcView
 id rectangles
 id recyclerView
-id recyclerView2
 id repeat
 id reverseSawtooth
 id right
@@ -2633,6 +2651,7 @@ id snackbar_action
 id snackbar_text
 id snap
 id snapMargins
+id spCategoria
 id spacer
 id spline
 id split_action_bar
@@ -2732,7 +2751,15 @@ id textView44
 id textView45
 id textView46
 id textView47
+id textView48
+id textView49
 id textView5
+id textView50
+id textView51
+id textView52
+id textView53
+id textView54
+id textView55
 id textView56
 id textView6
 id textView7
@@ -2778,6 +2805,7 @@ id txt8
 id txtAutorPost
 id txtAvaliar
 id txtCampo2
+id txtCampoKeys
 id txtContato
 id txtContatos
 id txtContatosCliente
@@ -2790,8 +2818,11 @@ id txtDiaSemana
 id txtEmailAutor
 id txtEmailList
 id txtEsquecer
+id txtFiltro
+id txtFiltroFixo
 id txtHora
 id txtInfo
+id txtKeys
 id txtMensagem
 id txtMiniDescricao
 id txtMsn
@@ -2799,6 +2830,8 @@ id txtNome
 id txtNomeAutor
 id txtNomeClientePerfil
 id txtNomeList
+id txtPalavrasChaves
+id txtPalavrasTrab
 id txtPassword
 id txtPostTitle
 id txtPrecoList
@@ -2950,6 +2983,7 @@ layout item_foto_list
 layout item_list_fotos
 layout item_msn_me
 layout item_post_img
+layout item_precos
 layout item_to_msn
 layout item_user_message
 layout mtrl_alert_dialog
@@ -3070,6 +3104,7 @@ string buscar
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
+string chip_ellipsis
 string chip_text
 string cidade
 string clear_text_end_icon_content_description
@@ -3431,6 +3466,7 @@ style Base_Widget_MaterialComponents_TextView
 style CardView
 style CardView_Dark
 style CardView_Light
+style DefaultChipSuggestionTextView
 style EmptyTheme
 style MaterialAlertDialog_MaterialComponents
 style MaterialAlertDialog_MaterialComponents_Body_Text
@@ -4003,6 +4039,7 @@ styleable MotionHelper onHide onShow
 styleable MotionLayout applyMotionScene currentState layoutDescription motionDebug motionProgress showPaths
 styleable MotionScene defaultDuration layoutDuringTransition
 styleable MotionTelltales telltales_tailColor telltales_tailScale telltales_velocityMode
+styleable NachoTextView chipBackground chipHeight chipSpacing chipTextColor chipTextSize chipVerticalSpacing
 styleable NavAction android_id destination enterAnim exitAnim launchSingleTop popEnterAnim popExitAnim popUpTo popUpToInclusive
 styleable NavArgument android_name android_defaultValue argType nullable
 styleable NavDeepLink android_autoVerify action mimeType uri

@@ -5,14 +5,12 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -39,12 +37,12 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
+import com.hootsuite.nachos.NachoTextView;
+import com.hootsuite.nachos.chip.Chip;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
-
-import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -58,12 +56,13 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     private ImageView imgFundo, imgFoto;
     private FloatingActionButton btnList;
     private TextInputEditText txtSobreMim, txtContatos;
-    private TextView txt1, txt2, txtTrabUm, txtTrabDois, txtTrabTres;
-    private Spinner prof, prof1, prof2;
+    private TextView txt1, txt2, txtTrabUm, txtTrabDois, txtTrabTres, txtCampoKeys, txtFiltro;
+    private Spinner prof, prof1, prof2, filtrosPesq;
     private Uri uri;
     private List<String> urls;
-    private GroupAdapter adapter, precosAdapter;
+    private GroupAdapter adapter;
     private boolean aux=false;
+    private NachoTextView txtPalavras;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,15 +70,11 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_perfil_trabalhador);
 
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
-        RecyclerView recyclerView1 = findViewById(R.id.recyclerView2);
 
         adapter = new GroupAdapter();
-        precosAdapter = new GroupAdapter();
         recyclerView.setAdapter(adapter);
-        recyclerView1.setAdapter(precosAdapter);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getApplicationContext(), 2, GridLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(gridLayoutManager);
-        recyclerView1.setLayoutManager(new LinearLayoutManager(this));
 
         iniciarComponentes();
     }
@@ -90,11 +85,14 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         txtTrabUm = findViewById(R.id.txtTrabUm);
         txtTrabDois = findViewById(R.id.txtTrabDois);
         txtTrabTres = findViewById(R.id.txtTrabTres);
+        txtPalavras = findViewById(R.id.txtPalavrasTrab);
         urls = new ArrayList<String>();
         userT = getIntent().getExtras().getParcelable("meT");
         imgFundo = findViewById(R.id.imgPerfil);
         imgFoto = findViewById(R.id.imgFoto);
         btnList = findViewById(R.id.btnList);
+        txtCampoKeys = findViewById(R.id.txtCampoKeys);
+        filtrosPesq = findViewById(R.id.filtrarTrab);
         txt1 = findViewById(R.id.txtCampo2);
         txt2 = findViewById(R.id.textView47);
         TextView txtNome = findViewById(R.id.txtNome);
@@ -103,6 +101,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         prof = findViewById(R.id.profUm);
         prof1 = findViewById(R.id.profDois);
         prof2 = findViewById(R.id.profTres);
+        txtFiltro = findViewById(R.id.txtFiltro);
 
         txtAvaliar.setText(String.valueOf(userT.getStars()/(float)userT.getCountStars()).substring(0, 3));
         ratingBar.setFocusable(false);
@@ -111,6 +110,8 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         imgFoto.setEnabled(false);
         imgFundo.setEnabled(false);
         btnList.setEnabled(false);
+        txtPalavras.addChipTerminator(' ', 2);
+        txtPalavras.setEnabled(false);
         txtNome.setText(userT.getNome());
         txtSobreMim.setText(userT.getSobreMim());
         txtContatos.setText(userT.getContatos());
@@ -119,11 +120,15 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         txtTrabUm.setText(userT.getProfUm());
         txtTrabDois.setText(userT.getProfDois());
         txtTrabTres.setText(userT.getProfTres());
+        txtFiltro.setText(userT.getFiltoFixo());
 
         List<String> profs = Arrays.asList(getResources().getStringArray(R.array.profs));
         prof.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, profs));
         prof1.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, profs));
         prof2.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, profs));
+
+        List<String> filtros = Arrays.asList(getResources().getStringArray(R.array.filtros));
+        filtrosPesq.setAdapter(new ArrayAdapter<>(getApplicationContext(), android.R.layout.simple_list_item_1, filtros));
 
 
         prof.setEnabled(false);
@@ -133,6 +138,8 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         prof.setVisibility(View.INVISIBLE);
         prof1.setVisibility(View.INVISIBLE);
         prof2.setVisibility(View.INVISIBLE);
+
+        txtPalavras.setText(userT.getKeys());
 
         listarFotos();
     }
@@ -169,6 +176,9 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
             prof.setEnabled(true);
             prof1.setEnabled(true);
             prof2.setEnabled(true);
+            txtFiltro.setVisibility(View.INVISIBLE);
+            filtrosPesq.setVisibility(View.VISIBLE);
+            txtPalavras.setEnabled(true);
             prof.setVisibility(View.VISIBLE);
             prof1.setVisibility(View.VISIBLE);
             prof2.setVisibility(View.VISIBLE);
@@ -188,8 +198,14 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                                     String contatos = txtContatos.getText().toString().trim();
 
                                     if (validar()) {
+                                        List<String> keys = new ArrayList<>();
                                         userT.setSobreMim(sobre);
                                         userT.setContatos(contatos);
+                                        for (String key: txtPalavras.getChipValues()){
+                                            keys.add(key);
+                                        }
+                                        userT.setKeys(keys);
+                                        userT.setFiltoFixo(filtrosPesq.getSelectedItem().toString());
                                         userT.setProfUm(prof.getSelectedItem().toString());
                                         userT.setProfDois(prof1.getSelectedItem().toString());
                                         userT.setProfTres(prof2.getSelectedItem().toString());
@@ -207,20 +223,26 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                                         prof.setEnabled(false);
                                         prof1.setEnabled(false);
                                         prof2.setEnabled(false);
+                                        txtPalavras.setEnabled(false);
                                         prof.setVisibility(View.INVISIBLE);
                                         prof1.setVisibility(View.INVISIBLE);
                                         prof2.setVisibility(View.INVISIBLE);
                                         txtTrabUm.setVisibility(View.VISIBLE);
                                         txtTrabDois.setVisibility(View.VISIBLE);
+                                        filtrosPesq.setVisibility(View.INVISIBLE);
+                                        txtFiltro.setVisibility(View.VISIBLE);
                                         txtTrabTres.setVisibility(View.VISIBLE);
                                         btnList.setImageResource(R.drawable.ic_expand_more);
                                         btnList.setEnabled(false);
                                         aux=!aux;
                                         txt1.setVisibility(View.INVISIBLE);
                                         txt2.setVisibility(View.INVISIBLE);
+                                        txtCampoKeys.setVisibility(View.INVISIBLE);
+                                        iniciarComponentes();
                                     } else {
                                         txt1.setVisibility(View.VISIBLE);
                                         txt2.setVisibility(View.VISIBLE);
+                                        txtCampoKeys.setVisibility(View.VISIBLE);
                                     }
                                 }
                     }).setNegativeButton("Reverter", new DialogInterface.OnClickListener() {
@@ -235,14 +257,18 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                     prof.setEnabled(false);
                     prof1.setEnabled(false);
                     prof2.setEnabled(false);
+                    txtPalavras.setEnabled(false);
                     txtTrabUm.setVisibility(View.VISIBLE);
                     txtTrabDois.setVisibility(View.VISIBLE);
                     txtTrabTres.setVisibility(View.VISIBLE);
                     prof.setVisibility(View.INVISIBLE);
+                    filtrosPesq.setVisibility(View.INVISIBLE);
                     prof1.setVisibility(View.INVISIBLE);
                     prof2.setVisibility(View.INVISIBLE);
                     txt1.setVisibility(View.INVISIBLE);
+                    txtFiltro.setVisibility(View.VISIBLE);
                     txt2.setVisibility(View.INVISIBLE);
+                    txtCampoKeys.setVisibility(View.INVISIBLE);
                     btnList.setEnabled(false);
                     aux=!aux;
                 }
@@ -415,7 +441,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         String sobre = txtSobreMim.getText().toString().trim();
         String contatos = txtContatos.getText().toString().trim();
 
-        if (!contatos.isEmpty() && !sobre.isEmpty() && prof.getSelectedItemPosition()!=0 || prof1.getSelectedItemPosition()!=0 || prof2.getSelectedItemPosition()!=0 ) {
+        if (!contatos.isEmpty() && !sobre.isEmpty() && !txtPalavras.getChipValues().isEmpty()) {
             return true;
         }
         return false;

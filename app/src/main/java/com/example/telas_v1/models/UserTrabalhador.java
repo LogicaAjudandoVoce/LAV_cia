@@ -8,9 +8,10 @@ import java.util.List;
 public class UserTrabalhador implements Parcelable {
 
     private String id, email, nome, senha, tipoUser, dataNasc, urlFotoPerfil, urlFotoFundo, sobreMim, contatos;
-    private String profUm, profDois, profTres;
+    private String profUm, profDois, profTres, filtoFixo;
     private float stars, myPreco;
     private int countStars;
+    private List<String> keys;
 
     public UserTrabalhador() {
     }
@@ -29,9 +30,11 @@ public class UserTrabalhador implements Parcelable {
         profUm = in.readString();
         profDois = in.readString();
         profTres = in.readString();
+        filtoFixo = in.readString();
         stars = in.readFloat();
         myPreco = in.readFloat();
         countStars = in.readInt();
+        keys = in.createStringArrayList();
     }
 
     @Override
@@ -49,9 +52,11 @@ public class UserTrabalhador implements Parcelable {
         dest.writeString(profUm);
         dest.writeString(profDois);
         dest.writeString(profTres);
+        dest.writeString(filtoFixo);
         dest.writeFloat(stars);
         dest.writeFloat(myPreco);
         dest.writeInt(countStars);
+        dest.writeStringList(keys);
     }
 
     @Override
@@ -175,6 +180,14 @@ public class UserTrabalhador implements Parcelable {
         this.profTres = profTres;
     }
 
+    public String getFiltoFixo() {
+        return filtoFixo;
+    }
+
+    public void setFiltoFixo(String filtoFixo) {
+        this.filtoFixo = filtoFixo;
+    }
+
     public float getStars() {
         return stars;
     }
@@ -197,5 +210,13 @@ public class UserTrabalhador implements Parcelable {
 
     public void setCountStars(int countStars) {
         this.countStars = countStars;
+    }
+
+    public List<String> getKeys() {
+        return keys;
+    }
+
+    public void setKeys(List<String> keys) {
+        this.keys = keys;
     }
 }

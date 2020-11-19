@@ -12,6 +12,7 @@ MERGED from [androidx.appcompat:appcompat:1.2.0] C:\Users\cassi\.gradle\caches\t
 MERGED from [com.xwray:groupie:2.1.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\c1073bac2bb3a14a5fe5321f4da111ce\jetified-groupie-2.1.0\AndroidManifest.xml:2:1-14:12
 MERGED from [androidx.navigation:navigation-fragment:2.3.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\fa57e33f9f2f8509b0d5e0141826dd45\navigation-fragment-2.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\12956671a7e663037b5dfc8095fb64a7\jetified-searchablespinnerlibrary-1.3.1\AndroidManifest.xml:2:1-17:12
+MERGED from [com.hootsuite.android:nachos:1.1.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\64cd7515aa92c5b32d8a1505adb999d4\jetified-nachos-1.1.1\AndroidManifest.xml:2:1-11:12
 MERGED from [com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\fd1a93cbf8ab18663ed7f1eae62e172e\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:2:1-24:12
 MERGED from [com.google.firebase:firebase-analytics:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2e7eaffa61b81df70822ce13ab7c8cfe\jetified-firebase-analytics-17.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.firebase:firebase-auth:19.3.2] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\317dd3e8a1346d6aad2e5bbc117aeddc\jetified-firebase-auth-19.3.2\AndroidManifest.xml:17:1-42:12
@@ -338,6 +339,8 @@ MERGED from [androidx.navigation:navigation-fragment:2.3.0] C:\Users\cassi\.grad
 MERGED from [androidx.navigation:navigation-fragment:2.3.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\fa57e33f9f2f8509b0d5e0141826dd45\navigation-fragment-2.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\12956671a7e663037b5dfc8095fb64a7\jetified-searchablespinnerlibrary-1.3.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.toptoche.searchablespinner:searchablespinnerlibrary:1.3.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\12956671a7e663037b5dfc8095fb64a7\jetified-searchablespinnerlibrary-1.3.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.hootsuite.android:nachos:1.1.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\64cd7515aa92c5b32d8a1505adb999d4\jetified-nachos-1.1.1\AndroidManifest.xml:7:5-9:41
+MERGED from [com.hootsuite.android:nachos:1.1.1] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\64cd7515aa92c5b32d8a1505adb999d4\jetified-nachos-1.1.1\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\fd1a93cbf8ab18663ed7f1eae62e172e\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-firestore:19.0.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\fd1a93cbf8ab18663ed7f1eae62e172e\jetified-firebase-firestore-19.0.0\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.firebase:firebase-analytics:17.5.0] C:\Users\cassi\.gradle\caches\transforms-2\files-2.1\2e7eaffa61b81df70822ce13ab7c8cfe\jetified-firebase-analytics-17.5.0\AndroidManifest.xml:5:5-44

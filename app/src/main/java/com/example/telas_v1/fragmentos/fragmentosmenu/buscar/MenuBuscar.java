@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,18 +32,22 @@ import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.OnItemClickListener;
 
+import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
 
 public class MenuBuscar extends Fragment {
 
     private MenuBuscarViewModel menubuscar_viewmodel;
     private MetodosUsers metodosUsers = new MetodosUsers();;
-    private GroupAdapter adapter;
+    public GroupAdapter adapter;
     private UserCliente cliente;
     private UserTrabalhador trabalhador;
     private FloatingActionButton btnAddPost;
@@ -49,10 +55,8 @@ public class MenuBuscar extends Fragment {
     private ImageView imgFoto;
     private Date date;
     private Calendar calendar;
-    private Uri uri;
-    //private LinearOutSlowInInterpolator linearOutSlowInInterpolator = new LinearOutSlowInInterpolator();
-
-    ObjectAnimator objectAnimator;
+    private List<String> keys =new ArrayList<>();
+    private String filtro = "Nenhum Selecionado";
 
     //tudo ok,dia: 40/09/2020 ás 00:24
     public View onCreateView(@NonNull final LayoutInflater inflater,
@@ -60,12 +64,24 @@ public class MenuBuscar extends Fragment {
         menubuscar_viewmodel = ViewModelProviders.of(this).get(MenuBuscarViewModel.class);
         final View root = inflater.inflate(R.layout.fragment_menu_buscar, container, false);
 
+
+        verificarUser();
+
         RecyclerView rcView = root.findViewById(R.id.rcView);
         btnAddPost = root.findViewById(R.id.btnAddPost);
         FloatingActionButton btnFiltrar = root.findViewById(R.id.btnBarra);
         txtNome = root.findViewById(R.id.txtNome);
         txtDia = root.findViewById(R.id.txtDiaSemana);
         imgFoto = root.findViewById(R.id.imgFoto);
+
+        if (getActivity().getIntent().getExtras()!=null) {
+            if (getActivity().getIntent().getExtras().getString("filtragemTrab")!=null) {
+                filtro = getActivity().getIntent().getExtras().getString("filtragemTrab");
+            }
+            else if (getActivity().getIntent().getExtras().getSerializable("filtros")!=null){
+                keys = ((List<String>) getActivity().getIntent().getExtras().getSerializable("filtros"));
+            }else keys=null;
+        }
 
         adapter = new GroupAdapter();
         rcView.setHasFixedSize(true);
@@ -80,6 +96,7 @@ public class MenuBuscar extends Fragment {
                     MetodosUsers.ListarPostagemViewModel model =(MetodosUsers.ListarPostagemViewModel) item;
                     intent.putExtra("post", model.postagem);
                     intent.putExtra("forma", "menu");
+                    intent.putExtra("meT", trabalhador);
                     startActivity(intent);
                 }
                 else if(cliente!=null){
@@ -92,8 +109,6 @@ public class MenuBuscar extends Fragment {
                 }
             }
         });
-
-        verificarUser();
 
         if (trabalhador!=null){
             btnAddPost.setVisibility(View.INVISIBLE);
@@ -155,7 +170,7 @@ public class MenuBuscar extends Fragment {
                     cliente = userCliente;
                     txtNome.setText(cliente.getNome());
                     Picasso.get().load(cliente.getUrlFotoPerfil()).into(imgFoto);
-                    metodosUsers.listarTrabalhador(adapter, "Nenhum Selecionado", "Qualquer", 0);
+                    metodosUsers.listarTrabalhador(adapter, filtro, keys);
                 }
             }
 
@@ -172,34 +187,6 @@ public class MenuBuscar extends Fragment {
             }
         });
     }
-
-//    private void prepareObjectAnimatorDown(TimeInterpolator timeInterpolator){
-//            float h = (float)layout.getHeight();
-//            float propertyStart = 0f;
-//            float propertyEnd = (h/2 - (float)appbar.getHeight()/2)+100;
-//            String propertyName = "translationY";
-//            objectAnimator
-//                    = ObjectAnimator.ofFloat(appbar, propertyName, propertyStart, propertyEnd);
-//            objectAnimator.setDuration(1700);
-//            //objectAnimator.setRepeatCount(1);
-//            //objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
-//            objectAnimator.setInterpolator(timeInterpolator);
-//            objectAnimator.start();
-//
-//    }
-//    private void prepareObjectAnimatorUp(TimeInterpolator timeInterpolator){
-//        float h = (float)layout.getHeight();
-//        float propertyEnd = 0f;
-//        float propertyStart = (h/2 - (float)appbar.getHeight()/2)+100;
-//        String propertyName = "translationY";
-//        objectAnimator
-//                = ObjectAnimator.ofFloat(appbar, propertyName, propertyStart, propertyEnd);
-//        objectAnimator.setDuration(1700);
-////        objectAnimator.setRepeatCount(1);
-////        objectAnimator.setRepeatMode(ObjectAnimator.REVERSE);
-//        objectAnimator.setInterpolator(timeInterpolator);
-//        objectAnimator.start();
-//    }
 
     public String weekDay(Calendar cal) {
         //String dia = new DateFormatSymbols().getWeekdays()[cal.get(Calendar.DAY_OF_WEEK)];

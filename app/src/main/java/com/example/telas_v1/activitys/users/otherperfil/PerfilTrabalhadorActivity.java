@@ -29,10 +29,13 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QuerySnapshot;
+import com.hootsuite.nachos.NachoTextView;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
+
+import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -98,12 +101,14 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         ImageView imgFundo = findViewById(R.id.imgBackPerfil);
         ImageView imgPerfil = findViewById(R.id.imgPerfil);
         TextView txtNome = findViewById(R.id.txtNome);
+        NachoTextView txtKeys = findViewById(R.id.txtKeys);
         TextView txtProfissao = findViewById(R.id.txtProfissao);
         TextView txtSobreMim = findViewById(R.id.txtSobreMim);
         TextView txtContato = findViewById(R.id.txtContato);
         TextView trab1 = findViewById(R.id.trab1);
         TextView trab2 = findViewById(R.id.trab2);
         TextView trab3 = findViewById(R.id.trab3);
+        TextView txtFiltro = findViewById(R.id.txtFiltroFixo);
         txtInfo = findViewById(R.id.txtInfo);
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         FloatingActionButton btnHistorico = findViewById(R.id.btnHistorico);
@@ -111,6 +116,8 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         RecyclerView tcView = findViewById(R.id.rcView);
         btnAvaliar = findViewById(R.id.btnAvaliar);
 
+        txtFiltro.setText(toT.getFiltoFixo());
+        txtKeys.setText(toT.getKeys());
         trab1.setText(toT.getProfUm());
         trab2.setText(toT.getProfDois());
         trab3.setText(toT.getProfTres());
