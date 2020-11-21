@@ -12,6 +12,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
+        android:alpha="0.5"
         android:scaleType="centerCrop"
         android:src="@drawable/img_fundo"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,13 +29,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
         android:paddingStart="8dp"
         android:paddingEnd="4dp"
         android:text="Título da Postagem"
-        android:textColor="#FFF"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/imgPost"
+        android:textColor="#000"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="@+id/imgPost"
         app:layout_constraintTop_toTopOf="@+id/imgPost" />
 
@@ -55,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Nome do Autor"
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="@+id/textView31"
         app:layout_constraintStart_toEndOf="@+id/textView31"
         app:layout_constraintTop_toTopOf="@+id/textView31" />
@@ -76,19 +75,19 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:text="Preço do serviço"
-        android:textColor="#FFF"
+        android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="@+id/textView37"
         app:layout_constraintStart_toEndOf="@+id/textView37"
         app:layout_constraintTop_toTopOf="@+id/textView37" />
 
     <TextView
-        android:id="@+id/txtDataPost"
+        android:id="@+id/textDataPost"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="24dp"
         android:layout_marginBottom="8dp"
         android:text="12/12/2012"
-        android:textColor="#FFF"
+        android:textColor="#000"
         app:layout_constraintBottom_toBottomOf="@+id/imgPost"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -101,7 +100,8 @@
         android:paddingEnd="4dp"
         android:paddingBottom="4dp"
         android:text="Aqui ficará uma breve descrição do serviço que esta sendo postado pelo cliente na hora da postagem."
-        android:textColor="#FFFFFF"
+        android:textColor="#000"
         app:layout_constraintStart_toStartOf="@+id/textView31"
         app:layout_constraintTop_toBottomOf="@+id/txtAutorPost" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

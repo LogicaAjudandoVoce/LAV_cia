@@ -8,7 +8,7 @@ import java.util.List;
 public class Postagem implements Parcelable {
 
     private String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao, filtroFixo, status;
-    private String idContratado;
+    private String idContratado, nomeContratato, urlImgContratado;
     private List<String> keys, fotos, voluntarios;
     private double preco, latitude, longitude;
 
@@ -27,6 +27,8 @@ public class Postagem implements Parcelable {
         filtroFixo = in.readString();
         status = in.readString();
         idContratado = in.readString();
+        nomeContratato = in.readString();
+        urlImgContratado = in.readString();
         keys = in.createStringArrayList();
         fotos = in.createStringArrayList();
         voluntarios = in.createStringArrayList();
@@ -48,6 +50,8 @@ public class Postagem implements Parcelable {
         dest.writeString(filtroFixo);
         dest.writeString(status);
         dest.writeString(idContratado);
+        dest.writeString(nomeContratato);
+        dest.writeString(urlImgContratado);
         dest.writeStringList(keys);
         dest.writeStringList(fotos);
         dest.writeStringList(voluntarios);
@@ -159,6 +163,22 @@ public class Postagem implements Parcelable {
 
     public void setIdContratado(String idContratado) {
         this.idContratado = idContratado;
+    }
+
+    public String getNomeContratato() {
+        return nomeContratato;
+    }
+
+    public void setNomeContratato(String nomeContratato) {
+        this.nomeContratato = nomeContratato;
+    }
+
+    public String getUrlImgContratado() {
+        return urlImgContratado;
+    }
+
+    public void setUrlImgContratado(String urlImgContratado) {
+        this.urlImgContratado = urlImgContratado;
     }
 
     public List<String> getKeys() {

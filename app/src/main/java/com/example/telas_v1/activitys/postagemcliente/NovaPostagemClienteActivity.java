@@ -62,7 +62,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     private ImageView imgMapa;
     private UUID uid = UUID.randomUUID();
     private List<String> uriFoto = new ArrayList<>();
-    private Uri uriAx;
+    private List<Uri>uriAx = new ArrayList<>();
     private Postagem postagem = new Postagem();
     private MetodosUsers metodosUsers= new MetodosUsers();
     private UserCliente cliente;
@@ -100,7 +100,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         txtRc = findViewById(R.id.txtRc);
         txtPreco = findViewById(R.id.trab1);
         imgMapa = findViewById(R.id.imgMapa);
-        rcView = findViewById(R.id.rcView);
+        rcView = findViewById(R.id.rcViews);
         btnPost = findViewById(R.id.btnPostar);
         txtPalavrasChaves = findViewById(R.id.txtPalavrasChaves);
         spCateghoria = findViewById(R.id.spCategoria);
@@ -140,11 +140,11 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode==0 && resultCode==RESULT_OK){
-            uriAx=data.getData();
-            adapter.add(new PostViewHolder(uriAx.toString()));
+            Uri uri = data.getData();
+            uriAx.add(uri);
+            adapter.add(new PostViewHolder(uri.toString()));
             adapter.notifyDataSetChanged();
             txtRc.setText("");
-        //    uploadarFotos();
         }
     }
 
@@ -177,38 +177,47 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
             postagem.setFiltroFixo(spCateghoria.getSelectedItem().toString());
             postagem.setData(dataFormatada);
 
-            FirebaseFirestore.getInstance().collection("postagens").document(postagem.getIdPost()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
-                @Override
-                public void onSuccess(Void aVoid) {
-                    Intent intent = new Intent(NovaPostagemClienteActivity.this, MenuActivity.class);
-                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
-                    startActivity(intent);
-                }
-            }).addOnFailureListener(new OnFailureListener() {
-                @Override
-                public void onFailure(@NonNull Exception e) {
-                    Log.e("TESTE", "Enviar Postagem: "+e.getMessage(), e);
-                }
-            });
+            int cont=0;
+            for (Uri uuri: uriAx){
+                cont++;
+                int totalFotos= uriAx.size();
+                uploadarFotos(uuri, totalFotos, cont);
+            }
         }else{
             Toast.makeText(this, "Preecha todos os campos!", Toast.LENGTH_LONG).show();
         }
     }
 
-    public void uploadarFotos(){
-        final StorageReference ref = FirebaseStorage.getInstance().getReference("/postagens/"+FirebaseAuth.getInstance().getUid()+"/"+uid.toString());
-            ref.putFile((Uri) uriAx).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
-                @Override
-                public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
-                    ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-                        @Override
-                        public void onSuccess(Uri uri) {
-                            uriFoto.add(uri.toString());
+    public void uploadarFotos(Uri uuri, final int totalFotos, int cont){
+        String nmr = "imagem"+cont;
+        final StorageReference ref = FirebaseStorage.getInstance().getReference("/postagens/"+postagem.getIdPost()+"/"+nmr);
+        ref.putFile(uuri).addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+            @Override
+            public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                    @Override
+                    public void onSuccess(Uri uri){
+                        uriFoto.add(uri.toString());
+                        if(totalFotos == uriFoto.size()){
                             postagem.setFotos(uriFoto);
+                            FirebaseFirestore.getInstance().collection("postagens").document(postagem.getIdPost()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
+                                    Intent intent = new Intent(NovaPostagemClienteActivity.this, MenuActivity.class);
+                                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                                    startActivity(intent);
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    Log.e("TESTE", "Enviar Postagem: "+e.getMessage(), e);
+                                }
+                            });
                         }
-                    });
-                }
-            });
+                    }
+                });
+            }
+        });
     }
 
     public void abrirMapa(View view){

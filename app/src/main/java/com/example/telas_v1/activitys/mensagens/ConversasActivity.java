@@ -59,7 +59,7 @@ public class ConversasActivity extends AppCompatActivity {
 
 
         adapter = new GroupAdapter();
-        RecyclerView rv = findViewById(R.id.rcView);
+        RecyclerView rv = findViewById(R.id.rcViews);
         rv.setLayoutManager(new LinearLayoutManager(this));
         rv.setAdapter(adapter);
 

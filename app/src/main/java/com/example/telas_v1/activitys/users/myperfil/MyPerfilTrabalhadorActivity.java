@@ -11,6 +11,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.users.ListFotosActivity;
+import com.example.telas_v1.fragmentos.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.models.FotoLista;
 import com.example.telas_v1.models.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -63,12 +65,15 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     private GroupAdapter adapter;
     private boolean aux=false;
     private NachoTextView txtPalavras;
+    private String first;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_perfil_trabalhador);
 
+        userT = getIntent().getExtras().getParcelable("meT");
+        first();
         RecyclerView recyclerView = findViewById(R.id.recyclerView);
 
         adapter = new GroupAdapter();
@@ -80,6 +85,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     }
 
     private void iniciarComponentes(){
+        first = getIntent().getExtras().getString("first");
         TextView txtAvaliar = findViewById(R.id.txtAvaliar);
         RatingBar ratingBar = findViewById(R.id.ratingBar2);
         txtTrabUm = findViewById(R.id.txtTrabUm);
@@ -87,7 +93,6 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         txtTrabTres = findViewById(R.id.txtTrabTres);
         txtPalavras = findViewById(R.id.txtPalavrasTrab);
         urls = new ArrayList<String>();
-        userT = getIntent().getExtras().getParcelable("meT");
         imgFundo = findViewById(R.id.imgPerfil);
         imgFoto = findViewById(R.id.imgFoto);
         btnList = findViewById(R.id.btnList);
@@ -103,7 +108,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         prof2 = findViewById(R.id.profTres);
         txtFiltro = findViewById(R.id.txtFiltro);
 
-        txtAvaliar.setText(String.valueOf(userT.getStars()/(float)userT.getCountStars()).substring(0, 3));
+        if (userT.getStars()!=0)txtAvaliar.setText(String.valueOf(userT.getStars()/(float)userT.getCountStars()).substring(0, 3));
         ratingBar.setFocusable(false);
         ratingBar.setRating(userT.getStars()/(float)userT.getCountStars());
 
@@ -456,5 +461,25 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
             startActivity(intent);
         }else
             Toast.makeText(this, "Não existem fotos para visualizar...", Toast.LENGTH_LONG).show();
+    }
+
+    private void first(){
+        if (first==null&& userT.getUrlFotoPerfil()==null){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Seja Bem Vindo!")
+                    .setMessage("Primeiramente, edite seu usuários preenchendo o máixmo de informações" +
+                            " que você puder. \n\n Clique no ícone de Editar parar inserir seus dados.")
+                    .setPositiveButton("Vamos la!", null)
+                    .create().show();
+        }
+    }
+
+    public void voltarMyPerfil(View view){
+        if (userT.getSobreMim()!=null){
+            if (first==null){
+                startActivity(new Intent(this, MenuActivity.class));
+            }
+            finish();
+        }else Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
     }
 }

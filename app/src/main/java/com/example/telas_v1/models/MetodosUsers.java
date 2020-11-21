@@ -179,6 +179,29 @@ public class MetodosUsers{
                 }
             }
         });
+
+    }public void listarTrabalhador(final GroupAdapter adapter, final Postagem postagem) {
+        FirebaseFirestore.getInstance().collection("/userTrabalhador").addSnapshotListener(new EventListener<QuerySnapshot>() {
+            @Override
+            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+                if (e!=null){
+                    Log.e("TESTE", "Listar Trabalhadores: " +e.getMessage(), e);
+                }
+                else {
+                    List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                    adapter.clear();
+                    for (DocumentSnapshot doc : docs) {
+                        UserTrabalhador userTrabalhador = doc.toObject(UserTrabalhador.class);
+                        for(String id: postagem.getVoluntarios()){
+                            if (id.equals(userTrabalhador.getId())){
+                                adapter.add(new ListarTrabalhadorView(userTrabalhador));
+                            }
+                        }
+                        adapter.notifyDataSetChanged();
+                    }
+                }
+            }
+        });
     }
 
     public class ListarTrabalhadorView extends Item<ViewHolder> {
@@ -231,7 +254,7 @@ public class MetodosUsers{
         });
     }
 
-    public void listarPostagensVoluntariosTrab(final GroupAdapter adapter, final String id, final String status){
+    public void listarPostagens(final GroupAdapter adapter, final UserCliente userCliente){
         FirebaseFirestore.getInstance().collection("postagens")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -244,11 +267,35 @@ public class MetodosUsers{
                             for (DocumentSnapshot doc : docs) {
                                 Postagem postagem = doc.toObject(Postagem.class);
 
-                                if (postagem.getStatus().equals(status)){
-                                    for(String user: postagem.getVoluntarios()) {
-                                        if (user.equals(id)) {
-                                            adapter.add(new ListarPostagemViewModel(postagem));
-                                            adapter.notifyDataSetChanged();
+                                if (postagem.getStatus().equals("Pendente") && postagem.getIdCliente().equals(userCliente.getId())){
+                                    adapter.add(new ListarPostagemViewModel(postagem));
+                                    adapter.notifyDataSetChanged();
+                                }
+                            }
+                        }
+                    }
+                });
+    }
+
+    public void listarPostagensTrabalhador(final GroupAdapter adapter, final String id, final String status){
+        FirebaseFirestore.getInstance().collection("postagens")
+                .addSnapshotListener(new EventListener<QuerySnapshot>() {
+                    @Override
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
+                            Log.e("TESTE", "Listar Postagens: "+e.getMessage(), e);
+                        }else{
+                            List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                            adapter.clear();
+                            for (DocumentSnapshot doc : docs) {
+                                Postagem postagem = doc.toObject(Postagem.class);
+                                if (postagem.getStatus().equals(status)) {
+                                    if (postagem.getVoluntarios() != null) {
+                                        for (String user : postagem.getVoluntarios()) {
+                                            if (user.equals(id)) {
+                                                adapter.add(new ListarPostagemViewModel(postagem));
+                                                adapter.notifyDataSetChanged();
+                                            }
                                         }
                                     }
                                 }
@@ -258,7 +305,7 @@ public class MetodosUsers{
                 });
     }
 
-    public void listarPostagensVoluntariosCliente(final GroupAdapter adapter, final String id, final  String status){
+    public void listarPostagensCliente(final GroupAdapter adapter, final  String status, final UserCliente cliente){
         FirebaseFirestore.getInstance().collection("postagens")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -270,10 +317,20 @@ public class MetodosUsers{
                             adapter.clear();
                             for (DocumentSnapshot doc : docs) {
                                 Postagem postagem = doc.toObject(Postagem.class);
-                                if (postagem.getStatus().equals(status)){
-                                    adapter.add(new ListarPostagemViewModel(postagem));
-                                    adapter.notifyDataSetChanged();
+                                if (status.equals("Pendente")) {
+                                    if (postagem.getStatus().equals(status) && postagem.getVoluntarios() != null && !postagem.getVoluntarios().isEmpty()&& postagem.getIdCliente().equals(cliente.getId())) {
+                                        adapter.add(new ListarPostagemViewModel(postagem));
+                                    }
+                                }else if(status.equals("Ativo")){
+                                    if (postagem.getStatus().equals(status) && postagem.getIdCliente().equals(cliente.getId())) {
+                                        adapter.add(new ListarPostagensAtivas(postagem));
+                                    }
+                                }else{
+                                    if (postagem.getStatus().equals(status)) {
+                                        adapter.add(new ListarPostagensAtivas(postagem));
+                                    }
                                 }
+                                adapter.notifyDataSetChanged();
                             }
                         }
                     }
@@ -333,20 +390,49 @@ public class MetodosUsers{
             TextView txtAutor = viewHolder.itemView.findViewById(R.id.txtAutorPost);
             TextView txtMini = viewHolder.itemView.findViewById(R.id.txtMiniDescricao);
             TextView txtPreco = viewHolder.itemView.findViewById(R.id.txtPrecoPost);
-            TextView txtData = viewHolder.itemView.findViewById(R.id.txtDataPost);
+            TextView txtData = viewHolder.itemView.findViewById(R.id.textDataPost);
             ImageView img = viewHolder.itemView.findViewById(R.id.imgPost);
 
+            if (postagem.getFotos()!=null)Picasso.get().load(postagem.getFotos().get(0)).fit().into(img);
             txtMini.setText(postagem.getMiniDescricao());
             txtTitle.setText(postagem.getTitulo());
             txtAutor.setText(postagem.getNomeAutor());
             txtPreco.setText(String.valueOf(postagem.getPreco()));
             txtData.setText(postagem.getData());
-
         }
 
         @Override
         public int getLayout() {
             return R.layout.item_card_list;
+        }
+    }
+
+    public class ListarPostagensAtivas extends Item<ViewHolder>{
+
+        final public Postagem postagem;
+
+        private ListarPostagensAtivas(Postagem postagem) {
+            this.postagem = postagem;
+        }
+
+        @Override
+        public void bind(@NonNull ViewHolder viewHolder, int position) {
+            TextView title = viewHolder.itemView.findViewById(R.id.txtTitlePost);
+            TextView desc = viewHolder.itemView.findViewById(R.id.txtDescPost);
+            TextView data = viewHolder.itemView.findViewById(R.id.txtDatePost);
+            TextView nameUser = viewHolder.itemView.findViewById(R.id.txtNameTrab);
+            ImageView img = viewHolder.itemView.findViewById(R.id.imgTrab);
+
+            title.setText(postagem.getTitulo());
+            desc.setText(postagem.getMiniDescricao());
+            data.setText(postagem.getData());
+            nameUser.setText(postagem.getNomeContratato());
+            Picasso.get().load(postagem.getUrlImgContratado()).into(img);
+        }
+
+        @Override
+        public int getLayout() {
+            return R.layout.item_post_ativo;
         }
     }
 
@@ -404,7 +490,6 @@ public class MetodosUsers{
                     });
                 }
                 dialog.dismiss();
-
             }
         });
     }

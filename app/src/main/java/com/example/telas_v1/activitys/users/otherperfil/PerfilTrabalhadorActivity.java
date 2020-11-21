@@ -3,7 +3,6 @@ package com.example.telas_v1.activitys.users.otherperfil;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
@@ -19,7 +18,6 @@ import android.widget.Toast;
 import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.mensagens.*;
 import com.example.telas_v1.activitys.users.ListFotosActivity;
-import com.example.telas_v1.activitys.users.myperfil.MyPerfilClienteActivity;
 import com.example.telas_v1.models.MetodosUsers;
 import com.example.telas_v1.models.UserCliente;
 import com.example.telas_v1.models.UserTrabalhador;
@@ -34,8 +32,6 @@ import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.ViewHolder;
-
-import org.w3c.dom.Text;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -113,7 +109,7 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         RatingBar ratingBar = findViewById(R.id.ratingBar);
         FloatingActionButton btnHistorico = findViewById(R.id.btnHistorico);
         btnChat = findViewById(R.id.btnChat);
-        RecyclerView tcView = findViewById(R.id.rcView);
+        RecyclerView tcView = findViewById(R.id.rcViews);
         btnAvaliar = findViewById(R.id.btnAvaliar);
 
         txtFiltro.setText(toT.getFiltoFixo());

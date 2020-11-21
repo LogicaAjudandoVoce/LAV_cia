@@ -1,8 +1,6 @@
 package com.example.telas_v1.fragmentos.fragmentosmenu.buscar;
 
-import android.animation.ObjectAnimator;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -10,8 +8,6 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Parcelable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,12 +28,10 @@ import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
 import com.xwray.groupie.OnItemClickListener;
 
-import java.io.Serializable;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
@@ -67,7 +61,7 @@ public class MenuBuscar extends Fragment {
 
         verificarUser();
 
-        RecyclerView rcView = root.findViewById(R.id.rcView);
+        RecyclerView rcView = root.findViewById(R.id.rcViews);
         btnAddPost = root.findViewById(R.id.btnAddPost);
         FloatingActionButton btnFiltrar = root.findViewById(R.id.btnBarra);
         txtNome = root.findViewById(R.id.txtNome);
@@ -168,6 +162,13 @@ public class MenuBuscar extends Fragment {
             public void onResultCliente(UserCliente userCliente) {
                 if (userCliente!=null){
                     cliente = userCliente;
+                    if(cliente.getSobremim()==null){
+                        Intent intent = new Intent(getContext(), MyPerfilClienteActivity.class);
+                        intent.putExtra("meC", cliente);
+                        intent.putExtra("first", "first");
+                        startActivity(intent);
+                        return;
+                    }
                     txtNome.setText(cliente.getNome());
                     Picasso.get().load(cliente.getUrlFotoPerfil()).into(imgFoto);
                     metodosUsers.listarTrabalhador(adapter, filtro, keys);
@@ -178,6 +179,13 @@ public class MenuBuscar extends Fragment {
             public void onResultTrabalhador(UserTrabalhador userTrabalhador) {
                 if (userTrabalhador!=null){
                     trabalhador = userTrabalhador;
+                    if (trabalhador.getSobreMim()==null){
+                        Intent intent = new Intent(getContext(), MyPerfilTrabalhadorActivity.class);
+                        intent.putExtra("meT", trabalhador);
+                        intent.putExtra("first", "first");
+                        startActivity(intent);
+                        return;
+                    }
                     txtNome.setText(trabalhador.getNome());
                     Picasso.get().load(trabalhador.getUrlFotoPerfil()).into(imgFoto);
                     metodosUsers.listarPostagens(adapter);
@@ -194,5 +202,9 @@ public class MenuBuscar extends Fragment {
         Locale local = new Locale("pt","BR");
         DateFormat dateFormat = new SimpleDateFormat("dd 'de' MMMM",local);
         return dateFormat.format(data);
+    }
+
+    public void voltarCliente(View view){
+
     }
 }

@@ -39,7 +39,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        final RecyclerView recyclerView = findViewById(R.id.rcView);
+        final RecyclerView recyclerView = findViewById(R.id.rcViews);
         txtMsn = findViewById(R.id.txtMensagem);
         txtNome = findViewById(R.id.txtNome);
         imgPerfil = findViewById(R.id.imgPerfil);
@@ -99,6 +99,14 @@ public class ChatActivity extends AppCompatActivity {
             Intent intent = new Intent(this, MyPerfilClienteActivity.class);
             intent.putExtra("meC", userC);
             intent.putExtra("tipo", "chat");
+            startActivity(intent);
+        }
+    }
+
+    public void enviarPostagen(View view){
+        if (meC!=null) {
+            Intent intent = new Intent(this, EnviarPostagemChatActivity.class);
+            intent.putExtra("meC", meC);
             startActivity(intent);
         }
     }

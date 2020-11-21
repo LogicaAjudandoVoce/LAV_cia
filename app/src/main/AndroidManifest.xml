@@ -17,7 +17,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitys.users.ListFotosActivity"></activity>
+        <activity android:name=".activitys.mensagens.EnviarPostagemChatActivity"></activity>
+        <activity android:name=".activitys.postagemcliente.PostagemAtivaActivity" />
+        <activity android:name=".fragmentos.fragmentosmenu.contratar.TrabalhadoresContratosActivity" />
+        <activity android:name=".activitys.users.ListFotosActivity" />
         <activity android:name=".activitys.users.myperfil.MyPerfilClienteActivity" />
         <activity android:name=".activitys.users.myperfil.MyPerfilTrabalhadorActivity" />
         <activity android:name=".fragmentos.fragmentosmenu.buscar.FiltrarTrabalhadorActivity" />

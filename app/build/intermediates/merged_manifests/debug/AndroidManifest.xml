@@ -35,6 +35,9 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
+        <activity android:name="com.example.telas_v1.activitys.mensagens.EnviarPostagemChatActivity" />
+        <activity android:name="com.example.telas_v1.activitys.postagemcliente.PostagemAtivaActivity" />
+        <activity android:name="com.example.telas_v1.fragmentos.fragmentosmenu.contratar.TrabalhadoresContratosActivity" />
         <activity android:name="com.example.telas_v1.activitys.users.ListFotosActivity" />
         <activity android:name="com.example.telas_v1.activitys.users.myperfil.MyPerfilClienteActivity" />
         <activity android:name="com.example.telas_v1.activitys.users.myperfil.MyPerfilTrabalhadorActivity" />

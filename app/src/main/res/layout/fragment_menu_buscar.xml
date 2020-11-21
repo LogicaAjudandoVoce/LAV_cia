@@ -88,7 +88,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rcView"
+            android:id="@+id/rcViews"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="12dp"
@@ -107,8 +107,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"
             android:backgroundTint="@color/colorDourado"
-            app:layout_constraintBottom_toBottomOf="@+id/rcView"
-            app:layout_constraintEnd_toEndOf="@+id/rcView">
+            app:layout_constraintBottom_toBottomOf="@+id/rcViews"
+            app:layout_constraintEnd_toEndOf="@+id/rcViews">
 
             <com.getbase.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnAddPost"

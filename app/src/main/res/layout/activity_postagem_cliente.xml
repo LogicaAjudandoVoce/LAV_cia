@@ -61,7 +61,7 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcView"
+                android:id="@+id/rcViews"
                 android:layout_width="410dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
@@ -77,10 +77,10 @@
                 android:text="Coloque suas fotos aqui"
                 android:textColor="#FFF"
                 android:textSize="24sp"
-                app:layout_constraintBottom_toBottomOf="@+id/rcView"
+                app:layout_constraintBottom_toBottomOf="@+id/rcViews"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/rcView" />
+                app:layout_constraintTop_toTopOf="@+id/rcViews" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
                 android:id="@+id/btnAddImg"
@@ -94,7 +94,7 @@
                 android:onClick="selecionarFoto"
                 android:tint="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcView"
+                app:layout_constraintTop_toBottomOf="@+id/rcViews"
                 app:srcCompat="@drawable/ic_floating" />
 
             <TextView

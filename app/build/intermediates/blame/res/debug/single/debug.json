@@ -228,6 +228,10 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_filtrar_trabalhador.xml"
     },
     {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_enviar_postagem_chat.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_enviar_postagem_chat.xml"
+    },
+    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_menu_branco.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable\\borda_menu_branco.xml"
     },
@@ -396,12 +400,20 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\ic_voltar.xml"
     },
     {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_trabalhadores_contratos.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_trabalhadores_contratos.xml"
+    },
+    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_zelador.jpg.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\drawable\\zelador.jpg"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_barra_progresso.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\barra_progresso.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_post_ativo.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\item_post_ativo.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_person_black_24dp.xml.flat",
@@ -414,6 +426,10 @@
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_fragment_menu_perfil.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\fragment_menu_perfil.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_postagem_ativa.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\src\\main\\res\\layout\\activity_postagem_ativa.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_postagem.xml.flat",

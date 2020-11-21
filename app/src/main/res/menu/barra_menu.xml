@@ -12,8 +12,7 @@
         android:id="@+id/nav_contratos"
         />
     <item
-        android:title="Perfil"
-        android:icon="@drawable/ic_pessoa"
         android:id="@+id/nav_perfil"
-        />
+        android:icon="@drawable/ic_hitorico"
+        android:title="Anúncios Abertos" />
 </menu>

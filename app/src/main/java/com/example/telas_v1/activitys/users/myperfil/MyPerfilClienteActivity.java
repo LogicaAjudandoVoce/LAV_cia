@@ -47,6 +47,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_perfil_cliente);
 
         meC = getIntent().getExtras().getParcelable("meC");
+        first();
         iniciarComponetes();
 
         btnAvaliar.setOnClickListener(new View.OnClickListener() {
@@ -82,6 +83,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
 
         if (meC.getStars()!=0)
             txtAvaliar.setText(String.valueOf(meC.getStars()/(float) meC.getCountStar()).substring(0,3));
+
         imgFundo.setClickable(false);
         imgPerfil.setClickable(false);
         txtContatos.setText(meC.getContatos());
@@ -234,5 +236,13 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
         Toast.makeText(this, "Alterando Foto...", Toast.LENGTH_LONG).show();
     }
 
-
+    private void first(){
+        if (!getIntent().getExtras().getString("first").isEmpty() && meC.getUrlFotoFundo()==null && meC.getUrlFotoPerfil()==null){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Seja Bem Vindo!")
+                    .setMessage("Primeiramente, edite seu usuários preenchendo o máixmo de informações" +
+                            " que você puder. \n\n Clique no ícone de Editar parar inserir seus dados.")
+                    .setPositiveButton("Vamos la!", null)
+                    .create().show();}
+    }
 }

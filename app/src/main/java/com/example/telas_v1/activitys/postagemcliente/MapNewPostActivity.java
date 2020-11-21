@@ -61,6 +61,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
         });
     }
 
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;

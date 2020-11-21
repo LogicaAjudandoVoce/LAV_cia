@@ -36,6 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="64dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:gravity="center"
                 android:text="Título da Postagem"
                 android:textColor="#000"
@@ -45,7 +46,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcView"
+                android:id="@+id/rcViews"
                 android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="16dp"
@@ -61,11 +62,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:text="Descrição:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcView" />
+                app:layout_constraintTop_toBottomOf="@+id/rcViews" />
 
             <TextView
                 android:id="@+id/textView33"
@@ -74,6 +76,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:text="Valor Máximo a ser Pago:"
+                android:fontFamily="@font/montserrat_alternates"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -87,6 +90,7 @@
                 android:layout_marginTop="16dp"
                 android:text="Localização:"
                 android:textColor="#000"
+                android:fontFamily="@font/montserrat_alternates"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView33" />
@@ -99,6 +103,7 @@
                 android:text="R$:"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintBottom_toBottomOf="@+id/textView33"
                 app:layout_constraintStart_toEndOf="@+id/textView33"
                 app:layout_constraintTop_toTopOf="@+id/textView33" />
@@ -110,6 +115,7 @@
                 android:layout_marginStart="2dp"
                 android:gravity="start"
                 android:textColor="#000"
+                android:fontFamily="@font/montserrat_alternates"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView35"
                 app:layout_constraintStart_toEndOf="@+id/textView35"
@@ -121,6 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:layout_marginEnd="16dp"
                 android:background="@android:drawable/editbox_background_normal"
                 android:padding="10dp"
@@ -147,6 +154,7 @@
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/botao_azul"
                 android:text="Abrir Chat"
+                android:fontFamily="@font/montserrat_alternates"
                 android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -161,6 +169,7 @@
                 android:background="@drawable/botao_azul"
                 android:onClick="solicitarContrato"
                 android:text="Solicitar contrato"
+                android:fontFamily="@font/montserrat_alternates"
                 android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="@+id/btnChat"
                 app:layout_constraintStart_toStartOf="parent"
@@ -187,6 +196,7 @@
                 android:text="Autor:"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -198,6 +208,7 @@
                 android:text="Nome Autor"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintBottom_toBottomOf="@+id/textView40"
                 app:layout_constraintStart_toEndOf="@+id/textView40"
                 app:layout_constraintTop_toTopOf="@+id/textView40" />
@@ -209,6 +220,7 @@
                 android:layout_marginTop="8dp"
                 android:text="Email:"
                 android:textColor="#000"
+                android:fontFamily="@font/montserrat_alternates"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView40"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
@@ -222,6 +234,7 @@
                 android:text="Email Autor"
                 android:textColor="#000"
                 android:textSize="18sp"
+                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintBottom_toBottomOf="@+id/textView42"
                 app:layout_constraintEnd_toEndOf="@+id/txtNomeAutor"
                 app:layout_constraintHorizontal_bias="0.0"

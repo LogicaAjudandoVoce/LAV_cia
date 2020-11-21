@@ -82,7 +82,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtProfissao" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rcView"
+                android:id="@+id/rcViews"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
                 android:background="@color/places_ui_default_primary_dark"
@@ -99,7 +99,7 @@
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textView23"
-                app:layout_constraintTop_toBottomOf="@+id/rcView" />
+                app:layout_constraintTop_toBottomOf="@+id/rcViews" />
 
             <TextView
                 android:id="@+id/txtSobreMim"
@@ -179,10 +179,10 @@
                 android:clickable="true"
                 android:onClick="abrirFotos"
                 android:tint="#FFF"
-                app:layout_constraintBottom_toBottomOf="@+id/rcView"
+                app:layout_constraintBottom_toBottomOf="@+id/rcViews"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rcView"
+                app:layout_constraintTop_toBottomOf="@+id/rcViews"
                 app:srcCompat="@drawable/ic_expand_more" />
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -205,10 +205,10 @@
                 android:text="Nada por aqui"
                 android:textColor="#FFF"
                 android:textSize="36sp"
-                app:layout_constraintBottom_toBottomOf="@+id/rcView"
-                app:layout_constraintEnd_toEndOf="@+id/rcView"
-                app:layout_constraintStart_toStartOf="@+id/rcView"
-                app:layout_constraintTop_toTopOf="@+id/rcView" />
+                app:layout_constraintBottom_toBottomOf="@+id/rcViews"
+                app:layout_constraintEnd_toEndOf="@+id/rcViews"
+                app:layout_constraintStart_toStartOf="@+id/rcViews"
+                app:layout_constraintTop_toTopOf="@+id/rcViews" />
 
             <ImageView
                 android:id="@+id/imgBackPerfil"
