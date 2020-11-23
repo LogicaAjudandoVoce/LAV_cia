@@ -26,14 +26,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="Suas conversas"
         app:titleMarginStart="80dp"
         app:titleTextColor="#FFF" />
+
+    <TextView
+        android:id="@+id/textView57"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:fontFamily="@font/montserrat_alternates"
+        android:text="Suas conversas"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/rcViews"
+        app:layout_constraintStart_toEndOf="@+id/btnVoltar"
+        app:layout_constraintTop_toTopOf="@+id/toolbar2" />
 
     <TextView
         android:id="@+id/txtInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="Nada por Aqui"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"

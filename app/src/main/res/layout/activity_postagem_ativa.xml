@@ -64,17 +64,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        app:layout_constraintGuide_percent="0.45" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imgUser"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:onClick="abrirPerfilTrab"
         android:src="@drawable/animais"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView64" />
 
@@ -105,7 +104,7 @@
 
     <Button
         android:id="@+id/btnConcluir"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="16dp"
@@ -113,14 +112,15 @@
         android:fontFamily="@font/montserrat_alternates"
         android:onClick="finalizarContrato"
         android:padding="15dp"
-        android:text="COncluir Serviço"
+        android:text="Concluir Serviço"
+        android:textAllCaps="false"
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnEncerrar"
-        android:layout_width="wrap_content"
+        android:layout_width="175dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="16dp"
@@ -129,6 +129,7 @@
         android:onClick="encerrarContrato"
         android:padding="15dp"
         android:text="Encerrar Contrato"
+        android:textAllCaps="false"
         android:textColor="#FFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

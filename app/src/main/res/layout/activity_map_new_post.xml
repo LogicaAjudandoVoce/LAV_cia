@@ -31,6 +31,7 @@
         android:background="@drawable/seacrh_item"
         android:drawableStart="@drawable/ic_search"
         android:ems="10"
+        android:fontFamily="@font/montserrat_alternates"
         android:hint="Informe o local aqui..."
         android:inputType="textPersonName"
         android:isScrollContainer="false"

@@ -22,7 +22,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="sans-serif-condensed"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="Espere um momento..."
         android:textColorLink="#000000"
         android:textSize="24sp"

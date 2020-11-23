@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="Recupere sua Senha"
         android:textColor="#FFF"
         android:textSize="36sp"
@@ -24,6 +25,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="Enviaremos um email de recuperação"
         android:textColor="#FFF"
         android:textSize="18sp"
@@ -44,6 +46,7 @@
             android:id="@+id/txtEmailList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_alternates"
             android:hint="@string/informe_seu_e_mail" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -53,7 +56,9 @@
         android:layout_height="50dp"
         android:layout_marginTop="60dp"
         android:background="@drawable/botao_preto"
+        android:fontFamily="@font/montserrat_alternates"
         android:text="Enviar email"
+        android:textAllCaps="false"
         android:textColor="#FFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

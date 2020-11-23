@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\Projeto_LAV\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
+            "outputFile": "C:\\Users\\Kazuma\\Projetos\\Projeto_LAV\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v26\\values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\4bd0c076f70629609e71456674ab68d8\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Kazuma\\.gradle\\caches\\transforms-2\\files-2.1\\4bd0c076f70629609e71456674ab68d8\\appcompat-1.2.0\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,3,4,8,12,16",
                         "startColumns": "4,4,4,4,4,4",

@@ -32,7 +32,8 @@
         android:id="@+id/txtNome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/montserrat_alternates"
         android:onClick="abrirPerfilTrabalhador"
         android:text="@string/infome_seu_nome"
         android:textColor="#000"
@@ -81,7 +82,8 @@
         android:id="@+id/rcViews"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/textInputLayout13"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtMensagem"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/barra" />
@@ -93,29 +95,25 @@
         android:onClick="abrirPerfilTrabalhador"
         app:layout_constraintBottom_toBottomOf="@+id/barra"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
+        app:layout_constraintHorizontal_bias="0.21"
         app:layout_constraintStart_toStartOf="@+id/btnVoltar"
         app:layout_constraintTop_toTopOf="parent"
         tools:src="@tools:sample/avatars" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout13"
+    <EditText
+        android:id="@+id/txtMensagem"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:gravity="start"
+        android:fontFamily="@font/montserrat_alternates"
+        android:hint="Digite uma mensagem"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnEnviarPost"
         app:layout_constraintEnd_toStartOf="@+id/btnEnviar"
         app:layout_constraintStart_toEndOf="@+id/btnEnviarPost"
         app:layout_constraintTop_toTopOf="@+id/btnEnviarPost">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/txtMensagem"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="Esqueva aqui..."
-            android:maxWidth="0dp" />
-    </com.google.android.material.textfield.TextInputLayout>
+    </EditText>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

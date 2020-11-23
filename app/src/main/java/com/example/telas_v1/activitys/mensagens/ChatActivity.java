@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -24,7 +25,7 @@ import com.xwray.groupie.GroupAdapter;
 
 public class ChatActivity extends AppCompatActivity {
 
-    private TextInputEditText txtMsn;
+    private EditText txtMsn;
     private TextView txtNome;
     private ImageView imgPerfil;
     private ImageButton btnEnviar;

@@ -9,7 +9,7 @@
         android:layout_width="350dp"
         android:layout_height="60dp"
         android:layout_marginTop="8dp"
-        android:background="@drawable/botao_dourado"
+        android:background="@drawable/botao_azul"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,6 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/montserrat_alternates"
             android:text="Nome do Usuário"
             android:textColor="#000"
             app:layout_constraintStart_toEndOf="@+id/imgPerfil"
@@ -39,8 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:fontFamily="@font/montserrat_alternates"
             android:text="Ultima mensagem..."
             app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
-            app:layout_constraintStart_toEndOf="@+id/imgPerfil" />
+            app:layout_constraintStart_toEndOf="@+id/imgPerfil"
+            app:layout_constraintTop_toBottomOf="@+id/txtNome" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
