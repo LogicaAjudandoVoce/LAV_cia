@@ -90,6 +90,7 @@ public class ChatActivity extends AppCompatActivity {
                 finish();
             }
         });
+
         abrirPost();
     }
 
