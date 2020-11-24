@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.users.myperfil.MyPerfilTrabalhadorActivity;
@@ -45,5 +46,9 @@ public class ListFotosActivity extends AppCompatActivity {
         urls = new ArrayList<>();
         urls = (List<String>) getIntent().getExtras().getSerializable("urls");
         recyclerView = findViewById(R.id.recyclerView);
-}
+    }
+
+    public void voltarTodasFotos(View view){
+        finish();
+    }
 }

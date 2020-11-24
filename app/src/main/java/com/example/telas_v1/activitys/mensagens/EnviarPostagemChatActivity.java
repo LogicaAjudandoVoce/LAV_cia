@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.models.MetodosUsers;
@@ -32,5 +33,9 @@ public class EnviarPostagemChatActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MetodosUsers metodosUsers = new MetodosUsers();
         metodosUsers.listarPostagens(adapter, cliente);
+    }
+
+    public void voltarPostagem(View view){
+        finish();
     }
 }

@@ -45,6 +45,10 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
+        iniciarComponentes();
+    }
+
+    private void iniciarComponentes(){
         txtLoc = findViewById(R.id.edtLoc);
 
         Places.initialize(MapNewPostActivity.this, "AIzaSyBjAlJo8Wlr1w007qWeRw8kXNCBEoJ0pJg");
@@ -55,7 +59,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
                 List<Place.Field> fieldList = Arrays.asList(Place.Field.ADDRESS,
                         Place.Field.LAT_LNG, Place.Field.NAME);
                 Intent intent = new Autocomplete.IntentBuilder(AutocompleteActivityMode.OVERLAY
-                , fieldList).build(MapNewPostActivity.this);
+                        , fieldList).build(MapNewPostActivity.this);
 
                 startActivityForResult(intent, 100);
             }

@@ -134,4 +134,8 @@ public class PostagemAtivaActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void voltarContrato(View view){
+        finish();
+    }
 }

@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -211,5 +212,19 @@ public class PostagemActivity extends AppCompatActivity {
         public int getLayout() {
             return R.layout.item_post_img;
         }
+    }
+
+    public void abrirMapa(View view){
+        final double latitude = postagem.getLatitude();
+        final double longitude = postagem.getLongitude();
+
+        String strUri = "http://maps.google.com/maps?q=loc:" +
+                        latitude + "," + longitude;
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
+                Uri.parse(strUri));
+
+        intent.setClassName("com.google.android.apps.maps",
+                "com.google.android.maps.MapsActivity");
+        PostagemActivity.this.startActivity(intent);
     }
 }
