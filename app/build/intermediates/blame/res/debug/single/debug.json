@@ -40,12 +40,12 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable\\trab.png"
     },
     {
-        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_logo_redonda.png.flat",
-        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\logo_redonda.png"
-    },
-    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_remove_24.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable\\ic_baseline_remove_24.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_logo_redonda.png.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\logo_redonda.png"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_create.xml.flat",
@@ -84,12 +84,12 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\logo_normal.png"
     },
     {
-        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_list_fotos.xml.flat",
-        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\layout\\item_list_fotos.xml"
-    },
-    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\font_montserrat_alternates.ttf.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\font\\montserrat_alternates.ttf"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_list_fotos.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\layout\\item_list_fotos.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_item_fundo_branco_edit_text.xml.flat",
@@ -108,12 +108,12 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_menu_branco.xml.flat",
-        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable\\borda_menu_branco.xml"
-    },
-    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_cabelos.png.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable\\cabelos.png"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_borda_menu_branco.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable\\borda_menu_branco.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable_moda.png.flat",
@@ -128,12 +128,12 @@
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable\\manicure.png"
     },
     {
-        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
-        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
-    },
-    {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_botao_preto.xml.flat",
         "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\botao_preto.xml"
+    },
+    {
+        "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\src\\main\\res\\drawable-v24\\ic_launcher_foreground.xml"
     },
     {
         "merged": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\MaisAtualAinda\\Projeto_LAV\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",

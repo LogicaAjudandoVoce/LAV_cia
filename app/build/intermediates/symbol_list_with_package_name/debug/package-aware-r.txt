@@ -2450,6 +2450,7 @@ id imageView
 id imageView2
 id imageView3
 id imageView4
+id imageView5
 id imageView6
 id imageView7
 id imageView8
@@ -2777,6 +2778,7 @@ id textView6
 id textView60
 id textView61
 id textView62
+id textView63
 id textView64
 id textView7
 id textView8
@@ -2800,6 +2802,7 @@ id toolbar2
 id toolbar3
 id toolbar4
 id toolbar5
+id toolbar6
 id top
 id topPanel
 id touch_outside
