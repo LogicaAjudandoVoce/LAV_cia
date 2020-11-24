@@ -497,9 +497,10 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (first!=null){
-            if (!aux)
+            if (!aux) {
                 if (txtSobreMim.getText().toString().isEmpty())
                     return;
+            }
         }else if (aux){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Tem certeza?")
