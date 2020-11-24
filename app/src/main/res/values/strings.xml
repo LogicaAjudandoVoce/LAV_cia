@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">LAV</string>
+    <string name="l_gica_ajudando_voc">Lógica Ajudando Você</string>
+    <string name="logo">Logo do projeto</string>
+    <string name="entrar">Entrar</string>
+    <string name="criar_conta">Criar Conta</string>
+    <string name="email_ou_telefone">Email ou Telefone</string>
+    <string name="senha">Senha</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="vamos_come_ar">Vamos começar!</string>
+    <string name="selecione_o_seu_tipo_de_conta">Selecione o seu tipo de conta</string>
+    <string name="cliente">Cliente</string>
+    <string name="trabalhador">Trabalhador</string>
+    <string name="n_o_vai_demorar_muito">Não vai demorar muito</string>
+    <string name="infome_seu_nome">Infome seu nome</string>
+    <string name="informe_seu_nome">Informe seu nome</string>
+    <string name="informe_seus_dados">informe seus dados</string>
+    <string name="data_de_nascimento">data de nascimento</string>
+    <string name="nome">nome completo</string>
+    <string name="nome_e_sobrenome">nome e sobrenome</string>
+    <string name="voltar">voltar</string>
+    <string name="avan_ar">avançar</string>
+    <string name="informe_seu_e_mail">Informe seu E-mail</string>
+    <string name="j_estamos_acabando">Já estamos acabando</string>
+    <string name="os_e_emails_n_o_s_o_iguais">Os e-emails não são iguais</string>
+    <string name="confirme_seu_e_mail">Confirme seu e-mail</string>
+    <string name="e_mail">E-mail</string>
+
+    <string name="teste2">Profissão</string>
+    <string name="valor">valor</string>
+    <string name="nomebusca">nome</string>
+    <string name="img_busca">busca</string>
+    <string name="buscar">buscar</string>
+    <string name="pre_o">Preço</string>
+    <string name="cidade">Cidade</string>
+    <string name="contratos_ativos">Contratos ativos:</string>
+
+    <string-array name="contrato">
+        <item>Contratos Voluntários</item>
+        <item>Contratos Ativos</item>
+        <item>Contratos Finalizados</item>
+    </string-array>
+    <string name="title_activity_mapa_nova_postagem">Map</string>
+    <string name="title_activity_map_new_post">Map</string>
+
+</resources>

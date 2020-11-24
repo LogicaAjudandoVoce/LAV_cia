@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/txtEnviarImgChat"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/animais"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/imgFundoChatPost"
+        android:layout_width="0dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="64dp"
+        android:alpha="0.5"
+        app:riv_border_width="1dp"
+        app:riv_border_color="@color/colorPrimary"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_fundo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtEnviarImgChat"
+        app:layout_constraintTop_toTopOf="@+id/txtEnviarImgChat"
+        app:riv_corner_radius="15dp" />
+
+    <TextView
+        android:id="@+id/titlePost"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:gravity="center"
+        android:text="TextView"
+        android:textColor="#000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/imgFundoChatPost"
+        app:layout_constraintStart_toStartOf="@+id/imgFundoChatPost"
+        app:layout_constraintTop_toTopOf="@+id/imgFundoChatPost" />
+
+    <TextView
+        android:id="@+id/miniDescricao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textColor="#000"
+        app:layout_constraintEnd_toEndOf="@+id/imgFundoChatPost"
+        app:layout_constraintStart_toStartOf="@+id/imgFundoChatPost"
+        app:layout_constraintTop_toBottomOf="@+id/titlePost" />
+
+    <TextView
+        android:id="@+id/textView59"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="R$:"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/imgFundoChatPost"
+        app:layout_constraintStart_toStartOf="@+id/imgFundoChatPost" />
+
+    <TextView
+        android:id="@+id/precoChatPost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:text="TextView"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="@+id/textView59"
+        app:layout_constraintStart_toEndOf="@+id/textView59"
+        app:layout_constraintTop_toTopOf="@+id/textView59" />
+</androidx.constraintlayout.widget.ConstraintLayout>
