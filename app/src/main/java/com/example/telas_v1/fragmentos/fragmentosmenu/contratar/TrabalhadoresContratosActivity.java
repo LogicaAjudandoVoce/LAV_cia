@@ -17,6 +17,7 @@ import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.users.otherperfil.PerfilTrabalhadorActivity;
 import com.example.telas_v1.models.MetodosUsers;
 import com.example.telas_v1.models.Postagem;
+import com.example.telas_v1.models.PostagemAux;
 import com.example.telas_v1.models.UserCliente;
 import com.example.telas_v1.models.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -28,7 +29,7 @@ import com.xwray.groupie.OnItemClickListener;
 
 public class TrabalhadoresContratosActivity extends AppCompatActivity {
 
-    private Postagem post;
+    private PostagemAux post;
     private MetodosUsers users;
     private UserCliente cliente;
     private GroupAdapter adapter;

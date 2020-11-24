@@ -126,11 +126,7 @@ public class MenuBuscar extends Fragment {
         btnFiltrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if (cliente!=null){
-                    startActivity(new Intent(getContext(), FiltrarTrabalhadorActivity.class));
-                }
-                if (trabalhador!=null){
-                }
+                startActivity(new Intent(getContext(), FiltrarTrabalhadorActivity.class));
             }
         });
 
@@ -188,7 +184,7 @@ public class MenuBuscar extends Fragment {
                     }
                     txtNome.setText(trabalhador.getNome());
                     Picasso.get().load(trabalhador.getUrlFotoPerfil()).into(imgFoto);
-                    metodosUsers.listarPostagens(adapter);
+                    metodosUsers.listarPostagens(adapter, filtro, keys);
                     btnAddPost.setVisibility(View.INVISIBLE);
                     btnAddPost.setEnabled(false);
                 }
