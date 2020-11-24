@@ -16,6 +16,7 @@ import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.users.otherperfil.PerfilTrabalhadorActivity;
 import com.example.telas_v1.models.MetodosUsers;
 import com.example.telas_v1.models.Postagem;
+import com.example.telas_v1.models.PostagemAux;
 import com.example.telas_v1.models.UserCliente;
 import com.example.telas_v1.models.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -27,8 +28,9 @@ import com.squareup.picasso.Picasso;
 public class PostagemAtivaActivity extends AppCompatActivity {
 
     private UserCliente cliente;
+    private UserTrabalhador trabalhador;
     private ImageView imgUser;
-    private Postagem post;
+    private PostagemAux post;
     private String forma;
 
     @Override
@@ -63,18 +65,15 @@ public class PostagemAtivaActivity extends AppCompatActivity {
         txtDesc.setText(post.getDescricao());
         txtNome.setText(post.getNomeContratato());
         Picasso.get().load(post.getUrlImgContratado()).into(imgUser);
+
+        getTrabalhador();
     }
 
-    public void abrirPerfilTrab(View view){
+    private void getTrabalhador(){
         FirebaseFirestore.getInstance().collection("userTrabalhador").document(post.getIdContratado()).get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
-                UserTrabalhador userTrabalhador = documentSnapshot.toObject(UserTrabalhador.class);
-                Intent intent = new Intent(PostagemAtivaActivity.this, PerfilTrabalhadorActivity.class);
-                intent.putExtra("toT", userTrabalhador);
-                intent.putExtra("meC", cliente);
-                intent.putExtra("forma", "menu");
-                startActivity(intent);
+                trabalhador = documentSnapshot.toObject(UserTrabalhador.class);
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -84,7 +83,23 @@ public class PostagemAtivaActivity extends AppCompatActivity {
         });
     }
 
+    public void abrirPerfilTrab(View view){
+
+        Intent intent = new Intent(PostagemAtivaActivity.this, PerfilTrabalhadorActivity.class);
+        intent.putExtra("toT", trabalhador);
+        intent.putExtra("meC", cliente);
+        intent.putExtra("forma", "menu");
+        startActivity(intent);
+    }
+
     public void encerrarContrato(View view){
+        int i=0;
+        for (String vol: post.getVoluntarios()){
+            if (vol.equals(trabalhador.getId())){
+                post.getVoluntarios().remove(i);
+            }
+            i++;
+        }
         post.setIdContratado(null);
         post.setNomeContratato(null);
         post.setUrlImgContratado(null);

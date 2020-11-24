@@ -15,6 +15,7 @@ import android.widget.EditText;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.models.Postagem;
+import com.example.telas_v1.models.PostagemAux;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -33,7 +34,7 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
 
     private GoogleMap mMap;
     private LatLng loc;
-    private Postagem postagem = new Postagem();
+    private PostagemAux postagem = new PostagemAux();
     private EditText txtLoc;
 
     @Override

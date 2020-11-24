@@ -5,227 +5,162 @@ import android.os.Parcelable;
 
 import java.util.List;
 
-public class Postagem implements Parcelable {
+public class Postagem{
 
-    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao, filtroFixo, status;
-    private String idContratado, nomeContratato, urlImgContratado;
-    private List<String> keys, fotos, voluntarios;
-    private double preco, latitude, longitude;
+    private static String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao, filtroFixo, status;
+    private static String idContratado, nomeContratato, urlImgContratado;
+    private static List<String> keys, fotos, voluntarios;
+    private static double preco, latitude, longitude;
 
-    public Postagem() {
-    }
-
-    protected Postagem(Parcel in) {
-        idCliente = in.readString();
-        idPost = in.readString();
-        nomeAutor = in.readString();
-        titulo = in.readString();
-        descricao = in.readString();
-        data = in.readString();
-        email = in.readString();
-        miniDescricao = in.readString();
-        filtroFixo = in.readString();
-        status = in.readString();
-        idContratado = in.readString();
-        nomeContratato = in.readString();
-        urlImgContratado = in.readString();
-        keys = in.createStringArrayList();
-        fotos = in.createStringArrayList();
-        voluntarios = in.createStringArrayList();
-        preco = in.readDouble();
-        latitude = in.readDouble();
-        longitude = in.readDouble();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(idCliente);
-        dest.writeString(idPost);
-        dest.writeString(nomeAutor);
-        dest.writeString(titulo);
-        dest.writeString(descricao);
-        dest.writeString(data);
-        dest.writeString(email);
-        dest.writeString(miniDescricao);
-        dest.writeString(filtroFixo);
-        dest.writeString(status);
-        dest.writeString(idContratado);
-        dest.writeString(nomeContratato);
-        dest.writeString(urlImgContratado);
-        dest.writeStringList(keys);
-        dest.writeStringList(fotos);
-        dest.writeStringList(voluntarios);
-        dest.writeDouble(preco);
-        dest.writeDouble(latitude);
-        dest.writeDouble(longitude);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    public static final Creator<Postagem> CREATOR = new Creator<Postagem>() {
-        @Override
-        public Postagem createFromParcel(Parcel in) {
-            return new Postagem(in);
-        }
-
-        @Override
-        public Postagem[] newArray(int size) {
-            return new Postagem[size];
-        }
-    };
-
-    public String getIdCliente() {
+    public static String getIdCliente() {
         return idCliente;
     }
 
-    public void setIdCliente(String idCliente) {
-        this.idCliente = idCliente;
+    public static void setIdCliente(String idCliente) {
+        Postagem.idCliente = idCliente;
     }
 
-    public String getIdPost() {
+    public static String getIdPost() {
         return idPost;
     }
 
-    public void setIdPost(String idPost) {
-        this.idPost = idPost;
+    public static void setIdPost(String idPost) {
+        Postagem.idPost = idPost;
     }
 
-    public String getNomeAutor() {
+    public static String getNomeAutor() {
         return nomeAutor;
     }
 
-    public void setNomeAutor(String nomeAutor) {
-        this.nomeAutor = nomeAutor;
+    public static void setNomeAutor(String nomeAutor) {
+        Postagem.nomeAutor = nomeAutor;
     }
 
-    public String getTitulo() {
+    public static String getTitulo() {
         return titulo;
     }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
+    public static void setTitulo(String titulo) {
+        Postagem.titulo = titulo;
     }
 
-    public String getDescricao() {
+    public static String getDescricao() {
         return descricao;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
+    public static void setDescricao(String descricao) {
+        Postagem.descricao = descricao;
     }
 
-    public String getData() {
+    public static String getData() {
         return data;
     }
 
-    public void setData(String data) {
-        this.data = data;
+    public static void setData(String data) {
+        Postagem.data = data;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public static void setEmail(String email) {
+        Postagem.email = email;
     }
 
-    public String getMiniDescricao() {
+    public static String getMiniDescricao() {
         return miniDescricao;
     }
 
-    public void setMiniDescricao(String miniDescricao) {
-        this.miniDescricao = miniDescricao;
+    public static void setMiniDescricao(String miniDescricao) {
+        Postagem.miniDescricao = miniDescricao;
     }
 
-    public String getFiltroFixo() {
+    public static String getFiltroFixo() {
         return filtroFixo;
     }
 
-    public void setFiltroFixo(String filtroFixo) {
-        this.filtroFixo = filtroFixo;
+    public static void setFiltroFixo(String filtroFixo) {
+        Postagem.filtroFixo = filtroFixo;
     }
 
-    public String getStatus() {
+    public static String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public static void setStatus(String status) {
+        Postagem.status = status;
     }
 
-    public String getIdContratado() {
+    public static String getIdContratado() {
         return idContratado;
     }
 
-    public void setIdContratado(String idContratado) {
-        this.idContratado = idContratado;
+    public static void setIdContratado(String idContratado) {
+        Postagem.idContratado = idContratado;
     }
 
-    public String getNomeContratato() {
+    public static String getNomeContratato() {
         return nomeContratato;
     }
 
-    public void setNomeContratato(String nomeContratato) {
-        this.nomeContratato = nomeContratato;
+    public static void setNomeContratato(String nomeContratato) {
+        Postagem.nomeContratato = nomeContratato;
     }
 
-    public String getUrlImgContratado() {
+    public static String getUrlImgContratado() {
         return urlImgContratado;
     }
 
-    public void setUrlImgContratado(String urlImgContratado) {
-        this.urlImgContratado = urlImgContratado;
+    public static void setUrlImgContratado(String urlImgContratado) {
+        Postagem.urlImgContratado = urlImgContratado;
     }
 
-    public List<String> getKeys() {
+    public static List<String> getKeys() {
         return keys;
     }
 
-    public void setKeys(List<String> keys) {
-        this.keys = keys;
+    public static void setKeys(List<String> keys) {
+        Postagem.keys = keys;
     }
 
-    public List<String> getFotos() {
+    public static List<String> getFotos() {
         return fotos;
     }
 
-    public void setFotos(List<String> fotos) {
-        this.fotos = fotos;
+    public static void setFotos(List<String> fotos) {
+        Postagem.fotos = fotos;
     }
 
-    public List<String> getVoluntarios() {
+    public static List<String> getVoluntarios() {
         return voluntarios;
     }
 
-    public void setVoluntarios(List<String> voluntarios) {
-        this.voluntarios = voluntarios;
+    public static void setVoluntarios(List<String> voluntarios) {
+        Postagem.voluntarios = voluntarios;
     }
 
-    public double getPreco() {
+    public static double getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
-        this.preco = preco;
+    public static void setPreco(double preco) {
+        Postagem.preco = preco;
     }
 
-    public double getLatitude() {
+    public static double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
+    public static void setLatitude(double latitude) {
+        Postagem.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public static double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
-        this.longitude = longitude;
+    public static void setLongitude(double longitude) {
+        Postagem.longitude = longitude;
     }
 }

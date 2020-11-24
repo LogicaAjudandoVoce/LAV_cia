@@ -112,20 +112,20 @@ public class MetodosUsers{
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                            userTrabalhador.setId(task.getResult().getUser().getUid());
-                            FirebaseFirestore.getInstance().collection("userTrabalhador").document(userTrabalhador.getId()).set(userTrabalhador).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        userTrabalhador.setId(task.getResult().getUser().getUid());
+                        FirebaseFirestore.getInstance().collection("userTrabalhador").document(userTrabalhador.getId()).set(userTrabalhador).addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void aVoid) {
-                            Toast.makeText(context, "Tudo certo! Realize seu Login agora.", Toast.LENGTH_LONG).show();
-                            activity.startActivity(new Intent(activity, LoginActiviy.class));
-                            activity.finish();
+                                Toast.makeText(context, "Tudo certo! Realize seu Login agora.", Toast.LENGTH_LONG).show();
+                                activity.startActivity(new Intent(activity, LoginActiviy.class));
+                                activity.finish();
                             }
                         }).addOnFailureListener(new OnFailureListener() {
-                                @Override
-                                public void onFailure(@NonNull Exception e) {
-                                    Log.e("TESTE", "Cadastrar Firestore Trablhador: "+e.getMessage(), e);
-                                }
-                            });
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.e("TESTE", "Cadastrar Firestore Trablhador: "+e.getMessage(), e);
+                            }
+                        });
                     }else{
                         try {
                             throw task.getException();
@@ -159,14 +159,12 @@ public class MetodosUsers{
                         if (!tipoTrab.equals("Nenhum Selecionado")) {
                             if (userTrabalhador.getFiltoFixo().equals(tipoTrab)){
                                 adapter.add(new ListarTrabalhadorView(userTrabalhador));
-                                return;
                             }
                         } else if (!keys.isEmpty()){
                             for (String keyT : userTrabalhador.getKeys()) {
                                 for (String filtro : keys) {
                                     if (keyT.equals(filtro)) {
                                         adapter.add(new ListarTrabalhadorView(userTrabalhador));
-                                        return;
                                     }
                                 }
                             }
@@ -180,7 +178,7 @@ public class MetodosUsers{
             }
         });
 
-    }public void listarTrabalhador(final GroupAdapter adapter, final Postagem postagem) {
+    }public void listarTrabalhador(final GroupAdapter adapter, final PostagemAux postagem) {
         FirebaseFirestore.getInstance().collection("/userTrabalhador").addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
@@ -231,27 +229,41 @@ public class MetodosUsers{
         }
     }
 
-    public void listarPostagens(final GroupAdapter adapter){
+    public void listarPostagens(final GroupAdapter adapter, final String filtro, final List<String> keys){
         FirebaseFirestore.getInstance().collection("postagens")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
-            @Override
-            public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
-                if (e!=null){
-                    Log.e("TESTE", "Listar Postagens: "+e.getMessage(), e);
-                }else{
-                    List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
-                    adapter.clear();
-                    for (DocumentSnapshot doc : docs) {
-                        Postagem postagem = doc.toObject(Postagem.class);
+                    @Override
+                    public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
+                        if (e!=null){
+                            Log.e("TESTE", "Listar Postagens: "+e.getMessage(), e);
+                        }else{
+                            List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
+                            adapter.clear();
+                            for (DocumentSnapshot doc : docs) {
+                                PostagemAux postagem = doc.toObject(PostagemAux.class);
 
-                        if (postagem.getStatus().equals("Pendente")){
-                             adapter.add(new ListarPostagemViewModel(postagem));
-                             adapter.notifyDataSetChanged();
+                                if (postagem.getStatus().equals("Pendente")){
+                                    if (!filtro.equals("Nenhum Selecionado")){
+                                        if (postagem.getFiltroFixo().equals(filtro)){
+                                            adapter.add(new ListarPostagemViewModel(postagem));
+                                        }
+                                    }else if (!keys.isEmpty()){
+                                        for(String key : keys){
+                                            for (String key1: postagem.getKeys()){
+                                                if (key.equals(key1)){
+                                                    adapter.add(new ListarPostagemViewModel(postagem));
+                                                }
+                                            }
+                                        }
+                                    }else{
+                                        adapter.add(new ListarPostagemViewModel(postagem));
+                                    }
+                                    adapter.notifyDataSetChanged();
+                                }
+                            }
                         }
                     }
-                }
-            }
-        });
+                });
     }
 
     public void listarPostagens(final GroupAdapter adapter, final UserCliente userCliente){
@@ -265,7 +277,7 @@ public class MetodosUsers{
                             List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
                             adapter.clear();
                             for (DocumentSnapshot doc : docs) {
-                                Postagem postagem = doc.toObject(Postagem.class);
+                                PostagemAux postagem = doc.toObject(PostagemAux.class);
 
                                 if (postagem.getStatus().equals("Pendente") && postagem.getIdCliente().equals(userCliente.getId())){
                                     adapter.add(new ListarPostagemViewModel(postagem));
@@ -288,7 +300,7 @@ public class MetodosUsers{
                             List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
                             adapter.clear();
                             for (DocumentSnapshot doc : docs) {
-                                Postagem postagem = doc.toObject(Postagem.class);
+                                PostagemAux postagem = doc.toObject(PostagemAux.class);
                                 if (postagem.getStatus().equals(status)) {
                                     if (postagem.getVoluntarios() != null) {
                                         for (String user : postagem.getVoluntarios()) {
@@ -316,7 +328,7 @@ public class MetodosUsers{
                             List<DocumentSnapshot> docs = queryDocumentSnapshots.getDocuments();
                             adapter.clear();
                             for (DocumentSnapshot doc : docs) {
-                                Postagem postagem = doc.toObject(Postagem.class);
+                                PostagemAux postagem = doc.toObject(PostagemAux.class);
                                 if (status.equals("Pendente")) {
                                     if (postagem.getStatus().equals(status) && postagem.getVoluntarios() != null && !postagem.getVoluntarios().isEmpty()&& postagem.getIdCliente().equals(cliente.getId())) {
                                         adapter.add(new ListarPostagemViewModel(postagem));
@@ -378,9 +390,9 @@ public class MetodosUsers{
     }
 
     public class ListarPostagemViewModel extends Item<ViewHolder> {
-       public final Postagem postagem;
+        public final PostagemAux postagem;
 
-        private ListarPostagemViewModel(Postagem postagem) {
+        private ListarPostagemViewModel(PostagemAux postagem) {
             this.postagem = postagem;
         }
 
@@ -409,9 +421,9 @@ public class MetodosUsers{
 
     public class ListarPostagensAtivas extends Item<ViewHolder>{
 
-        final public Postagem postagem;
+        final public PostagemAux postagem;
 
-        private ListarPostagensAtivas(Postagem postagem) {
+        private ListarPostagensAtivas(PostagemAux postagem) {
             this.postagem = postagem;
         }
 
@@ -472,7 +484,7 @@ public class MetodosUsers{
                             Log.e("TESTE", "Erro avaliar cliente: "+e.getMessage(), e);
                         }
                     });
-                 }else if (userT!=null) {
+                }else if (userT!=null) {
                     Log.d("TESTE", String.valueOf(ratingBar.getNumStars()));
                     userT.setCountStars(userT.getCountStars() + 1);
                     userT.setStars(userT.getStars()+ratingBar.getRating());

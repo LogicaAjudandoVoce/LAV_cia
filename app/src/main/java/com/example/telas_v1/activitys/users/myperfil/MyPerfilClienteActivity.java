@@ -34,12 +34,12 @@ import com.squareup.picasso.Picasso;
 public class MyPerfilClienteActivity extends AppCompatActivity {
 
     private UserCliente meC;
-    private ImageView imgFundo, imgPerfil;
-    private TextInputEditText txtSobreMim, txtContatos;
-    private Uri uri;
     private FloatingActionButton btnEdit;
-    private Button btnAvaliar;
+    private TextInputEditText txtSobreMim, txtContatos;
+    private ImageView imgFundo, imgPerfil;
+    private Uri uri;
     private boolean ax=false;
+    private Button btnAvaliar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +94,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
     }
 
     public void btnEdit(View view){
-       final FloatingActionButton btnEdit = findViewById(R.id.btnEditCliente);
+        final FloatingActionButton btnEdit = findViewById(R.id.btnEditCliente);
         if (!ax){
             btnEdit.setImageResource(R.drawable.ic_floating);
             imgFundo.setClickable(true);
@@ -131,11 +131,11 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                         txtContatos.setEnabled(false);
                         txtSobreMim.setEnabled(false);
                         ax=!ax;
-                }
+                    }
                 })
                 .setNeutralButton("Cancelar", null).create().show();
     }
-    
+
     public void alterarFoto(final View view){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("O que deseja fazer?")
@@ -155,7 +155,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         if (view.getId()==R.id.imgPerfil){
                             meC.setUrlFotoFundo("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105");
-                            FirebaseFirestore.getInstance().collection("userTrabalhador").document(meC.getId()).set(meC).addOnFailureListener(new OnFailureListener() {
+                            FirebaseFirestore.getInstance().collection("userCliente").document(meC.getId()).set(meC).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.e("TESTE", "Excluir Foto Perfil Trab: "+e.getMessage(), e);
@@ -164,7 +164,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                             Picasso.get().load(meC.getUrlFotoFundo()).into(imgFundo);
                         }else{
                             meC.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8");
-                            FirebaseFirestore.getInstance().collection("userTrabalhador").document(meC.getId()).set(meC).addOnFailureListener(new OnFailureListener() {
+                            FirebaseFirestore.getInstance().collection("userCliente").document(meC.getId()).set(meC).addOnFailureListener(new OnFailureListener() {
                                 @Override
                                 public void onFailure(@NonNull Exception e) {
                                     Log.e("TESTE", "Excluir Foto Fundo Trab: "+e.getMessage(), e);
@@ -237,7 +237,8 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
     }
 
     private void first(){
-        if (!getIntent().getExtras().getString("first").isEmpty() && meC.getUrlFotoFundo()==null && meC.getUrlFotoPerfil()==null){
+        String first = getIntent().getExtras().getString("first");
+        if (first==null && meC.getUrlFotoFundo()==null && meC.getUrlFotoPerfil()==null){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Seja Bem Vindo!")
                     .setMessage("Primeiramente, edite seu usuários preenchendo o máixmo de informações" +

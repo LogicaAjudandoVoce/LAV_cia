@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.mensagens.ChatActivity;
 import com.example.telas_v1.models.Postagem;
+import com.example.telas_v1.models.PostagemAux;
 import com.example.telas_v1.models.UserCliente;
 import com.example.telas_v1.models.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -33,7 +34,7 @@ import java.util.List;
 
 public class PostagemActivity extends AppCompatActivity {
 
-    private Postagem postagem;
+    private PostagemAux postagem;
     private String forma, ativo;
     private UserCliente cliente = new UserCliente();
     private UserTrabalhador trabalhador = new UserTrabalhador();
@@ -116,6 +117,20 @@ public class PostagemActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+        String user = getIntent().getExtras().getString("user");
+        if (user!=null) {
+            if (user.equals("cliente")) {
+                btnChat.setEnabled(false);
+                btnChat.setVisibility(View.INVISIBLE);
+                btnContrato.setEnabled(false);
+                btnContrato.setVisibility(View.INVISIBLE);
+            } else {
+                btnChat.setEnabled(false);
+                btnChat.setVisibility(View.INVISIBLE);
+            }
+        }
     }
 
     private void verificarUserPost(){
@@ -151,8 +166,8 @@ public class PostagemActivity extends AppCompatActivity {
             });
         }else{
             int ax=0;
-            for (String uid : postagem.getVoluntarios()){
-                if (trabalhador.getId().equals(uid)){
+            for (int i=0;i< postagem.getVoluntarios().size();i++){
+                if (trabalhador.getId().equals(postagem.getVoluntarios().get(i))){
                     postagem.getVoluntarios().remove(ax);
                 }
                 ax++;

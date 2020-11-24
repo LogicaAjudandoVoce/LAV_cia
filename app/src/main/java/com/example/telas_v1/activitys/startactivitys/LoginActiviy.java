@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Patterns;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.telas_v1.R;
 
@@ -43,8 +45,13 @@ public class LoginActiviy extends AppCompatActivity {
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!txtEmail.getText().toString().isEmpty() && !txtPassword.getText().toString().isEmpty())
-                metodosUsers.autenticarUsuario(getApplicationContext(), txtEmail.getText().toString(), txtPassword.getText().toString(), barra);
+                if (!txtEmail.getText().toString().isEmpty() && !txtPassword.getText().toString().isEmpty()) {
+                    if (Patterns.EMAIL_ADDRESS.matcher(txtEmail.getText().toString()).matches())
+                        metodosUsers.autenticarUsuario(getApplicationContext(), txtEmail.getText().toString(), txtPassword.getText().toString(), barra);
+                    else
+                        Toast.makeText(getApplicationContext(), "Informe um email válido!", Toast.LENGTH_LONG).show();
+                }else
+                    Toast.makeText(getApplicationContext(), "Preencha todos os campos!", Toast.LENGTH_LONG).show();
             }
         });
 

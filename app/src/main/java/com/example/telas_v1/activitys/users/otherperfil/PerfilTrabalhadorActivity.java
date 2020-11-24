@@ -58,7 +58,7 @@ public class PerfilTrabalhadorActivity extends AppCompatActivity {
         btnVoltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                    finish();
+                finish();
             }
         });
 

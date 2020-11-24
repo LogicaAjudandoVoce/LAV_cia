@@ -25,6 +25,7 @@ import com.example.telas_v1.R;
 import com.example.telas_v1.fragmentos.fragmentosmenu.*;
 import com.example.telas_v1.models.MetodosUsers;
 import com.example.telas_v1.models.Postagem;
+import com.example.telas_v1.models.PostagemAux;
 import com.example.telas_v1.models.UserCliente;
 import com.example.telas_v1.models.UserTrabalhador;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -36,6 +37,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.google.firebase.storage.UploadTask;
 import com.hootsuite.nachos.NachoTextView;
+import com.hootsuite.nachos.chip.Chip;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
 import com.xwray.groupie.Item;
@@ -62,12 +64,13 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     private ImageView imgMapa;
     private UUID uid = UUID.randomUUID();
     private List<String> uriFoto = new ArrayList<>();
-    private List<Uri>uriAx = new ArrayList<>();
-    private Postagem postagem = new Postagem();
+    private static List<Uri>uriAx = new ArrayList<>();
+    private PostagemAux postagem = new PostagemAux();
     private MetodosUsers metodosUsers= new MetodosUsers();
     private UserCliente cliente;
     private double preco;
     private NachoTextView txtPalavrasChaves;
+    private static List<String> keys = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         });
 
         iniciarComponentes();
+        iniciarPost();
     }
 
     private void iniciarComponentes(){
@@ -115,6 +119,14 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         rcView.setHasFixedSize(true);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
         rcView.setLayoutManager(layoutManager);
+
+        if (!uriAx.isEmpty()){
+            txtRc.setText("");
+            for(Uri uri: uriAx){
+                adapter.add(new PostViewHolder(uri.toString()));
+                adapter.notifyDataSetChanged();
+            }
+        }
     }
 
     public void voltar(View view){
@@ -153,13 +165,12 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         String mini = txtDescricaoRapida.getText().toString();
         String descricao= txtDescricao.getText().toString();
         if (txtPreco.getText().toString().isEmpty()) preco=0f;
-         else preco = Double.valueOf(txtPreco.getText().toString());
+        else preco = Double.valueOf(txtPreco.getText().toString());
 
         if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null && mini!=null){
             SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
             String dataFormatada = formataData.format(data);
-            List<String> keys = new ArrayList<>();
 
             postagem.setIdCliente(FirebaseAuth.getInstance().getUid());
             postagem.setIdPost(uid.toString() );
@@ -221,7 +232,24 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     }
 
     public void abrirMapa(View view){
+        getInfoPost();
         startActivity(new Intent(this, MapNewPostActivity.class));
+    }
+
+    private void getInfoPost(){
+        if (!txtTitulo.getText().toString().trim().isEmpty()){
+            Postagem.setTitulo(txtTitulo.getText().toString().trim());
+        }if (!txtDescricao.getText().toString().trim().isEmpty()){
+            Postagem.setDescricao(txtDescricao.getText().toString().trim());
+        }if (!txtDescricaoRapida.getText().toString().trim().isEmpty()){
+            Postagem.setMiniDescricao(txtDescricaoRapida.getText().toString().trim());
+        }if (!txtPreco.getText().toString().trim().isEmpty()){
+            Postagem.setPreco(Double.valueOf(txtPreco.getText().toString().trim()));
+        }if (!txtPalavrasChaves.getText().toString().isEmpty()){
+            for (String chip: txtPalavrasChaves.getChipValues()){
+                keys.add(chip);
+            }
+        }
     }
 
     private class PostViewHolder extends Item<ViewHolder>{
@@ -240,6 +268,24 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         @Override
         public int getLayout() {
             return R.layout.item_post_img;
+        }
+    }
+
+    private void iniciarPost(){
+        if (Postagem.getTitulo()!=null){
+            txtTitulo.setText(Postagem.getTitulo());
+        }if (Postagem.getDescricao()!=null){
+            txtDescricao.setText(Postagem.getDescricao());
+        }if (Postagem.getMiniDescricao()!=null){
+            txtDescricaoRapida.setText(Postagem.getMiniDescricao());
+        }if (Postagem.getPreco()!=0){
+            txtPreco.setText(String.valueOf(Postagem.getPreco()));
+        }if (Postagem.getKeys()!=null){
+            txtPalavrasChaves.setAdapter(new ArrayAdapter<>(getApplication(), android.R.layout.simple_list_item_1, Postagem.getKeys()));
+        }if (Postagem.getKeys()!=null){
+            for (String chip: Postagem.getKeys()) {
+                txtPalavrasChaves.getText().append(chip);
+            }
         }
     }
 

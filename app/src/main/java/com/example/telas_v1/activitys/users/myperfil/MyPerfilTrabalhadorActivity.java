@@ -172,7 +172,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     }
 
     public void editUser(View view){
-       final FloatingActionButton btnEdit = findViewById(R.id.btnEdit);
+        final FloatingActionButton btnEdit = findViewById(R.id.btnEdit);
         if (!aux) {
             btnEdit.setImageResource(R.drawable.ic_baseline_done_24);
             imgFoto.setEnabled(true);
@@ -197,59 +197,59 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("O que deseja?")
                     .setPositiveButton("Salvar", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-                                    String sobre = txtSobreMim.getText().toString().trim();
-                                    String contatos = txtContatos.getText().toString().trim();
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            String sobre = txtSobreMim.getText().toString().trim();
+                            String contatos = txtContatos.getText().toString().trim();
 
-                                    if (validar()) {
-                                        List<String> keys = new ArrayList<>();
-                                        userT.setSobreMim(sobre);
-                                        userT.setContatos(contatos);
-                                        for (String key: txtPalavras.getChipValues()){
-                                            keys.add(key);
-                                        }
-                                        userT.setKeys(keys);
-                                        userT.setFiltoFixo(filtrosPesq.getSelectedItem().toString());
-                                        userT.setProfUm(prof.getSelectedItem().toString());
-                                        userT.setProfDois(prof1.getSelectedItem().toString());
-                                        userT.setProfTres(prof2.getSelectedItem().toString());
-                                        FirebaseFirestore.getInstance().collection("userTrabalhador").document(userT.getId()).set(userT).addOnFailureListener(new OnFailureListener() {
-                                            @Override
-                                            public void onFailure(@NonNull Exception e) {
-                                                Log.e("TESTE", "Atualizar My Trab: "+e.getMessage(), e);
-                                            }
-                                        });
-                                        btnEdit.setImageResource(R.drawable.ic_editar);
-                                        imgFoto.setEnabled(false);
-                                        imgFundo.setEnabled(false);
-                                        txtSobreMim.setEnabled(false);
-                                        txtContatos.setEnabled(false);
-                                        prof.setEnabled(false);
-                                        prof1.setEnabled(false);
-                                        prof2.setEnabled(false);
-                                        txtPalavras.setEnabled(false);
-                                        prof.setVisibility(View.INVISIBLE);
-                                        prof1.setVisibility(View.INVISIBLE);
-                                        prof2.setVisibility(View.INVISIBLE);
-                                        txtTrabUm.setVisibility(View.VISIBLE);
-                                        txtTrabDois.setVisibility(View.VISIBLE);
-                                        filtrosPesq.setVisibility(View.INVISIBLE);
-                                        txtFiltro.setVisibility(View.VISIBLE);
-                                        txtTrabTres.setVisibility(View.VISIBLE);
-                                        btnList.setImageResource(R.drawable.ic_expand_more);
-                                        btnList.setEnabled(false);
-                                        aux=!aux;
-                                        txt1.setVisibility(View.INVISIBLE);
-                                        txt2.setVisibility(View.INVISIBLE);
-                                        txtCampoKeys.setVisibility(View.INVISIBLE);
-                                        iniciarComponentes();
-                                    } else {
-                                        txt1.setVisibility(View.VISIBLE);
-                                        txt2.setVisibility(View.VISIBLE);
-                                        txtCampoKeys.setVisibility(View.VISIBLE);
-                                    }
+                            if (validar()) {
+                                List<String> keys = new ArrayList<>();
+                                userT.setSobreMim(sobre);
+                                userT.setContatos(contatos);
+                                for (String key: txtPalavras.getChipValues()){
+                                    keys.add(key);
                                 }
+                                userT.setKeys(keys);
+                                userT.setFiltoFixo(filtrosPesq.getSelectedItem().toString());
+                                userT.setProfUm(prof.getSelectedItem().toString());
+                                userT.setProfDois(prof1.getSelectedItem().toString());
+                                userT.setProfTres(prof2.getSelectedItem().toString());
+                                FirebaseFirestore.getInstance().collection("userTrabalhador").document(userT.getId()).set(userT).addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Log.e("TESTE", "Atualizar My Trab: "+e.getMessage(), e);
+                                    }
+                                });
+                                btnEdit.setImageResource(R.drawable.ic_editar);
+                                imgFoto.setEnabled(false);
+                                imgFundo.setEnabled(false);
+                                txtSobreMim.setEnabled(false);
+                                txtContatos.setEnabled(false);
+                                prof.setEnabled(false);
+                                prof1.setEnabled(false);
+                                prof2.setEnabled(false);
+                                txtPalavras.setEnabled(false);
+                                prof.setVisibility(View.INVISIBLE);
+                                prof1.setVisibility(View.INVISIBLE);
+                                prof2.setVisibility(View.INVISIBLE);
+                                txtTrabUm.setVisibility(View.VISIBLE);
+                                txtTrabDois.setVisibility(View.VISIBLE);
+                                filtrosPesq.setVisibility(View.INVISIBLE);
+                                txtFiltro.setVisibility(View.VISIBLE);
+                                txtTrabTres.setVisibility(View.VISIBLE);
+                                btnList.setImageResource(R.drawable.ic_expand_more);
+                                btnList.setEnabled(false);
+                                aux=!aux;
+                                txt1.setVisibility(View.INVISIBLE);
+                                txt2.setVisibility(View.INVISIBLE);
+                                txtCampoKeys.setVisibility(View.INVISIBLE);
+                                iniciarComponentes();
+                            } else {
+                                txt1.setVisibility(View.VISIBLE);
+                                txt2.setVisibility(View.VISIBLE);
+                                txtCampoKeys.setVisibility(View.VISIBLE);
+                            }
+                        }
                     }).setNegativeButton("Reverter", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialogInterface, int i) {
