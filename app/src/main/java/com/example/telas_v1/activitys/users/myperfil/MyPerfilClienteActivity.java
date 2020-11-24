@@ -40,6 +40,8 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
     private Uri uri;
     private boolean ax=false;
     private Button btnAvaliar;
+    private String first;
+    private boolean back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,9 +60,12 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
             }
         });
 
+        Picasso.get().load(meC.getUrlFotoFundo()).into(imgFundo);
+        Picasso.get().load(meC.getUrlFotoPerfil()).into(imgPerfil);
     }
 
     private void iniciarComponetes(){
+        first = getIntent().getExtras().getString("first");
         String tipo = getIntent().getExtras().getString("tipo");
         RatingBar barra = findViewById(R.id.barraAvaliacao);
         TextView txtNome = findViewById(R.id.txtNomeClientePerfil);
@@ -89,8 +94,6 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
         txtContatos.setText(meC.getContatos());
         txtNome.setText(meC.getNome());
         txtSobreMim.setText(meC.getSobremim());
-        Picasso.get().load(meC.getUrlFotoFundo()).into(imgFundo);
-        Picasso.get().load(meC.getUrlFotoPerfil()).into(imgPerfil);
     }
 
     public void btnEdit(View view){
@@ -153,7 +156,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                 .setNegativeButton("Excluir Foto", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if (view.getId()==R.id.imgPerfil){
+                        if (view.getId()==R.id.imgFundoCliente){
                             meC.setUrlFotoFundo("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105");
                             FirebaseFirestore.getInstance().collection("userCliente").document(meC.getId()).set(meC).addOnFailureListener(new OnFailureListener() {
                                 @Override
@@ -161,7 +164,6 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                                     Log.e("TESTE", "Excluir Foto Perfil Trab: "+e.getMessage(), e);
                                 }
                             });
-                            Picasso.get().load(meC.getUrlFotoFundo()).into(imgFundo);
                         }else{
                             meC.setUrlFotoPerfil("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8");
                             FirebaseFirestore.getInstance().collection("userCliente").document(meC.getId()).set(meC).addOnFailureListener(new OnFailureListener() {
@@ -170,7 +172,6 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                                     Log.e("TESTE", "Excluir Foto Fundo Trab: "+e.getMessage(), e);
                                 }
                             });
-                            Picasso.get().load(meC.getUrlFotoPerfil()).into(imgPerfil);
                         }
                         Toast.makeText(getApplicationContext(), "Exlcuindo...", Toast.LENGTH_LONG).show();
                     }
@@ -182,11 +183,13 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode==RESULT_OK){
-            if (requestCode==0)
-                salvarFotoPerfil();
-            else if (requestCode==1)
-                salvarFundoPerfil();
             uri = data.getData();
+            if (requestCode==0) {
+                salvarFotoPerfil();
+            }
+            else if (requestCode==1) {
+                salvarFundoPerfil();
+            }
         }
     }
 
@@ -205,7 +208,6 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                                 Log.e("TESTE", "Salvar Foto Perfil Cliente: "+e.getMessage(), e);
                             }
                         });
-                        Picasso.get().load(meC.getUrlFotoPerfil()).into(imgPerfil);
                     }
                 });
             }
@@ -228,7 +230,6 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
                                 Log.e("TESTE", "Salvar Foto Fundo Cliente: "+e.getMessage(), e);
                             }
                         });
-                        Picasso.get().load(meC.getUrlFotoFundo()).into(imgFundo);
                     }
                 });
             }
@@ -237,13 +238,54 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
     }
 
     private void first(){
-        String first = getIntent().getExtras().getString("first");
-        if (first==null && meC.getUrlFotoFundo()==null && meC.getUrlFotoPerfil()==null){
+        first = getIntent().getExtras().getString("first");
+        if (first!=null && meC.getUrlFotoFundo().equals("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105") && meC.getUrlFotoPerfil().equals("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F716c1386-5b82-431c-a2ba-0e16cdeff750?alt=media&token=a48b95e4-7538-4c47-92e8-7f4576eba9c8")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Seja Bem Vindo!")
                     .setMessage("Primeiramente, edite seu usuários preenchendo o máixmo de informações" +
                             " que você puder. \n\n Clique no ícone de Editar parar inserir seus dados.")
                     .setPositiveButton("Vamos la!", null)
                     .create().show();}
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (first!=null){
+            if (!ax)
+                if (txtSobreMim.getText().toString().isEmpty())
+                    return;
+        }else if (ax){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Tem certeza?")
+                    .setMessage("Você perderá tudo o que editou até aqui")
+                    .setPositiveButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            MyPerfilClienteActivity.super.onBackPressed();
+                        }
+                    }).setNegativeButton("Cancelar", null).create().show();
+        }else{
+            super.onBackPressed();
+        }
+    }
+
+    public void voltarPerfilCliente(View view){
+        if (first!=null){
+            if (!ax)
+                if (txtSobreMim.getText().toString().isEmpty())
+                    return;
+        }else if (ax){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Tem certeza?")
+                    .setMessage("Você perderá tudo o que editou até aqui")
+                    .setPositiveButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    }).setNegativeButton("Cancelar", null).create().show();
+        }else{
+            finish();
+        }
     }
 }

@@ -12,6 +12,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -130,15 +131,11 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
     }
 
     public void voltar(View view){
-        AlertDialog.Builder builder = new AlertDialog.Builder(NovaPostagemClienteActivity.this);
-        builder.setTitle("Tem certeza?")
-                .setMessage("Você tem certeza que deseja voltar? Perderá qualquer possível alteração!")
-                .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        finish();
-                    }
-                }).setNegativeButton("Cancelar", null).create().show();
+        if (verificarBack()) {
+            super.onBackPressed();
+        }else{
+            dialogBack();
+        }
     }
 
     public void selecionarFoto(View view){
@@ -289,4 +286,33 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {
+        if (verificarBack()) {
+            super.onBackPressed();
+        }else{
+            dialogBack();
+        }
+    }
+
+    private boolean verificarBack(){
+        if (txtTitulo.getText().toString()!=null || txtDescricao.getText().toString()!=null || txtDescricaoRapida.getText().toString()!=null || txtPalavrasChaves.getText().toString()!=null || txtPreco.getText().toString()!=null || !uriAx.isEmpty()){
+            return false;
+        }
+        return true;
+    }
+
+    private void dialogBack(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Você tem certeza?")
+                .setMessage("Você perderá tudo o que editou até aqui.")
+                .setPositiveButton("Sair", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(intent);
+                    }
+                }).setNegativeButton("Cancelar", null).create().show();
+    }
 }

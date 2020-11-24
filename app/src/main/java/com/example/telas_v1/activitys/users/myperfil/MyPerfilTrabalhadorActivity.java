@@ -464,7 +464,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     }
 
     private void first(){
-        if (first==null&& userT.getUrlFotoPerfil()==null){
+        if (first!=null && userT.getUrlFotoFundo().equals("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios?alt=media&token=ee9d410b-3c49-4b8a-b03f-2670f2bfb105") && userT.getUrlFotoPerfil().equals("https://firebasestorage.googleapis.com/v0/b/projetolavcia-2020.appspot.com/o/imgsUsuarios%2F2e3534fb-21e2-429c-8f1c-ab8f0f5165ee?alt=media&token=0e3b8518-22ab-4ff2-bc13-367059352e92")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Seja Bem Vindo!")
                     .setMessage("Primeiramente, edite seu usuários preenchendo o máixmo de informações" +
@@ -475,11 +475,43 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     }
 
     public void voltarMyPerfil(View view){
-        if (userT.getSobreMim()!=null){
-            if (first==null){
-                startActivity(new Intent(this, MenuActivity.class));
-            }
+        if (first!=null){
+            if (!aux)
+                if (txtSobreMim.getText().toString().isEmpty())
+                    return;
+        }else if (aux){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Tem certeza?")
+                    .setMessage("Você perderá tudo o que editou até aqui")
+                    .setPositiveButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            finish();
+                        }
+                    }).setNegativeButton("Cancelar", null).create().show();
+        }else{
             finish();
-        }else Toast.makeText(this, "Preencha todos os campos!", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        if (first!=null){
+            if (!aux)
+                if (txtSobreMim.getText().toString().isEmpty())
+                    return;
+        }else if (aux){
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Tem certeza?")
+                    .setMessage("Você perderá tudo o que editou até aqui")
+                    .setPositiveButton("Sair", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            MyPerfilTrabalhadorActivity.super.onBackPressed();
+                        }
+                    }).setNegativeButton("Cancelar", null).create().show();
+        }else{
+            super.onBackPressed();
+        }
     }
 }

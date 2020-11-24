@@ -2312,6 +2312,7 @@ id btnEdit
 id btnEditCliente
 id btnEncerrar
 id btnEnviar
+id btnEnviarImagem
 id btnEnviarPost
 id btnFiltrar
 id btnHisotricCliente
@@ -2448,7 +2449,6 @@ id ignore
 id ignoreRequest
 id image
 id imageButton
-id imageButton6
 id imageView
 id imageView2
 id imageView3
@@ -2480,6 +2480,7 @@ id imgBackPerfil
 id imgFoto
 id imgFotoList
 id imgFotoPerfilCliente
+id imgFundoChatPost
 id imgFundoCliente
 id imgList
 id imgListSimple
@@ -2515,6 +2516,7 @@ id media_actions
 id message
 id middle
 id mini
+id miniDescricao
 id mirror
 id month_grid
 id month_navigation_bar
@@ -2602,6 +2604,7 @@ id places_autocomplete_try_again
 id places_autocomplete_try_again_progress
 id position
 id postLayout
+id precoChatPost
 id profDois
 id profTres
 id profUm
@@ -2770,6 +2773,7 @@ id textView54
 id textView55
 id textView56
 id textView57
+id textView59
 id textView6
 id textView60
 id textView64
@@ -2787,6 +2791,7 @@ id textinput_suffix_text
 id time
 id title
 id titleDividerNoCustom
+id titlePost
 id title_template
 id toggle
 id toolbar2
@@ -2829,6 +2834,7 @@ id txtDescricaoRapida
 id txtDiaSemana
 id txtEmailAutor
 id txtEmailList
+id txtEnviarImgChat
 id txtEsquecer
 id txtFiltro
 id txtFiltroFixo
@@ -2998,6 +3004,8 @@ layout fragment_step_two
 layout item_avaliar_users
 layout item_barrauser_list
 layout item_card_list
+layout item_enviar_me_post
+layout item_enviar_to_post
 layout item_foto_list
 layout item_list_fotos
 layout item_msn_me
