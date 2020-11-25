@@ -280,9 +280,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         }if (Postagem.getKeys()!=null){
             txtPalavrasChaves.setAdapter(new ArrayAdapter<>(getApplication(), android.R.layout.simple_list_item_1, Postagem.getKeys()));
         }if (Postagem.getKeys()!=null){
-            for (String chip: Postagem.getKeys()) {
-                txtPalavrasChaves.getText().append(chip);
-            }
+            txtPalavrasChaves.setText(keys);
         }
     }
 

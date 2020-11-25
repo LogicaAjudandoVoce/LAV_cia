@@ -63,10 +63,10 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcViews"
-                android:layout_width="410dp"
+                android:layout_width="0dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
-                android:background="#5C5C5B"
+                android:background="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout10" />
@@ -263,7 +263,7 @@
                 android:hint="Informe uma breve descrição..."
                 android:textColorHint="#FFF"
                 app:counterEnabled="true"
-                app:counterMaxLength="120"
+                app:counterMaxLength="80"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout11"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout11"
                 app:layout_constraintTop_toBottomOf="@+id/textView18">
@@ -276,9 +276,10 @@
                     android:fontFamily="@font/montserrat_alternates"
                     android:gravity="start"
                     android:maxWidth="0dp"
-                    android:maxLength="120"
+                    android:maxLength="80"
                     android:maxLines="10"
                     android:paddingStart="20dp"
+                    android:paddingTop="4dp"
                     android:paddingEnd="4dp"
                     android:paddingBottom="4dp"
                     android:textColor="#FFF"

@@ -12,5 +12,5 @@
     <item
         android:id="@+id/nav_perfil"
         android:icon="@drawable/ic_meusanuncios"
-        android:title="Meus  anúncios" />
+        android:title="@string/meus_anuncios" />
 </menu>

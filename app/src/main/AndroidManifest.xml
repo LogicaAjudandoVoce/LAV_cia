@@ -18,7 +18,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitys.mensagens.EnviarPostagemChatActivity"></activity>
+        <activity android:name=".activitys.postagemcliente.EditarPostagemActivity"></activity>
+        <activity android:name=".activitys.mensagens.EnviarPostagemChatActivity" />
         <activity android:name=".activitys.postagemcliente.PostagemAtivaActivity" />
         <activity android:name=".fragmentos.fragmentosmenu.contratar.TrabalhadoresContratosActivity" />
         <activity android:name=".activitys.users.ListFotosActivity" />

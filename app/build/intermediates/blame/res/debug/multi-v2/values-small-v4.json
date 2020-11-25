@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\Kazuma\\Projetos\\Projeto_LAV\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
+            "outputFile": "C:\\Users\\cassi\\Documents\\ProjetosEscola\\AndroidStudio\\ProjetoMobile\\ProjetoAtualizado\\CassioBugado\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-small-v4\\values-small-v4.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Kazuma\\.gradle\\caches\\transforms-2\\files-2.1\\bf0e923a7a5d78bb519e35d461bdcd2c\\material-1.2.0\\res\\values-small-v4\\values-small-v4.xml",
+                    "source": "C:\\Users\\cassi\\.gradle\\caches\\transforms-2\\files-2.1\\bf0e923a7a5d78bb519e35d461bdcd2c\\material-1.2.0\\res\\values-small-v4\\values-small-v4.xml",
                     "from": {
                         "startLines": "2,3,4,5",
                         "startColumns": "4,4,4,4",

@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51e8ae2d11b05c3715f0401bc4805108/jetified-protolite-well-known-types-16.0.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51e8ae2d11b05c3715f0401bc4805108/jetified-protolite-well-known-types-16.0.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/51e8ae2d11b05c3715f0401bc4805108/jetified-protolite-well-known-types-16.0.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

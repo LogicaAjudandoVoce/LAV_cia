@@ -3,7 +3,6 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3f165be91d676902d5c12098872c8dbf/jetified-grpc-android-1.16.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3f165be91d676902d5c12098872c8dbf/jetified-grpc-android-1.16.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/3f165be91d676902d5c12098872c8dbf/jetified-grpc-android-1.16.1/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-android/1.16.1/1451385e7fda23e1f06823fc7432e105b201e65a/grpc-android-1.16.1-javadoc.jar!/" />

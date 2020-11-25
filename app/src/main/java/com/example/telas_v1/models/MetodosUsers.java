@@ -266,7 +266,7 @@ public class MetodosUsers{
                 });
     }
 
-    public void listarPostagens(final GroupAdapter adapter, final UserCliente userCliente){
+    public void listarPostagens(final GroupAdapter adapter, final UserCliente userCliente, final TextView txtInfo){
         FirebaseFirestore.getInstance().collection("postagens")
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
@@ -280,6 +280,7 @@ public class MetodosUsers{
                                 PostagemAux postagem = doc.toObject(PostagemAux.class);
 
                                 if (postagem.getStatus().equals("Pendente") && postagem.getIdCliente().equals(userCliente.getId())){
+                                    txtInfo.setText("");
                                     adapter.add(new ListarPostagemViewModel(postagem));
                                     adapter.notifyDataSetChanged();
                                 }

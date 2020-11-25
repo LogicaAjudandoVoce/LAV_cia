@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.models.MetodosUsers;
@@ -16,6 +17,7 @@ public class EnviarPostagemChatActivity extends AppCompatActivity {
 
     private GroupAdapter adapter;
     private UserCliente cliente;
+    private TextView txtInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,12 +29,13 @@ public class EnviarPostagemChatActivity extends AppCompatActivity {
     private void inicar(){
         cliente = getIntent().getExtras().getParcelable("meC");
         RecyclerView recyclerView = findViewById(R.id.rcViews);
+        txtInfo = findViewById(R.id.txtInfo);
         adapter = new GroupAdapter();
 
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         MetodosUsers metodosUsers = new MetodosUsers();
-        metodosUsers.listarPostagens(adapter, cliente);
+        metodosUsers.listarPostagens(adapter, cliente, txtInfo);
     }
 
     public void voltarPostagem(View view){

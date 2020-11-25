@@ -2319,6 +2319,7 @@ id btnEncerrar
 id btnEnviar
 id btnEnviarImagem
 id btnEnviarPost
+id btnExcluir
 id btnFiltrar
 id btnHisotricCliente
 id btnHistorico
@@ -2418,6 +2419,7 @@ id fixed
 id flip
 id floating
 id floatingActionButton
+id floatingActionButton2
 id floatingActionButton3
 id floatingActionButton4
 id forever
@@ -2452,6 +2454,7 @@ id ignore
 id ignoreRequest
 id image
 id imageView
+id imageView10
 id imageView2
 id imageView3
 id imageView4
@@ -2488,6 +2491,7 @@ id imgFundoChatPost
 id imgFundoCliente
 id imgList
 id imgListSimple
+id imgLocation
 id imgMapa
 id imgPerfil
 id imgPost
@@ -2619,6 +2623,7 @@ id radio
 id ratingBar
 id ratingBar2
 id ratio
+id rcView
 id rcViews
 id rectangles
 id recyclerView
@@ -2670,6 +2675,7 @@ id spCategoria
 id spacer
 id spline
 id split_action_bar
+id spnCategory
 id spn_contrat
 id spread
 id spread_inside
@@ -2710,9 +2716,13 @@ id textInputLayout
 id textInputLayout10
 id textInputLayout11
 id textInputLayout12
+id textInputLayout13
 id textInputLayout14
 id textInputLayout15
+id textInputLayout16
 id textInputLayout17
+id textInputLayout18
+id textInputLayout19
 id textInputLayout2
 id textInputLayout3
 id textInputLayout4
@@ -2785,7 +2795,12 @@ id textView61
 id textView62
 id textView63
 id textView64
+id textView66
+id textView67
+id textView69
 id textView7
+id textView70
+id textView71
 id textView8
 id textView9
 id text_input_end_icon
@@ -2804,7 +2819,6 @@ id title_template
 id toggle
 id toolbar
 id toolbar2
-id toolbar3
 id toolbar4
 id toolbar5
 id toolbar6
@@ -2834,6 +2848,7 @@ id txtAutorPost
 id txtAvaliar
 id txtCampo2
 id txtCampoKeys
+id txtCategory
 id txtContato
 id txtContatos
 id txtContatosCliente
@@ -2843,6 +2858,7 @@ id txtDescPost
 id txtDescricao
 id txtDescricaoPostagem
 id txtDescricaoRapida
+id txtDescription
 id txtDiaSemana
 id txtEmailAutor
 id txtEmailList
@@ -2853,6 +2869,8 @@ id txtFiltroFixo
 id txtHora
 id txtInfo
 id txtKeys
+id txtLittleDescription
+id txtLoc
 id txtMensagem
 id txtMiniDescricao
 id txtMsn
@@ -2869,10 +2887,13 @@ id txtPostTitle
 id txtPrecoList
 id txtPrecoPost
 id txtPrecoPostagem
+id txtPrice
 id txtProfissao
 id txtRc
 id txtSobreMim
 id txtSobreMimCliente
+id txtTags
+id txtTitle
 id txtTitlePost
 id txtTitulo
 id txtTituloPost
@@ -2972,6 +2993,7 @@ layout abc_tooltip
 layout activity_chat
 layout activity_conversas
 layout activity_create
+layout activity_editar_postagem
 layout activity_enviar_postagem_chat
 layout activity_filtrar_trabalhador
 layout activity_list_fotos

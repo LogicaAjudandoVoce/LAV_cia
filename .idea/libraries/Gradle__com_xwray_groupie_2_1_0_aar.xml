@@ -3,9 +3,6 @@
     <CLASSES>
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1073bac2bb3a14a5fe5321f4da111ce/jetified-groupie-2.1.0/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c1073bac2bb3a14a5fe5321f4da111ce/jetified-groupie-2.1.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/74de365c8251874533db5995a10be35a/jetified-groupie-2.1.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/74de365c8251874533db5995a10be35a/jetified-groupie-2.1.0/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/74de365c8251874533db5995a10be35a/jetified-groupie-2.1.0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.xwray/groupie/2.1.0/6e24be3ddf6c9a4664b6ff3f91c3c3cf3ed564c6/groupie-2.1.0-javadoc.jar!/" />

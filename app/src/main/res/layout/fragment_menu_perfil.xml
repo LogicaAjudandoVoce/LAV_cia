@@ -43,4 +43,17 @@
             app:fab_icon="@drawable/ic_logout" />
     </com.getbase.floatingactionbutton.FloatingActionsMenu>
 
+    <TextView
+        android:id="@+id/txtInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat_alternates"
+        android:gravity="center"
+        android:text="Nenhum anúncio pendente"
+        android:textSize="36sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/rcViews"
+        app:layout_constraintTop_toTopOf="@+id/rcViews" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
