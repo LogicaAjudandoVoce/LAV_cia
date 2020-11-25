@@ -26,11 +26,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
-                android:layout_marginBottom="24dp"
                 android:backgroundTint="#393434"
                 android:clickable="true"
-                app:layout_constraintBottom_toTopOf="@+id/txtNome"
+                app:layout_constraintBottom_toBottomOf="@+id/imgPerfil"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgPerfil"
                 app:srcCompat="@drawable/ic_chat" />
 
             <com.google.android.material.floatingactionbutton.FloatingActionButton
@@ -38,12 +38,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginBottom="24dp"
                 android:backgroundTint="#393434"
                 android:clickable="true"
                 android:tint="#FFF"
                 app:layout_constraintBottom_toTopOf="@+id/txtNome"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/imgPerfil"
                 app:srcCompat="@drawable/ic_hitorico" />
 
             <TextView
@@ -88,7 +88,7 @@
                 android:id="@+id/rcViews"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
-                android:background="@color/places_ui_default_primary_dark"
+                android:background="@color/colorPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView23" />
@@ -128,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/montserrat_alternates"
-                android:text="Meus Trabalhos:"
+                android:text="Meus trabalhos:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textView32"
@@ -194,25 +194,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/rcViews"
                 app:srcCompat="@drawable/ic_expand_more" />
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/btnVoltar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:clickable="true"
-                android:src="@drawable/ic_voltar"
-                app:civ_border_color="#000"
-                app:civ_border_width="1dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/txtInfo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_alternates"
-                android:text="Nada por aqui"
+                android:text="Sem fotos"
                 android:textColor="#FFF"
                 android:textSize="36sp"
                 app:layout_constraintBottom_toBottomOf="@+id/rcViews"
@@ -237,10 +224,23 @@
                 android:layout_marginTop="120dp"
                 android:src="@drawable/trab"
                 app:civ_border_color="@color/colorDourado"
-                app:civ_border_width="1dp"
+                app:civ_border_width="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/imgBackPerfil" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/btnVoltar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:clickable="true"
+                android:src="@drawable/ic_voltar"
+                app:civ_border_color="#000"
+                app:civ_border_width="1dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/trab2"
@@ -365,7 +365,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/montserrat_alternates"
-                android:text="Palavras Chaves relacionadas ao Trabalhador:"
+                android:text="Palavras chaves do trabalhador:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textView38"
@@ -393,7 +393,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:fontFamily="@font/montserrat_alternates"
-                android:text="Filtro Fixo para Pesquisa:"
+                android:text="Filtro fixo para pesquisa:"
                 android:textColor="#000"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="@+id/textView38"

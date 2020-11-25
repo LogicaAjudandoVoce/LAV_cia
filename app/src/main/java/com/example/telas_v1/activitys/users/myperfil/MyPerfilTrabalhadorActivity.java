@@ -174,7 +174,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
     public void editUser(View view){
         final FloatingActionButton btnEdit = findViewById(R.id.btnEdit);
         if (!aux) {
-            btnEdit.setImageResource(R.drawable.ic_baseline_done_24);
+            btnEdit.setImageResource(R.drawable.ic_baseline_done_242);
             imgFoto.setEnabled(true);
             imgFundo.setEnabled(true);
             txtSobreMim.setEnabled(true);
@@ -237,7 +237,7 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
                                 filtrosPesq.setVisibility(View.INVISIBLE);
                                 txtFiltro.setVisibility(View.VISIBLE);
                                 txtTrabTres.setVisibility(View.VISIBLE);
-                                btnList.setImageResource(R.drawable.ic_expand_more);
+                                btnList.setImageResource(R.drawable.ic_baseline_add_24);
                                 btnList.setEnabled(false);
                                 aux=!aux;
                                 txt1.setVisibility(View.INVISIBLE);

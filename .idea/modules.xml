@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Telas_V1.iml" filepath="$PROJECT_DIR$/Telas_V1.iml" group="Telas_V1" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="Telas_V1/app" />
+      <module fileurl="file://$PROJECT_DIR$/Telas_V1.iml" filepath="$PROJECT_DIR$/Telas_V1.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/Telas_V1.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/Telas_V1.app.iml" />
     </modules>
   </component>
 </project>

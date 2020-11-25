@@ -15,7 +15,7 @@
         android:fontFamily="@font/montserrat_alternates"
         android:text="Recupere sua Senha"
         android:textColor="#FFF"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -37,6 +37,8 @@
         android:id="@+id/textInputLayout9"
         android:layout_width="325dp"
         android:layout_height="70dp"
+        android:textColorHint="@color/colorAccent"
+        app:boxStrokeColor="@color/colorAccent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +49,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_alternates"
-            android:hint="@string/informe_seu_e_mail" />
+            android:hint="@string/informe_seu_e_mail"
+            android:textColorHint="@color/colorAccent" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button

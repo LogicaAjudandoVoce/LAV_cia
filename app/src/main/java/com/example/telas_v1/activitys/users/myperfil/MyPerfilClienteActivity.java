@@ -99,7 +99,7 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
     public void btnEdit(View view){
         final FloatingActionButton btnEdit = findViewById(R.id.btnEditCliente);
         if (!ax){
-            btnEdit.setImageResource(R.drawable.ic_floating);
+            btnEdit.setImageResource(R.drawable.ic_baseline_done_242);
             imgFundo.setClickable(true);
             imgPerfil.setClickable(true);
             txtContatos.setEnabled(true);
