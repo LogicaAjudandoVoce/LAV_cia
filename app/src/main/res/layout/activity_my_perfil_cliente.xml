@@ -101,8 +101,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="0,0"
-                android:textSize="100sp"
+                android:text="0.0"
+                android:textColor="@color/colorAccent"
+                android:textSize="75sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -142,10 +143,10 @@
                 android:id="@+id/textInputLayout17"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="@android:drawable/editbox_background"
+                android:background="@drawable/brancopretoborda"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView21">
@@ -156,9 +157,9 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:enabled="false"
-
-                    android:paddingStart="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="13dp"
+                    android:paddingBottom="13dp"
                     android:textColor="#000" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -167,7 +168,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="16dp"
                 android:text="Contatos:"
                 android:textColor="#000"
                 android:textSize="18sp"
@@ -177,10 +178,11 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="8dp"
-                android:background="@android:drawable/editbox_background"
+                android:background="@drawable/brancopretoborda"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -192,8 +194,9 @@
                     android:layout_height="wrap_content"
                     android:background="@null"
                     android:enabled="false"
-                    android:paddingStart="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="13dp"
+                    android:paddingBottom="13dp"
                     android:textColor="#000" />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -222,7 +225,7 @@
                 android:paddingEnd="30dp"
                 android:text="Avaliar"
                 android:textColor="#FFF"
-                android:visibility="invisible"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/barraAvaliacao" />
 
@@ -246,6 +249,17 @@
                 android:background="@drawable/ic_voltar"
                 android:onClick="voltarPerfilCliente"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/menuBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button4"
                 app:layout_constraintTop_toTopOf="parent" />
 
 

@@ -4,12 +4,16 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -18,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telas_v1.R;
+import com.example.telas_v1.activitys.mensagens.ConversasActivity;
+import com.example.telas_v1.activitys.startactivitys.LoginActiviy;
 import com.example.telas_v1.models.MetodosUsers;
 import com.example.telas_v1.models.UserCliente;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -78,6 +84,9 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
         btnEdit = findViewById(R.id.btnEditCliente);
         barra.setFocusable(false);
         barra.setRating(meC.getStars()/meC.getCountStar());
+        Toolbar menuBar = findViewById(R.id.menuBar);
+        setSupportActionBar(menuBar);
+        getSupportActionBar().setTitle("");
 
         if (tipo!=null) {
             btnEdit.setVisibility(View.INVISIBLE);
@@ -287,5 +296,33 @@ public class MyPerfilClienteActivity extends AppCompatActivity {
         }else{
             finish();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = new MenuInflater(this);
+        menuInflater.inflate(R.menu.menu_perfil, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.menu_conversas:
+                Intent intent = new Intent(this, ConversasActivity.class);
+                intent.putExtra("meC", meC);
+                startActivity(intent);
+                break;
+            case R.id.menu_sair:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, LoginActiviy.class));
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void openHistoric(View view){
+
     }
 }

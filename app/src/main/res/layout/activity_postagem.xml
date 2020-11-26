@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
@@ -21,21 +21,33 @@
             android:layout_height="wrap_content">
 
 
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <Button
                 android:id="@+id/btnVoltar"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
                 android:background="@drawable/ic_voltar"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@+id/toolbar3" />
 
             <TextView
                 android:id="@+id/txtPostTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="64dp"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/montserrat_alternates"
                 android:gravity="center"
                 android:text="Título da Postagem"
@@ -43,16 +55,16 @@
                 android:textSize="30sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/toolbar3" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcViews"
                 android:layout_width="0dp"
-                android:layout_height="150dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="#5C5B5B"
+                android:background="@color/quantum_greywhite1000"
+                android:backgroundTint="#00FFFFFF"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtPostTitle" />
 
@@ -61,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:fontFamily="@font/montserrat_alternates"
                 android:text="Descrição:"
                 android:textColor="#000"
@@ -88,9 +100,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:text="Localização:"
                 android:textColor="#000"
-                android:fontFamily="@font/montserrat_alternates"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView33" />
@@ -113,9 +125,9 @@
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="2dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:gravity="start"
                 android:textColor="#000"
-                android:fontFamily="@font/montserrat_alternates"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="@+id/textView35"
                 app:layout_constraintStart_toEndOf="@+id/textView35"
@@ -126,11 +138,11 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/brancopretoborda"
                 android:fontFamily="@font/montserrat_alternates"
-                android:layout_marginEnd="16dp"
-                android:background="@android:drawable/editbox_background_normal"
-                android:padding="10dp"
+                android:padding="20dp"
                 android:text="Lorem ipsum dolor sit amet consectetur adipiscing elit vel arcu fusce ac pretium, maximus finibus dignissim condimentum euismod placerat laoreet senectus potenti duis vestibulum curabitur, eleifend pharetra fames iaculis scelerisque platea non accumsan faucibus litora mollis. Mi elementum dictumst pellentesque sem ad torquent phasellus, est per odio tristique habitasse ex."
                 android:textColor="#000"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -154,7 +166,6 @@
                 android:id="@+id/btnChat"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="48dp"
                 android:layout_marginEnd="16dp"
                 android:background="@drawable/botao_azul"
                 android:fontFamily="@font/montserrat_alternates"
@@ -163,13 +174,13 @@
                 android:textColor="#FFF"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                app:layout_constraintTop_toBottomOf="@+id/txtEmailAutor" />
 
             <Button
                 android:id="@+id/btnContrato"
                 android:layout_width="175dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
+                android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
                 android:background="@drawable/botao_azul"
                 android:fontFamily="@font/montserrat_alternates"
@@ -185,11 +196,11 @@
                 android:id="@+id/txtDataPostagem"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:text="Data"
-                android:textColor="#000"
+                android:textColor="#fff"
                 android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -199,10 +210,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:text="Autor:"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
@@ -211,10 +222,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:text="Nome Autor"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintBottom_toBottomOf="@+id/textView40"
                 app:layout_constraintStart_toEndOf="@+id/textView40"
                 app:layout_constraintTop_toTopOf="@+id/textView40" />
@@ -223,10 +234,10 @@
                 android:id="@+id/textView42"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:text="Email:"
                 android:textColor="#000"
-                android:fontFamily="@font/montserrat_alternates"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@+id/textView40"
                 app:layout_constraintStart_toStartOf="@+id/textView40"
@@ -237,16 +248,40 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:fontFamily="@font/montserrat_alternates"
                 android:text="Email Autor"
                 android:textColor="#000"
                 android:textSize="18sp"
-                android:fontFamily="@font/montserrat_alternates"
                 app:layout_constraintBottom_toBottomOf="@+id/textView42"
                 app:layout_constraintEnd_toEndOf="@+id/txtNomeAutor"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/textView42"
                 app:layout_constraintTop_toTopOf="@+id/textView42" />
 
+            <TextView
+                android:id="@+id/txtData"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="Postagem"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toolbar3"
+                app:layout_constraintStart_toEndOf="@+id/btnVoltar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_alternates"
+                android:text="Nenhuma fotos"
+                android:textSize="36sp"
+                app:layout_constraintBottom_toBottomOf="@+id/rcViews"
+                app:layout_constraintEnd_toEndOf="@+id/rcViews"
+                app:layout_constraintStart_toStartOf="@+id/rcViews"
+                app:layout_constraintTop_toBottomOf="@+id/txtPostTitle" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

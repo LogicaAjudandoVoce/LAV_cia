@@ -30,6 +30,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.squareup.picasso.Picasso;
 import com.xwray.groupie.GroupAdapter;
@@ -231,6 +232,7 @@ public class MetodosUsers{
 
     public void listarPostagens(final GroupAdapter adapter, final String filtro, final List<String> keys){
         FirebaseFirestore.getInstance().collection("postagens")
+                .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
@@ -268,6 +270,7 @@ public class MetodosUsers{
 
     public void listarPostagens(final GroupAdapter adapter, final UserCliente userCliente, final TextView txtInfo){
         FirebaseFirestore.getInstance().collection("postagens")
+                .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
@@ -278,7 +281,6 @@ public class MetodosUsers{
                             adapter.clear();
                             for (DocumentSnapshot doc : docs) {
                                 PostagemAux postagem = doc.toObject(PostagemAux.class);
-
                                 if (postagem.getStatus().equals("Pendente") && postagem.getIdCliente().equals(userCliente.getId())){
                                     txtInfo.setText("");
                                     adapter.add(new ListarPostagemViewModel(postagem));
@@ -290,8 +292,9 @@ public class MetodosUsers{
                 });
     }
 
-    public void listarPostagensTrabalhador(final GroupAdapter adapter, final String id, final String status){
+    public void listarPostagensTrabalhador(final GroupAdapter adapter, final String id, final String status, final TextView txtInfo){
         FirebaseFirestore.getInstance().collection("postagens")
+                .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
@@ -306,6 +309,7 @@ public class MetodosUsers{
                                     if (postagem.getVoluntarios() != null) {
                                         for (String user : postagem.getVoluntarios()) {
                                             if (user.equals(id)) {
+                                                txtInfo.setText("");
                                                 adapter.add(new ListarPostagemViewModel(postagem));
                                                 adapter.notifyDataSetChanged();
                                             }
@@ -318,8 +322,9 @@ public class MetodosUsers{
                 });
     }
 
-    public void listarPostagensCliente(final GroupAdapter adapter, final  String status, final UserCliente cliente){
+    public void listarPostagensCliente(final GroupAdapter adapter, final  String status, final UserCliente cliente, final TextView txtInfo){
         FirebaseFirestore.getInstance().collection("postagens")
+                .orderBy("timestamp", Query.Direction.DESCENDING)
                 .addSnapshotListener(new EventListener<QuerySnapshot>() {
                     @Override
                     public void onEvent(@javax.annotation.Nullable QuerySnapshot queryDocumentSnapshots, @javax.annotation.Nullable FirebaseFirestoreException e) {
@@ -332,14 +337,17 @@ public class MetodosUsers{
                                 PostagemAux postagem = doc.toObject(PostagemAux.class);
                                 if (status.equals("Pendente")) {
                                     if (postagem.getStatus().equals(status) && postagem.getVoluntarios() != null && !postagem.getVoluntarios().isEmpty()&& postagem.getIdCliente().equals(cliente.getId())) {
+                                        txtInfo.setText("");
                                         adapter.add(new ListarPostagemViewModel(postagem));
                                     }
                                 }else if(status.equals("Ativo")){
                                     if (postagem.getStatus().equals(status) && postagem.getIdCliente().equals(cliente.getId())) {
+                                        txtInfo.setText("");
                                         adapter.add(new ListarPostagensAtivas(postagem));
                                     }
                                 }else{
                                     if (postagem.getStatus().equals(status)) {
+                                        txtInfo.setText("");
                                         adapter.add(new ListarPostagensAtivas(postagem));
                                     }
                                 }

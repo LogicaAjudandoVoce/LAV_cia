@@ -35,12 +35,13 @@ import java.util.List;
 
 public class PostagemActivity extends AppCompatActivity {
 
-    private PostagemAux postagem;
+    private Button btnContrato;
     private String forma, ativo;
+    private GroupAdapter adapter;
+    private PostagemAux postagem;
+    private List<String> voluntarios;
     private UserCliente cliente = new UserCliente();
     private UserTrabalhador trabalhador = new UserTrabalhador();
-    private List<String> voluntarios;
-    private GroupAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,7 +64,7 @@ public class PostagemActivity extends AppCompatActivity {
         TextView txtData = findViewById(R.id.txtDataPostagem);
         Button btnChat = findViewById(R.id.btnChat);
         Button btnBack = findViewById(R.id.btnVoltar);
-        Button btnContrato = findViewById(R.id.btnContrato);
+        btnContrato = findViewById(R.id.btnContrato);
         RecyclerView rcView = findViewById(R.id.rcViews);
 
         adapter = new GroupAdapter();
@@ -87,6 +88,8 @@ public class PostagemActivity extends AppCompatActivity {
         }
 
         if (postagem.getFotos()!=null) {
+            TextView txtInfo = findViewById(R.id.txtInfo);
+            txtInfo.setText("");
             for (String url : postagem.getFotos()) {
                 Log.d("TESTE", url);
                 adapter.add(new ListarFotos(url));
@@ -157,6 +160,7 @@ public class PostagemActivity extends AppCompatActivity {
                 @Override
                 public void onSuccess(Void aVoid) {
                     Toast.makeText(PostagemActivity.this, "Contrato Solicitado! Aguarde até ser respondido na área de contratos..", Toast.LENGTH_LONG).show();
+                    btnContrato.setVisibility(View.INVISIBLE);
                 }
             }).addOnFailureListener(new OnFailureListener() {
                 @Override
@@ -218,7 +222,7 @@ public class PostagemActivity extends AppCompatActivity {
         final double longitude = postagem.getLongitude();
 
         String strUri = "http://maps.google.com/maps?q=loc:" +
-                        latitude + "," + longitude;
+                latitude + "," + longitude;
         Intent intent = new Intent(android.content.Intent.ACTION_VIEW,
                 Uri.parse(strUri));
 

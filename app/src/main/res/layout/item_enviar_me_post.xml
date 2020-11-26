@@ -22,13 +22,13 @@
         android:layout_marginStart="64dp"
         android:layout_marginEnd="8dp"
         android:alpha="0.5"
-        app:riv_border_width="1dp"
-        app:riv_border_color="@color/colorPrimary"
         android:scaleType="centerCrop"
         android:src="@drawable/img_fundo"
         app:layout_constraintEnd_toStartOf="@+id/txtEnviarImgChat"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/txtEnviarImgChat"
+        app:riv_border_color="@color/colorPrimary"
+        app:riv_border_width="0dp"
         app:riv_corner_radius="15dp" />
 
     <TextView

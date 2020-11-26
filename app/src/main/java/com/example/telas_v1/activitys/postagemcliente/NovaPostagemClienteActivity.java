@@ -91,7 +91,8 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
 
             }
         });
-
+        postagem.setLongitude(-1);
+        postagem.setLatitude(-1);
         iniciarComponentes();
         iniciarPost();
     }
@@ -164,7 +165,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         if (txtPreco.getText().toString().isEmpty()) preco=0f;
         else preco = Double.valueOf(txtPreco.getText().toString());
 
-        if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null && mini!=null){
+        if (!titulo.isEmpty() && !descricao.isEmpty() && preco>0 && uriFoto!=null && !mini.isEmpty() && !txtPalavrasChaves.getChipValues().isEmpty() && postagem.getLatitude()!=-1 && postagem.getLongitude()!=-1){
             SimpleDateFormat formataData = new SimpleDateFormat("dd/MM/yyyy");
             Date data = new Date();
             String dataFormatada = formataData.format(data);
@@ -207,7 +208,9 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
                     public void onSuccess(Uri uri){
                         uriFoto.add(uri.toString());
                         if(totalFotos == uriFoto.size()){
+                            long timestamp = System.currentTimeMillis();
                             postagem.setFotos(uriFoto);
+                            postagem.setTimestamp(timestamp);
                             FirebaseFirestore.getInstance().collection("postagens").document(postagem.getIdPost()).set(postagem).addOnSuccessListener(new OnSuccessListener<Void>() {
                                 @Override
                                 public void onSuccess(Void aVoid) {
@@ -230,7 +233,9 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
 
     public void abrirMapa(View view){
         getInfoPost();
-        startActivity(new Intent(this, MapNewPostActivity.class));
+        Intent intent = new Intent(this, MapNewPostActivity.class);
+        intent.putExtra("edit", "no");
+        startActivity(intent);
     }
 
     private void getInfoPost(){
@@ -246,6 +251,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
             for (String chip: txtPalavrasChaves.getChipValues()){
                 keys.add(chip);
             }
+            Postagem.setKeys(keys);
         }
     }
 
@@ -278,9 +284,7 @@ public class NovaPostagemClienteActivity extends AppCompatActivity {
         }if (Postagem.getPreco()!=0){
             txtPreco.setText(String.valueOf(Postagem.getPreco()));
         }if (Postagem.getKeys()!=null){
-            txtPalavrasChaves.setAdapter(new ArrayAdapter<>(getApplication(), android.R.layout.simple_list_item_1, Postagem.getKeys()));
-        }if (Postagem.getKeys()!=null){
-            txtPalavrasChaves.setText(keys);
+            txtPalavrasChaves.setText(Postagem.getKeys());
         }
     }
 

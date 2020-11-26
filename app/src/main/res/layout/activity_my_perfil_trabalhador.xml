@@ -72,7 +72,7 @@
                 android:id="@+id/recyclerView"
                 android:layout_width="0dp"
                 android:layout_height="200dp"
-                android:background="@color/colorPrimary"
+                android:background="@null"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"
@@ -84,7 +84,6 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_alternates"
                 android:text="Nada por aqui"
-                android:textColor="#FFF"
                 android:textSize="36sp"
                 app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
                 app:layout_constraintEnd_toEndOf="@+id/recyclerView"
@@ -124,7 +123,7 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                android:background="@drawable/item_fundo_branco_edit_text"
+                android:background="@drawable/brancopretoborda"
                 android:maxWidth="0dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -139,8 +138,10 @@
                     android:background="@null"
                     android:enabled="false"
                     android:fontFamily="@font/montserrat_alternates"
-                    android:paddingStart="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="13dp"
+                    android:paddingBottom="13dp"
+                    android:textColor="@color/colorAccent"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -182,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="64dp"
                 android:fontFamily="@font/montserrat_alternates"
                 android:text="Contatos:"
                 android:textColor="#000"
@@ -198,7 +199,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:background="@drawable/item_fundo_branco_edit_text"
+                android:background="@drawable/brancopretoborda"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -212,8 +213,9 @@
                     android:enabled="false"
                     android:fontFamily="@font/montserrat_alternates"
                     android:maxWidth="0dp"
-                    android:paddingStart="10dp"
-                    android:paddingBottom="10dp"
+                    android:paddingStart="13dp"
+                    android:paddingEnd="13dp"
+                    android:paddingBottom="13dp"
                     android:textColor="#000"
                     android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -288,8 +290,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:gravity="center"
-                android:text="0,0"
-                android:textSize="100sp"
+                android:text="0.0"
+                android:textColor="@color/colorAccent"
+                android:textSize="75sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView44" />
@@ -365,7 +368,7 @@
                 android:id="@+id/txtTrabUm"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@android:drawable/editbox_background_normal"
+                android:background="@drawable/brancopretoborda"
                 android:fontFamily="@font/montserrat_alternates"
                 android:gravity="center"
                 android:text="Trabalho Um"
@@ -380,7 +383,7 @@
                 android:id="@+id/txtTrabDois"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@android:drawable/editbox_background_normal"
+                android:background="@drawable/brancopretoborda"
                 android:fontFamily="@font/montserrat_alternates"
                 android:gravity="center"
                 android:text="Trabalho Dois"
@@ -395,7 +398,7 @@
                 android:id="@+id/txtTrabTres"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:background="@android:drawable/editbox_background_normal"
+                android:background="@drawable/brancopretoborda"
                 android:fontFamily="@font/montserrat_alternates"
                 android:gravity="center"
                 android:text="Trabalho Três"
@@ -411,11 +414,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:background="@drawable/item_fundo_branco_edit_text"
+                android:background="@drawable/brancopretoborda"
                 android:fontFamily="@font/montserrat_alternates"
-                android:paddingStart="10dp"
-                android:paddingTop="10dp"
-                android:paddingBottom="10dp"
+                android:paddingTop="13dp"
+                android:paddingStart="13dp"
+                android:paddingEnd="13dp"
+                android:paddingBottom="13dp"
                 app:layout_constraintEnd_toEndOf="@+id/textInputLayout14"
                 app:layout_constraintStart_toStartOf="@+id/textInputLayout14"
                 app:layout_constraintTop_toBottomOf="@+id/textView53" />
@@ -468,6 +472,7 @@
                 android:id="@+id/txtFiltro"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
+                android:background="@drawable/brancopretoborda"
                 android:fontFamily="@font/montserrat_alternates"
                 android:gravity="center"
                 android:text="TextView"
@@ -490,31 +495,16 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <com.getbase.floatingactionbutton.FloatingActionsMenu
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/menuBar"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent">
-
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/btnConversas"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:clickable="true"
-                    android:src="@drawable/ic_chat"
-                    app:fab_icon="@drawable/ic_chat"
-                    app:fab_title="Conversas" />
-
-                <com.getbase.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/bt_sairperfil"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="@color/colorPrimary"
-                    android:clickable="true"
-                    android:src="@drawable/ic_logout"
-                    app:fab_icon="@drawable/ic_logout" />
-            </com.getbase.floatingactionbutton.FloatingActionsMenu>
+                android:background="@null"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button3"
+                app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

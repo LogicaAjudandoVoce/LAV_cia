@@ -7,12 +7,13 @@ import java.util.List;
 
 public class PostagemAux implements Parcelable {
 
-    private  String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao, filtroFixo, status;
-    private  String idContratado, nomeContratato, urlImgContratado;
-    private  List<String> keys, fotos, voluntarios;
-    private  double preco, latitude, longitude;
+    private String idCliente, idPost, nomeAutor, titulo, descricao, data, email, miniDescricao, filtroFixo, status;
+    private String idContratado, nomeContratato, urlImgContratado;
+    private List<String> keys, fotos, voluntarios;
+    private double preco, latitude, longitude;
+    private long timestamp;
 
-    public PostagemAux(){
+    public PostagemAux() {
 
     }
 
@@ -36,6 +37,7 @@ public class PostagemAux implements Parcelable {
         preco = in.readDouble();
         latitude = in.readDouble();
         longitude = in.readDouble();
+        timestamp = in.readLong();
     }
 
     @Override
@@ -59,6 +61,7 @@ public class PostagemAux implements Parcelable {
         dest.writeDouble(preco);
         dest.writeDouble(latitude);
         dest.writeDouble(longitude);
+        dest.writeLong(timestamp);
     }
 
     @Override
@@ -228,5 +231,13 @@ public class PostagemAux implements Parcelable {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(long timestamp) {
+        this.timestamp = timestamp;
     }
 }

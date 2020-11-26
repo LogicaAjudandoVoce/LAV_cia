@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -13,6 +14,9 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.PersistableBundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
@@ -22,6 +26,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.telas_v1.R;
+import com.example.telas_v1.activitys.mensagens.ConversasActivity;
+import com.example.telas_v1.activitys.startactivitys.LoginActiviy;
 import com.example.telas_v1.activitys.users.ListFotosActivity;
 import com.example.telas_v1.fragmentos.fragmentosmenu.MenuActivity;
 import com.example.telas_v1.models.FotoLista;
@@ -107,6 +113,9 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         prof1 = findViewById(R.id.profDois);
         prof2 = findViewById(R.id.profTres);
         txtFiltro = findViewById(R.id.txtFiltro);
+        Toolbar menuBar = findViewById(R.id.menuBar);
+        setSupportActionBar(menuBar);
+        getSupportActionBar().setTitle("");
 
         if (userT.getStars()!=0)txtAvaliar.setText(String.valueOf(userT.getStars()/(float)userT.getCountStars()).substring(0, 3));
         ratingBar.setFocusable(false);
@@ -514,5 +523,29 @@ public class MyPerfilTrabalhadorActivity extends AppCompatActivity {
         }else{
             super.onBackPressed();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater menuInflater = new MenuInflater(this);
+        menuInflater.inflate(R.menu.menu_perfil, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch(item.getItemId()){
+            case R.id.menu_conversas:
+                Intent intent = new Intent(this, ConversasActivity.class);
+                intent.putExtra("meT", userT);
+                startActivity(intent);
+                break;
+            case R.id.menu_sair:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(this, LoginActiviy.class));
+                finish();
+                break;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

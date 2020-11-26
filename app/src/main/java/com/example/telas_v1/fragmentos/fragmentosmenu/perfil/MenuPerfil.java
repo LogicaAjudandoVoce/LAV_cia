@@ -43,27 +43,6 @@ public class MenuPerfil extends Fragment {
         root = inflater.inflate(R.layout.fragment_menu_perfil, container, false);
 
         iniciar();
-
-        FloatingActionButton btnLogOut = root.findViewById(R.id.bt_sairperfil);
-        btnLogOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                startActivity(new Intent(getActivity(), LoginActiviy.class));
-                getActivity().finish();
-            }
-        });
-
-        FloatingActionButton btnConversas = root.findViewById(R.id.btnConversas);
-        btnConversas.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getContext(), ConversasActivity.class);
-                if (cliente!=null) intent.putExtra("meC", cliente);
-                if (trabalhador!=null) intent.putExtra("meT", trabalhador);
-                startActivity(intent);
-            }
-        });
         return root;
     }
 

@@ -2055,6 +2055,7 @@ drawable botao_azul
 drawable botao_branco
 drawable botao_dourado
 drawable botao_preto
+drawable brancopretoborda
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -2129,6 +2130,7 @@ drawable ic_mtrl_chip_close_circle
 drawable ic_person_black_24dp
 drawable ic_pessoa
 drawable ic_search
+drawable ic_search12
 drawable ic_send_black_24dp
 drawable ic_spinner
 drawable ic_star
@@ -2295,7 +2297,6 @@ id bt_avancar
 id bt_client
 id bt_entrar
 id bt_retornar
-id bt_sairperfil
 id bt_trab
 id bt_voltar
 id bt_voltar_frag_dois
@@ -2303,6 +2304,7 @@ id bt_voltar_fragmento
 id bt_voltar_fragmento2
 id btnAdd
 id btnAddImg
+id btnAddPhoto
 id btnAddPost
 id btnAvaliar
 id btnAvaliarStars
@@ -2312,7 +2314,6 @@ id btnCancelar
 id btnChat
 id btnConcluir
 id btnContrato
-id btnConversas
 id btnEdit
 id btnEditCliente
 id btnEncerrar
@@ -2521,6 +2522,9 @@ id ly_fundo_tres
 id map
 id masked
 id media_actions
+id menuBar
+id menu_conversas
+id menu_sair
 id message
 id middle
 id mini
@@ -2616,6 +2620,7 @@ id precoChatPost
 id profDois
 id profTres
 id profUm
+id progress
 id progressBar
 id progress_circular
 id progress_horizontal
@@ -2792,7 +2797,6 @@ id textView59
 id textView6
 id textView60
 id textView61
-id textView62
 id textView63
 id textView64
 id textView66
@@ -2819,6 +2823,7 @@ id title_template
 id toggle
 id toolbar
 id toolbar2
+id toolbar3
 id toolbar4
 id toolbar5
 id toolbar6
@@ -2852,6 +2857,7 @@ id txtCategory
 id txtContato
 id txtContatos
 id txtContatosCliente
+id txtData
 id txtDataPostagem
 id txtDatePost
 id txtDescPost
@@ -3124,6 +3130,7 @@ layout text_view_with_line_height_from_style
 layout text_view_with_theme_line_height
 layout text_view_without_line_height
 menu barra_menu
+menu menu_perfil
 mipmap ic_launcher
 mipmap ic_launcher_foreground
 mipmap ic_launcher_round

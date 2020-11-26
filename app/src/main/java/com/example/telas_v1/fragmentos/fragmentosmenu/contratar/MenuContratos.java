@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.telas_v1.R;
 import com.example.telas_v1.activitys.postagemcliente.PostagemActivity;
@@ -29,11 +30,12 @@ public class MenuContratos extends Fragment {
 
     private View root;
     private Spinner spn;
-    private GroupAdapter adapter;
-    private UserTrabalhador trabalhador;
+    private TextView txtInfo;
     private UserCliente cliente;
-    private MenuContratosViewModel menucontratos_viewmodel;
+    private GroupAdapter adapter;
     private MetodosUsers metodosUsers;
+    private UserTrabalhador trabalhador;
+    private MenuContratosViewModel menucontratos_viewmodel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              final ViewGroup container, Bundle savedInstanceState) {
@@ -71,6 +73,8 @@ public class MenuContratos extends Fragment {
 
         rcView.setLayoutManager(new LinearLayoutManager(getContext()));
         rcView.setAdapter(adapter);
+
+        txtInfo = root.findViewById(R.id.txtInfo);
     }
 
     private void verificarUser(){
@@ -95,25 +99,27 @@ public class MenuContratos extends Fragment {
 
     public void filtrarTrab(){
         if (spn.getSelectedItem().toString().equals("Contratos Voluntários")) {
-            metodosUsers.listarPostagensTrabalhador(adapter, FirebaseAuth.getInstance().getUid(), "Pendente");
+            txtInfo.setText("Nenhum contrato voluntário");
+            metodosUsers.listarPostagensTrabalhador(adapter, FirebaseAuth.getInstance().getUid(), "Pendente", txtInfo);
         } else if (spn.getSelectedItem().toString().equals("Contratos Ativos")) {
-            MetodosUsers metodosUsers = new MetodosUsers();
-            metodosUsers.listarPostagensTrabalhador(adapter, FirebaseAuth.getInstance().getUid(), "Ativo");
+            txtInfo.setText("Nenhum contrato ativos");
+            metodosUsers.listarPostagensTrabalhador(adapter, FirebaseAuth.getInstance().getUid(), "Ativo", txtInfo);
         }else if (spn.getSelectedItem().toString().equals("Contratos Finalizados")){
-            MetodosUsers metodosUsers = new MetodosUsers();
-            metodosUsers.listarPostagensTrabalhador(adapter, FirebaseAuth.getInstance().getUid(), "Finalizado");
+            txtInfo.setText("Nenhum contrato finalizado");
+            metodosUsers.listarPostagensTrabalhador(adapter, FirebaseAuth.getInstance().getUid(), "Finalizado", txtInfo);
         }
     }
 
     public void filtrarCliente(){
         if (spn.getSelectedItem().toString().equals("Contratos Voluntários")) {
-            metodosUsers.listarPostagensCliente(adapter, "Pendente", cliente);
+            txtInfo.setText("Nenhum contrato voluntário");
+            metodosUsers.listarPostagensCliente(adapter, "Pendente", cliente, txtInfo);
         } else if (spn.getSelectedItem().toString().equals("Contratos Ativos")) {
-            MetodosUsers metodosUsers = new MetodosUsers();
-            metodosUsers.listarPostagensCliente(adapter,  "Ativo", cliente);
+            txtInfo.setText("Nenhum contrato ativos");
+            metodosUsers.listarPostagensCliente(adapter,  "Ativo", cliente, txtInfo);
         }else{
-            MetodosUsers metodosUsers = new MetodosUsers();
-            metodosUsers.listarPostagensCliente(adapter, "Finalizado", cliente);
+            txtInfo.setText("Nenhum contrato finalizado");
+            metodosUsers.listarPostagensCliente(adapter, "Finalizado", cliente, txtInfo);
         }
     }
 

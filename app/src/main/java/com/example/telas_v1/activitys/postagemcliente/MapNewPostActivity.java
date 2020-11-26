@@ -10,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 
@@ -36,6 +37,9 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
     private LatLng loc;
     private PostagemAux postagem = new PostagemAux();
     private EditText txtLoc;
+    private double latitude;
+    private double longitude;
+    private String edit="a";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,6 +88,16 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
                 postagem.setLongitude(latLng.longitude);
             }
         });
+
+        edit = getIntent().getExtras().getString("edit");
+        if (!edit.equals("no")){
+            Log.d("TESTE", "AAAAAAAA");
+            latitude = getIntent().getExtras().getDouble("latitude");
+            longitude = getIntent().getExtras().getDouble("longitude");
+
+            mMap.addMarker(new MarkerOptions().position(new LatLng(latitude, longitude)).title("Local atual da sua postagem"));
+            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(latitude, longitude), 17));
+        }
     }
 
     @Override
@@ -106,6 +120,13 @@ public class MapNewPostActivity extends FragmentActivity implements OnMapReadyCa
                 .setPositiveButton("Sim", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        if (!edit.equals("no")){
+                            Intent intent = new Intent(getApplicationContext(), EditarPostagemActivity.class);
+                            intent.putExtra("latitude", latitude);
+                            intent.putExtra("longitude", longitude);
+                            startActivity(intent);
+                            return;
+                        }
                         Intent intent = new Intent(MapNewPostActivity.this, NovaPostagemClienteActivity.class);
                         intent.putExtra("loc", postagem);
                         startActivity(intent);
