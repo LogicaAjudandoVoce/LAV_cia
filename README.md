@@ -7,7 +7,7 @@
  <a href="#dog-objetivo">Objetivo</a> •
  <a href="#dog-funcionalidades">Funcionalidades</a> • 
  <a href="#cat-instalação">Instalação</a> • 
- <a href="#dog-integrantes-e-seus-papéis">Integrantes e seus Papéis</a> • 
+ <a href="#dog-integrantes-e-seus-papéis">Integrantes e seus Papéis</a> 
 </p>
 
 
