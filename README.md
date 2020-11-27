@@ -30,14 +30,14 @@ O LAV (Lógica Ajudando Você) trás como principal objetivo suprir a necessidad
 
 Você pode baixar o apk para **ANDROID** clicando no link abaixo 👇
 
-[Download - LAV](https://drive.google.com/file/d/1yvxNZmW4Hu5REV8j2BtYNQcPX0P7r-w5/view?usp=sharing)
+[Download - LAV](https://drive.google.com/file/d/1t1F8vRKM7ejEW3WSWk86s5ELKD6lqSyk/view?usp=sharing)
 
 **Observação**, antes de realizar a instalação, caso seja a primeira vez que você baixar um aplicativo de fora da loja do smartphone, é necessária a permissão para que o aplicativo seja instalado, realizando os seguintes passos.
 
 1. Para começar, você precisa liberar a instalação de aplicativos de “fontes desconhecidas” no Android. Para isso, em seu dispositivo Android, abra Configurar > Segurança e marque a opção Fontes desconhecidas.
 Essa opção está disponível no Android 4.0 ou superior. Se você tem uma versão anterior do Android, você deve acessar “Configurações > Aplicativos”, selecionar a opção “Fontes Desconhecidas” e tocar em OK.
 
-2. Acesse o site que oferece o download do aplicativo em formato APK em qualquer navegador ou em seu smartphone e faça o download do “arquivo APK” do aplicativo que pretende instalar no smartphone. Acesse o link > [Download - LAV](https://drive.google.com/file/d/1yvxNZmW4Hu5REV8j2BtYNQcPX0P7r-w5/view?usp=sharing)
+2. Acesse o site que oferece o download do aplicativo em formato APK em qualquer navegador ou em seu smartphone e faça o download do “arquivo APK” do aplicativo que pretende instalar no smartphone. Acesse o link > [Download - LAV](https://drive.google.com/file/d/1t1F8vRKM7ejEW3WSWk86s5ELKD6lqSyk/view?usp=sharing)
 
 3. Em alguns casos, o navegador pode exibir uma mensagem informando que o arquivo pode danificar o seu dispositivo e se você quer manter o arquivo APK mesmo assim. Toque em “OK” para autorizar o download.
 
