@@ -53,5 +53,5 @@ Se não ficou muito claro, acesse o [SOFTDOWNLOAD](https://www.softdownload.com.
 ## 🤵 Integrantes e seus Papéis
 <ul>
   <li>AndreVictorFMM (André Victor) - Programador</il>
-  <li>Cassio-Marciao (Cássio Marcião)- Programador</il>
+  <li>cmarciao (Cássio Marcião)- Programador</il>
   <li>millyferb (Ingrid Samilly) - Designer</il>
